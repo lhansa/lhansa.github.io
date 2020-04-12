@@ -1,0 +1,46 @@
+baseurl = "/"
+title = "Comala"
+author = "Leonardo Hansa"
+canonifyurls = true
+languagecode = "en"
+theme = "hugo-tanka"
+
+googleAnalytics = ""
+disqusShortname = ""
+disable_mathjax = false
+
+pygmentsstyle      = "vs"
+pygmentscodefences = true
+
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+
+[params]
+  sitename = "Comala"
+  dateform = "02/01/2006"
+  title = "Cosa"
+  
+[[permalinks]]
+    title = "Cosa"
+    post = "/:year/:month/:day/:slug/"
+
+  
+[[menu.main]]
+    name = "Home"
+    url = "http://leonardohansa.com"
+    weight = 1
+[[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/lhansa"
+    weight = 2
+[[menu.main]]
+    name = "LinkedIn"
+    url = "https://www.linkedin.com/in/leonardohansa"
+    weight = 3
+[[menu.main]]
+    name = "Twitter"
+    url = "https://twitter.com/l_hansa"
+    weight = 4
+[[menu.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 5
