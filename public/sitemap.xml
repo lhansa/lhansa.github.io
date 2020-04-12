@@ -3,22 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/hugo-tanka/project/project1/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/project/project2/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/project/project3/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/project/project4/</loc>
-  </url>
-  
-  <url>
     <loc>/hugo-tanka/categories/</loc>
     <lastmod>2020-04-12T01:00:00-07:00</lastmod>
   </url>
@@ -69,124 +53,8 @@
   </url>
   
   <url>
-    <loc>/hugo-tanka/post/2016-12-30-hello-markdown/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/post/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/post/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/hugo-tanka/lorem-ipsum/</loc>
     <lastmod>2015-01-01T13:09:13-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/post/2015-01-01-lorem-ipsum/</loc>
-    <lastmod>2015-01-01T13:09:13-06:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/post/creating-a-new-theme/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/go/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/golang/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/hugo/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/themes/</loc>
-    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/post/goisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/post/hugoisforlovers/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/template/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/static-site-generator/</loc>
-    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/about/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/bootstrap/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/css/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/highlight-js/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/html/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/js/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/project/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/responsive/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo-tanka/tags/syntax-highlighting/</loc>
   </url>
   
 </urlset>
