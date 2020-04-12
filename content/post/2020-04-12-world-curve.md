@@ -1,6 +1,6 @@
 ---
-date: "2016-12-30T21:49:57-07:00"
-title: A Plain Markdown Post
+date: "2020-04-12T01:00:00-07:00"
+title: La curva mundial
 author: "Leonardo Hansa"
 categories: ["R"]
 tags: ["R Markdown", "plot", "regression"]
