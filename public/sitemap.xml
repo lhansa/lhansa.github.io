@@ -3,175 +3,190 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/project/project1/</loc>
+    <loc>/hugo-tanka/project/project1/</loc>
   </url>
   
   <url>
-    <loc>/project/project2/</loc>
+    <loc>/hugo-tanka/project/project2/</loc>
   </url>
   
   <url>
-    <loc>/project/project3/</loc>
+    <loc>/hugo-tanka/project/project3/</loc>
   </url>
   
   <url>
-    <loc>/project/project4/</loc>
+    <loc>/hugo-tanka/project/project4/</loc>
   </url>
   
   <url>
-    <loc>/post/2016-12-30-hello-markdown/</loc>
+    <loc>/hugo-tanka/categories/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/2020-04-12-world-curve/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/tags/plot/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/categories/r/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/tags/r-markdown/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/tags/regression/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/tags/</loc>
+    <lastmod>2020-04-12T01:00:00-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/tanka-theme-demo/</loc>
+    <lastmod>2017-12-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/hello-markdown/</loc>
     <lastmod>2016-12-30T21:49:57-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2020-04-12-world-curve/</loc>
+    <loc>/hugo-tanka/post/2016-12-30-hello-markdown/</loc>
     <lastmod>2016-12-30T21:49:57-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/hugo-tanka/post/</loc>
     <lastmod>2016-12-30T21:49:57-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/plot/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r-markdown/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/regression/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2016-12-30T21:49:57-07:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2015-07-23-r-rmarkdown/</loc>
+    <loc>/hugo-tanka/post/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2015-01-01-lorem-ipsum/</loc>
+    <loc>/hugo-tanka/lorem-ipsum/</loc>
     <lastmod>2015-01-01T13:09:13-06:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/creating-a-new-theme/</loc>
+    <loc>/hugo-tanka/post/2015-01-01-lorem-ipsum/</loc>
+    <lastmod>2015-01-01T13:09:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/hugo-tanka/post/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/go/</loc>
+    <loc>/hugo-tanka/tags/go/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/golang/</loc>
+    <loc>/hugo-tanka/tags/golang/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/hugo/</loc>
+    <loc>/hugo-tanka/tags/hugo/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/themes/</loc>
+    <loc>/hugo-tanka/tags/themes/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/goisforlovers/</loc>
+    <loc>/hugo-tanka/post/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/development/</loc>
+    <loc>/hugo-tanka/tags/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/hugoisforlovers/</loc>
+    <loc>/hugo-tanka/post/hugoisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/template/</loc>
+    <loc>/hugo-tanka/tags/template/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/jekyll/</loc>
+    <loc>/hugo-tanka/tags/jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/migrate-from-jekyll/</loc>
+    <loc>/hugo-tanka/post/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/static-site-generator/</loc>
+    <loc>/hugo-tanka/tags/static-site-generator/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>/hugo-tanka/about/</loc>
   </url>
   
   <url>
-    <loc>/tags/bootstrap/</loc>
+    <loc>/hugo-tanka/tags/bootstrap/</loc>
   </url>
   
   <url>
-    <loc>/tags/css/</loc>
+    <loc>/hugo-tanka/tags/css/</loc>
   </url>
   
   <url>
-    <loc>/tags/highlight-js/</loc>
+    <loc>/hugo-tanka/tags/highlight-js/</loc>
   </url>
   
   <url>
-    <loc>/tags/html/</loc>
+    <loc>/hugo-tanka/tags/html/</loc>
   </url>
   
   <url>
-    <loc>/tags/js/</loc>
+    <loc>/hugo-tanka/tags/js/</loc>
   </url>
   
   <url>
-    <loc>/project/</loc>
+    <loc>/hugo-tanka/project/</loc>
   </url>
   
   <url>
-    <loc>/tags/responsive/</loc>
+    <loc>/hugo-tanka/tags/responsive/</loc>
   </url>
   
   <url>
-    <loc>/tags/syntax-highlighting/</loc>
+    <loc>/hugo-tanka/tags/syntax-highlighting/</loc>
   </url>
   
 </urlset>

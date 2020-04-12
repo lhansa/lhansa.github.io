@@ -1,175 +1,175 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Minimal</title>
-    <link>/tags/</link>
-    <description>Recent content in Tags on Minimal</description>
+    <title>Tags on Hugo Tanka Theme</title>
+    <link>/hugo-tanka/tags/</link>
+    <description>Recent content in Tags on Hugo Tanka Theme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate>
+    <language>en</language>
+    <lastBuildDate>Sun, 12 Apr 2020 01:00:00 -0700</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/hugo-tanka/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>plot</title>
-      <link>/tags/plot/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      <link>/hugo-tanka/tags/plot/</link>
+      <pubDate>Sun, 12 Apr 2020 01:00:00 -0700</pubDate>
       
-      <guid>/tags/plot/</guid>
+      <guid>/hugo-tanka/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>/tags/r-markdown/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      <link>/hugo-tanka/tags/r-markdown/</link>
+      <pubDate>Sun, 12 Apr 2020 01:00:00 -0700</pubDate>
       
-      <guid>/tags/r-markdown/</guid>
+      <guid>/hugo-tanka/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>/tags/regression/</link>
-      <pubDate>Fri, 30 Dec 2016 21:49:57 -0700</pubDate>
+      <link>/hugo-tanka/tags/regression/</link>
+      <pubDate>Sun, 12 Apr 2020 01:00:00 -0700</pubDate>
       
-      <guid>/tags/regression/</guid>
+      <guid>/hugo-tanka/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>go</title>
-      <link>/tags/go/</link>
+      <link>/hugo-tanka/tags/go/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/go/</guid>
+      <guid>/hugo-tanka/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>/tags/golang/</link>
+      <link>/hugo-tanka/tags/golang/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/golang/</guid>
+      <guid>/hugo-tanka/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>/tags/hugo/</link>
+      <link>/hugo-tanka/tags/hugo/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/hugo/</guid>
+      <guid>/hugo-tanka/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>themes</title>
-      <link>/tags/themes/</link>
+      <link>/hugo-tanka/tags/themes/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/themes/</guid>
+      <guid>/hugo-tanka/tags/themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>development</title>
-      <link>/tags/development/</link>
+      <link>/hugo-tanka/tags/development/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/development/</guid>
+      <guid>/hugo-tanka/tags/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>template</title>
-      <link>/tags/template/</link>
+      <link>/hugo-tanka/tags/template/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/template/</guid>
+      <guid>/hugo-tanka/tags/template/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jekyll</title>
-      <link>/tags/jekyll/</link>
+      <link>/hugo-tanka/tags/jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/jekyll/</guid>
+      <guid>/hugo-tanka/tags/jekyll/</guid>
       <description></description>
     </item>
     
     <item>
       <title>static-site-generator</title>
-      <link>/tags/static-site-generator/</link>
+      <link>/hugo-tanka/tags/static-site-generator/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>/tags/static-site-generator/</guid>
+      <guid>/hugo-tanka/tags/static-site-generator/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bootstrap</title>
-      <link>/tags/bootstrap/</link>
+      <link>/hugo-tanka/tags/bootstrap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/bootstrap/</guid>
+      <guid>/hugo-tanka/tags/bootstrap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>/tags/css/</link>
+      <link>/hugo-tanka/tags/css/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/css/</guid>
+      <guid>/hugo-tanka/tags/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>highlight-js</title>
-      <link>/tags/highlight-js/</link>
+      <link>/hugo-tanka/tags/highlight-js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/highlight-js/</guid>
+      <guid>/hugo-tanka/tags/highlight-js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>html</title>
-      <link>/tags/html/</link>
+      <link>/hugo-tanka/tags/html/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/html/</guid>
+      <guid>/hugo-tanka/tags/html/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>/tags/js/</link>
+      <link>/hugo-tanka/tags/js/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/js/</guid>
+      <guid>/hugo-tanka/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>responsive</title>
-      <link>/tags/responsive/</link>
+      <link>/hugo-tanka/tags/responsive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/responsive/</guid>
+      <guid>/hugo-tanka/tags/responsive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>syntax-highlighting</title>
-      <link>/tags/syntax-highlighting/</link>
+      <link>/hugo-tanka/tags/syntax-highlighting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/tags/syntax-highlighting/</guid>
+      <guid>/hugo-tanka/tags/syntax-highlighting/</guid>
       <description></description>
     </item>
     
