@@ -62,48 +62,6 @@
 
 
 <p>La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.</p>
-<pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(tidyr)
-library(readr)
-library(purrr)
-library(ggplot2)
-
-df &lt;- read_csv(&quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv&quot;)</code></pre>
-<pre><code>## `curl` package not installed, falling back to using `url()`</code></pre>
-<pre><code>## Parsed with column specification:
-## cols(
-##   .default = col_double(),
-##   `Province/State` = col_character(),
-##   `Country/Region` = col_character()
-## )</code></pre>
-<pre><code>## See spec(...) for full column specifications.</code></pre>
-<pre class="r"><code># df_paises &lt;- df %&gt;% 
-#   select(`Province/State`, `Country/Region`, Lat, Long) %&gt;% 
-#   clean_names()
-
-df_largo &lt;- df %&gt;% 
-  select(-`Province/State`, -Lat, -Long) %&gt;% 
-  pivot_longer(-`Country/Region`) %&gt;% 
-  set_names(c(&quot;country_region&quot;, &quot;date&quot;, &quot;casos&quot;)) %&gt;% 
-  filter(country_region == &quot;Australia&quot;) %&gt;% 
-  group_by(country_region, date) %&gt;% 
-  summarise(casos = sum(casos)) %&gt;% 
-  ungroup() %&gt;% 
-  mutate(date = as.Date(date, format = &quot;%m/%d/%y&quot;))
-
-df_largo %&gt;% 
-  group_by(date) %&gt;% 
-  summarise(casos = sum(casos)) %&gt;% 
-  ggplot(aes(x = date, y = casos)) + 
-  geom_line()</code></pre>
 <p><img src="../../post/2020-04-13-curva-mundial-ii_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 
     </div>
