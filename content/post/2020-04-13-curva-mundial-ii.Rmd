@@ -11,7 +11,7 @@ tags:
 
 La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.
 
-```{r}
+```{r echo=FALSE}
 library(dplyr)
 library(tidyr)
 library(readr)
@@ -28,7 +28,7 @@ df_largo <- df %>%
   select(-`Province/State`, -Lat, -Long) %>% 
   pivot_longer(-`Country/Region`) %>% 
   set_names(c("country_region", "date", "casos")) %>% 
-  filter(country_region == "Australia") %>% 
+  # filter(country_region == "Australia") %>% 
   group_by(country_region, date) %>% 
   summarise(casos = sum(casos)) %>% 
   ungroup() %>% 
@@ -38,6 +38,7 @@ df_largo %>%
   group_by(date) %>% 
   summarise(casos = sum(casos)) %>% 
   ggplot(aes(x = date, y = casos)) + 
-  geom_line()
+  geom_line() + 
+  scale_y_log10()
 ```
 
