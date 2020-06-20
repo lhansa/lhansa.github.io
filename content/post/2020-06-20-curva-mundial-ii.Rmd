@@ -11,7 +11,7 @@ tags:
 
 [Rebrotes,](https://www.eldiario.es/internacional/registra-rebrotes-coronavirus-Europa-turismo_0_1039047160.html) pero como si no.
 
-```{r echo=FALSE, message=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(highcharter)
 
