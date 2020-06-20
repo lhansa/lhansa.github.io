@@ -1,9 +1,10 @@
 ---
-title: Curva mundial (II)
+title: Curva mundial (I)
 author: Leonardo Hansa
 date: '2020-04-13'
-slug: curva-mundial-ii
-categories: []
+slug: curva-mundial-i
+categories: 
+  - Magallanes
 tags:
   - covid19
   - curva

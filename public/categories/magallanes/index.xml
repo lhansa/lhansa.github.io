@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Magallanes on Comala</title>
+    <link>/categories/magallanes/</link>
+    <description>Recent content in Magallanes on Comala</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 20 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/magallanes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Curva Mundial (II)</title>
+      <link>/post/curva-mundial-ii/</link>
+      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/curva-mundial-ii/</guid>
+      <description>Rebrotes, pero como si no.
+## Warning: `parse_quosure()` is deprecated as of rlang 0.2.0. ## Please use `parse_quo()` instead. ## This warning is displayed once per session. ## Warning: `group_by_()` is deprecated as of dplyr 0.</description>
+    </item>
+    
+    <item>
+      <title>Curva mundial (I)</title>
+      <link>/post/curva-mundial-i/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/curva-mundial-i/</guid>
+      <description>La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.</description>
+    </item>
+    
+    <item>
+      <title>Curva mundial (I)</title>
+      <link>/post/curva-mundial-i/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/curva-mundial-i/</guid>
+      <description>La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.</description>
+    </item>
+    
+  </channel>
+</rss>

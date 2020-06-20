@@ -4,12 +4,37 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-05-24T00:00:00+00:00</lastmod>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/covid19/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/curva-mundial-ii/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/magallanes/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -28,27 +53,17 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2020-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/covid19/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/curva/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/curva-mundial-ii/</loc>
+    <loc>/post/curva-mundial-i/</loc>
+    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/curva-mundial-i/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
   </url>
   

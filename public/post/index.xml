@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Comala</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 24 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Curva Mundial (II)</title>
+      <link>/post/curva-mundial-ii/</link>
+      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/curva-mundial-ii/</guid>
+      <description>Rebrotes, pero como si no.
+## Warning: `parse_quosure()` is deprecated as of rlang 0.2.0. ## Please use `parse_quo()` instead. ## This warning is displayed once per session. ## Warning: `group_by_()` is deprecated as of dplyr 0.</description>
+    </item>
     
     <item>
       <title>Literatura y totalitarismo</title>
@@ -21,11 +31,20 @@
     </item>
     
     <item>
-      <title>Curva mundial (II)</title>
-      <link>/post/curva-mundial-ii/</link>
+      <title>Curva mundial (I)</title>
+      <link>/post/curva-mundial-i/</link>
       <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/post/curva-mundial-ii/</guid>
+      <guid>/post/curva-mundial-i/</guid>
+      <description>La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.</description>
+    </item>
+    
+    <item>
+      <title>Curva mundial (I)</title>
+      <link>/post/curva-mundial-i/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/curva-mundial-i/</guid>
       <description>La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.</description>
     </item>
     
