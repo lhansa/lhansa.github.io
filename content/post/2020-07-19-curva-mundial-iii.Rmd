@@ -30,7 +30,9 @@ df_largo <- df %>%
   group_by(country_region, date) %>% 
   summarise(casos = sum(casos), .groups = "drop") %>% 
   mutate(date = as.Date(date, format = "%m/%d/%y"))
+```
 
+```{r hcplot, eval=FALSE, echo=FALSE, message=FALSE}
 tltip <- tooltip_table(c("Casos: "), sprintf("{point.%s:.2f}", c("casos")))
 
 hc_grafico <- df_largo %>% 
@@ -50,3 +52,19 @@ hc_grafico <- df_largo %>%
 # frameWidget(hc_grafico
 hc_grafico
 ```
+
+```{r ggplot, echo=FALSE, message=FALSE}
+library(gganimate)
+p <- df_largo %>% 
+  group_by(date) %>% 
+  summarise(casos = sum(casos), .groups = "drop") %>% 
+  ggplot(aes(x = date, y = casos)) + 
+  geom_line(col = "purple", size = 1) + 
+  scale_y_log10()
+
+p <- p + transition_reveal(date)
+
+animate(p, renderer = ffmpeg_renderer())
+```
+
+
