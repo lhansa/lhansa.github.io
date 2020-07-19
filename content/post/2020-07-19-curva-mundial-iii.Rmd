@@ -1,6 +1,7 @@
 ---
 title: Curva mundial (III)
 author: Leonardo Hansa
+description: "Nuevo vistazo a la evolución mundial de casos confirmados."
 date: '2020-07-19'
 slug: curva-mundial-iii
 categories:
@@ -15,6 +16,7 @@ Y sigue:
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(highcharter)
+library(widgetframe)
 
 ruta <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
 
@@ -31,7 +33,7 @@ df_largo <- df %>%
 
 tltip <- tooltip_table(c("Casos: "), sprintf("{point.%s:.2f}", c("casos")))
 
-df_largo %>% 
+hc_grafico <- df_largo %>% 
   group_by(date) %>% 
   summarise(casos = sum(casos), .groups = "drop") %>% 
   hchart("line", hcaes(x = date, y = casos), color = "purple") %>% 
@@ -44,5 +46,7 @@ df_largo %>%
   hc_credits(enabled = TRUE,
              text = "Source: Johns Hopkins",
              href = ruta)
+  
+# frameWidget(hc_grafico
+hc_grafico
 ```
-
