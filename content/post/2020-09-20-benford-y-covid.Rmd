@@ -12,7 +12,7 @@ tags:
 
 Hace poco vi el cuarto capítulo de la serie [Superconectados](https://www.netflix.com/es/title/81031737) y conocí a Benford. Ahora me dedico a buscarlo por todas partes, por ejemplo, entre los enfermos de Covid19. 
 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE}
 library(tidyverse)
 
 calcula_primero <- function(x) as.integer(x / (10 ^ as.integer(log10(x))))
