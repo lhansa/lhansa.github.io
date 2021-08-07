@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Longitud sin anchura</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nate Silver describe el comienzo de una pandemia que no fue</title>
+      <link>/post/nate-silver-describe-el-comienzo-de-una-pandemia-que-no-fue/</link>
+      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nate-silver-describe-el-comienzo-de-una-pandemia-que-no-fue/</guid>
+      <description>En Fort Dix en enero de 1976 un soldado murió de una neumonía causada por la gripe porcina, la causante de la pandemia que asoló el mundo en 1918. En los EEUU esta gripe también se manifestó inicialmente en un fuerte y acabó con más de 600000 estadounidenses. El Secretario de Salud de Gerald Ford dio un millón como estimación de muertos si este nuevo brote se manifestaba tan letal como el del 18.</description>
+    </item>
     
     <item>
       <title>Benford y Covid</title>
