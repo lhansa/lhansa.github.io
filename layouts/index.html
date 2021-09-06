@@ -1,5 +1,23 @@
 {{ partial "header.html" . }}
 
+<section id=preabout>
+  <div id=intro>
+    <p>
+      <i class="fa fa-male" style="color:purple"></i>
+      Soy un matemático que escucha a los datos. Me dedico a su análisis y a la formación. 
+    </p>
+    <p>
+      <i class="fa fa-bookmark" style="color:purple"></i>
+      Si no se me olvida, compartiré por aquí aprendizajes interesantes... al menos para mí.
+    </p>
+    <p>
+      <i class="fa fa-map-pin" style="color:purple"></i> Madrid, Europa, Laniakea.
+    </p>
+  </div>
+</section>
+
+<hr>
+
 <section id=content>
   <ul class=posts_listing>
     {{ range .Data.Pages.ByDate.Reverse }}
