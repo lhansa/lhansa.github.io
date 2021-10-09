@@ -27,6 +27,9 @@
         <div id=date>
           <time>{{ .Date.Format (.Site.Params.dateform | default "2006/01/02") }}</time>
         </div>
+        <div id=summ>
+          <p>{{ .Summary }}</p>
+        </div>
       </li>
     {{ end }}
   </ul>
