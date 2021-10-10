@@ -11,7 +11,7 @@ tags:
 
 [Rebrotes,](https://www.eldiario.es/internacional/registra-rebrotes-coronavirus-Europa-turismo_0_1039047160.html) pero como si no.
 
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE, results="markup"}
 library(tidyverse)
 library(highcharter)
 
@@ -30,7 +30,7 @@ df_largo <- df %>%
 
 tltip <- tooltip_table(c("Casos: "), sprintf("{point.%s:.2f}", c("casos")))
 
-df_largo %>% 
+hc <- df_largo %>% 
   group_by(date) %>% 
   summarise(casos = sum(casos), .groups = "drop") %>% 
   hchart("line", hcaes(x = date, y = casos), color = "purple") %>% 
@@ -43,5 +43,11 @@ df_largo %>%
   hc_credits(enabled = TRUE,
              text = "Source: Johns Hopkins",
              href = ruta)
+
+# htmlwidgets::saveWidget(hc, "hc_world-curve.html")
+hc
 ```
+
+<!-- <iframe src="./content/post/hc_world-curve.html" title="La curva"></iframe>  -->
+
 
