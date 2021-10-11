@@ -45,7 +45,6 @@ hc <- df_largo %>%
              href = ruta)
 
 # htmlwidgets::saveWidget(hc, "hc_world-curve.html")
-hc
 ```
 
 <!-- <iframe src="./content/post/hc_world-curve.html" title="La curva"></iframe>  -->
