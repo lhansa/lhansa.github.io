@@ -21,23 +21,6 @@
 
 <hr>
 
-<section id=content>
-  <ul class=posts_listing>
-    {{ range first 11 .Data.Pages.ByDate.Reverse }}
-      <li>
-        <h2><a href="{{ .Permalink }}">{{.Title}}</a></h2>
-        <div id=date>
-          <time>{{ .Date.Format (.Site.Params.dateform | default "2006/01/02") }}</time>
-        </div>
-        {{ .Summary }}
-        {{ if .Truncated }}
-        <div>
-          <a href="{{ .Permalink }}">Sigue por aquí…</a>
-        </div>
-        {{ end }}
-      </li>
-    {{ end }}
-  </ul>
-</section>
+
 
 {{ partial "footer.html" . }}
