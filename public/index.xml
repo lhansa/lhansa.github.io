@@ -94,5 +94,17 @@ Fuente. Los datos son de Datadista. El gráfico es mío, con ggplot2.</descripti
       <description>La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Soy mediocre No destaco en nada. No la lío mucho pero tampoco soy un fiera en nada.
+Quizá te pase a ti también.
+Te apañas con las cosillas que sabes. Y tiras adelante con ello.
+A veces te toca hacer algo que se lo has visto hacer a otras personas y flipas. Compararte con los que destacan es un problema. Es como si te haces freelance y te quieres poner a la altura de Steve Jobs o Elon Musk.</description>
+    </item>
+    
   </channel>
 </rss>

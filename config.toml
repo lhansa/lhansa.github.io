@@ -25,18 +25,10 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   
 [[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/lhansa"
+    name = "Newsletter"
+    url = "/post/"
     weight = 1
 [[menu.main]]
-    name = "LinkedIn"
-    url = "https://www.linkedin.com/in/leonardohansa"
+    name = "Mediocre"
+    url = "/about/"
     weight = 2
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/l_hansa"
-    weight = 3
-[[menu.main]]
-    name = "Cursos"
-    url = "https://lhansa.github.io/"
-    weight = 4

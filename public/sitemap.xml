@@ -132,4 +132,9 @@
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
   </url>
   
+  <url>
+    <loc>/about/</loc>
+    <priority>0</priority>
+  </url>
+  
 </urlset>
