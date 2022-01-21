@@ -36,8 +36,7 @@ Día que no estás, consejo de programación que te pierdes.
 
 Te das de alta con un click. Si no te gusta, te das de baja con otro.
 
-<div> cosa </div>
-
+{{< rawhtml >}}
 <!-- Begin Mailchimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7_dtp.css" rel="stylesheet" type="text/css">
 <style type="text/css">
@@ -55,9 +54,7 @@ Te das de alta con un click. Si no te gusta, te das de baja con otro.
 	    </div>
 </form>
 </div>
+{{< /rawhtml >}}
 
-<!--End mc_embed_signup-->
 
-</section>
-"_
 
