@@ -2,7 +2,7 @@
 title: No hagas ese máster
 author: Leonardo Hansa
 date: '2022-01-02'
-slug: no-hagas-ese-máster
+slug: no-hagas-ese-master
 categories: []
 tags: []
 ---
