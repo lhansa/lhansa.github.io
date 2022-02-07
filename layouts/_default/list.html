@@ -17,16 +17,26 @@
     {{ if .IsHome }}
     {{ $pages = .Site.RegularPages }}
     {{ end }}
-    {{ range (where $pages "Section" "!=" "").GroupByDate "2006"}}<!-- -->
-    <h2 class="archive-title">{{ .Key }}</h2>
+    {{ range (where $pages "Section" "!=" "").GroupByDate "2006"}}
+    <!---<h2 class="archive-title">{{ .Key }}</h2>--->
     {{ range .Pages }}
     <article class="archive-item">
-      <a href="{{ .RelPermalink }}" class="archive-item-link">{{ .Title }}</a>
+      <h3 href="{{ .RelPermalink }}" class="archive-item-link">{{ .Title }}</h3>
       <!---
       <span class="archive-item-date">
         {{ .Date.Format "2006-01-02" }}
       </span>
       --->
+        <div>
+        <p>
+        {{ .Summary }}
+        {{ if .Truncated }}
+        <div>
+          <a style="font-size:12px;" href="{{ .Permalink }}">Sigue por aquí…</a>
+        </div>
+        {{ end }}  
+        </p>
+      </div>
     </article>
     {{ end }}
     {{ end }}
