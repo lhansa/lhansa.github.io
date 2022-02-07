@@ -3,138 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tags/bubble/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/burbuja-tur%C3%ADstica/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/datos-abiertos/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
+    <loc>/post/est%C3%A1s-aprendiendo-constantemente/</loc>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/open-data/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/sustainability/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/tourism/</loc>
-    <lastmod>2021-12-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/asalariado-taleb-habla-de-ti/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/companies/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/lecturas/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/taleb/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/work/</loc>
-    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/covid19/</loc>
-    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/nate-silver-describe-el-comienzo-de-una-pandemia-que-no-fue/</loc>
-    <lastmod>2021-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/benford/</loc>
-    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/benford-y-covid/</loc>
-    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/magallanes/</loc>
-    <lastmod>2020-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/curva/</loc>
-    <lastmod>2020-07-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/curva-mundial-iii/</loc>
-    <lastmod>2020-07-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/curva-mundial-ii/</loc>
-    <lastmod>2020-06-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/literatura-y-totalitarismo/</loc>
-    <lastmod>2020-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/orwell/</loc>
-    <lastmod>2020-05-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/curva-mundial-i/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
+    <loc>/post/no-hagas-ese-master/</loc>
+    <lastmod>2022-01-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/about/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
   </url>
   
 </urlset>

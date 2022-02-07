@@ -6,92 +6,39 @@
     <description>Recent content on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 25 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Feb 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Burbuja turística</title>
-      <link>/post/burbuja-tur%C3%ADstica/</link>
-      <pubDate>Sat, 25 Dec 2021 00:00:00 +0000</pubDate>
+      <title>Estás aprendiendo constantemente</title>
+      <link>/post/est%C3%A1s-aprendiendo-constantemente/</link>
+      <pubDate>Fri, 04 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>/post/burbuja-tur%C3%ADstica/</guid>
-      <description>Te gusta viajar. Conoces otras culturas, comidas diferentes, desconectas.
-Preparar la maleta, a veces, te estresa un poco. Pero también te hace ilusión. ¿Qué me llevo? Gran pregunta.
-En el aeropuerto sacas tarjeta de embarque y documentación haga falta o no. A veces te la piden en un sitio, a veces en otro. Tú la sacas en todos y arreglado.
-Te tienes que quitar las botas en el control.</description>
+      <guid>/post/est%C3%A1s-aprendiendo-constantemente/</guid>
+      <description>Hace tiempo trabajé en un sitio en el que hacíamos modelos matemáticos con los datos de nuestros clientes.
+Suena muy aparatoso, pero nuestro trabajo, principalmente, era trabajar con Excel y PowerPoint.
+Sí.
+No voy a entrar en detalles ahora de lo absurdo que suena. Lo relevante para ti hoy es que el trabajo se hacía con Excel y PowerPoint.
+Quizá, igual que tú.
+Pero claro, había proyectos un poco grandes, para los que Excel se quedaba pequeño.</description>
     </item>
     
     <item>
-      <title>Asalariado, Taleb habla de ti</title>
-      <link>/post/asalariado-taleb-habla-de-ti/</link>
-      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      <title>No hagas ese máster</title>
+      <link>/post/no-hagas-ese-master/</link>
+      <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>/post/asalariado-taleb-habla-de-ti/</guid>
-      <description>Un perro alardea ante un lobo de todos los lujos y comodidades a su disposición.
-Este está casi convencido de unirse a él.
-Hasta que le pregunta por su collar y se queda aterrado al saber para qué se usa.
-— No quiero ninguna de tus comidas— dijo el lobo.
-Acto seguido echó a correr y correr y aún sigue corriendo.
-Tú qué quieres ser: ¿lobo o perro?</description>
-    </item>
-    
-    <item>
-      <title>Nate Silver describe el comienzo de una pandemia que no fue</title>
-      <link>/post/nate-silver-describe-el-comienzo-de-una-pandemia-que-no-fue/</link>
-      <pubDate>Sat, 07 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/post/nate-silver-describe-el-comienzo-de-una-pandemia-que-no-fue/</guid>
-      <description>En Fort Dix en enero de 1976 un soldado murió de una neumonía causada por la gripe porcina, la causante de la pandemia que asoló el mundo en 1918. En los EEUU esta gripe también se manifestó inicialmente en un fuerte y acabó con más de 600000 estadounidenses. El Secretario de Salud de Gerald Ford dio un millón como estimación de muertos si este nuevo brote se manifestaba tan letal como el del 18.</description>
-    </item>
-    
-    <item>
-      <title>Benford y Covid</title>
-      <link>/post/benford-y-covid/</link>
-      <pubDate>Sun, 20 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/benford-y-covid/</guid>
-      <description>Hace poco vi el cuarto capítulo de la serie Superconectados y conocí a Benford. Ahora me dedico a buscarlo por todas partes, por ejemplo, entre los enfermos de Covid19.
-Fuente. Los datos son de Datadista. El gráfico es mío, con ggplot2.</description>
-    </item>
-    
-    <item>
-      <title>Curva mundial (III)</title>
-      <link>/post/curva-mundial-iii/</link>
-      <pubDate>Sun, 19 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/curva-mundial-iii/</guid>
-      <description> Y sigue:
- </description>
-    </item>
-    
-    <item>
-      <title>Curva Mundial (II)</title>
-      <link>/post/curva-mundial-ii/</link>
-      <pubDate>Sat, 20 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/curva-mundial-ii/</guid>
-      <description>  Rebrotes, pero como si no.
- -- </description>
-    </item>
-    
-    <item>
-      <title>Literatura y totalitarismo</title>
-      <link>/post/literatura-y-totalitarismo/</link>
-      <pubDate>Sun, 24 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/literatura-y-totalitarismo/</guid>
-      <description>«El totalitarismo ha abolido la libertad de pensamiento hasta unos límites inauditos en cualquier época anterior. Y es importante que comprendamos que este control del pensamiento no es solo de signo negativo, sino también positivo: no solo nos prohíbe expresas -e incluso tener- ciertos pensamientos; también nos dica lo que debemos pensar, crea una ideología para nosotros, trata de gobernar nuestra vida emocional al tiemo que establece un código de conducta.</description>
-    </item>
-    
-    <item>
-      <title>Curva mundial (I)</title>
-      <link>/post/curva-mundial-i/</link>
-      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/post/curva-mundial-i/</guid>
-      <description>La curva mundial no ha recibido la misma atención que las de cada país. Creo que tiene su interés y, con tiempo, se podrían extraer conclusiones provechosas. Pero yo no tengo tiempo.</description>
+      <guid>/post/no-hagas-ese-master/</guid>
+      <description>Un tal James Clear dice que no te pongas objetivos en la vida.
+Más o menos.
+Lo que dice es que lo importante son los sistemas, no las metas. ¿Qué quiere decir con esto?
+Hay un ejemplo típico: adelgazar.
+Mira.
+Imagina que quieres perder 5 kilos. Te buscas una dieta de 1000 y pico calorías y confías en que unos meses esté hecho.
+Pues pinta mal el asunto.
+A ver, que igual adelgazas esos kilos.</description>
     </item>
     
     <item>
