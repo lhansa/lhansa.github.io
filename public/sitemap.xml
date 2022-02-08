@@ -23,12 +23,11 @@
   </url>
   
   <url>
-    <loc>/about/</loc>
-    <priority>0</priority>
+    <loc>/categories/</loc>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/soy-mediocre/</loc>
   </url>
   
   <url>

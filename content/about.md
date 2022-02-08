@@ -1,3 +1,9 @@
+---
+title: Soy mediocre - Leonardo Hansa
+author: Leonardo Hansa
+slug: soy-mediocre
+---
+
 ## Soy mediocre
 
 No destaco en nada. No la lío mucho pero tampoco soy un fiera en nada. 
