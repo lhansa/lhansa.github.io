@@ -12,6 +12,8 @@ disable_mathjax = false
 pygmentsstyle      = "vs"
 pygmentscodefences = true
 
+summaryLength = 70
+
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
