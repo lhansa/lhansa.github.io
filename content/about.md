@@ -49,11 +49,11 @@ Te das de alta con un click. Si no te gusta, te das de baja con otro.
 <div id="mc_embed_signup">
 <form action="https://gmail.us20.list-manage.com/subscribe/post?u=de9d714d023c472c9981ba7c0&amp;id=f857732e7c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 <div id="mc_embed_signup_scroll">
-<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="dirección de correo" required>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Aquí pones tu correo" required>
     <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_de9d714d023c472c9981ba7c0_f857732e7c" tabindex="-1" value=""></div>
         <div class="clear foot">
-           <input type="submit" value="Aquí te escribiré" name="subscribe" id="mc-embedded-subscribe" class="button">
+           <input type="submit" value="Aquí te escribiré" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #800080">
         </div>
 	    </div>
 </form>
