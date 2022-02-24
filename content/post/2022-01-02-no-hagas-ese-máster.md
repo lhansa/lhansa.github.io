@@ -37,6 +37,11 @@ En tal caso, la utilidad de lo que hayas cursado es nula.
 
 Matrículate en el curso que veas. Pero es muy importante que metas la programación en tu rutina.
 
+Responde a este correo y le damos una vuelta juntos. 
+
+
+P.D. En serio, matrículate en el curso que veas. Lo importante es que cuando termines el curso tengas claro que luego te toca continuar. Sin curso. En solitario. Eso no es fácil. Pero te ayudo si quieres. Escríbeme.
+
 
 {{< rawhtml >}}
 <!-- Begin Mailchimp Signup Form -->

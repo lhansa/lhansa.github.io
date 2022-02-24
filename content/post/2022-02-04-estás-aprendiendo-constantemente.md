@@ -57,9 +57,9 @@ Si estás ahora en un curso, o lo has terminado hace poco, o lo vas a empezar pr
 
 Material hay. Solo te falta método.
 
-Tengo un curso. No aprenderás a programar conmigo. Pero te acompañaré en los primeros pasos del aprendizaje, para que luego sepas continuar solo.
+Si necesitas método, escríbeme. No aprenderás a programar conmigo. Pero te acompañaré en los primeros pasos del aprendizaje, para que luego sepas continuar solo.
 
-Curso antioxidante de datos y programación. 55€
+
 
 P.D. Mi compañera sigue impartiendo cursos. Pero estudia mucho más de lo que enseña. No para de estudiar. No se matricula en ningún máster, pero aprende mucho.
 
