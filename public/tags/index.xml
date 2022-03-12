@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 12 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>caca</title>
+      <link>/tags/caca/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/caca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>comunicación</title>
+      <link>/tags/comunicaci%C3%B3n/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/comunicaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programación</title>
+      <link>/tags/programaci%C3%B3n/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programaci%C3%B3n/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -3,17 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/est%C3%A1s-aprendiendo-constantemente/</loc>
-    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+    <loc>/tags/caca/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/comunicaci%C3%B3n/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/cuando-haces-caca-en-el-trabajo-no-se-lo-dices-a-nadie/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2022-02-04T00:00:00+00:00</lastmod>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/programaci%C3%B3n/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-03-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/est%C3%A1s-aprendiendo-constantemente/</loc>
     <lastmod>2022-02-04T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,10 +53,6 @@
   
   <url>
     <loc>/soy-mediocre/</loc>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
   </url>
   
 </urlset>
