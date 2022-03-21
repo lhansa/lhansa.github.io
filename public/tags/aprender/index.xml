@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aprender on Leonardo Hansa</title>
+    <link>/tags/aprender/</link>
+    <description>Recent content in aprender on Leonardo Hansa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 19 Mar 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/aprender/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>En qué se parecen los cursos de idiomas y de programación</title>
+      <link>/post/en-que-se-parecen-los-cursos-de-idiomas-y-de-programacion/</link>
+      <pubDate>Sat, 19 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/en-que-se-parecen-los-cursos-de-idiomas-y-de-programacion/</guid>
+      <description>Si has estudiado alguna vez un idioma que no es el tuyo, en la primera clase te enseñarían a decir algo tipo &amp;ldquo;hola&amp;rdquo;.
+Y luego a presentarte.
+&amp;ldquo;Hola, me llamo Leonardo y me gusta el fútbol&amp;rdquo; (Era mentira pero no sabía decir otra cosa aún).
+Tiene sentido.
+El objetivo de las clases iniciales es que puedas usar lo que aprendes. No que te conviertas en un experto teórico de la lengua.</description>
+    </item>
+    
+    <item>
+      <title>Un dilema en el que tus dos únicas opciones son muy buenas</title>
+      <link>/post/un-dilema-en-el-que-tus-dos-%C3%BAnicas-opciones-son-muy-buenas/</link>
+      <pubDate>Sat, 12 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/un-dilema-en-el-que-tus-dos-%C3%BAnicas-opciones-son-muy-buenas/</guid>
+      <description>Hace unos días dije que si tienes en mente varios recursos para estudiar programación, decantarte por solo uno es difícil. Pero claro, tu tiempo no es infinito, y tu dinero tampoco, así que no puedes hacerlos todos.
+¿Cómo te decides?
+Mi sugerencia era que te hicieras una pregunta: ¿para qué quieres el curso?
+Algunas posibles respuestas:
+Para conocer herramientas potentes para tu trabajo. Para conseguir un trabajo diferente al que tienes.</description>
+    </item>
+    
+  </channel>
+</rss>

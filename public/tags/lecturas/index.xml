@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lecturas on Leonardo Hansa</title>
+    <link>/tags/lecturas/</link>
+    <description>Recent content in lecturas on Leonardo Hansa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/lecturas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Una utilidad sobre programación que he aprendido leyendo la Biblia</title>
+      <link>/post/una-utilidad-sobre-programacion-que-he-aprendido-leyendo-la-biblia/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/una-utilidad-sobre-programacion-que-he-aprendido-leyendo-la-biblia/</guid>
+      <description>Salomón, según la Biblia, fue un rey de Israel al que un día se le presentaron dos mujeres discutiendo sobre si un bebé era de una o de otra.
+Como no se ponían de acuerdo, Salomón ordenó matar al niño, partirlo en dos y dar una mitad a cada una.
+Una de ellas estuvo de acuerdo. La otra dijo que no, que no mataran al niño y se lo dieran a la otra.</description>
+    </item>
+    
+  </channel>
+</rss>
