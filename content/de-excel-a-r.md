@@ -4,7 +4,99 @@ author: Leonardo Hansa
 slug: de-excel-a-r
 ---
 
-## Contenido
+# Los datos se han puesto las pilas. ¿Te las has puesto tú?
+
+### Si crees que tu trabajo corre peligro porque ahora están de moda los data scientist y tú no eres data scientist, tengo buenas noticias: no te preocupes, que no es para tanto.
+
+Hay una fiebre enfermiza con el tema de los datos y en tu trabajo quizá te está salpicando. 
+
+- Consultores subcontratados constantemente. 
+- Vacantes con títulos y requisitos que ni entiendes. 
+- Objetivos que no parecen llevar a nada mejor, sino solo a estar a la moda.
+
+Mira. 
+
+En serio. 
+
+No te preocupes, que tiene solución. 
+
+Tu trabajo no va a desaparecer simplemente porque a tus jefes se les haya antojado contratar data scientists, hacer big data y no sé qué cosas más.
+
+Tu trabajo es necesario para tu jefe, y tu experiencia es necesaria para tu trabajo. 
+
+Un titulado en matemáticas, informática y otras cosas punteras no va a saber hacer tu trabajo mejor que tú porque Steve Jobs dijera que el suyo es el trabajo más sexy del siglo XXI. 
+
+Eso sí. 
+
+Todo evoluciona. 
+
+Y tú deberías evolucionar con todo. 
+
+Eres útil en tu trabajo. Pero no te puedes quedar atrás. 
+
+## ¿Sientes que te quedas atrás?
+
+### Pues no lo hagas. 
+
+#### ¿Cómo?! Me dirás...
+
+Pues manteniéndote al día. 
+
+Mira. 
+
+Excel es súper guay para muchas cosas. Pero se queda corto. 
+
+- Se queda corto para ficheros grandes. Y no digo big data de ese. Digo que en cuanto tienes unos miles de filas, las tablas dinámicas ya se empiezan a tomar su tiempo. O esos ficheros que abre Excel que tienen dos millones de filas pero Excel te los corta y pierdes datos.
+- Va súper lento en las carpetas esas compartidas con más gente, en las que uno tiene el fichero ya abierto y tú no lo puedes abrir. O lo podéis abrir los dos pero luego se sincroniza mal. Y acabáis copiando todo en local y luego combinando a ojo.
+- Si haces gráficos, haces dos gráficos. Tampoco mucho más. 
+- Te pasan datos pegados como valor y luego nadie sabe recuperar de dónde vienen. 
+- O te pasan ficheros con fórmulas enormes que tardan la eternidad en actualizarse. 
+- Te trabajas unos para que estén en el formato que necesitas. Y resulta que los datos estaban mal xD Y ahora te lo tienes que hacer todo otra vez.
+
+O sea, que sí. 
+
+Que Excel, en parte, te permitió que progresaras en el curro actual. 
+
+Pero para seguir progresando, necesitas algo más. 
+
+Algo que te saque de esos apuros. 
+
+Si quieres progresar. 
+
+### Quizá no quita el sueño que tu jefe esté cada dos por tres viendo a consultores data scientist para hacer proyectos que en teoría ibas a hacer tú. 
+
+O que estén buscando a gente en tu departamento que sepa programar, y cosas así. 
+
+Mientras tú no sabes. 
+
+Quizá no te quite el sueño. 
+
+Si sí te preocupa, tengo una idea. 
+
+¿Que programes?
+
+Bueno... no exactamente. 
+
+## No quieres hacerte programador. Tú eres otra cosa. Pero sí puedes usar programación para que te vaya mejor en tu trabajo
+
+No necesitas cambiar de sector. Ni dar un giro de no sé cuántos grados a tu carrera. 
+
+Necesitas solo un enfoque distinto. 
+
+- Para trabajar más rápido. 
+- Para automatizar más tareas aburridas. 
+- Para abordar nuevas tareas. 
+
+Y ese enfoque, sí, te lo pueden dar herramientas de programación. 
+
+
+### Te propongo una cosa
+
+Te ayudo a que aprendas programación para que la puedas usar como complemento a Excel. 
+
+Cuando Excel se quede corto, te gustará tener un plan B. 
+
+## Las cosas que te enseñará este curso
 
 ### 1. Deja atrás la hoja de cálculo
 
@@ -68,7 +160,7 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 ***
 
 [Formación para mejorar tu situación profesional.](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk)  
-55€ (impuestos incluidos)
+55€
 
 ***
 
