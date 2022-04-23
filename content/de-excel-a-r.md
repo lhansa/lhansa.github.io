@@ -16,7 +16,7 @@ slug: de-excel-a-r
 
 ## Preguntas frecuentes
 
-**¿Qué formato tiene?**
+### ¿Qué formato tiene?
 
 Documentación. Con códigos y explicaciones. 
 
@@ -26,17 +26,36 @@ Basándote en esos ejemplos, podrás realizar **todos los ejercicios** que te pr
 
 También incluye un vídeo sobre un tema muy concreto, que considero casi tan importante como el contenido en sí. Para que te hagas una idea, sin lo que cuento en el vídeo es posible que no puedas aplicar seriamente el contenido de la documentación.
 
-**¿Los ejercicios vienen con la solución?**
+### ¿Los ejercicios vienen con la solución?
 
 No. La solución es lo menos interesante de los ejercicios. Lo interesante es que les dediques tiempo. Si no te salen de ninguna forma, me escribes y te ayudo. Lo útil es que te pelees con ellos. 
 
 Los ejercicios te piden que saques conclusiones sobre los datos. Y **la manera en que sacarás partido a esta formación** es intentando esos ejercicios una y otra vez, de muchas formas distintas. Eso te ayudará a conseguir soltura escribiendo código, que es a lo que deberías aspirar con esta formación.
 
-**¿Incluye soporte?**
+### ¿Incluye soporte?
 
 Sí, por correo electrónico. Te respondo personalmente en 48 horas hábiles.
 
-**Con esta formación, ¿podré encontrar trabajo de data scientist?**
+Cuando compres el curso recibirás instrucciones de cómo contactar conmigo para el soporte.
+
+### ¿Necesito instalar algún programa?
+
+Te resultará más cómodo si lo haces, pero no es necesario para aprovechar el contenido. 
+
+En uno de los documentos te facilito información de cómo instalar las cosas, o de cómo acceder a una herramienta online. 
+
+### Mi ordenador es malillo. ¿Funcionará el programa?
+
+Pues hay ordenadores y ordenadores. Si el tuyo es tan poquita cosa que no aguanta el programa que recomiendo usar, puedes aprovechar la formación con la herramienta online que te mencionaré. Solo necesitarías un navegador para acceder a internet en este caso. 
+
+### Tengo XXX como sistema operativo. ¿Podré aprovechar la formación?
+
+En Mac y Windows podrás instalar el programa sin problema. En Linux por supuesto también. 
+
+Si tienes chromebook solo podrás trabajar con la versión online, con la que de todos modos podrás aprovechar todos los contenidos de la formación.
+
+
+### Con esta formación, ¿podré encontrar trabajo de data scientist?
 
 No. La formación te será útil para gestionar datos con R. 
 
@@ -46,7 +65,11 @@ Esta formación te proporcionará una herramienta para simplificar el trabajo ha
 
 Si quieres hacer data scientist, necesitarás trabajar con data scientists durante mucho tiempo. Y así te convertirás en uno de ellos.
 
+***
 
-[Formación para mejorar tu situación profesional.](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk)  55€ (impuestos incluidos)
+[Formación para mejorar tu situación profesional.](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk)  
+55€ (impuestos incluidos)
+
+***
 
 
