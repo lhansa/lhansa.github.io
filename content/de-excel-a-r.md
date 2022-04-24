@@ -16,9 +16,7 @@ Hay una fiebre enfermiza con el tema de los datos y en tu trabajo quizá te est�
 
 Mira. 
 
-En serio. 
-
-No te preocupes, que tiene solución. 
+En serio. No te preocupes, que tiene solución. 
 
 Tu trabajo no va a desaparecer simplemente porque a tus jefes se les haya antojado contratar data scientists, hacer big data y no sé qué cosas más.
 
@@ -98,13 +96,27 @@ Cuando Excel se quede corto, te gustará tener un plan B.
 
 ## Las cosas que te enseñará este curso
 
-### 1. Deja atrás la hoja de cálculo
+Empezarás con estas cosillas:
 
-### 2. Crea información nueva. Elimina la que sobra
+- El entorno de trabajo de un programador es, simplemente, una especie de calculadora. 
+- Los números y los textos son la base de la comunicación. 
+- Una de las palabras que más teme tu jefe y que tú empezarás a amar cuando lleves un tiempo programando. 
+- Por qué no tiene sentido poner en el currículum que programas en R o en Python, así sin más. 
 
-### 3. Juega al quién es quién
+Además, lo que ya sabes de Excel te servirá como base:
 
-### 4. En qué se parecen los datos a los Lego
+- ¿Sabes usar fórmulas en Excel para crear una columna nueva?
+- ¿Sabes hacer filtros en Excel para ver unas filas que cumplan condiciones concretas?
+- ¿Sabes crear una tabla dinámica?
+
+Si no sabes, te empezará a sonar ahora. Si ya sabes, verás que en programación hay muchas cosas que ya conoces, pero se llaman de forma distinta. 
+
+Hay más cosas que aprenderás con el curso: 
+
+- Los datos son como los Lego. Puedes hacer todo tipo de virguerías con ellos, pero solo algunas son útiles. 
+- Para usar una herramienta bien, hay que estar cómodo. En programación también. Lo bueno es que, con técnicas adecuadas, aprenderás a estar cómodo programando. 
+- Si empiezas tu camino en la programación en R, y dentro de un tiempo quieres pasarte a Python, no empezarás de nuevo desde cero. Tendrás ya un camino hecho.
+
 
 ## Preguntas frecuentes
 
@@ -159,8 +171,16 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 
 ***
 
-[Formación para mejorar tu situación profesional.](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk)  
-55€
+## Formación para mejorar tu situación profesional
+
+~~PVP: 77€~~ 
+
+**Precio de preventa:**
+[55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+
+
+
+
 
 ***
 
