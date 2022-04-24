@@ -94,6 +94,17 @@ Te ayudo a que aprendas programación para que la puedas usar como complemento a
 
 Cuando Excel se quede corto, te gustará tener un plan B. 
 
+***
+
+## Formación para mejorar tu situación profesional
+
+~~PVP: 77€~~ 
+
+### Precio de preventa:
+[55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+
+***
+
 ## Las cosas que te enseñará este curso
 
 Empezarás con estas cosillas:
@@ -116,6 +127,17 @@ Hay más cosas que aprenderás con el curso:
 - Los datos son como los Lego. Puedes hacer todo tipo de virguerías con ellos, pero solo algunas son útiles. 
 - Para usar una herramienta bien, hay que estar cómodo. En programación también. Lo bueno es que, con técnicas adecuadas, aprenderás a estar cómodo programando. 
 - Si empiezas tu camino en la programación en R, y dentro de un tiempo quieres pasarte a Python, no empezarás de nuevo desde cero. Tendrás ya un camino hecho.
+
+***
+
+## Formación para mejorar tu situación profesional
+
+~~PVP: 77€~~ 
+
+### Precio de preventa:
+[55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+
+***
 
 
 ## Preguntas frecuentes
@@ -175,12 +197,8 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 
 ~~PVP: 77€~~ 
 
-**Precio de preventa:**
+### Precio de preventa:
 [55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
-
-
-
-
 
 ***
 
