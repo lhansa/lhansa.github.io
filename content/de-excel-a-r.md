@@ -98,8 +98,7 @@ Cuando Excel se quede corto, te gustará tener un plan B.
 
 ~~PVP: 77€~~ 
 
-### Precio de preventa:
-[55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+### Precio de preventa: [55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
 
 ***
 
@@ -132,8 +131,7 @@ Hay **más cosas que aprenderás** con el curso:
 
 ~~PVP: 77€~~ 
 
-### Precio de preventa:
-[55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+### Precio de preventa: [55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
 
 ***
 
@@ -195,8 +193,7 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 
 ~~PVP: 77€~~ 
 
-### Precio de preventa:
-[55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+### Precio de preventa: [55€](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
 
 ***
 
