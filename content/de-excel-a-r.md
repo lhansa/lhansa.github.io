@@ -1,10 +1,8 @@
 ---
-title: Quieres un trabajo mejor
+title: Los datos se han puesto las pilas. ¿Te las has puesto tú?
 author: Leonardo Hansa
 slug: de-excel-a-r
 ---
-
-# Los datos se han puesto las pilas. ¿Te las has puesto tú?
 
 ### Si crees que tu trabajo corre peligro porque ahora están de moda los data scientist y tú no eres data scientist, tengo buenas noticias: no te preocupes, que no es para tanto.
 
@@ -42,14 +40,14 @@ Pues manteniéndote al día.
 
 Mira. 
 
-Excel es súper guay para muchas cosas. Pero se queda corto. 
+**Excel es súper guay para muchas cosas. Pero se queda corto.**
 
-- Se queda corto para ficheros grandes. Y no digo big data de ese. Digo que en cuanto tienes unos miles de filas, las tablas dinámicas ya se empiezan a tomar su tiempo. O esos ficheros que abre Excel que tienen dos millones de filas pero Excel te los corta y pierdes datos.
+- Se queda corto para **ficheros grandes.** Y no digo big data de ese. Digo que en cuanto tienes unos miles de filas, las tablas dinámicas ya se empiezan a tomar su tiempo. O esos ficheros que abre Excel que tienen dos millones de filas pero Excel te los corta y pierdes datos.
 - Va súper lento en las carpetas esas compartidas con más gente, en las que uno tiene el fichero ya abierto y tú no lo puedes abrir. O lo podéis abrir los dos pero luego se sincroniza mal. Y acabáis copiando todo en local y luego combinando a ojo.
-- Si haces gráficos, haces dos gráficos. Tampoco mucho más. 
-- Te pasan datos pegados como valor y luego nadie sabe recuperar de dónde vienen. 
-- O te pasan ficheros con fórmulas enormes que tardan la eternidad en actualizarse. 
-- Te trabajas unos para que estén en el formato que necesitas. Y resulta que los datos estaban mal xD Y ahora te lo tienes que hacer todo otra vez.
+- Si haces **gráficos**, haces dos gráficos. Tampoco mucho más. 
+- Te pasan **datos pegados como valor** y luego nadie sabe recuperar de dónde vienen. 
+- O te pasan ficheros con **fórmulas enormes** que tardan la eternidad en actualizarse. 
+- Te trabajas unos datos para que estén en el formato que necesitas. Y resulta que los datos estaban mal xD Y **ahora te lo tienes que hacer todo otra vez.**
 
 O sea, que sí. 
 
@@ -81,9 +79,9 @@ No necesitas cambiar de sector. Ni dar un giro de no sé cuántos grados a tu ca
 
 Necesitas solo un enfoque distinto. 
 
-- Para trabajar más rápido. 
-- Para automatizar más tareas aburridas. 
-- Para abordar nuevas tareas. 
+- Para **trabajar más rápido.**
+- Para **automatizar** más tareas aburridas. 
+- Para abordar **nuevas tareas.** 
 
 Y ese enfoque, sí, te lo pueden dar herramientas de programación. 
 
@@ -107,26 +105,26 @@ Cuando Excel se quede corto, te gustará tener un plan B.
 
 ## Las cosas que te enseñará este curso
 
-Empezarás con estas cosillas:
+**Empezarás con estas cosillas:**
 
 - El entorno de trabajo de un programador es, simplemente, una especie de calculadora. 
 - Los números y los textos son la base de la comunicación. 
 - Una de las palabras que más teme tu jefe y que tú empezarás a amar cuando lleves un tiempo programando. 
 - Por qué no tiene sentido poner en el currículum que programas en R o en Python, así sin más. 
 
-Además, lo que ya sabes de Excel te servirá como base:
+Además, **lo que ya sabes de Excel te servirá como base:**
 
 - ¿Sabes usar fórmulas en Excel para crear una columna nueva?
 - ¿Sabes hacer filtros en Excel para ver unas filas que cumplan condiciones concretas?
 - ¿Sabes crear una tabla dinámica?
 
-Si no sabes, te empezará a sonar ahora. Si ya sabes, verás que en programación hay muchas cosas que ya conoces, pero se llaman de forma distinta. 
+**Si no sabes, te empezará a sonar ahora.** Si ya sabes, verás que en programación hay muchas cosas que ya conoces, pero se llaman de forma distinta. 
 
-Hay más cosas que aprenderás con el curso: 
+Hay **más cosas que aprenderás** con el curso: 
 
-- Los datos son como los Lego. Puedes hacer todo tipo de virguerías con ellos, pero solo algunas son útiles. 
-- Para usar una herramienta bien, hay que estar cómodo. En programación también. Lo bueno es que, con técnicas adecuadas, aprenderás a estar cómodo programando. 
-- Si empiezas tu camino en la programación en R, y dentro de un tiempo quieres pasarte a Python, no empezarás de nuevo desde cero. Tendrás ya un camino hecho.
+- **Los datos son como los Lego.** Puedes hacer todo tipo de virguerías con ellos, pero solo algunas son útiles. 
+- Para usar una herramienta bien, **hay que estar cómodo.** En programación también. Lo bueno es que, con técnicas adecuadas, aprenderás a estar cómodo programando. 
+- Si empiezas tu camino en la programación en R, y dentro de un tiempo quieres pasarte a Python, no empezarás de nuevo desde cero. **Tendrás ya un camino hecho.**
 
 ***
 

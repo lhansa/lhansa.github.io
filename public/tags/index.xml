@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Apr 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>aprender</title>
       <link>/tags/aprender/</link>
-      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprender/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>aprendizaje</title>
+      <link>/tags/aprendizaje/</link>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprendizaje/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>estudiar</title>
       <link>/tags/estudiar/</link>
-      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/estudiar/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>programación</title>
       <link>/tags/programaci%C3%B3n/</link>
-      <pubDate>Sat, 23 Apr 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/programaci%C3%B3n/</guid>
       <description></description>
@@ -53,15 +62,6 @@
       <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/lecturas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aprendizaje</title>
-      <link>/tags/aprendizaje/</link>
-      <pubDate>Sat, 19 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aprendizaje/</guid>
       <description></description>
     </item>
     
