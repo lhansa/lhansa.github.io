@@ -170,7 +170,15 @@ En uno de los documentos te facilito información de cómo instalar las cosas, o
 
 ### Mi ordenador es malillo. ¿Funcionará el programa?
 
-Pues hay ordenadores y ordenadores. Si el tuyo es tan poquita cosa que no aguanta el programa que recomiendo usar, puedes aprovechar la formación con la herramienta online que te mencionaré. Solo necesitarías un navegador para acceder a internet en este caso. 
+Pues hay ordenadores y ordenadores. Si el tuyo es tan poquita cosa que no aguanta el programa que recomiendo usar, puedes aprovechar la formación con la herramienta online que te mencionaré. Solo necesitarías un navegador para acceder a internet en este caso.
+
+### ¿Recibiré un certificado cuando termine?
+
+No. Prácticamente ningún certificado tiene valor real. Uno emitido por mí, menos. 
+
+Si no crees que lo que te puedo enseñar te será útil, no compres esta formación. 
+
+Si lo que necesitas es un certificado (y aprender es secundario), haz un máster.
 
 ### Tengo XXX como sistema operativo. ¿Podré aprovechar la formación?
 
