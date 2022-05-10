@@ -201,7 +201,7 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 
 ***
 
-## Formación para mejorar tu situación profesional
+## Formación para dar un salto en tu situación profesional
 
 ~~PVP: 77€~~ 
 
