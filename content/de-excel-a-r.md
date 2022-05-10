@@ -14,11 +14,11 @@ Hay una fiebre enfermiza con el tema de los datos y en tu trabajo quizá te est�
 
 Mira. 
 
-En serio. No te preocupes, que tiene solución. 
+En serio. No te preocupes, **que tiene solución.** 
 
 Tu trabajo no va a desaparecer simplemente porque a tus jefes se les haya antojado contratar data scientists, hacer big data y no sé qué cosas más.
 
-Tu trabajo es necesario para tu jefe, y tu experiencia es necesaria para tu trabajo. 
+**Tu trabajo es necesario para tu jefe, y tu experiencia es necesaria para tu trabajo.** 
 
 Un titulado en matemáticas, informática y otras cosas punteras no va a saber hacer tu trabajo mejor que tú porque Steve Jobs dijera que el suyo es el trabajo más sexy del siglo XXI. 
 
@@ -34,7 +34,7 @@ Eres útil en tu trabajo. Pero no te puedes quedar atrás.
 
 ### Pues no lo hagas. 
 
-#### ¿Cómo?! Me dirás...
+¿Cómo?! Me dirás...
 
 Pues manteniéndote al día. 
 
@@ -42,8 +42,8 @@ Mira.
 
 **Excel es súper guay para muchas cosas. Pero se queda corto.**
 
-- Se queda corto para **ficheros grandes.** Y no digo big data de ese. Digo que en cuanto tienes unos miles de filas, las tablas dinámicas ya se empiezan a tomar su tiempo. O esos ficheros que abre Excel que tienen dos millones de filas pero Excel te los corta y pierdes datos.
-- Va súper lento en las carpetas esas compartidas con más gente, en las que uno tiene el fichero ya abierto y tú no lo puedes abrir. O lo podéis abrir los dos pero luego se sincroniza mal. Y acabáis copiando todo en local y luego combinando a ojo.
+- Se queda corto para **ficheros grandes.** Y no digo _big data_ de ese. Digo que en cuanto tienes unos miles de filas, las **tablas dinámicas** ya se empiezan a tomar su tiempo. O esos ficheros que abre Excel que tienen dos millones de filas pero Excel te los corta y pierdes datos.
+- Va súper lento en las **carpetas esas compartidas con más gente**, en las que uno tiene el fichero ya abierto y tú no lo puedes abrir. O lo podéis abrir los dos pero luego se sincroniza mal. Y acabáis copiando todo en local y luego combinando a ojo.
 - Si haces **gráficos**, haces dos gráficos. Tampoco mucho más. 
 - Te pasan **datos pegados como valor** y luego nadie sabe recuperar de dónde vienen. 
 - O te pasan ficheros con **fórmulas enormes** que tardan la eternidad en actualizarse. 
@@ -53,13 +53,13 @@ O sea, que sí.
 
 Que Excel, en parte, te permitió que progresaras en el curro actual. 
 
-Pero para seguir progresando, necesitas algo más. 
+Pero para seguir progresando, necesitas algo más.
 
 Algo que te saque de esos apuros. 
 
 Si quieres progresar. 
 
-### Quizá no quita el sueño que tu jefe esté cada dos por tres viendo a consultores data scientist para hacer proyectos que en teoría ibas a hacer tú. 
+### Quizá no quita el sueño que tu jefe esté cada dos por tres viendo a consultores data scientists para hacer proyectos que en teoría ibas a hacer tú. 
 
 O que estén buscando a gente en tu departamento que sepa programar, y cosas así. 
 
@@ -94,25 +94,16 @@ Cuando Excel se quede corto, te gustará tener un plan B.
 
 ***
 
-## Formación para mejorar tu situación profesional
+## Las cosas que te enseñaré en mi curso
 
-~~PVP: 77€~~ 
-
-### Precio de preventa: 55€
-[Pago seguro con tarjeta.](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
-
-***
-
-## Las cosas que te enseñará este curso
-
-**Empezarás con estas cosillas:**
+**En los primeros capítulos empezarás con esto:**
 
 - El entorno de trabajo de un programador es, simplemente, una especie de calculadora. 
 - Los números y los textos son la base de la comunicación. 
-- Una de las palabras que más teme tu jefe y que tú empezarás a amar cuando lleves un tiempo programando. 
+- La palabra que más teme tu jefe y que tú empezarás a amar cuando lleves un tiempo programando. 
 - Por qué no tiene sentido poner en el currículum que programas en R o en Python, así sin más. 
 
-Además, **lo que ya sabes de Excel te servirá como base:**
+Luego toca bajar al barro. Además, **lo que ya sabes de Excel te servirá como base:**
 
 - ¿Sabes usar fórmulas en Excel para crear una columna nueva?
 - ¿Sabes hacer filtros en Excel para ver unas filas que cumplan condiciones concretas?
@@ -125,15 +116,26 @@ Hay **más cosas que aprenderás** con el curso:
 - **Los datos son como los Lego.** Puedes hacer todo tipo de virguerías con ellos, pero solo algunas son útiles. 
 - Para usar una herramienta bien, **hay que estar cómodo.** En programación también. Lo bueno es que, con técnicas adecuadas, aprenderás a estar cómodo programando. 
 - Si empiezas tu camino en la programación en R, y dentro de un tiempo quieres pasarte a Python, no empezarás de nuevo desde cero. **Tendrás ya un camino hecho.**
+- Cómo podrás continuar estudiando sin matricularte en más cursos. Te diré cómo lo hago yo, y te decepcionará. Y dirás que vaya timo. Pero si te animas a probarlo, te ahorrarás todos los euros que te costarían el próximo curso que tengas en mente hacer.
+
+
+## Formato y disponibilidad del curso
+
+- **El curso está en preventa.** Lo estoy terminando y lo recibirás a comienzos del mes de junio (muy a comienzos). Diré la fecha exacta en mis correos.
+- Por ello, está a precio reducido. Cuando termine la preventa, el precio subirá. Y nunca bajará. Porque no todo lo que sube baja. 
+- Casi todo el contenido de la formación es un documento con códigos y explicaciones de cada línea de código. Incluye algo en vídeo porque hay cosas que es mejor verlas a leerlas. 
+- Los códigos no te servirán de nada si no los aplicas. Así que tendrás a tu disposición unos cuantos ejercicios. Análisis de unos datos para que extraigas conclusiones de ellos. Con R. 
+- Tienes mi soporte. Tanto para profundizar en los contenidos como para los ejercicios. Será vía email. 
+- La formación incluye todas las instrucciones que se me han ocurrido sobre cómo configurarlo todo. Y, como tienes soporte, me puedes preguntar sobre esto también.
 
 ***
 
-## Formación para mejorar tu situación profesional
+## Formación para dar un salto tu situación profesional
 
 ~~PVP: 77€~~ 
 
 ### Precio de preventa: 55€
-[Pago seguro con tarjeta. ](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+[Pago seguro con tarjeta. ](https://buy.stripe.com/7sIbLi18WafN0SYeUV) 
 
 ***
 
@@ -148,7 +150,7 @@ Es una formación sobre exploraciones de datos con códigos en R. Y lo que verá
 
 Basándote en esos ejemplos, podrás realizar **todos los ejercicios** que te propongo.
 
-También incluye un vídeo sobre un tema muy concreto, que considero casi tan importante como el contenido en sí. Para que te hagas una idea, sin lo que cuento en el vídeo es posible que no puedas aplicar seriamente el contenido de la documentación.
+También incluye un vídeo sobre un tema muy concreto, que considero casi tan importante como el contenido en sí.
 
 ### ¿Los ejercicios vienen con la solución?
 
@@ -158,7 +160,7 @@ Los ejercicios te piden que saques conclusiones sobre los datos. Y **la manera e
 
 ### ¿Incluye soporte?
 
-Sí, por correo electrónico. Te respondo personalmente en 48 horas hábiles.
+Sí, por correo electrónico. Te respondo personalmente en 2 días hábiles.
 
 Cuando compres el curso recibirás instrucciones de cómo contactar conmigo para el soporte.
 
@@ -166,7 +168,7 @@ Cuando compres el curso recibirás instrucciones de cómo contactar conmigo para
 
 Te resultará más cómodo si lo haces, pero no es necesario para aprovechar el contenido. 
 
-En uno de los documentos te facilito información de cómo instalar las cosas, o de cómo acceder a una herramienta online. 
+En los documentos te facilito información de cómo instalar las cosas, o de cómo acceder a una herramienta online. 
 
 ### Mi ordenador es malillo. ¿Funcionará el programa?
 
@@ -178,13 +180,13 @@ No. Prácticamente ningún certificado tiene valor real. Uno emitido por mí, me
 
 Si no crees que lo que te puedo enseñar te será útil, no compres esta formación. 
 
-Si lo que necesitas es un certificado (y aprender es secundario), haz un máster.
+Si lo que necesitas es un certificado, haz un máster.
 
 ### Tengo XXX como sistema operativo. ¿Podré aprovechar la formación?
 
-En Mac y Windows podrás instalar el programa sin problema. En Linux por supuesto también. 
+En Mac y Windows podrás instalar el programa sin problema. Y en Linux más todavía. 
 
-Si tienes chromebook solo podrás trabajar con la versión online, con la que de todos modos podrás aprovechar todos los contenidos de la formación.
+Si tienes Chromebook podrás trabajar con la versión online, con la que de todos modos podrás aprovechar todos los contenidos de la formación.
 
 
 ### Con esta formación, ¿podré encontrar trabajo de data scientist?
@@ -204,7 +206,7 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 ~~PVP: 77€~~ 
 
 ### Precio de preventa: 55€
-[Pago seguro con tarjeta.](https://buy.stripe.com/bIYbLi5pc0Fd1X25kk) 
+[Pago seguro con tarjeta.](https://buy.stripe.com/7sIbLi18WafN0SYeUV) 
 
 ***
 
