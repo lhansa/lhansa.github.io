@@ -116,7 +116,10 @@ Hay **más cosas que aprenderás** con el curso:
 - **Los datos son como los Lego.** Puedes hacer todo tipo de virguerías con ellos, pero solo algunas son útiles. 
 - Para usar una herramienta bien, **hay que estar cómodo.** En programación también. Lo bueno es que, con técnicas adecuadas, aprenderás a estar cómodo programando. 
 - Si empiezas tu camino en la programación en R, y dentro de un tiempo quieres pasarte a Python, no empezarás de nuevo desde cero. **Tendrás ya un camino hecho.**
-- Cómo podrás continuar estudiando sin matricularte en más cursos. Te diré cómo lo hago yo, y te decepcionará. Y dirás que vaya timo. Pero si te animas a probarlo, te ahorrarás todos los euros que te costarían el próximo curso que tengas en mente hacer.
+- Cómo podrás **continuar estudiando** sin matricularte en más cursos. Te diré cómo lo hago yo, y te decepcionará. Y dirás que vaya timo. Pero si te animas a probarlo, te ahorrarás todos los euros que te costarían el próximo curso que tengas en mente hacer.
+- Cuando tienes muchos tablas entre varios ficheros, ¿la única forma que sabes de unificarlas en una sola es ir copiando y pegando? Hay una alternativa. 
+- ¿Sabes que estás abriendo con Excel ficheros que no son Excel? Pues eso puede hacerte perder datos. 
+
 
 
 ## Formato y disponibilidad del curso
