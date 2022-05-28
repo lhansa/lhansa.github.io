@@ -6,10 +6,73 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>data</title>
+      <link>/tags/data/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datascientist</title>
+      <link>/tags/datascientist/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/datascientist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>empresas</title>
+      <link>/tags/empresas/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/empresas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>estudiar</title>
+      <link>/tags/estudiar/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/estudiar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>formación</title>
+      <link>/tags/formaci%C3%B3n/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/formaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ia</title>
+      <link>/tags/ia/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trabajo</title>
+      <link>/tags/trabajo/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/trabajo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>comunicación</title>
@@ -35,24 +98,6 @@
       <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprender/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>empresas</title>
-      <link>/tags/empresas/</link>
-      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/empresas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>formación</title>
-      <link>/tags/formaci%C3%B3n/</link>
-      <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/formaci%C3%B3n/</guid>
       <description></description>
     </item>
     
@@ -93,29 +138,11 @@
     </item>
     
     <item>
-      <title>trabajo</title>
-      <link>/tags/trabajo/</link>
-      <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/trabajo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>aprendizaje</title>
       <link>/tags/aprendizaje/</link>
       <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprendizaje/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>estudiar</title>
-      <link>/tags/estudiar/</link>
-      <pubDate>Sun, 24 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/estudiar/</guid>
       <description></description>
     </item>
     

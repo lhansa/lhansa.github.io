@@ -6,10 +6,24 @@
     <description>Recent content on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 08 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Una inteligencia artificial te quitará tu trabajo</title>
+      <link>/post/una-inteligencia-artificial-te-quitar%C3%A1-tu-trabajo/</link>
+      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/una-inteligencia-artificial-te-quitar%C3%A1-tu-trabajo/</guid>
+      <description>Microsoft ha sacado una herramienta para que hagas aplicaciones web sin que codifiques nada.
+Cero código.
+Dibujas cuadraditos, escribes letreros, arrastras unos botones aquí y allá y ¡pum! Aplicación web hecha. Flipante.
+Habrá gente que piense que es el final de los desarrolladores web.
+Hace poco también Microsoft publicó una inteligencia artificial que escribía código de programación guiándose por los comentarios que hiciera el usuario.
+Por ejemplo, escribías &amp;ldquo;quiero un código que lea este Excel, reformule estas columnas de esta manera, haga una tabla dinámica con estas filas y columnas, y la guarde en un Excel nuevo en este otro sitio&amp;rdquo;.</description>
+    </item>
     
     <item>
       <title>No tiene sentido traducir una obra literalmente</title>
