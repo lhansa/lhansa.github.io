@@ -124,8 +124,7 @@ Hay **más cosas que aprenderás** con el curso:
 
 ## Formato y disponibilidad del curso
 
-- **El curso está en preventa.** Lo estoy terminando y lo recibirás a comienzos del mes de junio (muy a comienzos). Diré la fecha exacta en mis correos.
-- Por ello, está a precio reducido. Cuando termine la preventa, el precio subirá. Y nunca bajará. Porque no todo lo que sube baja. 
+- Si compras la formación, te llegará el acceso al material en las horas siguientes. No te preocupes si no es inmediato, que llegará.
 - Casi todo el contenido de la formación es un documento con códigos y explicaciones de cada línea de código. Incluye algo en vídeo porque hay cosas que es mejor verlas a leerlas. 
 - Los códigos no te servirán de nada si no los aplicas. Así que tendrás a tu disposición unos cuantos ejercicios. Análisis de unos datos para que extraigas conclusiones de ellos. Con R. 
 - Tienes mi soporte. Tanto para profundizar en los contenidos como para los ejercicios. Será vía email. 
@@ -135,10 +134,9 @@ Hay **más cosas que aprenderás** con el curso:
 
 ## Formación para dar un salto tu situación profesional
 
-~~PVP: 77€~~ 
+## PVP: 77€
 
-### Precio de preventa: 55€
-[Pago seguro con tarjeta. ](https://buy.stripe.com/7sIbLi18WafN0SYeUV) 
+[Pago seguro con tarjeta. ](https://buy.stripe.com/cN216E9Fs5Zx6di5km) 
 
 ***
 
@@ -206,10 +204,9 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 
 ## Formación para dar un salto en tu situación profesional
 
-~~PVP: 77€~~ 
+### PVP: 77€
 
-### Precio de preventa: 55€
-[Pago seguro con tarjeta.](https://buy.stripe.com/7sIbLi18WafN0SYeUV) 
+[Pago seguro con tarjeta.](https://buy.stripe.com/cN216E9Fs5Zx6di5km) 
 
 ***
 
