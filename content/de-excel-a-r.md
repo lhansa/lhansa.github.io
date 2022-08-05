@@ -2,6 +2,8 @@
 title: Los datos se han puesto las pilas. ¿Te las has puesto tú?
 author: Leonardo Hansa
 slug: de-excel-a-r
+_build:
+    list: never
 ---
 
 ### Si crees que tu trabajo corre peligro porque ahora están de moda los data scientist y tú no eres data scientist, tengo buenas noticias: no te preocupes, que no es para tanto.
