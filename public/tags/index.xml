@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Aug 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>aprender</title>
       <link>/tags/aprender/</link>
-      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aprendizaje</title>
+      <link>/tags/aprendizaje/</link>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprendizaje/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>comunicación</title>
+      <link>/tags/comunicaci%C3%B3n/</link>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/comunicaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lecturas</title>
+      <link>/tags/lecturas/</link>
+      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lecturas/</guid>
       <description></description>
     </item>
     
@@ -62,15 +89,6 @@
       <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/programaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aprendizaje</title>
-      <link>/tags/aprendizaje/</link>
-      <pubDate>Sat, 25 Jun 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aprendizaje/</guid>
       <description></description>
     </item>
     
@@ -143,24 +161,6 @@
       <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/trabajo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>comunicación</title>
-      <link>/tags/comunicaci%C3%B3n/</link>
-      <pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/comunicaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>lecturas</title>
-      <link>/tags/lecturas/</link>
-      <pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/lecturas/</guid>
       <description></description>
     </item>
     
