@@ -1,66 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/fonts.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="icon" type="image/png" href="../favicon-alt.png">
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="no-referrer">
-  
-  <meta name="description" content="¿Oxidado en el trabajo? Te mando una idea diaria para que deje de ser así.">
-  
-
-
-  <title>
-    
-    
-     Categories 
-    
-  </title>
-  <link rel="canonical" href="../categories/">
-
-  <link rel="stylesheet" href="../css/fonts.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-
-  
-  <link href="../categories/index.xml" rel="alternate" type="application/rss+xml" title="Leonardo Hansa" />
-  
-</head>
-
-<body>
-<section id=nav>
-  <h1><a href="../">Programo porque es resultón</a></h1>
-  <ul>
-    
-    <li><a href="../post/"><strong>Newsletter</strong></a></li>
-    
-    <li><a href="../soy-mediocre/"><strong>Mediocre</strong></a></li>
-    
-  </ul>
-</section>
-
-<main class="content" role="main">
-
-  
-  <div class="archive">
-    
-    
-    
-  </div>
-
-</main>
-
-  <div id="cookie-notice">
+<div id="cookie-notice">
 <span>Este sitio uiliza cookies propias y de terceros para analizar sus servicios y mostrarte publicidad relacionada con tus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación.</span>
 <a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
 <a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a>
-<a href="../privacy" class="btn btn-primary btn-sm">Más info</a></div>
+<a href="/privacy" class="btn btn-primary btn-sm">Más info</a></div>
 <script>
     function createCookie(name,value,days) {
         var expires = "";
@@ -86,7 +28,7 @@
     }
 
     if(readCookie('cookie-notice-option')=='true') {
-        
+        {{ if hugo.IsProduction | or (eq .Site.Params.env "production") }}
         
         function loadScriptAsync(scriptSrc, callback) {
             if (typeof callback !== 'function') {
@@ -98,17 +40,17 @@
             document.head.appendChild(script);
         }
 
-        
-
-        
+        /* This is the part where you call the above defined function and "calls back" 
+        your code which gets executed after the script has loaded */
+        //REPLACE WITH YOUR GA TAG!
         loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX', function () {
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true }); 
+            gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true }); //REPLACE WITH YOUR GA TAG!
         })
 
-        
+        {{ end }}
     } else if (readCookie('cookie-notice-option')!='false'){
         document.getElementById('cookie-notice').style.display = 'block';
     }
@@ -126,27 +68,3 @@
     });
 
 </script>
-
-  
-  <div>
-  <p style="text-align:right;font-size:10px;position:fixed;bottom:0;right:10px;vertical-align: bottom;line-height: normal;">
-  <a href="https://leonardohansa.com/legal">Legal</a>
-  <a href="https://leonardohansa.com/condiciones">Contratación</a>
-  <a href="https://leonardohansa.com/cookies">Política de cookies</a>
-  </p>
-  
-  </div>
-  
-  
-
-  
-  
-</body>
-  
-<footer style="position:absolute;bottom:0;width:100%;">
-
-
-</footer>
-
-</html>
-

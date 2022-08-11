@@ -1,14 +1,23 @@
-  {{ template "_internal/google_analytics_async.html" . }}
-  {{ partial "footer_mathjax.html" . }}
-</body>
+  {{ template "partials/cookie-consent.html" . }}
   
-<footer>
-<p style="text-align:right;font-size:10px;position:fixed;bottom:0;right:10px;vertical-align: bottom;line-height: normal;">
-  <!--- <q>N'a de convictions que celui qui n'a rien approfondi</q> (E.M. Cioran) --->
+  <div>
+  <p style="text-align:right;font-size:10px;position:fixed;bottom:0;right:10px;vertical-align: bottom;line-height: normal;">
   <a href="https://leonardohansa.com/legal">Legal</a>
   <a href="https://leonardohansa.com/condiciones">Contratación</a>
   <a href="https://leonardohansa.com/cookies">Política de cookies</a>
   </p>
+  
+  </div>
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{ partial "footer_mathjax.html" . }}
+  
+  
+</body>
+  
+<footer style="position:absolute;bottom:0;width:100%;">
+<!---<p style="text-align:right;font-size:10px;position:fixed;bottom:0;right:10px;vertical-align: bottom;line-height: normal;">
+   <q>N'a de convictions que celui qui n'a rien approfondi</q> (E.M. Cioran) 
+  </p> -->
 
 </footer>
 
