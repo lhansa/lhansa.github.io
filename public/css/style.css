@@ -301,9 +301,8 @@ ul li {
 
 /* COOKIES */
 
-#cookie-notice {font-size: smaller; padding: 0.5rem 1rem; display: none;
-text-align: center; bottom: 0; left: 20px; padding-top: 7px;
-padding-bottom: 7px; width: 100%; background: rgb(255, 255, 255);border:1px solid #BBBBBB;
+#cookie-notice {font-size: smaller; padding: 0.5rem 1rem; display: table;
+text-align: center; bottom: 0; left: 0; width: 100%; background: rgb(255, 255, 255);border:1px solid #BBBBBB;
 color: #333333;}
 
 #cookie-notice a {font-weight: 100; display: inline-flex; cursor: pointer; margin-left: 0.5rem;}
