@@ -1,4 +1,6 @@
   <!--{{ template "partials/cookie-consent.html" . }}-->
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{ partial "footer_mathjax.html" . }}
   
   <div>
   <p style="text-align:right;font-size:10px;">
@@ -8,8 +10,6 @@
   </p>
   
   </div>
-  {{ template "_internal/google_analytics_async.html" . }}
-  {{ partial "footer_mathjax.html" . }}
   
   
 </body>
