@@ -143,28 +143,6 @@ functionality of this website.</span>
 
     if(readCookie('cookie-notice-option')=='true') {
         
-        
-        function loadScriptAsync(scriptSrc, callback) {
-            if (typeof callback !== 'function') {
-                throw new Error('Not a valid callback for async script load');
-            }
-            var script = document.createElement('script');
-            script.onload = callback;
-            script.src = scriptSrc;
-            document.head.appendChild(script);
-        }
-
-        
-
-        
-        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX', function () {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true }); 
-        })
-
-        
     } else if (readCookie('cookie-notice-option')!='false'){
         document.getElementById('cookie-notice').style.display = 'block';
     }
