@@ -165,7 +165,9 @@ Una de ellas estuvo de acuerdo. La otra dijo que no, que no mataran al niño y s
 
     if(readCookie('cookie-notice-option')=='true') {
         
-    } else if (readCookie('cookie-notice-option')!='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
+    
+    } else {
         document.getElementById('cookie-notice').style.display = 'block';
     }
 
@@ -177,8 +179,8 @@ Una de ellas estuvo de acuerdo. La otra dijo que no, que no mataran al niño y s
 
     document.getElementById('cookie-notice-deny').addEventListener("click",function() {
         createCookie('cookie-notice-option','false',31);
-        document.getElementById('cookie-notice').style.display = 'none';
-        location.reload();
+        document.getElementById('cookie-notice').style.display = 'block';
+        
     });
 
 </script>

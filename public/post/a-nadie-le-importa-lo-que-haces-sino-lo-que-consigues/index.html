@@ -146,7 +146,9 @@ Qué está causando la caída en ventas de los últimos meses...
 
     if(readCookie('cookie-notice-option')=='true') {
         
-    } else if (readCookie('cookie-notice-option')!='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
+    
+    } else {
         document.getElementById('cookie-notice').style.display = 'block';
     }
 
@@ -158,8 +160,8 @@ Qué está causando la caída en ventas de los últimos meses...
 
     document.getElementById('cookie-notice-deny').addEventListener("click",function() {
         createCookie('cookie-notice-option','false',31);
-        document.getElementById('cookie-notice').style.display = 'none';
-        location.reload();
+        document.getElementById('cookie-notice').style.display = 'block';
+        
     });
 
 </script>
