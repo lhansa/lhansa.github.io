@@ -55,9 +55,8 @@
         */
         {{ end }}
         document.getElementById('cookie-notice').style.display = 'none';
-    //} else if (readCookie('cookie-notice-option')=='false'){
-    } else {
-        document.getElementById('cookie-notice').style.display = 'block';
+    } else if (readCookie('cookie-notice-option')=='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
     }
 
     document.getElementById('cookie-notice-accept').addEventListener("click",function() {
@@ -68,7 +67,7 @@
 
     document.getElementById('cookie-notice-deny').addEventListener("click",function() {
         createCookie('cookie-notice-option','false',31);
-        document.getElementById('cookie-notice').style.display = 'block';
+        document.getElementById('cookie-notice').style.display = 'none';
         //location.reload();
     });
 
