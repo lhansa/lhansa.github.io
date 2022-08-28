@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 11 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 28 Aug 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>aprendizaje</title>
       <link>/tags/aprendizaje/</link>
-      <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprendizaje/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cambio</title>
+      <link>/tags/cambio/</link>
+      <pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cambio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ficcion</title>
+      <link>/tags/ficcion/</link>
+      <pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ficcion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recomendaciones</title>
+      <link>/tags/recomendaciones/</link>
+      <pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/recomendaciones/</guid>
       <description></description>
     </item>
     
