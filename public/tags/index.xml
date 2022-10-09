@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 17 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Oct 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>comunicación</title>
+      <link>/tags/comunicaci%C3%B3n/</link>
+      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/comunicaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>empresas</title>
+      <link>/tags/empresas/</link>
+      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/empresas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>recomendaciones</title>
+      <link>/tags/recomendaciones/</link>
+      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/recomendaciones/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>asco</title>
@@ -75,15 +102,6 @@
     </item>
     
     <item>
-      <title>recomendaciones</title>
-      <link>/tags/recomendaciones/</link>
-      <pubDate>Sun, 28 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/recomendaciones/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>identidad</title>
       <link>/tags/identidad/</link>
       <pubDate>Thu, 11 Aug 2022 00:00:00 +0000</pubDate>
@@ -116,15 +134,6 @@
       <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprender/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>comunicación</title>
-      <link>/tags/comunicaci%C3%B3n/</link>
-      <pubDate>Mon, 08 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/comunicaci%C3%B3n/</guid>
       <description></description>
     </item>
     
@@ -188,15 +197,6 @@
       <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/datascientist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>empresas</title>
-      <link>/tags/empresas/</link>
-      <pubDate>Sat, 28 May 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/empresas/</guid>
       <description></description>
     </item>
     

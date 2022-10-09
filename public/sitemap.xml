@@ -1,6 +1,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://leonardohansa.com/tags/comunicaci%C3%B3n/</loc>
+      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/empresas/</loc>
+      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/no-cometas-este-error/</loc>
+      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/recomendaciones/</loc>
+      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
       <loc>https://leonardohansa.com/tags/asco/</loc>
       <lastmod>2022-09-17T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
@@ -15,28 +64,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2022-09-17T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2022-09-17T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
-      <lastmod>2022-09-17T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
       <lastmod>2022-09-17T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -72,13 +100,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/ficcion/</loc>
-      <lastmod>2022-08-28T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/recomendaciones/</loc>
       <lastmod>2022-08-28T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -121,13 +142,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/aprender/</loc>
-      <lastmod>2022-08-08T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/comunicaci%C3%B3n/</loc>
       <lastmod>2022-08-08T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -205,13 +219,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/datascientist/</loc>
-      <lastmod>2022-05-28T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/empresas/</loc>
       <lastmod>2022-05-28T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
