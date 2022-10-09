@@ -46,23 +46,23 @@ Este sitio usa las siguientes cookies:
 | QSI_SI_b89mZSIW5HDkNCZ_intercept | 3 meses   | De terceros| Necesaria para el sitio web |
 | OptanonConsent | 1 año  | Necesaria  |   Información sobre cookies   |
 | _uetsid | 1 año    | Targeting|      |  Bing la usa para mostrar anuncios relevantes para el usuario     |
-| fs_cid |      |      |           |
+| fs_cid |   -   |   -   |     -      |
 | _gid |  1 día     |   Estadística   |  Conteo de visitas    |
-| MC_PLUMS_PERSONALIZED |      |      |       |
-| MC_GAUID |       |           |
-| _ga_N5HD1RTH6E |       |           |
-| _clck |       |           |
-| MC_USER_PROFILE |      |           |
-| fs_uid |       |           |
-| _ttp |       |           |
-| _mc_lang |       |           |
-| optimizelyEndUserId |       |         |
-| _tt_enable_cookie |       |           |
-| _gcl_au |       |           |
-| nmstat |       |           |
-| _mcid |       |           |
-| _mc_anon_id |      |           |
-| OptanonAlertBoxClosed |       |           |
+| MC_PLUMS_PERSONALIZED |   - | -  |   -   |    -  |
+| MC_GAUID |    -   |     -      | -|
+| _ga_N5HD1RTH6E |    -   |      -|-     |
+| _clck |   -    |    -       | -|
+| MC_USER_PROFILE |   -   |      -|  -   |
+| fs_uid |   -    |     -      |-|
+| _ttp |    -   |       -    | -|
+| _mc_lang |  -     |     -      |-|
+| optimizelyEndUserId |    -   |     -    |-|
+| _tt_enable_cookie |     -  |      -     |-|
+| _gcl_au |    -   |      -     |-|
+| nmstat |    -   |       -    |-|
+| _mcid |     -  |        -   |-|
+| _mc_anon_id | -     |    -       |-|
+| OptanonAlertBoxClosed |     -  |    -       |-|
 
 
 
