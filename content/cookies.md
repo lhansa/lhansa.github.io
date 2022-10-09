@@ -34,8 +34,6 @@ La(s) entidad(es) encargada(s) del suministro de cookies podrá(n) ceder esta in
 
 Este sitio usa las siguientes cookies:
 
-### Estadísticas
-
 | Nombre      |  Duración | Tipo | Finalidad |
 |-------------|----------|------|-----------|
 | _ga         | 2 años   | Estadística| Cuenta visitas    |
