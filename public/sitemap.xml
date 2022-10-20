@@ -1,6 +1,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://leonardohansa.com/tags/aprendizaje/</loc>
+      <lastmod>2022-10-20T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/cambio/</loc>
+      <lastmod>2022-10-20T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/formaci%C3%B3n/</loc>
+      <lastmod>2022-10-20T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2022-10-20T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2022-10-20T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2022-10-20T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/tu-tiempo-llega-a-su-fin-2/</loc>
+      <lastmod>2022-10-20T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
       <loc>https://leonardohansa.com/tags/comunicaci%C3%B3n/</loc>
       <lastmod>2022-10-09T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
@@ -15,13 +64,6 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/post/no-cometas-este-error/</loc>
       <lastmod>2022-10-09T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
@@ -29,21 +71,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/recomendaciones/</loc>
-      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
       <lastmod>2022-10-09T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -80,20 +108,6 @@
     <url>
       <loc>https://leonardohansa.com/tags/tecnologia/</loc>
       <lastmod>2022-09-17T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/aprendizaje/</loc>
-      <lastmod>2022-08-28T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/cambio/</loc>
-      <lastmod>2022-08-28T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
@@ -226,13 +240,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/estudiar/</loc>
-      <lastmod>2022-05-28T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/formaci%C3%B3n/</loc>
       <lastmod>2022-05-28T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
