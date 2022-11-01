@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tecnologia on Leonardo Hansa</title>
-    <link>/tags/tecnologia/</link>
-    <description>Recent content in tecnologia on Leonardo Hansa</description>
+    <title>code on Leonardo Hansa</title>
+    <link>/tags/code/</link>
+    <description>Recent content in code on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/tecnologia/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/code/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,22 +27,6 @@ Revisé lo que pude y me rendí. No era capaz de identificarlo.
 ¿Solución?
 Le borré el código y empezamos de nuevo.
 En lugar de escribir el código letra a letra, nos apoyamos en el autocompletado.</description>
-    </item>
-    
-    <item>
-      <title>Te gusta la caca y quizá no lo sepas</title>
-      <link>/post/te-gusta-la-caca-y-quiza-no-lo-sepas/</link>
-      <pubDate>Sat, 17 Sep 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/post/te-gusta-la-caca-y-quiza-no-lo-sepas/</guid>
-      <description>El alcohol es caca.
-Parece una frase que se le dice a un niño pequeño para que se mantenga lejos del alcohol.
-Pero no.
-Es caca de verdad.
-Caca de levadura.
-Las levaduras son unos bichines* súper pequeños que comen azúcares diversos y cagan alcohol. Y dióxido de carbono.
-*(No son bichines, son hongos unicelulares, pero ahora no me interesa eso).
-Ese alcohol es el que te emborracha cuando bebes cerveza.</description>
     </item>
     
   </channel>

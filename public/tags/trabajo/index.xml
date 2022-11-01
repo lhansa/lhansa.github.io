@@ -6,10 +6,28 @@
     <description>Recent content in trabajo on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 28 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/trabajo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Otro error que se me resiste</title>
+      <link>/post/otro-error-que-se-me-resiste/</link>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/otro-error-que-se-me-resiste/</guid>
+      <description>Ayer en clase a un estudiante le salía un error raro.
+Había replicado un código mío. Que funcionaba en mi ordenador.
+Pero a él no.
+Me lo enseña. Y yo&amp;hellip;
+&amp;hellip;pues ni idea, la verdad.
+Ni idea de qué pasaba. No veía nada raro.
+Revisé lo que pude y me rendí. No era capaz de identificarlo.
+¿Solución?
+Le borré el código y empezamos de nuevo.
+En lugar de escribir el código letra a letra, nos apoyamos en el autocompletado.</description>
+    </item>
     
     <item>
       <title>Una inteligencia artificial te quitará tu trabajo</title>
