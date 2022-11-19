@@ -61,7 +61,7 @@ Los dos vais a manchar. Pero cosas distintas y de cosas distintas.
 
 </br>
 
-Como tu trabajo es sacar información a partir de datos, no te debería preocupar que tu código no fuera muy eficiente: que un cálculo sobre una tabla consuma más memoria que si lo hace el ingeniero con sus herramientas no te debería quitar el sueño.
+Como [tu trabajo](https://leonardohansa.com/post/aprender-a-programar-te-viene-bien-aunque-no-programes-nunca/) es sacar información a partir de datos, no te debería preocupar que tu código no fuera muy eficiente: que un cálculo sobre una tabla consuma más memoria que si lo hace el ingeniero con sus herramientas no te debería quitar el sueño.
 
 Puedes manchar el mantel con una gota de vino pero no puedes salpicar el aceite de los huevos al servir.
 
