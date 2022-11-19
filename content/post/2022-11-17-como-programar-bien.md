@@ -17,6 +17,8 @@ _Yo programo un poco pero no lo hago bien._
 
 ¿Qué quiere decir "programo bien"?
 
+Me interesa esa pregunta porque su respuesta apoyará a "cómo programar bien".
+
 Te lo cuento bajo tres puntos de vista (uno hoy, otro mañana y otro pasado).
 
 
