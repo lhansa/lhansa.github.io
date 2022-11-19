@@ -2,7 +2,7 @@
 title: Cómo programar bien (2)
 author: ''
 date: '2022-11-18'
-slug: cómo-programar-bien-2
+slug: como-programar-bien-2
 categories: []
 tags:
   - programar
