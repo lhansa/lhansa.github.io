@@ -6,10 +6,55 @@
     <description>Recent content in programar on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/programar/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cómo programar bien (3)</title>
+      <link>/post/como-programar-bien-3/</link>
+      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/como-programar-bien-3/</guid>
+      <description>Hace años, en un máster, nos mandaron un trabajo sobre simulación.
+La simulación es una rama de la estadística útil cuando no puedes observar un acontecimiento.
+Por ejemplo, vas a abrir una tienda de un súper y tienes que dedicidir cuántas cajas (de las de pagar) pones.
+Si pones muy pocas, se montarán unas colas enormes.
+Si pones muchas, habrás invertido de más en infraestructura. Y tendrás a cajeros sin trabajo y los despedirás.</description>
+    </item>
+    
+    <item>
+      <title>Cómo programar bien (2)</title>
+      <link>/post/c%C3%B3mo-programar-bien-2/</link>
+      <pubDate>Fri, 18 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/c%C3%B3mo-programar-bien-2/</guid>
+      <description>Ayer te hablaba de cómo te debes preocupar por los recursos informáticos cuando analizas datos.
+Otra pieza clave para que programes bien en la sintaxis.
+A ver, cuidado.
+No digo que no cometas errores de sintaxis. Eso ya se te ha ocurrido a ti.
+Si te falta un paréntesis, el código no chuta. Y punto.
+Y si tu editor es aceptable, te dirá dónde está el error.
+Pero la sintaxis va más allá de eso.</description>
+    </item>
+    
+    <item>
+      <title>Cómo programar bien</title>
+      <link>/post/como-programar-bien/</link>
+      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/como-programar-bien/</guid>
+      <description>Mucha gente que trabaja con datos dice:
+Yo programo un poco pero no lo hago bien.
+¿Qué quiere decir &amp;ldquo;programo bien&amp;rdquo;?
+Te lo cuento bajo tres puntos de vista (uno hoy, otro mañana y otro pasado).
+1. Recursos informáticos
+Estás cocinando unos huevos fritos.
+Y el aceite salpica la vitro, la inducción o lo que tengas.
+Es normal, ¿no? Luego lo limpias y ya está.
+Ahora vas al salón, a servir los huevos fritos en platos, y lo haces muy brusco, salpicando el aceite y manchas todo.</description>
+    </item>
     
     <item>
       <title>Otro error que se me resiste</title>

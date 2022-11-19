@@ -6,10 +6,27 @@
     <description>Recent content in trabajo on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/trabajo/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cómo programar bien</title>
+      <link>/post/como-programar-bien/</link>
+      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/como-programar-bien/</guid>
+      <description>Mucha gente que trabaja con datos dice:
+Yo programo un poco pero no lo hago bien.
+¿Qué quiere decir &amp;ldquo;programo bien&amp;rdquo;?
+Te lo cuento bajo tres puntos de vista (uno hoy, otro mañana y otro pasado).
+1. Recursos informáticos
+Estás cocinando unos huevos fritos.
+Y el aceite salpica la vitro, la inducción o lo que tengas.
+Es normal, ¿no? Luego lo limpias y ya está.
+Ahora vas al salón, a servir los huevos fritos en platos, y lo haces muy brusco, salpicando el aceite y manchas todo.</description>
+    </item>
     
     <item>
       <title>Otro error que se me resiste</title>

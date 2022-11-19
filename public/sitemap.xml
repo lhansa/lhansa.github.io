@@ -1,14 +1,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://leonardohansa.com/tags/code/</loc>
-      <lastmod>2022-11-01T00:00:00+00:00</lastmod>
+      <loc>https://leonardohansa.com/tags/aprender/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/como-programar-bien-3/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/data/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/datos/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/programar/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/python/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/c%C3%B3mo-programar-bien-2/</loc>
+      <lastmod>2022-11-18T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/como-programar-bien/</loc>
+      <lastmod>2022-11-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/trabajo/</loc>
+      <lastmod>2022-11-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/code/</loc>
       <lastmod>2022-11-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -22,42 +106,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/programar/</loc>
-      <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/python/</loc>
-      <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
-      <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/tecnologia/</loc>
-      <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/trabajo/</loc>
       <lastmod>2022-11-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -134,13 +183,6 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
-      <lastmod>2022-09-17T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/post/te-gusta-la-caca-y-quiza-no-lo-sepas/</loc>
       <lastmod>2022-09-17T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
@@ -190,13 +232,6 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/tags/aprender/</loc>
-      <lastmod>2022-08-08T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/post/esta-cama-no-te-resultar%C3%A1-c%C3%B3moda/</loc>
       <lastmod>2022-08-08T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
@@ -205,20 +240,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/comunidad/</loc>
-      <lastmod>2022-07-09T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/data/</loc>
-      <lastmod>2022-07-09T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/datos/</loc>
       <lastmod>2022-07-09T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
