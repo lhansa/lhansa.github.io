@@ -33,7 +33,7 @@ Pelearme con el cliente para que sus datos estuvieran bien y, entonces, empezar 
 
 Pero ese es el error: que **poner bien los datos ya es un proyecto.**
 
-</br>
+<br/>
 
 Organizo formaciones de tratamiento de datos. Sí, poner tablas en orden para explorarlas. 
 
@@ -41,7 +41,7 @@ Ni _deep learning_, ni _machine learning_: tratar tablas.
 
 Escríbeme a hola@leonardohansa.com, cuéntame en qué situación crees que están tus datos y te digo qué puedo ofrecerte.
 
-</br>
+<br/>
 
 P.D. Por supuesto, en la conversación de arriba Raúl es el que da la formación. Yo soy el que no se había enterado aún de que la formación hay que darla desde el paso 0.
 
