@@ -37,7 +37,9 @@ Es como una cama de Procusto, en la que tienes que cortar trozos de tus datos pa
 
 Y claro, no tiene ningún sentido.
 
-<br/>
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
 
 En la mitología griega, Teseo mata a Procusto. Pero en la vida real ningún Teseo va a matar a Excel.
 
@@ -57,6 +59,9 @@ Un fichero parquet guarda tus datos tabulares de una manera más eficiente que u
 [Me ha gustado esta entrada](https://www.rstudio.com/blog/shiny-and-arrow/
 ) sobre tratamiento de ficheros parquet con R (los puedes trabajar en Python igualmente).
 
-<br/>
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
+
 
 P.D. Excel no es solo una cama de Procusto porque te corta datos, sino también porque ocupa más que un CSV y un parquet en muchas circunstancias, aunque en los tres casos guardes los mismos datos. A ver si llega pronto Teseo.
