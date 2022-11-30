@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 30 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Es que eso tiene ya mucho valor</title>
+      <link>/post/es-que-eso-tiene-ya-mucho-valor/</link>
+      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/es-que-eso-tiene-ya-mucho-valor/</guid>
+      <description>Hablaba ayer con Raúl Vaquerizo, referente:
+&amp;ndash; Una formación que me gusta dar es presentarme, sin prepararme, a una sesión de trabajo con los datos del cliente. Y le enseño con sus datos lo que se puede hacer. &amp;ndash; ¿Y qué haces cuando los datos están mal y no se puede hacer nada? &amp;ndash; Termino ahí la formación. Es que eso ya tiene mucho valor.
+He trabajado en muchos proyectos en los que los datos estaban mal.</description>
+    </item>
     
     <item>
       <title>Cómo programar bien (3)</title>
