@@ -183,7 +183,7 @@ Luego sube a 82€.
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
 
-### PVP: ~82€~ 63€ (precio preventa)
+### PVP: ~~82€~~ 63€ (precio preventa)
 
 [Pago seguro con tarjeta.]() 
 
@@ -253,7 +253,10 @@ Si quieres hacerte data scientist, necesitarás trabajar con _data scientists_ d
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
 
-### PVP: ~82€~ 63€ (precio preventa)
+### PVP: ~~82€~~ 63€ (precio preventa)
 
 [Pago seguro con tarjeta.]() 
 
+***
+
+Por cierto, por si aún no te has suscrito:
