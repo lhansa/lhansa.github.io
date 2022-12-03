@@ -185,7 +185,7 @@ Luego sube a 82€.
 
 ### PVP: ~~82€~~ 63€ (precio preventa)
 
-[Pago seguro con tarjeta.]() 
+[Pago seguro con tarjeta.](https://buy.stripe.com/14kcPm7xkgEb0SY4gj) 
 
 ***
 
@@ -255,7 +255,7 @@ Si quieres hacerte data scientist, necesitarás trabajar con _data scientists_ d
 
 ### PVP: ~~82€~~ 63€ (precio preventa)
 
-[Pago seguro con tarjeta.]() 
+[Pago seguro con tarjeta.](https://buy.stripe.com/14kcPm7xkgEb0SY4gj) 
 
 ***
 
