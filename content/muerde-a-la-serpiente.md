@@ -131,7 +131,7 @@ Por supuesto, con esta frase debería quedarte clara una cosa: si no trabajas co
 
 Si sí, sigue leyendo.
 
-- Verás que todo tu trabajo con tablas se resume en 5 cosas. En la formación entrarás en detalle de esas 5 cosas.
+- Verás que todo **tu trabajo con tablas se resume en 5 cosas.** En la formación entrarás en detalle de esas 5 cosas.
 - Asumo que trabajas con más de una tabla a la vez (en plan, una tabla en una hoja de Excel, otra en otra, otra en un fichero, y así...). Bueno, pues le daremos una vuelta a lo que Python pone a tu disposición para esos casos.
 
 Me gusta acabar mis formaciones con ideas de cómo debes seguir formándote sin matricularte en titulaciones caras cada vez que quieras aprender algo nuevo. 
@@ -249,6 +249,15 @@ Esta formación te proporcionará una herramienta para simplificar el trabajo ha
 
 Si quieres hacerte data scientist, necesitarás trabajar con _data scientists_ durante mucho tiempo. Y así te convertirás en uno de ellos.
 
+### Vale, no me haré data scientist. ¿Pero me haré data analyst al menos?
+
+Pues tampoco. No te enseñaré a sacar conclusiones a partir de tus exploraciones. Te daré herramientas para que puedas explorarlos. Aprenderás a manejar tus tablas. 
+
+Luego necesitarás estadística: modelos, visualizaciones, tests,... pero eso no entra en esta formación. 
+
+En esta formación entra la parte previa. Que la necesitarás para ser data analyst (o como lo quieras llamar). Pero si lo que quieres es aprender la parte estadística, entonces esta **no** es tu formación.
+
+
 ***
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
@@ -259,4 +268,5 @@ Si quieres hacerte data scientist, necesitarás trabajar con _data scientists_ d
 
 ***
 
-Por cierto, por si aún no te has suscrito:
+Por cierto, por si aún no te has suscrito, en mi newsletter contaré más detalles sobre el curso (y más cosas sobre programación que te interesarán si te estás planteando meterte en la formación):
+
