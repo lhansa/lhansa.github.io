@@ -177,7 +177,7 @@ La formación está en preventa hasta el 15 de enero de 2023. Unos días despué
 
 ## Precio
 
-Hasta el 14 de enero, a las 23:59 hora peninsular española, 63€. 
+Hasta el 15 de enero, a las 23:59 hora peninsular española, 63€. 
 
 Luego sube a 82€.
 
