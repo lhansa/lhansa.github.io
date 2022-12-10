@@ -5,7 +5,7 @@ _build:
     list: never
 ---
 
-## "...y no me vale un curso cerrado.""
+## "...y no me vale un curso cerrado."
 
 Esa situación es muy habitual. **Y quizá sea la tuya.**
 
@@ -156,5 +156,13 @@ Si buscas un certificado, haz un máster.
 
 Mi formación está para que en poco tiempo te pongas a aplicar lo que aprendas sobre datos. 
 
+***
 
+## Formación a medida de análisis de datos
+
+### PVP: 345 €
+
+***
+
+Y por si aún no te has suscrito:
 

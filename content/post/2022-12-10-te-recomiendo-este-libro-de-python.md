@@ -29,14 +29,19 @@ Cada uno empezó a decir lo que se le ocurría. Cosas random. Todo diferente.
 Hasta que uno dijo:
 
 -- ¿Tenéis cervezas japonesas?
+
 -- Sí, Saporo.
+
 -- Ah, pues una Saporo.
 
 Y en eso que todos empezamos:
 
 -- Oye, pues yo también.
+
 -- Sí, yo también. Quítame lo que te dije antes y ponme eso.
+
 -- Sí, yo igual.
+
 -- Y yo.
 
 {{< rawhtml >}}
@@ -87,7 +92,7 @@ Hazlo de otra forma.
 
 Por ahora, te recomiendo este libro: 
 
-[Python for data analysis, de Wes McKinney](Python for Data Analysis)
+[Python for data analysis, de Wes McKinney](https://wesmckinney.com/book/)
 
 
 Ahora bien, si ya lo conoces, o si lo de estudiar por tu cuenta no es suficiente, lo que te voy a ofrecer mañana te gustará más.
