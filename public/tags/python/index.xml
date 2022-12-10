@@ -6,10 +6,25 @@
     <description>Recent content in python on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 19 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 10 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Te recomiendo este libro de Python</title>
+      <link>/post/te-recomiendo-este-libro-de-python/</link>
+      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/te-recomiendo-este-libro-de-python/</guid>
+      <description>Hace unos días estaba en un restaurante japonés con unos amigos.
+No sabíamos muy bien qué pedir de bebida.
+Cada uno empezó a decir lo que se le ocurría. Cosas random. Todo diferente.
+Hasta que uno dijo:
+&amp;ndash; ¿Tenéis cervezas japonesas? &amp;ndash; Sí, Saporo. &amp;ndash; Ah, pues una Saporo.
+Y en eso que todos empezamos:
+&amp;ndash; Oye, pues yo también. &amp;ndash; Sí, yo también. Quítame lo que te dije antes y ponme eso.</description>
+    </item>
     
     <item>
       <title>Cómo programar bien (3)</title>
