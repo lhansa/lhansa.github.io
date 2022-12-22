@@ -6,10 +6,22 @@
     <description>Recent content in analisis on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/analisis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Un enfoque que no tienes en cuenta cuando tratas datos</title>
+      <link>/post/un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos/</guid>
+      <description>Una cosa que escuché cuando empecé a trabajar con R, hace años, es que estaba orientado a objetos.
+Yo, ni idea de qué era eso. Pero vale, vale&amp;hellip;
+Poco después, cuando me interesaba ya en serio por estas cosas, me enteré de que había gente que se ofendía por algo así.
+Era gente que venía de Javascript, o incluso Python, y que en R lo que se hacía con objetos no tenía nada que ver con el paradigma de la programación orientada a objetos.</description>
+    </item>
     
     <item>
       <title>Te recomiendo este libro de Python</title>

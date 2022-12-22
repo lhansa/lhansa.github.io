@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,25 +14,34 @@
     <item>
       <title>analisis</title>
       <link>/tags/analisis/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/analisis/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>aprender</title>
-      <link>/tags/aprender/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <title>code</title>
+      <link>/tags/code/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
-      <guid>/tags/aprender/</guid>
+      <guid>/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codificacion</title>
+      <link>/tags/codificacion/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/codificacion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>data</title>
       <link>/tags/data/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/data/</guid>
       <description></description>
@@ -41,9 +50,135 @@
     <item>
       <title>dataanalysis</title>
       <link>/tags/dataanalysis/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/dataanalysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datos</title>
+      <link>/tags/datos/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/datos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programación</title>
+      <link>/tags/programaci%C3%B3n/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programar</title>
+      <link>/tags/programar/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programming</title>
+      <link>/tags/programming/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aprender</title>
+      <link>/tags/aprender/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aprendizaje</title>
+      <link>/tags/aprendizaje/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprendizaje/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>estudiar</title>
+      <link>/tags/estudiar/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/estudiar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>formación</title>
+      <link>/tags/formaci%C3%B3n/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/formaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trabajo</title>
+      <link>/tags/trabajo/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/trabajo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>training</title>
+      <link>/tags/training/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/training/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>empresas</title>
+      <link>/tags/empresas/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/empresas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psicologia</title>
+      <link>/tags/psicologia/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/psicologia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tecnologia</title>
+      <link>/tags/tecnologia/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tecnologia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>venta</title>
+      <link>/tags/venta/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/venta/</guid>
       <description></description>
     </item>
     
@@ -53,15 +188,6 @@
       <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/datascience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>estudiar</title>
-      <link>/tags/estudiar/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/estudiar/</guid>
       <description></description>
     </item>
     
@@ -84,65 +210,11 @@
     </item>
     
     <item>
-      <title>programar</title>
-      <link>/tags/programar/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programming</title>
-      <link>/tags/programming/</link>
-      <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>python</title>
       <link>/tags/python/</link>
       <pubDate>Sat, 10 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aprendizaje</title>
-      <link>/tags/aprendizaje/</link>
-      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aprendizaje/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code</title>
-      <link>/tags/code/</link>
-      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>codificacion</title>
-      <link>/tags/codificacion/</link>
-      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/codificacion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>datos</title>
-      <link>/tags/datos/</link>
-      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/datos/</guid>
       <description></description>
     </item>
     
@@ -165,51 +237,6 @@
     </item>
     
     <item>
-      <title>formación</title>
-      <link>/tags/formaci%C3%B3n/</link>
-      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/formaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>training</title>
-      <link>/tags/training/</link>
-      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/training/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programación</title>
-      <link>/tags/programaci%C3%B3n/</link>
-      <pubDate>Sat, 19 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trabajo</title>
-      <link>/tags/trabajo/</link>
-      <pubDate>Thu, 17 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/trabajo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tecnologia</title>
-      <link>/tags/tecnologia/</link>
-      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tecnologia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>cambio</title>
       <link>/tags/cambio/</link>
       <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
@@ -224,15 +251,6 @@
       <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/comunicaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>empresas</title>
-      <link>/tags/empresas/</link>
-      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/empresas/</guid>
       <description></description>
     </item>
     

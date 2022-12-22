@@ -2,48 +2,188 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/analisis/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/tags/aprender/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
+      <loc>https://leonardohansa.com/tags/code/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/codificacion/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/tags/data/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/tags/dataanalysis/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/tags/datascience/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/estudiar/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
+      <loc>https://leonardohansa.com/tags/datos/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/programar/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/programming/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos/</loc>
+      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/aprender/</loc>
+      <lastmod>2022-12-24T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/aprendizaje/</loc>
+      <lastmod>2022-12-24T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/el-80-de-lo-que-estudias-no-te-sirve-para-nada/</loc>
+      <lastmod>2022-12-24T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/estudiar/</loc>
+      <lastmod>2022-12-24T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/formaci%C3%B3n/</loc>
+      <lastmod>2022-12-24T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/trabajo/</loc>
+      <lastmod>2022-12-24T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/training/</loc>
+      <lastmod>2022-12-24T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/empresas/</loc>
+      <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/psicologia/</loc>
+      <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/tecnologia/</loc>
+      <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/venta/</loc>
+      <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/que-es-el-efecto-ikea/</loc>
+      <lastmod>2022-12-23T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/argumentos-para-estudiar-algo-que-nunca-usaras/</loc>
+      <lastmod>2022-12-22T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/datascience/</loc>
       <lastmod>2022-12-10T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -64,35 +204,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/programar/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/programming/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/python/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
       <lastmod>2022-12-10T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -101,34 +213,6 @@
     <url>
       <loc>https://leonardohansa.com/post/te-recomiendo-este-libro-de-python/</loc>
       <lastmod>2022-12-10T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/aprendizaje/</loc>
-      <lastmod>2022-11-30T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/code/</loc>
-      <lastmod>2022-11-30T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/codificacion/</loc>
-      <lastmod>2022-11-30T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/datos/</loc>
-      <lastmod>2022-11-30T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
@@ -155,28 +239,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/tags/formaci%C3%B3n/</loc>
-      <lastmod>2022-11-30T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/training/</loc>
-      <lastmod>2022-11-30T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/post/como-programar-bien-3/</loc>
-      <lastmod>2022-11-19T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
       <lastmod>2022-11-19T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -197,21 +260,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/tags/trabajo/</loc>
-      <lastmod>2022-11-17T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/post/otro-error-que-se-me-resiste/</loc>
-      <lastmod>2022-11-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/tecnologia/</loc>
       <lastmod>2022-11-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -233,13 +282,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/comunicaci%C3%B3n/</loc>
-      <lastmod>2022-10-09T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/empresas/</loc>
       <lastmod>2022-10-09T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>

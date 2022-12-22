@@ -6,10 +6,47 @@
     <description>Recent content in programming on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Dec 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Un enfoque que no tienes en cuenta cuando tratas datos</title>
+      <link>/post/un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos/</link>
+      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos/</guid>
+      <description>Una cosa que escuché cuando empecé a trabajar con R, hace años, es que estaba orientado a objetos.
+Yo, ni idea de qué era eso. Pero vale, vale&amp;hellip;
+Poco después, cuando me interesaba ya en serio por estas cosas, me enteré de que había gente que se ofendía por algo así.
+Era gente que venía de Javascript, o incluso Python, y que en R lo que se hacía con objetos no tenía nada que ver con el paradigma de la programación orientada a objetos.</description>
+    </item>
+    
+    <item>
+      <title>El 80% de lo que estudias no te sirve para nada</title>
+      <link>/post/el-80-de-lo-que-estudias-no-te-sirve-para-nada/</link>
+      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/el-80-de-lo-que-estudias-no-te-sirve-para-nada/</guid>
+      <description>Seguro que conoces a alguien que considera obvio que votar al PP es un crimen contra la solidaridad.
+Seguro que conoces a alguien que considera obvio que un correo electrónico se redacta como si fuera correo postal.
+Seguro que conoces a alguien que considera obvio que la mejor serie de la historia es The Wire.
+Seguro que conoces a alguien que considera obvio que la tortilla de patata lleva cebolla.</description>
+    </item>
+    
+    <item>
+      <title>Argumentos para estudiar algo que nunca usarás</title>
+      <link>/post/argumentos-para-estudiar-algo-que-nunca-usaras/</link>
+      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/argumentos-para-estudiar-algo-que-nunca-usaras/</guid>
+      <description>R es un lenguaje de programación que tiene unos 30 años.
+Su ámbito era la estadística. Lo desarrollaron con el objetivo de tener un entorno de trabajo para estadística.
+¿Que no te interesaba la estadística? Pues no te interesaría R.
+Pero la estadística empezó a estar por todas partes. La empezaron a llamar data mining, machine learning, data science&amp;hellip; y ahora todo el mundo quería hacer estadística.
+Y hubo gente que dijo:</description>
+    </item>
     
     <item>
       <title>Te recomiendo este libro de Python</title>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>psicologia on Leonardo Hansa</title>
+    <link>/tags/psicologia/</link>
+    <description>Recent content in psicologia on Leonardo Hansa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 23 Dec 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/psicologia/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>¿Qué es el efecto Ikea?</title>
+      <link>/post/que-es-el-efecto-ikea/</link>
+      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/post/que-es-el-efecto-ikea/</guid>
+      <description>Me encanta Ikea.
+No sus muebles, ni lo de ir a casa de otra persona y pensar &amp;ldquo;ah, ese mueble lo tengo yo, y ese, y ese&amp;hellip;&amp;quot;, ni los pasillos eternos, ni el coger una caja pesada para ponerla en el carro, ni el ir hasta el polígono&amp;hellip;
+O sea, no me gusta casi nada de Ikea.
+Solo me encanta su idea de negocio.
+Tiene dos patas: la pata objetiva y la pata subjetiva.</description>
+    </item>
+    
+  </channel>
+</rss>
