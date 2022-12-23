@@ -1,6 +1,6 @@
 ---
 title: Habrás oído que todo está en internet
-slug: muerde-a-la-serpiente
+slug: descarga-internet
 _build:
     list: never
 ---
