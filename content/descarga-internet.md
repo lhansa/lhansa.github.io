@@ -207,7 +207,7 @@ Pero lo propio de web scraping, su interacción son los elementos web, es común
 
 Entonces, todo junto: 
 
-- **3 casos de uso **de web scraping. 
+- **3 casos de uso** de web scraping. 
 - Muy **comentados y documentados**, con explicaciones de por qué uso el código que uso.
 - Con soporte mío, **para que puedas hacer variaciones.**
 
@@ -231,7 +231,7 @@ Es **1 fichero pdf** con las explicaciones. Y **3 scripts de Python** con coment
 
 ### Yo no sé Python. ¿Podré aprovecharlo?
 
-Si no sabes nada de Python, no. Tengo una formación sobre iniciación a Python para datos. 
+Si no sabes nada de Python, no. Tengo una [formación sobre iniciación a Python para datos.](https://leonardohansa.com/muerde-a-la-serpiente/) 
 
 Pero esto es otra cosa. Necesitas saber abrir un script, ejecutarlo, instalar librerías...
 
