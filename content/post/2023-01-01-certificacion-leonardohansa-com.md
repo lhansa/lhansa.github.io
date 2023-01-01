@@ -68,6 +68,6 @@ Pero lo que necesitas ya no está en esa plataforma: está en bajar al barro y p
 
 Así que, ¿trabajas con datos, necesitas dar un impulso a tu carrera y crees que un certificado te ayudará?
 
-Pues te deseo mucha ~suerte~ práctica, porque la vas a necesitar.
+Pues te deseo mucha ~~suerte~~ práctica, porque la vas a necesitar.
 
 
