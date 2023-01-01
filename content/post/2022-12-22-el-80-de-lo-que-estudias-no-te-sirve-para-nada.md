@@ -1,7 +1,7 @@
 ---
 title: El 80% de lo que estudias no te sirve para nada
 author: ''
-date: '2022-12-24'
+date: '2023-01-01'
 slug: el-80-de-lo-que-estudias-no-te-sirve-para-nada
 categories: []
 tags:

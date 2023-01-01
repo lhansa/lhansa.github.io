@@ -6,15 +6,27 @@
     <description>Recent content in aprendizaje on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 24 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/aprendizaje/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Certificación leonardohansa.com</title>
+      <link>/post/certificacion-leonardohansa-com/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/certificacion-leonardohansa-com/</guid>
+      <description>Me gustó una cosa que dijo Matt Dancho hace poco en su newsletter.
+Criticaba plataformas como Udemy, Coursera, Datacamp, etc. Se basaba en que, como su modelo de negocio es que tú les pagues regularmente, no les compensa que aprendas a ser autosuficiente.
+No sé cómo continuaba el argumento. Pero tenía su sentido. Son plataformas que, si aprendes lo que ibas buscando, ya no les tienes que pagar.
+Pueden tratar de generar contenido nuevo para que te quedes pero eso tiene dos dificultades:</description>
+    </item>
+    
+    <item>
       <title>El 80% de lo que estudias no te sirve para nada</title>
       <link>/post/el-80-de-lo-que-estudias-no-te-sirve-para-nada/</link>
-      <pubDate>Sat, 24 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/post/el-80-de-lo-que-estudias-no-te-sirve-para-nada/</guid>
       <description>Seguro que conoces a alguien que considera obvio que votar al PP es un crimen contra la solidaridad.
@@ -26,7 +38,7 @@ Seguro que conoces a alguien que considera obvio que la tortilla de patata lleva
     <item>
       <title>Argumentos para estudiar algo que nunca usarás</title>
       <link>/post/argumentos-para-estudiar-algo-que-nunca-usaras/</link>
-      <pubDate>Thu, 22 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/post/argumentos-para-estudiar-algo-que-nunca-usaras/</guid>
       <description>R es un lenguaje de programación que tiene unos 30 años.
