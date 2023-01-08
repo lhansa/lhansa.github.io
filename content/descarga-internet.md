@@ -134,7 +134,7 @@ Más útil que copiar y pegar datos de páginas web.
 
 ### ¿Qué tiene el documento?
 
-Comentarios sobre los códigos que uso. Explico por qué uso lo que uso. 
+**26 páginas** con comentarios sobre los códigos que uso. Explico por qué uso lo que uso. 
 
 Los códigos también están comentados. 
 
@@ -195,7 +195,7 @@ Por cierto, por si te suena, en este último uso selenium. En los otros dos, scr
 </br>
 {{< /rawhtml >}}
 
-#### Está en Python. 
+### Está todo en Python. 
 
 Pero el código te dará ideas suficientes si lo quieres llevar a R. 
 
@@ -207,7 +207,7 @@ Pero lo propio de web scraping, su interacción son los elementos web, es común
 
 Entonces, todo junto: 
 
-- **3 casos de uso** de web scraping. 
+- **3 casos de uso** de web scraping. Con Python.  
 - Muy **comentados y documentados**, con explicaciones de por qué uso el código que uso.
 - Con soporte mío, **para que puedas hacer variaciones.**
 
@@ -227,7 +227,7 @@ No es un curso. Son casos de uso.
 
 ### Vale, vale. ¿Qué formato tienen?
 
-Es **1 fichero pdf** con las explicaciones. Y **3 scripts de Python** con comentarios.
+Es **1 fichero pdf de 26 páginas** con las explicaciones. Y **3 scripts de Python** con comentarios. Tienes más de 200 líneas de código.
 
 ### Yo no sé Python. ¿Podré aprovecharlo?
 
@@ -239,7 +239,7 @@ Aprende primero eso. Y luego vuelves aquí.
 
 ### Ya intenté web scraping una vez y no me aclaraba
 
-Las personas que más aprovechan este tipo de productos son precisamente quienes ya se han peleado con el tema pero necesitan un apoyo más. 
+Las personas que más aprovechan este tipo de productos son precisamente quienes ya se han peleado con _web scraping_ pero necesitan un apoyo más. 
 
 Los casos de uso te servirán como ejemplos completos, con varios elementos de web scraping, que luego podrás llevarte a cosas tuyas. 
 
@@ -277,7 +277,7 @@ Y Firefox. Uso Firefox para el caso 3.
 
 #### Yo uso Chrome. ¿No vale?
 
-El código está pensado para usar Firefox. La tarea se puede hacer con cualquier navegador, pero el código va a usar Firefox para navegar por la web y descargar los ficheros pdf. 
+El código está pensado para usar Firefox. La tarea se puede hacer con (casi) cualquier navegador, pero el código va a usar Firefox para navegar por la web y descargar los ficheros pdf. 
 
 Habrá que cambiar algunas cosas del código para que funcione con Chrome. Con el soporte que tienes incluido, te puedo mandar algo de documentación para qué sepas por dónde van los tiros. 
 
