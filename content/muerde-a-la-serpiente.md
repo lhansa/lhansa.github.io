@@ -173,7 +173,10 @@ Y te respondo rápido. No tardo 15 días en responder. 2, como mucho. A veces, e
 
 ## Disponibilidad
 
-La formación está en preventa hasta el 15 de enero de 2023. Unos días después, te llegará la formación al correo electrónico. 
+La formación está en preventa hasta el 15 de enero de 2023. Unos días después, te llegará la mayor parte de la formación al correo electrónico. 
+
+El resto te llegará un poco después porque necesito más margen para prepararla.
+
 
 ## Precio
 
@@ -207,11 +210,25 @@ No. La solución es lo menos interesante de los ejercicios. Lo interesante es qu
 
 Los ejercicios te piden que saques conclusiones sobre los datos. Y **la manera en que sacarás partido a esta formación** es intentando esos ejercicios una y otra vez, de muchas formas distintas. Eso te ayudará a conseguir soltura escribiendo código, que es a lo que deberías aspirar con esta formación.
 
+### ¿Cómo entregas el material?
+
+Te lo envío al correo que uses para la compra. Si lo compras en preventa (a precio reducido), lo recibirás por partes. La primera semana recibirás la mayor parte del material. Después recibirás unos documentos complementarios y un vídeo. Y finalmente los ejercicios. 
+
+Y si hay actualizaciones de cualquiera de los contenidos, lo recibirás también. **Sin pagar nada extra.**
+
+### Si lo envías por partes, entonces mejor espero a que esté todo y te lo compro entonces. 
+
+Vale, pero entonces habrá subido de precio. La confianza de quien adquiera mi formación por adelantado la valoro mucho. 
+
 ### ¿Incluye soporte?
 
 Sí, por correo electrónico. Te respondo personalmente en 2 días hábiles.
 
 Cuando compres el curso recibirás instrucciones de cómo contactar conmigo para el soporte.
+
+**El soporte es ilimitado en el tiempo.** O sea, si dentro de tres años tienes dudas sobre cómo aplicar alguna parte del código, me escribes y te respondo. 
+
+Y sí, creo que dentro de 3 años seguiremos usando estas herramientas. 
 
 ### ¿Necesito instalar algún programa?
 
@@ -235,6 +252,16 @@ Si lo que necesitas es un certificado, haz un máster.
 En Mac y Windows podrás instalar los programas sin problema. Y en Linux más todavía. 
 
 Si tienes Chromebook podrás trabajar con la versión online, con la que de todos modos podrás aprovechar todos los contenidos de la formación.
+
+### ¿Hay garantía de devolución?
+
+No. En cuanto recibas el material no hay devolución posible. 
+
+Pero si tienes dudas de si te arrepentirás de comprarla, la respuesta es sí: así que no la compres. 
+
+### ¿Emites factura?
+
+Por supuesto. Pídemela y te la envío.
 
 
 ### Con esta formación, ¿podré encontrar trabajo de data scientist?
