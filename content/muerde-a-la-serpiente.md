@@ -173,16 +173,13 @@ Y te respondo rápido. No tardo 15 días en responder. 2, como mucho. A veces, e
 
 ## Disponibilidad
 
-La formación está en preventa hasta el 15 de enero de 2023. Unos días después, te llegará la mayor parte de la formación al correo electrónico. 
+La documentción principal te llegará al poco de comprar la formación, al correo electrónico que indiques en el momento de compra. 
 
-El resto te llegará un poco después porque necesito más margen para prepararla.
-
+El resto del material (ejercicios y suplementos) te llegará unos días después. 
 
 ## Precio
 
-Hasta el 15 de enero, a las 23:59 hora peninsular española, 63€. 
-
-Luego sube a 82€.
+82€
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
 
