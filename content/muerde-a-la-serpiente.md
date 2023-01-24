@@ -186,9 +186,9 @@ Luego sube a 82€.
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
 
-### PVP: ~~82€~~ 63€ (precio preventa)
+### PVP: 82€ 
 
-[Pago seguro con tarjeta.](https://buy.stripe.com/14kcPm7xkgEb0SY4gj) 
+[Pago seguro con tarjeta.](https://buy.stripe.com/8wMcPm5pccnVaty4gl) 
 
 ***
 
@@ -289,9 +289,9 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
 
-### PVP: ~~82€~~ 63€ (precio preventa)
+### PVP: 82€ 
 
-[Pago seguro con tarjeta.](https://buy.stripe.com/14kcPm7xkgEb0SY4gj) 
+[Pago seguro con tarjeta.](https://buy.stripe.com/8wMcPm5pccnVaty4gl) 
 
 ***
 

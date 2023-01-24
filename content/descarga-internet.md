@@ -213,9 +213,9 @@ Entonces, todo junto:
 
 ## Descarga internet con web scraping: 3 casos de uso
 
-### PVP: ~~26€~~ 13€ (precio preventa)
+### PVP: 26€ 
 
-[Pago seguro con tarjeta.](https://buy.stripe.com/dR6eXubNA4VtbxC6os) 
+[Pago seguro con tarjeta.](https://buy.stripe.com/28o5mUbNA1JhfNSfZ4) 
 
 ***
 
@@ -286,9 +286,9 @@ Pero el soporte no incluye reescribir el código para Chrome.
 
 ## Descarga internet con web scraping: 3 casos de uso
 
-### PVP: ~~26€~~ 13€ (precio preventa)
+### PVP: 26€ 
 
-[Pago seguro con tarjeta.](https://buy.stripe.com/dR6eXubNA4VtbxC6os) 
+[Pago seguro con tarjeta.](https://buy.stripe.com/28o5mUbNA1JhfNSfZ4) 
 
 ***
 
