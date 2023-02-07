@@ -141,7 +141,10 @@ Me gusta acabar mis formaciones con ideas de cómo debes seguir formándote sin 
 
 Documentación **escrita.** La acompañaré de un **vídeo,** o dos, porque hay cosas que se cuentan mejor de manera audiovisual. 
 
-Pero mucho texto. 
+Pero mucho texto: 
+
+- 87 páginas de documentación principal. 
+- 32 páginas de material complementario mediante suplementos. 
 
 Mucho **código.** Con sus explicaciones. 
 
@@ -175,7 +178,7 @@ Y te respondo rápido. No tardo 15 días en responder. 2, como mucho. A veces, e
 
 La documentción principal te llegará al poco de comprar la formación, al correo electrónico que indiques en el momento de compra. 
 
-El resto del material (ejercicios y suplementos) te llegará unos días después. 
+Los ejercicios te llegarán unos días después. 
 
 ## Precio
 
@@ -193,13 +196,11 @@ El resto del material (ejercicios y suplementos) te llegará unos días después
 
 ### ¿Qué formato tiene?
 
-Documentación. Con códigos y explicaciones. 
+87 páginas de documentación, y más de 30 páginas de material extra. Con códigos y explicaciones. 
 
 Es una formación sobre exploraciones de datos con códigos en Python. Y lo que verás son muchos ejemplos de eso, de exploración de datos. 
 
 Basándote en esos ejemplos, podrás realizar **todos los ejercicios** que te propongo.
-
-Complemento la formación con un vídeo. Porque hay formas de trabajar que no se pueden explicar solo con palabras escritas.
 
 ### ¿Los ejercicios vienen con la solución?
 
