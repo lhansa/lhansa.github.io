@@ -1,14 +1,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://leonardohansa.com/tags/aprender/</loc>
-      <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+      <loc>https://leonardohansa.com/post/52-lecturas-para-2023/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/tags/aprendizaje/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/code/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/data/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/lecturas/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2023-02-17T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/aprender/</loc>
       <lastmod>2023-01-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -30,13 +79,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/clientes/</loc>
-      <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/data/</loc>
       <lastmod>2023-01-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -78,21 +120,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/persuasion/</loc>
-      <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/post/</loc>
       <lastmod>2023-01-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -114,13 +142,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/programming/</loc>
-      <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
       <lastmod>2023-01-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -156,13 +177,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/analisis/</loc>
-      <lastmod>2022-12-25T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/code/</loc>
       <lastmod>2022-12-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -359,13 +373,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/identidad/</loc>
-      <lastmod>2022-08-11T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/lecturas/</loc>
       <lastmod>2022-08-11T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
