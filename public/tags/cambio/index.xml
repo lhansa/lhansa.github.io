@@ -6,10 +6,27 @@
     <description>Recent content in cambio on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 20 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/cambio/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hay muchos datos, sí, ¿y?</title>
+      <link>/post/hay-muchos-datos-si-y/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hay-muchos-datos-si-y/</guid>
+      <description>En una asignatura en la universidad durante unos años enseñaron solo pyspark.
+15 sesiones.
+Cuando me metieron a mí, reduje esa parte a 5 sesiones y dediqué las otras sesiones a tocar otros temas.
+¿Por qué?
+Porque no creo que el 100% del trabajo del 100% de los alumnos vaya a ser pyspark. Seguramente hagan otras cosas.
+Como SQL.
+Como pandas.
+¿Como R? Quién sabe&amp;hellip; igual también.
+Metí APIs incluso.</description>
+    </item>
     
     <item>
       <title>Tu tiempo llega a su fin (2)</title>

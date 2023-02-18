@@ -6,10 +6,82 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cambio</title>
+      <link>/tags/cambio/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cambio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>/tags/data/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datos</title>
+      <link>/tags/datos/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/datos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>herramientas</title>
+      <link>/tags/herramientas/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/herramientas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programación</title>
+      <link>/tags/programaci%C3%B3n/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programar</title>
+      <link>/tags/programar/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psicologia</title>
+      <link>/tags/psicologia/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/psicologia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trabajo</title>
+      <link>/tags/trabajo/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/trabajo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>aprendizaje</title>
@@ -26,15 +98,6 @@
       <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/code/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data</title>
-      <link>/tags/data/</link>
-      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data/</guid>
       <description></description>
     </item>
     
@@ -75,15 +138,6 @@
     </item>
     
     <item>
-      <title>datos</title>
-      <link>/tags/datos/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/datos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>empresas</title>
       <link>/tags/empresas/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
@@ -120,38 +174,11 @@
     </item>
     
     <item>
-      <title>programación</title>
-      <link>/tags/programaci%C3%B3n/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programar</title>
-      <link>/tags/programar/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>programming</title>
       <link>/tags/programming/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trabajo</title>
-      <link>/tags/trabajo/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/trabajo/</guid>
       <description></description>
     </item>
     
@@ -188,15 +215,6 @@
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/dataanalysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>psicologia</title>
-      <link>/tags/psicologia/</link>
-      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/psicologia/</guid>
       <description></description>
     </item>
     
@@ -269,15 +287,6 @@
       <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/error/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cambio</title>
-      <link>/tags/cambio/</link>
-      <pubDate>Thu, 20 Oct 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cambio/</guid>
       <description></description>
     </item>
     
@@ -404,15 +413,6 @@
       <pubDate>Mon, 02 May 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/suerte/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>herramientas</title>
-      <link>/tags/herramientas/</link>
-      <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/herramientas/</guid>
       <description></description>
     </item>
     

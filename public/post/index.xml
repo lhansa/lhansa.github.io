@@ -6,10 +6,40 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Compromiso de permanencia</title>
+      <link>/post/compromiso-de-permanencia/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/compromiso-de-permanencia/</guid>
+      <description>Un amigo hizo un máster en Ciencia de datos hace un tiempo.
+Le fue bien. Le sacó mucho partido. Incluso más, porque es de estas personas que buscan más allá de lo que les ponen delante.
+Estudiaba las asignaturas con mucho más material del que le daban. De forma que profundizó mucho más de lo exigido.
+Consiguió trabajo poco después.
+Se dice que hay mucho trabajo en el ámbito de los datos&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Hay muchos datos, sí, ¿y?</title>
+      <link>/post/hay-muchos-datos-si-y/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/hay-muchos-datos-si-y/</guid>
+      <description>En una asignatura en la universidad durante unos años enseñaron solo pyspark.
+15 sesiones.
+Cuando me metieron a mí, reduje esa parte a 5 sesiones y dediqué las otras sesiones a tocar otros temas.
+¿Por qué?
+Porque no creo que el 100% del trabajo del 100% de los alumnos vaya a ser pyspark. Seguramente hagan otras cosas.
+Como SQL.
+Como pandas.
+¿Como R? Quién sabe&amp;hellip; igual también.
+Metí APIs incluso.</description>
+    </item>
     
     <item>
       <title>52 lecturas para 2023</title>

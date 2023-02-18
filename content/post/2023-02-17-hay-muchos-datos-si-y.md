@@ -1,0 +1,59 @@
+---
+title: Hay muchos datos, sí, ¿y?
+author: ''
+date: '2023-02-18'
+slug: hay-muchos-datos-si-y
+categories: []
+tags:
+  - data
+  - cambio
+  - datos
+  - herramientas
+---
+
+
+En una asignatura en la universidad durante unos años enseñaron solo pyspark.
+
+15 sesiones.
+
+Cuando me metieron a mí, reduje esa parte a 5 sesiones y dediqué las otras sesiones a tocar otros temas.
+
+¿Por qué?
+
+Porque no creo que el 100% del trabajo del 100% de los alumnos vaya a ser pyspark. Seguramente hagan otras cosas.
+
+Como SQL.
+
+Como pandas.
+
+¿Como R? Quién sabe... igual también.
+
+Metí APIs incluso.
+
+¡Hala, qué aventurado! 
+
+
+\\
+
+Nate Silver lo cuenta muy bien: los datos han aumentado exponencialmente en los últimos años, sí, pero no su calidad.
+
+De hecho, **lo que también está creciendo es el ratio de ruido frente a señal.**
+
+Pero más gente se ha dado cuenta. 
+
+En el artículo que te comparto, el autor (que trabajó en uno de los productos de big data de Google) cuenta que tenía clientes que tenían muchos datos. Big data de verdad.
+
+Petabytes y cosas de esas. Un 1 seguido de 15 ceros: 1 000 000 000 000 000. Mi disco duro externo tiene una capacidad mil veces menor.
+
+Pues esos clientes consultaban apenas unos megas.
+
+Tenían muchos datos, sí, pero no los usaban.
+
+Luego, que si hay que estudiar 15 sesiones de pyspark.
+
+\\
+
+[Link al artículo](https://motherduck.com/blog/big-data-is-dead/)
+
+
+
