@@ -6,17 +6,71 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Feb 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>aprender</title>
+      <link>/tags/aprender/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aprendizaje</title>
+      <link>/tags/aprendizaje/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprendizaje/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>cambio</title>
       <link>/tags/cambio/</link>
-      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/cambio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>formación</title>
+      <link>/tags/formaci%C3%B3n/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/formaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>psicologia</title>
+      <link>/tags/psicologia/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/psicologia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tecnologia</title>
+      <link>/tags/tecnologia/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tecnologia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trabajo</title>
+      <link>/tags/trabajo/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/trabajo/</guid>
       <description></description>
     </item>
     
@@ -66,33 +120,6 @@
     </item>
     
     <item>
-      <title>psicologia</title>
-      <link>/tags/psicologia/</link>
-      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/psicologia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trabajo</title>
-      <link>/tags/trabajo/</link>
-      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/trabajo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aprendizaje</title>
-      <link>/tags/aprendizaje/</link>
-      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aprendizaje/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>code</title>
       <link>/tags/code/</link>
       <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
@@ -107,15 +134,6 @@
       <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/lecturas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aprender</title>
-      <link>/tags/aprender/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aprender/</guid>
       <description></description>
     </item>
     
@@ -152,15 +170,6 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/estudiar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>formación</title>
-      <link>/tags/formaci%C3%B3n/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/formaci%C3%B3n/</guid>
       <description></description>
     </item>
     
@@ -215,15 +224,6 @@
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/dataanalysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tecnologia</title>
-      <link>/tags/tecnologia/</link>
-      <pubDate>Fri, 23 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tecnologia/</guid>
       <description></description>
     </item>
     
