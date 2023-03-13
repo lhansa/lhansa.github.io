@@ -2,14 +2,70 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/aprender/</loc>
-      <lastmod>2023-02-25T00:00:00+00:00</lastmod>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/tags/aprendizaje/</loc>
-      <lastmod>2023-02-25T00:00:00+00:00</lastmod>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/cloud/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/data/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/datascience/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/datos/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/me-piden-nubes-pero-no-gominolas/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
@@ -29,28 +85,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2023-02-25T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2023-02-25T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/psicologia/</loc>
-      <lastmod>2023-02-25T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
       <lastmod>2023-02-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -79,20 +114,6 @@
   
     <url>
       <loc>https://leonardohansa.com/post/compromiso-de-permanencia/</loc>
-      <lastmod>2023-02-18T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/data/</loc>
-      <lastmod>2023-02-18T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/datos/</loc>
       <lastmod>2023-02-18T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -255,13 +276,6 @@
     <url>
       <loc>https://leonardohansa.com/post/que-es-el-efecto-ikea/</loc>
       <lastmod>2022-12-23T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/datascience/</loc>
-      <lastmod>2022-12-10T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
