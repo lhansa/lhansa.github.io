@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gpt on Leonardo Hansa</title>
+    <link>/tags/gpt/</link>
+    <description>Recent content in gpt on Leonardo Hansa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/gpt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tipo de sexo que le mola a ChatGPT</title>
+      <link>/post/tipo-de-sexo-que-le-mola-a-chatgpt/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/tipo-de-sexo-que-le-mola-a-chatgpt/</guid>
+      <description>A ChatGPT le molan los preliminares.
+Nada de &amp;ldquo;aquí te pillo aquí te mato&amp;rdquo;.
+Al principio, hay que ir suave con él (¿ella, ello?).
+\
+Si tienes una consulta, y vas a saco:
+ &amp;ldquo;Hazme un código en dplyr que procese datos con tal estructura&amp;rdquo;, o &amp;ldquo;Escríbeme un post para un blog sobre el estado del arte de librerías de data frames&amp;rdquo;, o &amp;ldquo;Escríbeme un correo para pedir a mis jefes licencias de GPT4&amp;rdquo;,  pues oye, se apañará, sí, pero le faltará precisión.</description>
+    </item>
+    
+  </channel>
+</rss>
