@@ -34,9 +34,9 @@ Programar te simplifica el trabajo con esos ficheros. Para que tengas tiempo par
 
 También sin destacar como programador. Es solo una herramienta. No hay que destacar.
 
-Si te interesa programar, todos los días envío un email con ideas. Para que aprenderlo sea llevadero. 
+Si te interesa programar, todos las semanas envío un email con ideas. O dos o tres. Para que aprenderlo sea llevadero. 
 
-Día que no estás, consejo de programación que te pierdes.
+Semana que no estás, consejo de programación que te pierdes.
 
 Te das de alta con un click. Si no te gusta, te das de baja con otro.
 
