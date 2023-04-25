@@ -6,10 +6,19 @@
     <description>Recent content in python on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>24 dilemas vitales</title>
+      <link>/post/24-dilemas-vitales/</link>
+      <pubDate>Tue, 25 Apr 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/24-dilemas-vitales/</guid>
+      <description>Beatles o Rollings CocaCola o Pepsi Light o Zero Cerveza o vino Tinto o blanco Con casera o con limón Carne o pescado Vegetariano o vegano Comer fuera o en casa Ciencias o letras Invertir o ahorrar Estudias o trabajas Mar o montaña Ciudad o pueblo De Windows a Mac o de Windows a Linux Android o iOS Google Docs u Microsoft Office Boli negro o azul Izquierda o derecha Perro o gato Alquiler o compra SQL o NoSQL Modelos explicativos o modelos predictivos R o Python  Decir que los dos están bien es débiles.</description>
+    </item>
     
     <item>
       <title>Te recomiendo este libro de Python</title>
