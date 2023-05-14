@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 25 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 May 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>codificacion</title>
+      <link>/tags/codificacion/</link>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/codificacion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programación</title>
+      <link>/tags/programaci%C3%B3n/</link>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programar</title>
+      <link>/tags/programar/</link>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>software</title>
+      <link>/tags/software/</link>
+      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/software/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>python</title>
@@ -44,15 +80,6 @@
       <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprendizaje/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programación</title>
-      <link>/tags/programaci%C3%B3n/</link>
-      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programaci%C3%B3n/</guid>
       <description></description>
     </item>
     
@@ -174,15 +201,6 @@
     </item>
     
     <item>
-      <title>programar</title>
-      <link>/tags/programar/</link>
-      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>code</title>
       <link>/tags/code/</link>
       <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
@@ -251,15 +269,6 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/training/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>codificacion</title>
-      <link>/tags/codificacion/</link>
-      <pubDate>Sat, 31 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/codificacion/</guid>
       <description></description>
     </item>
     
