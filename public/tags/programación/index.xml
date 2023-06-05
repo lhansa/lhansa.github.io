@@ -6,10 +6,23 @@
     <description>Recent content in programación on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 14 May 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jun 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/programaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Terrible post sobre Python y R</title>
+      <link>/post/terrible-post-sobre-python-y-r/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/terrible-post-sobre-python-y-r/</guid>
+      <description>No sé cómo hay gente que se atreve a decir las burradas que dice.
+Vi ayer un post en Linkedin sin pies ni cabeza.
+No era largo, pero el tipo se había currado un poco el formato. Lo había puesto mono.
+Y claro, me pregunto, ¿para qué se molesta? ¡Si lo que dice es mentira!
+Qué decía el post La primera línea decía algo así como &amp;ldquo;las 5 cosas que puedes hacer con Python pero no con R&amp;rdquo; y viceversa.</description>
+    </item>
     
     <item>
       <title>¿Preparado para los cambios que vienen?</title>
