@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python, R, SQL e IA</title>
+      <link>/post/python-r-sql-e-ia/</link>
+      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/python-r-sql-e-ia/</guid>
+      <description>Enrique Dans ha escrito sobre lo inútil de estudiar programación por el mero hecho de estudiar programación.
+Me ha gustado la lectura porque me sirve para confirmar lo que llevo tiempo diciéndote: no tiene sentido que estudies Python.
+Dans habla de la programación en general y yo menciono Python en concreto pero porque es lo habitual en mi campo, en datos.
+Hay gente que estudia Python porque quieren meterse en datos.</description>
+    </item>
     
     <item>
       <title>Terrible post sobre Python y R</title>
