@@ -1,28 +1,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
-      <loc>https://leonardohansa.com/tags/ia/</loc>
-      <lastmod>2023-06-13T00:00:00+00:00</lastmod>
+      <loc>https://leonardohansa.com/tags/data/</loc>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/datos/</loc>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/despidos-en-el-sector-de-los-datos/</loc>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/empresas/</loc>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/</loc>
-      <lastmod>2023-06-13T00:00:00+00:00</lastmod>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2023-06-13T00:00:00+00:00</lastmod>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
     </url>
   
     <url>
       <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/ia/</loc>
       <lastmod>2023-06-13T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -58,13 +93,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/sql/</loc>
-      <lastmod>2023-06-13T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
       <lastmod>2023-06-13T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -162,21 +190,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/tags/data/</loc>
-      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/datascience/</loc>
-      <lastmod>2023-03-13T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/datos/</loc>
       <lastmod>2023-03-13T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -296,13 +310,6 @@
   
     <url>
       <loc>https://leonardohansa.com/post/el-80-de-lo-que-estudias-no-te-sirve-para-nada/</loc>
-      <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/empresas/</loc>
       <lastmod>2023-01-01T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>

@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>data</title>
+      <link>/tags/data/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datos</title>
+      <link>/tags/datos/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/datos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>empresas</title>
+      <link>/tags/empresas/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/empresas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programación</title>
+      <link>/tags/programaci%C3%B3n/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programaci%C3%B3n/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ia</title>
@@ -17,15 +53,6 @@
       <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/ia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>programación</title>
-      <link>/tags/programaci%C3%B3n/</link>
-      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programaci%C3%B3n/</guid>
       <description></description>
     </item>
     
@@ -138,29 +165,11 @@
     </item>
     
     <item>
-      <title>data</title>
-      <link>/tags/data/</link>
-      <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>datascience</title>
       <link>/tags/datascience/</link>
       <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/datascience/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>datos</title>
-      <link>/tags/datos/</link>
-      <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/datos/</guid>
       <description></description>
     </item>
     
@@ -251,15 +260,6 @@
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/clientes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>empresas</title>
-      <link>/tags/empresas/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/empresas/</guid>
       <description></description>
     </item>
     
