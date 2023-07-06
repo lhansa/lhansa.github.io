@@ -6,10 +6,55 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ia</title>
+      <link>/tags/ia/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pandas</title>
+      <link>/tags/pandas/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/pandas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programación</title>
+      <link>/tags/programaci%C3%B3n/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trabajo</title>
+      <link>/tags/trabajo/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/trabajo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>data</title>
@@ -39,38 +84,11 @@
     </item>
     
     <item>
-      <title>programación</title>
-      <link>/tags/programaci%C3%B3n/</link>
-      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/programaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ia</title>
-      <link>/tags/ia/</link>
-      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/ia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>programming</title>
       <link>/tags/programming/</link>
       <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>/tags/python/</link>
-      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
       <description></description>
     </item>
     
@@ -206,15 +224,6 @@
       <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/tecnologia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trabajo</title>
-      <link>/tags/trabajo/</link>
-      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/trabajo/</guid>
       <description></description>
     </item>
     

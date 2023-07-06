@@ -1,6 +1,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://leonardohansa.com/tags/ia/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/pandas/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/python/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/trabajo/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/vale-esta-ia-si-te-puede-quitar-el-trabajo/</loc>
+      <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
       <loc>https://leonardohansa.com/tags/data/</loc>
       <lastmod>2023-06-29T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
@@ -29,49 +92,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/programaci%C3%B3n/</loc>
-      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
-      <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/ia/</loc>
-      <lastmod>2023-06-13T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/tags/programming/</loc>
-      <lastmod>2023-06-13T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/python/</loc>
       <lastmod>2023-06-13T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
@@ -226,13 +247,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/tecnologia/</loc>
-      <lastmod>2023-02-25T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/trabajo/</loc>
       <lastmod>2023-02-25T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>
