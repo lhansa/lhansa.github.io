@@ -69,7 +69,7 @@ Muy completa, quizá demasiado para que la instales y ya la uses (yo no lo voy a
 ***
 
 
-2️⃣** Con tanta IA se nos olvida que los datos se analizan con estadística**.
+2️⃣ **Con tanta IA se nos olvida que los datos se analizan con estadística**.
 
 Habitualmente, se aplica estadística ejecutando un código (R, Python) y mirando si el p-valor es pequeño. ¿Problema? **Que los conceptos detrás de eso son menos intuitivos que los argumentos de Christopher Nolan. **
 
@@ -83,7 +83,7 @@ Porque **muestra muchas librerías de R sobre esta rama, y te pueden servir para
 ***
 
 
-3️⃣** ¿Por qué las empresas que se dicen data-driven siguen tomando las decisiones con intuición y no con datos?** 
+3️⃣ **¿Por qué las empresas que se dicen data-driven siguen tomando las decisiones con intuición y no con datos?** 
 
 ¿Porque el análisis de datos ha fracasado? 
 
@@ -96,7 +96,7 @@ El objetivo del análisis de datos no es solo aplicar alguna técnica estadísti
 
 ***
 
-4️⃣ _(Sí, aquí te pongo el link que quizá te quite el trabajo_)** Con ChatGPT he leído a muchos críticos ensalzando los errores que comete la herramienta.**
+4️⃣ _(Sí, aquí te pongo el link que quizá te quite el trabajo_) **Con ChatGPT he leído a muchos críticos ensalzando los errores que comete la herramienta.**
 
 Lo siento por ellos. 
 
