@@ -6,15 +6,69 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>aprender</title>
+      <link>/tags/aprender/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprender/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>aprendizaje</title>
+      <link>/tags/aprendizaje/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/aprendizaje/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>/tags/code/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>codificacion</title>
+      <link>/tags/codificacion/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/codificacion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data</title>
+      <link>/tags/data/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>datos</title>
+      <link>/tags/datos/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/datos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ia</title>
       <link>/tags/ia/</link>
-      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/ia/</guid>
       <description></description>
@@ -53,24 +107,6 @@
       <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/trabajo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>data</title>
-      <link>/tags/data/</link>
-      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>datos</title>
-      <link>/tags/datos/</link>
-      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/datos/</guid>
       <description></description>
     </item>
     
@@ -120,38 +156,11 @@
     </item>
     
     <item>
-      <title>codificacion</title>
-      <link>/tags/codificacion/</link>
-      <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/codificacion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>software</title>
       <link>/tags/software/</link>
       <pubDate>Sun, 14 May 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/software/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aprender</title>
-      <link>/tags/aprender/</link>
-      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aprender/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>aprendizaje</title>
-      <link>/tags/aprendizaje/</link>
-      <pubDate>Sun, 23 Apr 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/aprendizaje/</guid>
       <description></description>
     </item>
     
@@ -233,15 +242,6 @@
       <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/herramientas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>code</title>
-      <link>/tags/code/</link>
-      <pubDate>Fri, 17 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/code/</guid>
       <description></description>
     </item>
     
