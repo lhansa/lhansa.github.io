@@ -114,9 +114,9 @@ Vamos a tratar datos con Python.
 
 Ya... apasionante no es. ¿Pero útil?
 
-Estoy preparando un curso de Python. Para explorar datos. 
+Tengo un curso de Python. Para explorar datos. 
 
-## Te cuento lo que tendrá
+## Te cuento lo que verás en él
 
 - Empezarás viendo **dónde escribir** tu código Python.
 - Luego darás unos primeros pasos. Que quizá hayas dado ya por tu cuenta. Pero nos asegurará que hablamos el **mismo idioma.** Y con ellos sabrás el tipo de cosas con las que te encontrarás.
@@ -210,13 +210,13 @@ Los ejercicios te piden que saques conclusiones sobre los datos. Y **la manera e
 
 ### ¿Cómo entregas el material?
 
-Te lo envío al correo que uses para la compra. Si lo compras en preventa (a precio reducido), lo recibirás por partes. La primera semana recibirás la mayor parte del material. Después recibirás unos documentos complementarios y un vídeo. Y finalmente los ejercicios. 
+Te lo envío al correo que uses para la compra. 
 
-Y si hay actualizaciones de cualquiera de los contenidos, lo recibirás también. **Sin pagar nada extra.**
+Si hay actualizaciones de cualquiera de los contenidos, lo recibirás también. **Sin pagar nada extra.**
 
-### Si lo envías por partes, entonces mejor espero a que esté todo y te lo compro entonces. 
+### Entonces mejor espero a que haya actualizaciones y te lo compro entonces. 
 
-Vale, pero entonces habrá subido de precio. La confianza de quien adquiera mi formación por adelantado la valoro mucho. 
+Vale, pero entonces habrá subido de precio. La confianza de quien adquiera mi formación cuanto antes la valoro mucho. 
 
 ### ¿Incluye soporte?
 
