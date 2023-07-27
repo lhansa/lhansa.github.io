@@ -6,10 +6,23 @@
     <description>Recent content in r on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 13 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>¿El esfuerzo siempre vale la pena? Spoiler: no</title>
+      <link>/post/el-esfuerzo-siempre-vale-la-pena-spoiler-no/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/el-esfuerzo-siempre-vale-la-pena-spoiler-no/</guid>
+      <description>El Profesor Smith era un académico estadounidense que vino a España a dar una conferencia.
+Nivel de español: ninguno.
+Pero se propuso hacer un esfuerzo para que los asistentes pudieran aprovechar mejor su charla: se aprendió de memoria su charla en español.
+Durante las semanas previas, un ayudante suyo que sí hablaba español lo ayudó a traducirlo y a aprender a pronunciarlo.
+Pero esas semanas no fueron suficientes y su español era tan malo que acabó siendo más difícil entender su español que lo que habría sido entender su inglés.</description>
+    </item>
     
     <item>
       <title>Python, R, SQL e IA</title>

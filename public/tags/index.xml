@@ -6,15 +6,24 @@
     <description>Recent content in Tags on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 15 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>analisis</title>
+      <link>/tags/analisis/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/analisis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>aprender</title>
       <link>/tags/aprender/</link>
-      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprender/</guid>
       <description></description>
@@ -23,9 +32,108 @@
     <item>
       <title>aprendizaje</title>
       <link>/tags/aprendizaje/</link>
-      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/aprendizaje/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>autoayuda</title>
+      <link>/tags/autoayuda/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/autoayuda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cambio</title>
+      <link>/tags/cambio/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cambio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>error</title>
+      <link>/tags/error/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>estudiar</title>
+      <link>/tags/estudiar/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/estudiar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>formación</title>
+      <link>/tags/formaci%C3%B3n/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/formaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programacion</title>
+      <link>/tags/programacion/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programacion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>/tags/python/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>r</title>
+      <link>/tags/r/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tecnologia</title>
+      <link>/tags/tecnologia/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tecnologia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>trabajo</title>
+      <link>/tags/trabajo/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/trabajo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>training</title>
+      <link>/tags/training/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/training/</guid>
       <description></description>
     </item>
     
@@ -93,24 +201,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>/tags/python/</link>
-      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>trabajo</title>
-      <link>/tags/trabajo/</link>
-      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/trabajo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>empresas</title>
       <link>/tags/empresas/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
@@ -125,15 +215,6 @@
       <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>r</title>
-      <link>/tags/r/</link>
-      <pubDate>Tue, 13 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
@@ -201,38 +282,11 @@
     </item>
     
     <item>
-      <title>cambio</title>
-      <link>/tags/cambio/</link>
-      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/cambio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>formación</title>
-      <link>/tags/formaci%C3%B3n/</link>
-      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/formaci%C3%B3n/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>psicologia</title>
       <link>/tags/psicologia/</link>
       <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/psicologia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tecnologia</title>
-      <link>/tags/tecnologia/</link>
-      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/tecnologia/</guid>
       <description></description>
     </item>
     
@@ -273,38 +327,11 @@
     </item>
     
     <item>
-      <title>estudiar</title>
-      <link>/tags/estudiar/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/estudiar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>persuasion</title>
       <link>/tags/persuasion/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
       <guid>/tags/persuasion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>training</title>
-      <link>/tags/training/</link>
-      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/training/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>analisis</title>
-      <link>/tags/analisis/</link>
-      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/analisis/</guid>
       <description></description>
     </item>
     
@@ -350,15 +377,6 @@
       <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/deuda/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>error</title>
-      <link>/tags/error/</link>
-      <pubDate>Wed, 30 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/error/</guid>
       <description></description>
     </item>
     
