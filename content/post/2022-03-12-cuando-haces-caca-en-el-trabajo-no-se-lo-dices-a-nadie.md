@@ -62,26 +62,3 @@ Si quieres que aprender a programar encaje en tu día a día, estoy trabajando e
 P.D. A ver, no me malinterpretes. Hay cursos caros o baratos, con mucha carga de trabajo o con poca, en los que se aprende mucho. De verdad. Pero puede no encajarte. ¿Si te encajara, aprenderías? Sí, pero no te encaja. Pues hay que buscar alternativas. En unos días, te propongo una cosa.
 
 
-{{< rawhtml >}}
-<!-- Begin Mailchimp Signup Form -->
-<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7_dtp.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
-</style>
-<div id="mc_embed_signup">
-<form action="https://gmail.us20.list-manage.com/subscribe/post?u=de9d714d023c472c9981ba7c0&amp;id=f857732e7c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-<div id="mc_embed_signup_scroll">
-<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="dirección de correo" required>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_de9d714d023c472c9981ba7c0_f857732e7c" tabindex="-1" value=""></div>
-        <div class="clear foot">
-           <input type="submit" value="Venga, quiero leerte más" name="subscribe" id="mc-embedded-subscribe" class="button">
-        </div>
-	    </div>
-</form>
-</div>
-</br>
-</br>
-{{< /rawhtml >}}
-
-
