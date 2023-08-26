@@ -40,6 +40,57 @@
 </script>
 
 
+<div id="cookie-notice">
+<span>Este sitio utiliza cookies propias y de terceros para analizar sus servicios. Tienes<a href="../../cookies" >más info aquí.</a></span>
+</br>
+<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
+<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a></div>
+<script>
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    if(readCookie('cookie-notice-option')=='true') {
+        
+        document.getElementById('cookie-notice').style.display = 'none';
+    } else if (readCookie('cookie-notice-option')=='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
+    }
+
+    document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+        createCookie('cookie-notice-option','true',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+    document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+        createCookie('cookie-notice-option','false',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+</script>
+
+
 </head>
 
 <body>
@@ -137,56 +188,7 @@
   
   
 
-  <div id="cookie-notice">
-<span>Este sitio utiliza cookies propias y de terceros para analizar sus servicios. Tienes<a href="../../cookies" >más info aquí.</a></span>
-</br>
-<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
-<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a></div>
-<script>
-    function createCookie(name,value,days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days*24*60*60*1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + value + expires + "; path=/";
-    }
-    function readCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-        }
-        return null;
-    }
-    function eraseCookie(name) {
-        createCookie(name,"",-1);
-    }
-
-    if(readCookie('cookie-notice-option')=='true') {
-        
-        document.getElementById('cookie-notice').style.display = 'none';
-    } else if (readCookie('cookie-notice-option')=='false'){
-        document.getElementById('cookie-notice').style.display = 'none';
-    }
-
-    document.getElementById('cookie-notice-accept').addEventListener("click",function() {
-        createCookie('cookie-notice-option','true',31);
-        document.getElementById('cookie-notice').style.display = 'none';
-        
-    });
-
-    document.getElementById('cookie-notice-deny').addEventListener("click",function() {
-        createCookie('cookie-notice-option','false',31);
-        document.getElementById('cookie-notice').style.display = 'none';
-        
-    });
-
-</script>
-
+  
   
   <div>
   <p style="text-align:right;font-size:10px;">
