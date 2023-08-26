@@ -46,12 +46,20 @@
         
         
         
-        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
+        /*loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
             gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); //REPLACE WITH YOUR GA TAG!
-        })
+        })*/
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5WBGM7TKK6');
         
         {{ end }}
         document.getElementById('cookie-notice').style.display = 'none';
