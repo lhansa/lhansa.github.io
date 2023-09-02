@@ -44,14 +44,13 @@
         your code which gets executed after the script has loaded */
         //REPLACE WITH YOUR GA TAG!
         
-        
-        
-        /*loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
+        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
             window.dataLayer = window.dataLayer || [];
             function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
-            gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); //REPLACE WITH YOUR GA TAG!
-        })*/
+            gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); 
+        })
+
         {{ end }}
         document.getElementById('cookie-notice').style.display = 'none';
     } else if (readCookie('cookie-notice-option')=='false'){
