@@ -1,6 +1,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2023-09-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2023-09-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/que-es-el-business-intelligence/</loc>
+      <lastmod>2023-09-09T00:00:00+00:00</lastmod>
+      <changefreq>never</changefreq>
+      <priority>0.5</priority>
+    </url>
+  
+    <url>
       <loc>https://leonardohansa.com/tags/analisis/</loc>
       <lastmod>2023-07-27T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
@@ -58,20 +79,6 @@
   
     <url>
       <loc>https://leonardohansa.com/tags/formaci%C3%B3n/</loc>
-      <lastmod>2023-07-27T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2023-07-27T00:00:00+00:00</lastmod>
-      <changefreq>never</changefreq>
-      <priority>0.5</priority>
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/post/</loc>
       <lastmod>2023-07-27T00:00:00+00:00</lastmod>
       <changefreq>never</changefreq>
       <priority>0.5</priority>

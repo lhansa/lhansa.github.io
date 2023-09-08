@@ -1,0 +1,19 @@
+<div class="faq-section">
+    <h2 class="faq-question">{{ .Get "question" }}</h2>
+    <p class="faq-answer">{{ .Get "answer" }}</p>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "{{ .Get "question" }}",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "{{ .Get "answer" }}"
+    }
+  }]
+}
+</script>

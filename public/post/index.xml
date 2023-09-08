@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 27 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Qué es el Business Intelligence</title>
+      <link>/post/que-es-el-business-intelligence/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/que-es-el-business-intelligence/</guid>
+      <description>Se habla mucho de Ciencia de Datos pero entrar en ese campo es exigente: requiere mucho esfuerzo y conocimientos de varias áreas (tecnología, matemáticas, estadísica, negocio, comunicación&amp;hellip;).
+Un perfil necesario en el sector de los datos es el analista de Business Intelligence (o analista de negocio, o de inteligencia de negocio). Esta persona tiene un trabajo menos técnico que el data scientist pero sus aprendizajes son igualmente necesarios para aprovechar el conocimiento de los datos.</description>
+    </item>
     
     <item>
       <title>Di no más veces</title>
