@@ -1,4 +1,17 @@
-<div class="faq-section">
+<style>
+.faq-section {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+    border-radius: 4px;
+    background: #fff;
+    margin: 2em auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 1em;
+    box-sizing: border-box;
+}
+</style>
+
+<div class="faq-section" >
     <h2 class="faq-question">{{ .Get "question" }}</h2>
     <p class="faq-answer">{{ .Get "answer" }}</p>
 </div>
