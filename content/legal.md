@@ -2,6 +2,7 @@
 title: Aviso legal y condiciones de uso
 author: Leonardo Hansa
 slug: legal
+noindex: true
 _build:
     list: never
 ---

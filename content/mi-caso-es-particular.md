@@ -1,6 +1,7 @@
 ---
 title: "Mi caso es particular..."
 slug: mi-caso-es-particular
+noindex: true
 _build:
     list: never
 ---

@@ -2,6 +2,7 @@
 title: Los datos se han puesto las pilas. ¿Te las has puesto tú?
 author: Leonardo Hansa
 slug: de-excel-a-r
+noindex: true 
 _build:
     list: never
 ---

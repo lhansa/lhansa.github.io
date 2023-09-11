@@ -2,6 +2,7 @@
 title: Política de cookies
 author: Leonardo Hansa
 slug: cookies
+noindex: true
 _build:
     list: never
 ---

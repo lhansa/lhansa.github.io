@@ -2,6 +2,7 @@
 title: Condiciones generales de contratación
 author: Leonardo Hansa
 slug: condiciones
+noindex: true
 _build:
     list: never
 ---

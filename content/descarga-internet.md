@@ -1,6 +1,7 @@
 ---
 title: Habrás oído que todo está en internet
 slug: descarga-internet
+noindex: true
 _build:
     list: never
 ---
