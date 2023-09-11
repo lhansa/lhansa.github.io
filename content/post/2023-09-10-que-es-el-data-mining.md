@@ -5,6 +5,7 @@ date: '2023-09-10'
 slug: que-es-el-data-mining
 categories: []
 tags: []
+description: "Data mining: qué es, para qué sirve y cómo se aplica"
 ---
 
 

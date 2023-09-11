@@ -12,11 +12,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="referrer" content="no-referrer">
-  {{ if .Site.Params.description }}
-  <meta name="description" content="{{ .Site.Params.description }}">
-  {{else}}
-  <meta name="description" content="¿Oxidado en el trabajo? Te mando una idea diaria para que deje de ser así.">
-  {{ end }}
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
 
 
   <title>

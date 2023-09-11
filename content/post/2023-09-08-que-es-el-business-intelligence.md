@@ -6,6 +6,7 @@ publishdate: '2023-09-09'
 slug: que-es-el-business-intelligence
 categories: []
 tags: []
+description: "Business Intelligence: qué es, para qué sirve y cómo se aplica"
 ---
 
 Se habla mucho de Ciencia de Datos pero entrar en ese campo es exigente: requiere mucho esfuerzo y conocimientos de varias áreas (tecnología, matemáticas, estadísica, negocio, comunicación...). 
