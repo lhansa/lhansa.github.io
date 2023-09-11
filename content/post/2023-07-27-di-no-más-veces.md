@@ -3,15 +3,6 @@ title: Di no más veces
 author: ''
 date: '2023-07-27'
 slug: di-no-mas-veces
-categories: []
-tags:
-  - programacion
-  - aprender
-  - aprendizaje
-  - autoayuda
-  - cambio
-  - estudiar
-  - formación
 ---
 
 

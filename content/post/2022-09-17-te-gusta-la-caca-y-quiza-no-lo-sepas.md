@@ -3,12 +3,6 @@ title: Te gusta la caca y quizá no lo sepas
 author: ''
 date: '2022-09-17'
 slug: te-gusta-la-caca-y-quiza-no-lo-sepas
-categories: []
-tags:
-  - tecnologia
-  - programación
-  - deuda
-  - asco
 ---
 
 

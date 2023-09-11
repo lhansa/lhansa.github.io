@@ -3,11 +3,6 @@ title: No cometas este error
 author: ''
 date: '2022-10-09'
 slug: no-cometas-este-error
-categories: []
-tags:
-  - comunicación
-  - empresas
-  - recomendaciones
 ---
 
 Amazon ha apostado mucho por la serie del Señor de los Anillos.

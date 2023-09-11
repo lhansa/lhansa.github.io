@@ -3,15 +3,6 @@ title: Tu último día. Pero Sísifo sigue
 author: ''
 date: '2023-02-25'
 slug: tu-ultimo-dia-pero-sisifo-sigue
-categories: []
-tags:
-  - cambio
-  - aprendizaje
-  - aprender
-  - formación
-  - trabajo
-  - tecnologia
-  - psicologia
 ---
 
 Sísifo fue un rebelde que consiguió enemistarse con todos los dioses con los que se cruzaba.

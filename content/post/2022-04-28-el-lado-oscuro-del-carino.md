@@ -3,11 +3,6 @@ title: El lado oscuro del cariño
 author: Leonardo Hansa
 date: '2022-04-28'
 slug: el-lado-oscuro-del-carino
-categories: []
-tags:
-  - herramientas
-  - programación
-  - trabajo
 ---
 
 Si has tenido mascota sabes que se le coge cariño. Más. Quieres a tu mascota más que a algunos miembros de tu familia. 

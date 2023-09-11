@@ -3,8 +3,6 @@ title: Estás aprendiendo constantemente
 author: Leonardo Hansa
 date: '2022-02-04'
 slug: estás-aprendiendo-constantemente
-categories: []
-tags: []
 ---
 
 Hace tiempo trabajé en un sitio en el que hacíamos modelos matemáticos con los datos de nuestros clientes.

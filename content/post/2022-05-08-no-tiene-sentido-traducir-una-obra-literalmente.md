@@ -3,10 +3,6 @@ title: No tiene sentido traducir una obra literalmente
 author: ''
 date: '2022-05-08'
 slug: no-tiene-sentido-traducir-una-obra-literalmente
-categories: []
-tags:
-  - comunicación
-  - lecturas
 ---
 
 

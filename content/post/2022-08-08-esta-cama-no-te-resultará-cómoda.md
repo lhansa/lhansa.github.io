@@ -3,12 +3,6 @@ title: Esta cama no te resultará cómoda
 author: ''
 date: '2022-08-08'
 slug: esta-cama-no-te-resultará-cómoda
-categories: []
-tags:
-  - aprender
-  - aprendizaje
-  - comunicación
-  - lecturas
 ---
 
 Cuenta la mitología griega que un posadero, llamado Procusto, recibía a pasajeros solitarios a pasar la noche.

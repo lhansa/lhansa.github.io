@@ -3,12 +3,6 @@ title: ¿Preparado para los cambios que vienen?
 author: ''
 date: '2023-05-14'
 slug: preparado-para-los-cambios-que-vienen
-categories: []
-tags:
-  - codificacion
-  - programación
-  - programar
-  - software
 ---
 
 

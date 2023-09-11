@@ -3,11 +3,6 @@ title: Cuando haces caca en el trabajo no se lo dices a nadie
 author: Leonardo Hansa
 date: '2022-03-12'
 slug: cuando-haces-caca-en-el-trabajo-no-se-lo-dices-a-nadie
-categories: []
-tags:
-  - caca
-  - programación
-  - comunicación
 ---
 
 Cuando haces caca te sientes más a gusto.

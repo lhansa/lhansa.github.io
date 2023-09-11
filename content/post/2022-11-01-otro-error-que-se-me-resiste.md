@@ -3,13 +3,6 @@ title: Otro error que se me resiste
 author: ''
 date: '2022-11-01'
 slug: otro-error-que-se-me-resiste
-categories: []
-tags:
-  - python
-  - programar
-  - code
-  - tecnologia
-  - trabajo
 ---
 
 Ayer en clase a un estudiante le salía un error raro.

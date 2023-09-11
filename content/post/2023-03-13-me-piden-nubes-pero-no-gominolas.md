@@ -3,13 +3,6 @@ title: Me piden nubes (pero no gominolas)
 author: ''
 date: '2023-03-13'
 slug: me-piden-nubes-pero-no-gominolas
-categories: []
-tags:
-  - aprender
-  - cloud
-  - datos
-  - datascience
-  - aprendizaje
 ---
 
 

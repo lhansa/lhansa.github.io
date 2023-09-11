@@ -3,16 +3,6 @@ title: Certificación leonardohansa.com
 author: ''
 date: '2023-01-01'
 slug: certificacion-leonardohansa-com
-categories: []
-tags:
-  - aprendizaje
-  - formación
-  - certificaciones
-  - datos
-  - programar
-  - empresas
-  - clientes
-  - persuasion
 ---
 
 Me gustó una cosa que dijo Matt Dancho hace poco en su newsletter.

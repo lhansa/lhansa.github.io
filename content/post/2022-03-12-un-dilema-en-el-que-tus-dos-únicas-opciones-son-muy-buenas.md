@@ -4,10 +4,6 @@ author: Leonardo Hansa
 date: '2022-03-12'
 slug: un-dilema-en-el-que-tus-dos-únicas-opciones-son-muy-buenas
 categories: []
-tags:
-  - programación
-  - aprender
-  - aprendizaje
 ---
 
 

@@ -3,11 +3,6 @@ title: Tu tiempo llega a su fin (2)
 author: ''
 date: '2022-10-20'
 slug: tu-tiempo-llega-a-su-fin-2
-categories: []
-tags:
-  - cambio
-  - formación
-  - aprendizaje
 ---
 
 

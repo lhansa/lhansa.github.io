@@ -3,13 +3,6 @@ title: Hay que redefinir las oposiciones
 author: ''
 date: '2022-06-25'
 slug: hay-que-redefinir-las-oposiciones
-categories: []
-tags:
-  - aprender
-  - aprendizaje
-  - programación
-  - estado
-  - politica
 ---
 
 Las oposiciones son un filtro para quitar de forma masiva candidatos a un puesto de trabajo público.

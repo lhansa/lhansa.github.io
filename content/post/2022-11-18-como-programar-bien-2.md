@@ -3,13 +3,6 @@ title: Cómo programar bien (2)
 author: ''
 date: '2022-11-18'
 slug: como-programar-bien-2
-categories: []
-tags:
-  - programar
-  - programación
-  - aprender
-  - datos
-  - data
 ---
 
 [Ayer](https://leonardohansa.com/post/como-programar-bien/) te hablaba de cómo te debes preocupar por los recursos informáticos cuando analizas datos.

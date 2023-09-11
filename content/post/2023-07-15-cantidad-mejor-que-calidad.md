@@ -3,15 +3,6 @@ title: Cantidad, mejor que calidad
 author: ''
 date: '2023-07-15'
 slug: cantidad-mejor-que-calidad
-categories: []
-tags:
-  - aprender
-  - aprendizaje
-  - codificacion
-  - code
-  - datos
-  - data
-  - ia
 ---
 
 

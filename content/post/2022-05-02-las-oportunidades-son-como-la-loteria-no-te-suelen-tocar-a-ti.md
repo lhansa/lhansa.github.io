@@ -3,14 +3,6 @@ title: 'Las oportunidades son como la lotería: no te suelen tocar a ti'
 author: Leonardo Hansa
 date: '2022-05-02'
 slug: las-oportunidades-son-como-la-loteria-no-te-suelen-tocar-a-ti
-categories: []
-tags:
-  - aprender
-  - empresas
-  - programación
-  - formación
-  - suerte
-  - lotería
 ---
 
 El verano pasado estaba con unos amigos tomando algo en una terraza. 

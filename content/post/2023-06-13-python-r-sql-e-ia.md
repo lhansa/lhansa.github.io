@@ -3,14 +3,6 @@ title: Python, R, SQL e IA
 author: ''
 date: '2023-06-13'
 slug: python-r-sql-e-ia
-categories: []
-tags:
-  - python
-  - sql
-  - r
-  - programming
-  - programación
-  - ia
 ---
 
 

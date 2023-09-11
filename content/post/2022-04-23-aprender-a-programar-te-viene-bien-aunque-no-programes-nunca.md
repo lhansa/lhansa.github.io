@@ -3,11 +3,6 @@ title: Aprender a programar te viene bien aunque no programes nunca
 author: Leonardo Hansa
 date: '2022-04-23'
 slug: aprender-a-programar-te-viene-bien-aunque-no-programes-nunca
-categories: []
-tags:
-  - aprender
-  - programación
-  - estudiar
 ---
 
 Nunca he visto a mi profesor de yoga hacer yoga. 

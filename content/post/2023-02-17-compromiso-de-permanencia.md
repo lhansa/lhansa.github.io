@@ -3,12 +3,6 @@ title: Compromiso de permanencia
 author: ''
 date: '2023-02-18'
 slug: compromiso-de-permanencia
-categories: []
-tags:
-  - programación
-  - programar
-  - psicologia
-  - trabajo
 ---
 
 

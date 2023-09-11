@@ -3,10 +3,6 @@ title: A nadie le importa lo que haces, sino lo que consigues
 author: Leonardo Hansa
 date: '2022-03-21'
 slug: a-nadie-le-importa-lo-que-haces-sino-lo-que-consigues
-categories: []
-tags:
-  - comunicación
-  - programación
 ---
 
 

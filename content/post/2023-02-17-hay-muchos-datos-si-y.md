@@ -3,12 +3,6 @@ title: Hay muchos datos, sí, ¿y?
 author: ''
 date: '2023-02-18'
 slug: hay-muchos-datos-si-y
-categories: []
-tags:
-  - data
-  - cambio
-  - datos
-  - herramientas
 ---
 
 

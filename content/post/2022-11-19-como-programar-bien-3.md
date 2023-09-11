@@ -3,14 +3,6 @@ title: Cómo programar bien (3)
 author: ''
 date: '2022-11-19'
 slug: como-programar-bien-3
-categories: []
-tags:
-  - aprender
-  - programar
-  - programación
-  - data
-  - datos
-  - python
 ---
 
 Hace años, en un máster, nos mandaron un trabajo sobre simulación.

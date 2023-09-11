@@ -3,11 +3,6 @@ title: Cómo programar bien
 author: ''
 date: '2022-11-17'
 slug: como-programar-bien
-categories: []
-tags:
-  - programar
-  - programación
-  - trabajo
 ---
 
 

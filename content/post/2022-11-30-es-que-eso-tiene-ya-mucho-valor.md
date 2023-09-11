@@ -3,18 +3,6 @@ title: Es que eso tiene ya mucho valor
 author: ''
 date: '2022-11-30'
 slug: es-que-eso-tiene-ya-mucho-valor
-categories: []
-tags:
-  - aprendizaje
-  - formación
-  - training
-  - data
-  - code
-  - codificacion
-  - dataanalysis
-  - deuda
-  - error
-  - datos
 ---
 
 

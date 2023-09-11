@@ -3,8 +3,6 @@ title: No hagas ese máster
 author: Leonardo Hansa
 date: '2022-01-02'
 slug: no-hagas-ese-master
-categories: []
-tags: []
 ---
 
 Un tal James Clear dice que no te pongas objetivos en la vida.

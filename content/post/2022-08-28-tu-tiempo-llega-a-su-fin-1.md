@@ -3,12 +3,6 @@ title: Tu tiempo llega a su fin (1)
 author: ''
 date: '2022-08-28'
 slug: tu-tiempo-llega-a-su-fin-1
-categories: []
-tags:
-  - ficcion
-  - recomendaciones
-  - cambio
-  - aprendizaje
 ---
 
 Red Dead Redemption es una de las mejores ficciones que se han escrito nunca.

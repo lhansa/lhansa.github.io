@@ -3,14 +3,6 @@ title: Por qué me gusta el porno
 author: ''
 date: '2022-07-09'
 slug: por-qué-me-gusta-el-porno
-categories: []
-tags:
-  - porno
-  - comunidad
-  - aprender
-  - programación
-  - data
-  - datos
 ---
 
 Antes de la pandemia iba mucho a charlas.

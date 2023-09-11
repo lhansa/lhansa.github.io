@@ -3,15 +3,6 @@ title: Una inteligencia artificial te quitará tu trabajo
 author: ''
 date: '2022-05-28'
 slug: una-inteligencia-artificial-te-quitará-tu-trabajo
-categories: []
-tags:
-  - trabajo
-  - data
-  - datascientist
-  - ia
-  - empresas
-  - estudiar
-  - formación
 ---
 
 Microsoft ha sacado una herramienta para que hagas aplicaciones web sin que codifiques nada.

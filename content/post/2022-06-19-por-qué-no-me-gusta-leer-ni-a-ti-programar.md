@@ -3,11 +3,6 @@ title: Por qué no me gusta leer ni a ti programar
 author: ''
 date: '2022-06-19'
 slug: por-qué-no-me-gusta-leer-ni-a-ti-programar
-categories: []
-tags:
-  - aprendizaje
-  - data
-  - programación
 ---
 
 

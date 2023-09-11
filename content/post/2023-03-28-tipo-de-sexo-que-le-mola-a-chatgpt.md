@@ -3,10 +3,6 @@ title: Tipo de sexo que le mola a ChatGPT
 author: ''
 date: '2023-03-28'
 slug: tipo-de-sexo-que-le-mola-a-chatgpt
-categories: []
-tags:
-  - sexo
-  - gpt
 ---
 
 A ChatGPT le molan los preliminares.

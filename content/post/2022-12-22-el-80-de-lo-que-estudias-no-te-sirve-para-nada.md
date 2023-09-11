@@ -3,17 +3,6 @@ title: El 80% de lo que estudias no te sirve para nada
 author: ''
 date: '2023-01-01'
 slug: el-80-de-lo-que-estudias-no-te-sirve-para-nada
-categories: []
-tags:
-  - estudiar
-  - aprendizaje
-  - aprender
-  - data
-  - programming
-  - programación
-  - trabajo
-  - training
-  - formación
 ---
 
 

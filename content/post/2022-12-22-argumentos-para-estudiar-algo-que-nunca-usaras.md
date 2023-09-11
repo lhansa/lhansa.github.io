@@ -3,13 +3,6 @@ title: Argumentos para estudiar algo que nunca usarás
 author: ''
 date: '2022-12-31'
 slug: argumentos-para-estudiar-algo-que-nunca-usaras
-categories: []
-tags:
-  - aprender
-  - aprendizaje
-  - codificacion
-  - programming
-  - data
 ---
 
 R es un lenguaje de programación que tiene unos 30 años.

@@ -3,12 +3,6 @@ title: Despidos en el sector de los datos
 author: ''
 date: '2023-06-29'
 slug: despidos-en-el-sector-de-los-datos
-categories: []
-tags:
-  - programación
-  - datos
-  - data
-  - empresas
 ---
 
 Hace unas semanas te escribí sobre el tema de los despidos de empresas como Facebook, Google, Twitter,... todas esas tecnológicas gordas.

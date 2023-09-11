@@ -3,16 +3,6 @@ title: Un enfoque que no tienes en cuenta cuando tratas datos
 author: ''
 date: '2022-12-25'
 slug: un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos
-categories: []
-tags:
-  - analisis
-  - code
-  - codificacion
-  - programación
-  - programming
-  - programar
-  - dataanalysis
-  - datos
 ---
 
 Una cosa que escuché cuando empecé a trabajar con R, hace años, es que estaba orientado a objetos.

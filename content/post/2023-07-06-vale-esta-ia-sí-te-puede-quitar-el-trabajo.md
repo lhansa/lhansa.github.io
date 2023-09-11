@@ -3,13 +3,6 @@ title: Vale, esta IA sí te puede quitar el trabajo
 author: ''
 date: '2023-07-06'
 slug: vale-esta-ia-si-te-puede-quitar-el-trabajo
-categories: []
-tags:
-  - ia
-  - trabajo
-  - programación
-  - python
-  - pandas
 ---
 
 

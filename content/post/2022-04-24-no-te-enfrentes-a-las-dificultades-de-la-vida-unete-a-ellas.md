@@ -3,12 +3,6 @@ title: No te enfrentes a las dificultades de la vida. Únete a ellas
 author: Leonardo Hansa
 date: '2022-04-24'
 slug: no-te-enfrentes-a-las-dificultades-de-la-vida-unete-a-ellas
-categories: []
-tags:
-  - aprender
-  - aprendizaje
-  - estudiar
-  - programación
 ---
 
 

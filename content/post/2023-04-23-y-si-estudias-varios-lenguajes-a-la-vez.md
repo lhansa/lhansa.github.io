@@ -3,12 +3,6 @@ title: ¿Y si estudias varios lenguajes a la vez?
 author: ''
 date: '2023-04-23'
 slug: y-si-estudias-varios-lenguajes-a-la-vez
-categories: []
-tags:
-  - aprender
-  - aprendizaje
-  - programming
-  - programación
 ---
 
 

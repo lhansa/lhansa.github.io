@@ -3,20 +3,6 @@ title: '¿El esfuerzo siempre vale la pena? Spoiler: no'
 author: ''
 date: '2023-07-27'
 slug: el-esfuerzo-siempre-vale-la-pena-spoiler-no
-categories: []
-tags:
-  - analisis
-  - aprender
-  - aprendizaje
-  - autoayuda
-  - cambio
-  - error
-  - estudiar
-  - python
-  - r
-  - tecnologia
-  - trabajo
-  - training
 ---
 
 

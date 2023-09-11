@@ -3,19 +3,6 @@ title: Te recomiendo este libro de Python
 author: ''
 date: '2022-12-10'
 slug: te-recomiendo-este-libro-de-python
-categories: []
-tags:
-  - python
-  - aprender
-  - data
-  - estudiar
-  - programar
-  - analisis
-  - dataanalysis
-  - datascience
-  - modelling
-  - programming
-  - modelos
 ---
 
 

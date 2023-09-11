@@ -4,8 +4,6 @@ author: ''
 date: '2023-09-09'
 publishdate: '2023-09-09'
 slug: que-es-el-business-intelligence
-categories: []
-tags: []
 description: "Business Intelligence: qué es, para qué sirve y cómo se aplica"
 ---
 

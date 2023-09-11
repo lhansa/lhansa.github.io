@@ -3,10 +3,6 @@ title: 24 dilemas vitales
 author: ''
 date: '2023-04-25'
 slug: 24-dilemas-vitales
-categories: []
-tags:
-  - python
-  - r
 ---
 
 1. Beatles o Rollings

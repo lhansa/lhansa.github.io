@@ -3,13 +3,6 @@ title: ¿Qué es el efecto Ikea?
 author: ''
 date: '2022-12-23'
 slug: que-es-el-efecto-ikea
-categories: []
-tags:
-  - empresas
-  - venta
-  - tecnologia
-  - trabajo
-  - psicologia
 ---
 
 Me encanta Ikea.
