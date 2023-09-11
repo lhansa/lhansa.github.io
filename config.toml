@@ -52,6 +52,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     disable = true
     
 [sitemap]
-  changefreq = 'never'
+  changefreq = 'weekly'
   filename = 'sitemap.xml'
   priority = 0.5
