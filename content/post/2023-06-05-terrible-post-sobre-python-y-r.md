@@ -3,12 +3,6 @@ title: Terrible post sobre Python y R
 author: ''
 date: '2023-06-05'
 slug: terrible-post-sobre-python-y-r
-categories: []
-tags:
-  - python
-  - r
-  - programación
-  - programar
 ---
 
 
