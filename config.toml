@@ -20,9 +20,9 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   sitename = "Programo porque es resultón"
   dateform = "02/01/2006"
   title = "Cosa"
+  description = "¿Oxidado en el trabajo? Te mando ideas semanales para que deje de ser así."
   
 [[permalinks]]
-    title = "Cosa"
     post = "/:year/:month/:day/:slug/"
 
   
