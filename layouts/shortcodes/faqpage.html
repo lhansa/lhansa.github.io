@@ -12,21 +12,59 @@
 </style>
 
 <div class="faq-section" >
-    <h2 class="faq-question">{{ .Get "question" }}</h2>
-    <p class="faq-answer">{{ .Get "answer" }}</p>
+    <h2 class="faq-question">{{ .Get "question1" }}</h2>
+    <p class="faq-answer">{{ .Get "answer1" }}</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">{{ .Get "question2" }}</h2>
+    <p class="faq-answer">{{ .Get "answer2" }}</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">{{ .Get "question3" }}</h2>
+    <p class="faq-answer">{{ .Get "answer3" }}</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">{{ .Get "question4" }}</h2>
+    <p class="faq-answer">{{ .Get "answer4" }}</p>
 </div>
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "{{ .Get "question" }}",
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": "{{ .Get "answer" }}"
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "{{ .Get "question1" }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ .Get "answer1" }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ .Get "question2" }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ .Get "answer2" }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ .Get "question3" }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ .Get "answer3" }}"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "{{ .Get "question4" }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ .Get "answer4" }}"
+      }
     }
-  }]
+  ]
 }
 </script>
