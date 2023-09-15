@@ -28,7 +28,6 @@
     }
 
     if(readCookie('cookie-notice-option')=='true') {
-        {{ if (eq .Site.Params.env "production") }}
         
         function loadScriptAsync(scriptSrc, callback) {
             if (typeof callback !== 'function') {
@@ -51,7 +50,6 @@
             gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); 
         })
 
-        {{ end }}
         document.getElementById('cookie-notice').style.display = 'none';
     } else if (readCookie('cookie-notice-option')=='false'){
         document.getElementById('cookie-notice').style.display = 'none';
