@@ -2,6 +2,7 @@
 title: Cómo se descarga Python
 author: ''
 date: '2023-09-29'
+publishdate: '2023-09-29'
 slug: como-se-descarga-python
 categories: []
 tags: []
