@@ -1,9 +1,6 @@
 ---
 title: También a mí se me hizo bola empezar con Python
 slug: muerde-a-la-serpiente
-noindex: true
-_build:
-    list: never
 ---
 
 ## pero finalmente aprendí.
