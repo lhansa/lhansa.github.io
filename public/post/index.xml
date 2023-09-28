@@ -6,10 +6,23 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 14 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 Sep 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cómo se descarga Python</title>
+      <link>/post/como-se-descarga-python/</link>
+      <pubDate>Fri, 29 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/como-se-descarga-python/</guid>
+      <description>Si estás aquí puede ser porque quieres usar Python para data science, o Python para business intelligence, o sea, Python para datos.
+Te habrán dicho que está de moda y hay mucho trabajo con eso.
+Es verdad. Pero ponerse a ello es muy tedioso.
+Da mucha pereza instalar Python, porque hay que tener en cuenta muchos detalles.
+No voy a entrar en ellos pero en este post te cuento cómo te recomiendo que uses Python.</description>
+    </item>
     
     <item>
       <title>La duda que deberías tener cuando aprendes Python desde cero</title>

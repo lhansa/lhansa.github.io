@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="../../favicon-alt.png">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="¿Oxidado en el trabajo? Te mando ideas semanales para que deje de ser así.">
+  
+
+  <title>
+    
+    
+     Cómo se descarga Python 
+    
+  </title>
+  <link rel="canonical" href="../../post/como-se-descarga-python/">
+
+  <link rel="stylesheet" href="../../css/fonts.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+  
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+
+<div id="cookie-notice">
+<span>Este sitio utiliza cookies propias y de terceros para analizar sus servicios. Tienes<a href="../../cookies" >más info aquí.</a></span>
+</br>
+<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
+<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a></div>
+<script>
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    if(readCookie('cookie-notice-option')=='true') {
+        
+        function loadScriptAsync(scriptSrc, callback) {
+            if (typeof callback !== 'function') {
+                throw new Error('Not a valid callback for async script load');
+            }
+            var script = document.createElement('script');
+            script.onload = callback;
+            script.src = scriptSrc;
+            document.head.appendChild(script);
+        }
+
+        
+
+        
+        
+        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); 
+        })
+
+        document.getElementById('cookie-notice').style.display = 'none';
+    } else if (readCookie('cookie-notice-option')=='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
+    }
+
+    document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+        createCookie('cookie-notice-option','true',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+    document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+        createCookie('cookie-notice-option','false',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+</script>
+
+
+</head>
+
+<body>
+<section id=nav>
+  <h1><a href="../../">Programo porque es resultón</a></h1>
+  <ul>
+    
+    <li><a href="../../post/"><strong>Newsletter</strong></a></li>
+    
+    <li><a href="../../soy-mediocre/"><strong>Mediocre</strong></a></li>
+    
+    <li><a href="../../muerde-a-la-serpiente/"><strong>Aprende Python</strong></a></li>
+    
+  </ul>
+</section>
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">6 min read</span>
+    
+
+    <h1 class="article-title">Cómo se descarga Python</h1>
+
+    
+    <span class="article-date">2023-09-29</span>
+    
+
+    <div class="article-content">
+      <p>Si estás aquí puede ser porque quieres usar Python para <em>data science</em>, o Python para <em>business intelligence</em>, o sea, Python para datos.</p>
+<p>Te habrán dicho que está de moda y hay mucho trabajo con eso.</p>
+<p>Es verdad. Pero ponerse a ello es muy tedioso.</p>
+<p>Da mucha pereza instalar Python, porque hay que tener en cuenta muchos detalles.</p>
+<p>No voy a entrar en ellos pero en este post te cuento cómo te recomiendo que uses Python.</p>
+<h2 id="índice">Índice</h2>
+<h2 id="índice-1">Índice</h2>
+<ul>
+<li><a href="#section1">Cómo te recomiendo que uses Python</a></li>
+<li><a href="#section2">Cuál es la forma más fácil de instalar Python</a></li>
+<li><a href="#section3">Cómo te recomiendo que instales Python (¿avanzado?)</a></li>
+</ul>
+<h2 id="section1">Cómo te recomiendo que uses Python</h2>
+<p>Mi primera recomendación es: <strong>no te instales Python.</strong> Sobre todo si estás empezando.</p>
+<p>Vas a pasarte muchas horas configurando detalles en tu ordenador. Ni siquiera vas a saber por qué versión de Python decantarte.</p>
+<p>Así que lo mejor que puedes hacer para empezar es usarlo online. ¿Cómo? Con Google Colab, una herramienta de Google.</p>
+<p>Incluso la versión gratuita te va a servir para empezar.</p>
+<p>Si quieres ajustar tus propias redes neuronales con TensorFlow igual no te vale la versión gratuita, pero entiendo que no estás en ese punto.</p>
+<p>Tú quieres empezar a familiarizarte.</p>
+<p>Así que ve a <a href="https://colab.research.google.com/?hl=es">su url</a> y, con una cuenta ed GMail, ya tendrás acceso a lo que necesitas.</p>
+<p><img src="img/google-colab.png" alt="Usa Python en Google Colab y simplifica la configuración"></p>
+<h2 id="section1">Cuál es la forma más fácil de instalar Python</h2>
+<p>Quizá quieras es instalar Python en tu ordenador local.</p>
+<p>Puede ser porque tu ordenador te dé más libertad que el Google Colab gratuito, o porque necesitas acceso cómodo a ciertos ficheros de tu ordenador.</p>
+<p>En ese caso, lo más fácil es que <strong>no instales Python,</strong> sino que <a href="https://www.anaconda.com/">instales Anaconda.</a></p>
+<p><img src="img/anaconda-logo.png" alt="Instalar Python es un suplicio. Así que hay una empresa que te lo instala por ti"></p>
+<p>Cuando instales Anaconda, podrás abrir este programa y desde ahí abres Jupyter o Spyder, programas habituales para programar en Python.</p>
+<p>Además, Anaconda instala por ti librerías habituales en el trabajo con datos. Ya te he contado que <a href="https://leonardohansa.com/post/la-duda-que-deberias-tener-cuando-aprendes-python-desde-cero/">tú no quieres aprender Python, en general,</a> sino determinadas partes de Python útiles para tu trabajo. Si estás suscrito a mi newsletter y tienes mi <a href="https://leonardohansa.com">Piedra Roseta</a>, sabrás a qué me refiero.</p>
+<h2 id="section1">Cómo te recomiendo que instales Python (¿avanzado?)</h2>
+<p>Ahora bien, eso de depender de una empresa para instalar software a mí me da repelús. Anaconda es un intermediario para una gestión. Y a la larga, los intermediarios solo entorpecen la relación. La simplifican al principio, cuando no tienes ni idea.</p>
+<p>Por ejemplo, gestionar las versiones de Python o las librerías es un coñazo enorme. Pero Anaconda no te enseña a hacerlo: simplemente hace una caja negra que te protege del peligro, pero no te enseña a gestionarlo tú.</p>
+<p>Así que yo paso de Anaconda.</p>
+<p>Me descargo Python del <a href="https://www.python.org/downloads/">sitio oficial</a>. Si no lo quiero para nada en concreto, solo para probar, <strong>me descargo la última versión.</strong></p>
+<p>Cuidado con esto: si trabajas con más gente seguramente te toque hablar con ellos y poneros de acuerdo en qué versión usar. Pero en ese caso, te descargas de ese mismo sitio la versión que necesites.</p>
+<p>Instalar Python desde ahí instalará también <code>pip</code>, que lo usarás para instalar librerías.</p>
+<p>¿Cómo lo usarás?</p>
+<p>pip lo usas desde la terminal, desde la pantalla esa negra en la que los hackers meten comandos.</p>
+<p>Yo concretamente todo el trabajo de Python lo hago desde VScode, programa que incluye una terminal.</p>
+<p>Para instalar librerías de Python, deberías saber usar los entornos virtuales. Pero eso se queda para otro post o <a href="https://leonardohansa.com/muerde-a-la-serpiente/">para un curso.</a></p>
+<style>
+.faq-section {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+    border-radius: 4px;
+    background: #fff;
+    margin: 2em auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 1em;
+    box-sizing: border-box;
+}
+</style>
+
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo descargar Python gratis?</h2>
+    <p class="faq-answer">Python es gratis siempre. Si alguien quiere cobrarte por instalar Python, te está timando. Verás que Anaconda dice algo de licencias. Eso sí: Anaconda es de pago, a día de hoy, para empresas grandes. Pero si tú solo quieres aprender Python, puedes también instalar Anaconda gratis. Y Google Colab tiene versión gratuita. La versión de pago te da más potencia de cómputo y más tiempo de uso, pero Python es gratis.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo instalar Python en mi PC?</h2>
+    <p class="faq-answer">Para instalar Python en tu PC la forma más fácil es a través del software Anaconda. Aunque a la larga, cuando tengas más nivel, te recomiendo que aprendas a instalar Python directamente tú, desde su sitio oficial, y gestionar sus librerías con pip y entornos virtuales.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo descargar el lenguaje de programación Python?</h2>
+    <p class="faq-answer">Tú no descargas un lenguaje de programación. Un lenguaje de programación lo escribes. Si lo que quieres luego es que tu ordenador sepa ejecutar ese lenguaje de programación que has escrito, entonces sí necesitas instalar algo. Concretamente, el programa Python, que lo puedes hacer desde el sitio oficial o desde Anaconda.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo se instala Python en Windows 10?</h2>
+    <p class="faq-answer">De la misma forma que en cualquier sitio. O bien instalas Anaconda y ese software te hace la gestión por ti, o bien te descargas el instalador de Python desde el sitio oficial e instalas Python con eso.</p>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo descargar Python gratis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Python es gratis siempre. Si alguien quiere cobrarte por instalar Python, te está timando. Verás que Anaconda dice algo de licencias. Eso sí: Anaconda es de pago, a día de hoy, para empresas grandes. Pero si tú solo quieres aprender Python, puedes también instalar Anaconda gratis. Y Google Colab tiene versión gratuita. La versión de pago te da más potencia de cómputo y más tiempo de uso, pero Python es gratis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo instalar Python en mi PC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Para instalar Python en tu PC la forma más fácil es a través del software Anaconda. Aunque a la larga, cuando tengas más nivel, te recomiendo que aprendas a instalar Python directamente tú, desde su sitio oficial, y gestionar sus librerías con pip y entornos virtuales."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo descargar el lenguaje de programación Python?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tú no descargas un lenguaje de programación. Un lenguaje de programación lo escribes. Si lo que quieres luego es que tu ordenador sepa ejecutar ese lenguaje de programación que has escrito, entonces sí necesitas instalar algo. Concretamente, el programa Python, que lo puedes hacer desde el sitio oficial o desde Anaconda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se instala Python en Windows 10?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De la misma forma que en cualquier sitio. O bien instalas Anaconda y ese software te hace la gestión por ti, o bien te descargas el instalador de Python desde el sitio oficial e instalas Python con eso."
+      }
+    }
+  ]
+}
+</script>
+
+
+    </div>
+  </article>
+
+  <section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = '';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+  <section id=subscribe_final>
+  
+  </br>
+  </br>
+  </br>
+  
+<em>Si te ha gustado esto, te gustarán mis correos. Para recibirlos te suscribes aquí:</em>
+  
+<div class="ml-embedded" data-form="HwWIEu"></div>
+
+
+
+
+    
+
+
+
+</section>
+
+
+</main>
+
+  
+  
+
+  
+  
+  <div>
+  <p style="text-align:right;font-size:10px;">
+  <a href="https://leonardohansa.com/legal">Legal</a>
+  <a href="https://leonardohansa.com/condiciones">Contratación</a>
+  <a href="https://leonardohansa.com/cookies">Política de cookies</a>
+  </p>
+  
+  </div>
+  
+  
+</body>
+  
+<footer style="position:absolute;bottom:0;width:100%;">
+
+
+</footer>
+
+</html>
+
