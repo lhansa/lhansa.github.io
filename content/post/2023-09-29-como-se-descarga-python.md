@@ -20,8 +20,6 @@ No voy a entrar en ellos pero en este post te cuento cómo te recomiendo que use
 
 ## Índice
 
-## Índice
-
 - [Cómo te recomiendo que uses Python](#section1)
 - [Cuál es la forma más fácil de instalar Python](#section2)
 - [Cómo te recomiendo que instales Python (¿avanzado?)](#section3)
@@ -42,9 +40,9 @@ Tú quieres empezar a familiarizarte.
 
 Así que ve a [su url](https://colab.research.google.com/?hl=es) y, con una cuenta ed GMail, ya tendrás acceso a lo que necesitas. 
 
-![Usa Python en Google Colab y simplifica la configuración](img/google-colab.png)
+![Usa Python en Google Colab y simplifica la configuración](../../img/google-colab.png)
 
-## Cuál es la forma más fácil de instalar Python {#section1}
+## Cuál es la forma más fácil de instalar Python {#section2}
 
 Quizá quieras es instalar Python en tu ordenador local. 
 
@@ -52,13 +50,13 @@ Puede ser porque tu ordenador te dé más libertad que el Google Colab gratuito,
 
 En ese caso, lo más fácil es que **no instales Python,** sino que [instales Anaconda.](https://www.anaconda.com/) 
 
-![Instalar Python es un suplicio. Así que hay una empresa que te lo instala por ti](img/anaconda-logo.png)
+![Instalar Python es un suplicio. Así que hay una empresa que te lo instala por ti](../../img/anaconda-logo.png)
 
 Cuando instales Anaconda, podrás abrir este programa y desde ahí abres Jupyter o Spyder, programas habituales para programar en Python. 
 
 Además, Anaconda instala por ti librerías habituales en el trabajo con datos. Ya te he contado que [tú no quieres aprender Python, en general,](https://leonardohansa.com/post/la-duda-que-deberias-tener-cuando-aprendes-python-desde-cero/) sino determinadas partes de Python útiles para tu trabajo. Si estás suscrito a mi newsletter y tienes mi [Piedra Roseta](https://leonardohansa.com), sabrás a qué me refiero.
 
-## Cómo te recomiendo que instales Python (¿avanzado?) {#section1}
+## Cómo te recomiendo que instales Python (¿avanzado?) {#section3}
 
 Ahora bien, eso de depender de una empresa para instalar software a mí me da repelús. Anaconda es un intermediario para una gestión. Y a la larga, los intermediarios solo entorpecen la relación. La simplifican al principio, cuando no tienes ni idea. 
 
