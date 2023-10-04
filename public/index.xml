@@ -6,10 +6,23 @@
     <description>Recent content on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 29 Sep 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introducción a la programación para no técnicos</title>
+      <link>/post/introduccion-a-la-programacion-para-no-tecnicos/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/introduccion-a-la-programacion-para-no-tecnicos/</guid>
+      <description>¿Has empezado a programar y no sabes qué hacer con las cosas que has aprendido?
+O incluso, ¿sientes que dedicas tiempo al curso pero los conceptos no se te quedan en la cabeza?
+Es más, ¿te frustra el no ser capaz de avanzar y te dices &amp;ldquo;esto no es para mí&amp;rdquo;?
+En este post te explico por qué te pasa eso y qué debes hacer para solucionarlo.
+Imagen generada con DALL-E 3</description>
+    </item>
     
     <item>
       <title>Cómo se descarga Python</title>
