@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="../../favicon-alt.png">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="¿Oxidado en el trabajo? Te mando ideas semanales para que deje de ser así.">
+  
+
+  <title>
+    
+    
+     Por qué no deberías crear un portfolio de data science 
+    
+  </title>
+  <link rel="canonical" href="../../post/por-que-no-deberias-crear-un-portfolio-de-data-science/">
+
+  <link rel="stylesheet" href="../../css/fonts.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+  
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+
+<div id="cookie-notice">
+<span>Este sitio utiliza cookies propias y de terceros para analizar sus servicios. Tienes<a href="../../cookies" >más info aquí.</a></span>
+</br>
+<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
+<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a></div>
+<script>
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    if(readCookie('cookie-notice-option')=='true') {
+        
+        function loadScriptAsync(scriptSrc, callback) {
+            if (typeof callback !== 'function') {
+                throw new Error('Not a valid callback for async script load');
+            }
+            var script = document.createElement('script');
+            script.onload = callback;
+            script.src = scriptSrc;
+            document.head.appendChild(script);
+        }
+
+        
+
+        
+        
+        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); 
+        })
+
+        document.getElementById('cookie-notice').style.display = 'none';
+    } else if (readCookie('cookie-notice-option')=='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
+    }
+
+    document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+        createCookie('cookie-notice-option','true',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+    document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+        createCookie('cookie-notice-option','false',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+</script>
+
+
+</head>
+
+<body>
+<section id=nav>
+  <h1><a href="../../">Programo porque es resultón</a></h1>
+  <ul>
+    
+    <li><a href="../../post/"><strong>Newsletter</strong></a></li>
+    
+    <li><a href="../../soy-mediocre/"><strong>Mediocre</strong></a></li>
+    
+    <li><a href="../../muerde-a-la-serpiente/"><strong>Aprende Python</strong></a></li>
+    
+  </ul>
+</section>
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">8 min read</span>
+    
+
+    <h1 class="article-title">Por qué no deberías crear un portfolio de data science</h1>
+
+    
+    <span class="article-date">2023-10-18</span>
+    
+
+    <div class="article-content">
+      <p>Si estás buscando un primer puesto de data analyst o data science sin experiencia, te habrán insistido mucho en que te montes un portfolio de proyectos que hayas hecho con datos públicos.</p>
+<p>Así podrás usarlo en tus entrevistas para mostrar que, aunque no tienes experiencia, sabes aplicar las cosas que has aprendido en un máster de data science, en un bootcamp de big data, o en cualquier formación que hayas tenido.</p>
+<p>En estos párrafos te cuento por qué no deberías preocuparte por tener un portfolio de data science.</p>
+<h2 id="qué-es-un-portfolio-de-ciencia-de-datos">¿Qué es un portfolio de ciencia de datos?</h2>
+<p>En cualquier sector, un portfolio de proyectos incluye un resumen de los proyectos que has realizado en el pasado. Así, quien esté pensando en contratarte puede hacerse una idea de qué tipo de cosas sabes hacer, sin que se las cuentes.</p>
+<p>Los proyectos típicos de un portfolio en ciencia de datos consisten en análisis que tengan todas las fases de un proyecto:</p>
+<ul>
+<li><strong>Acceso a la fuente de los datos.</strong> Idealmente desde una API, pero no pasa nada porque sean ficheros (CSV, Excel, parquet), ya que en la realidad muchos de tus proyectos serán con ficheros.</li>
+<li><strong>Tratamiento de los datos.</strong> Normalmente los datos en su origen tendrán un formato que no te viene bien y tendrás que adaptarlo. Puede ser el formato de algunas columnas, pero también puede ser el formato de la tabla entera, o que tengas toda la información en varias tablas y necesites unificarla.</li>
+<li><strong>Análisis exploratorio.</strong> No tiene sentido que te pongas a hacer modelos avanzados sin revisar previamente que tus datos tienen cierta calidad. Si tus variables son casi constantes, o todas repiten la misma información, quizá no puedas hacer gran cosa.</li>
+<li><strong>Modelo o análisis estadístico.</strong> La idea no se trata tanto de que te pongas a aplicar modelos complejos y redes neuronales para que vea la gente que sabes usarla. Lo importante es que en esta fase des respuesta a un problema de negocio. Los datos deberían serte útiles para eso, y aquí es cuando usas la estadística para solucionar (o entender) un problema.</li>
+<li><strong>Presentación de resultados.</strong> Puedes dar una conclusión con unos gráficos sin más, pero no está de más en tu porfolio que metas algún <em>dashboard</em> con resultados. Con PowerBI o R Shiny los puedes alojar en repositorios públicos para que cualquiera los explore.</li>
+</ul>
+<p>Si eres capaz de hacer dos o tres análisis con todas esas fases, y además los alojas en un sitio público, apoyándote en GitHub Actions, algunas herramientas de Amazon Web Services, has triunfado.</p>
+<p>Es más, aunque no te compliques con la presentación final de los resultados, alojarlo en un perfil público de GitHub puede ser la forma más directa de montar un portfolio.</p>
+<p>O sea, no te compliques haciendo un sitio web, aunque sea muy fácil con plantillas: simplemente comparte tu perfil público de Github. Tenlo bien ordenado, con un README actualizado que haga referencia a los repositorios que alojes ahí, y ya tienes tu portfolio disponible.</p>
+<p>Ahora bien&hellip;</p>
+<h2 id="cuánto-te-aporta-tener-un-portfolio-de-ciencia-de-datos">¿Cuánto te aporta tener un portfolio de ciencia de datos?</h2>
+<p>Mira.</p>
+<p>Actualmente, los procesos de selección pasan todos por pruebas técnicas.</p>
+<p>¿Qué es una prueba técnica?</p>
+<p>Pues una especie de examen, de ejercicio que te piden hacer para incorporarte a un equipo.</p>
+<p>A veces es solo una entrevista, en la que te hacen preguntas. A veces te piden que hagas un ejercicio en casa. O a veces te piden que hagas un ejercicio en el sitio donde esté la empresa. Y a veces te piden todo eso.</p>
+<p>Hay procesos de selección que tienen una fase técnica que lleva todo el día (una vergüenza, la verdad).</p>
+<p>En los procesos que hacen pruebas técnicas me atrevo a decir que lo que les importa un portfolio es <strong>absolutamente nada.</strong></p>
+<p>Es verdad que hay pruebas técnicas mal planteadas. Pero por lo menos tienen una cosa buena: estandarizan el proceso.</p>
+<p>O sea, ¿qué ocurre con los portfolios?</p>
+<p>Con lo que te contaba en el párrafo anterior lo has debido de deducir: llevan mucho tiempo.</p>
+<p>Y si estás trabajando o vives en ciertas circunstancias personales que te roban tiempo, no vas a poder sacar muchos proyectos por tu cuenta.</p>
+<p>Tener un porfolio es un privilegio. Pero no tener un portfolio no significa que no sepas.</p>
+<p>Un portfolio te ayudará a demostrar que sabes aplicar ciertas cosas, sí.</p>
+<p>Pero muchas empresas saben que tu conocimiento lo puedes demostrar de otras formas, así que no pensarán mal de ti si no tienes un portfolio.</p>
+<h2 id="debería-crear-un-portfolio">¿Debería crear un portfolio?</h2>
+<p>Si puedes, hazlo. Sí.</p>
+<p>¿Porque así luego los de los procesos de selección podrán verlo?</p>
+<p>No.</p>
+<p>Porque tú aprenderás mucho.</p>
+<p>Incluida la parte de hacerlo público te aportará.</p>
+<p>Obligarte a publicar tus análisis te obligará a ser más meticuloso y a asegurar ciertas buenas prácticas para poder desplegar tus proyectos en la nube.</p>
+<p>¿Luego no los mirará nadie?</p>
+<p>Pues es muy posible.</p>
+<p>Pero tú habrás aprendido mucho en el proceso.</p>
+<h2 id="además-pedir-portfolios-de-proyectos-es-una-falta-de-respeto">Además, pedir portfolios de proyectos es una falta de respeto</h2>
+<p>A estas alturas de texto te habrá quedado claro que un portfolio lleva tiempo.</p>
+<p>Si eres una persona que ya está trabajando en otro sector, y quiere dar el salto al sector de la ciencia de datos o similares, no vas a tener tiempo para montarte un portfolio público.</p>
+<p>Por supuesto, tendrás que estudiar, y quizá, si quieres sí o sí tener un potfolio, tu solución es publicar tus apuntes y tus ejercicios.</p>
+<p>Pero poco más.</p>
+<p>Si en un proceso de selección están pidiendo portfolios, no es porque quieran valorar tu capacidad para aplicar conocimientos: es solo porque quieren meter un filtro fácil.</p>
+<p>¿Qué les aporta ese filtro?</p>
+<p>Pues que como la gente que ya está trabajando no va a tener tiempo para eso, se los quitan del proceso. Así, esa gente que ya tiene experiencia (aunque sea en otro sector), no la puede utilizar para justificar que se merecen un salario un poco más alto que el básico que se podría dar a un recién iniciado.</p>
+<p>Así que sí, es solo un filtro para asegurar que va gente que aspira a un salario bajo.</p>
+<style>
+.faq-section {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+    border-radius: 4px;
+    background: #fff;
+    margin: 2em auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 1em;
+    box-sizing: border-box;
+}
+</style>
+
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo hacer un proyecto de Data Science?</h2>
+    <p class="faq-answer">Escoge tres o cuatro conjuntos de datos que creas que pueden dar respuesta a una pregunta. No tiene por qué ser algo empresarial: pueden ser datos públicos para entender algo de clima, o de situación de una ciudad. Haz un análisis exploratorio para ver la calidad de los datos y aplica estadística a responder esa pregunta.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo armar tu portfolio?</h2>
+    <p class="faq-answer">Lo más directo es que te hagas un perfil público de Github y sea eso tu porfolio. Tenlo bien ordenado, con repositorios claros y un buen README que dé contexto, y con eso te vale. </p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo hacer un portfolio laboral?</h2>
+    <p class="faq-answer">Preocúpate por dar respuesta a un problema. El objetivo no es demostrar que sabes aplicar muchas cosas, sino que sabes resolver un problema. Es mejor que apliques una metodología sencilla pero de manera coherente, que hagas muchas complejas a medias.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Qué tiene que tener un buen portfolio?</h2>
+    <p class="faq-answer">Proyectos que den una respuesta a un problema. Plantea de manera clara qué problema estás intentando resolver, o qué pregunta quieres responder. Y luego deja claros los pasos que sigues qué te aporta cada paso. Idealmente, intenta que los proyectos del portfolio sean distintos unos de otros. En el caso de un portfolio de ciencia de datos, intenta tener un proyecto más orientado a visualización, uno a inferencia estadística, uno de tecnología y despliegue de apps... mezcla situaciones distintas.</p>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cómo hacer un proyecto de Data Science?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Escoge tres o cuatro conjuntos de datos que creas que pueden dar respuesta a una pregunta. No tiene por qué ser algo empresarial: pueden ser datos públicos para entender algo de clima, o de situación de una ciudad. Haz un análisis exploratorio para ver la calidad de los datos y aplica estadística a responder esa pregunta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo armar tu portfolio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lo más directo es que te hagas un perfil público de Github y sea eso tu porfolio. Tenlo bien ordenado, con repositorios claros y un buen README que dé contexto, y con eso te vale. "
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo hacer un portfolio laboral?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preocúpate por dar respuesta a un problema. El objetivo no es demostrar que sabes aplicar muchas cosas, sino que sabes resolver un problema. Es mejor que apliques una metodología sencilla pero de manera coherente, que hagas muchas complejas a medias."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué tiene que tener un buen portfolio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Proyectos que den una respuesta a un problema. Plantea de manera clara qué problema estás intentando resolver, o qué pregunta quieres responder. Y luego deja claros los pasos que sigues qué te aporta cada paso. Idealmente, intenta que los proyectos del portfolio sean distintos unos de otros. En el caso de un portfolio de ciencia de datos, intenta tener un proyecto más orientado a visualización, uno a inferencia estadística, uno de tecnología y despliegue de apps... mezcla situaciones distintas."
+      }
+    }
+  ]
+}
+</script>
+
+
+    </div>
+  </article>
+
+  <section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = '';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+  <section id=subscribe_final>
+  
+  </br>
+  </br>
+  </br>
+  
+<em>Si te ha gustado esto, te gustarán mis correos. Para recibirlos te suscribes aquí:</em>
+  
+<div class="ml-embedded" data-form="HwWIEu"></div>
+
+
+
+
+    
+
+
+
+</section>
+
+
+</main>
+
+  
+  
+
+  
+  
+  <div>
+  <p style="text-align:right;font-size:10px;">
+  <a href="https://leonardohansa.com/legal">Legal</a>
+  <a href="https://leonardohansa.com/condiciones">Contratación</a>
+  <a href="https://leonardohansa.com/cookies">Política de cookies</a>
+  </p>
+  
+  </div>
+  
+  
+</body>
+  
+<footer style="position:absolute;bottom:0;width:100%;">
+
+
+</footer>
+
+</html>
+

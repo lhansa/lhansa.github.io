@@ -1,6 +1,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2023-10-18T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/por-que-no-deberias-crear-un-portfolio-de-data-science/</loc>
+      <lastmod>2023-10-18T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2023-10-18T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
       <loc>https://leonardohansa.com/post/introduccion-a-la-programacion-para-no-tecnicos/</loc>
       <lastmod>2023-10-05T00:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
@@ -9,23 +33,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2023-10-05T00:00:00+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/post/no-me-gusta-programar/</loc>
-      <lastmod>2023-10-05T00:00:00+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/post/</loc>
       <lastmod>2023-10-05T00:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>

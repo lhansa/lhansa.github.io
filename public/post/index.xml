@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Oct 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Por qué no deberías crear un portfolio de data science</title>
+      <link>/post/por-que-no-deberias-crear-un-portfolio-de-data-science/</link>
+      <pubDate>Wed, 18 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/por-que-no-deberias-crear-un-portfolio-de-data-science/</guid>
+      <description>Si estás buscando un primer puesto de data analyst o data science sin experiencia, te habrán insistido mucho en que te montes un portfolio de proyectos que hayas hecho con datos públicos.
+Así podrás usarlo en tus entrevistas para mostrar que, aunque no tienes experiencia, sabes aplicar las cosas que has aprendido en un máster de data science, en un bootcamp de big data, o en cualquier formación que hayas tenido.</description>
+    </item>
     
     <item>
       <title>Introducción a la programación para no técnicos</title>
