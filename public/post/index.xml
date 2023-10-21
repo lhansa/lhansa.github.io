@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Oct 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Coding is Hard: The Unconventional Guide to Learning to Code</title>
+      <link>/post/coding-is-hard-the-unconventional-guide-to-learning-to-code/</link>
+      <pubDate>Sat, 21 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/coding-is-hard-the-unconventional-guide-to-learning-to-code/</guid>
+      <description>Learning to code is anything but a walk in the park.
+Let&amp;rsquo;s be honest: it&amp;rsquo;s hard, especially if you&amp;rsquo;re just starting out.
+Almost every guide out there recommends Python as the best starting point, but is this really the one-size-fits-all solution that it&amp;rsquo;s made out to be?
+In this article, we&amp;rsquo;ll turn conventional wisdom on its head and look at some unconventional ways to approach programming, particularly focusing on Python and the Data Analyst pathway.</description>
+    </item>
     
     <item>
       <title>Por qué no deberías crear un portfolio de data science</title>
