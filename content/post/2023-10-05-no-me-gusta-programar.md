@@ -4,6 +4,7 @@ author: ''
 date: '2023-10-05'
 publishDate: '2023-10-06'
 slug: no-me-gusta-programar
+description: "¿Te sientes frustrado con la programación o sientes que no es para ti? Explora las razones detrás de esta sensación y descubre cómo enfocar tu aprendizaje para encontrar motivación y propósito en el mundo del código. Aprende a identificar tus intereses y cómo adaptarlos al mundo tecnológico."
 categories: []
 tags: []
 ---

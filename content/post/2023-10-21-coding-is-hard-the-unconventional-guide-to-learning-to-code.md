@@ -3,7 +3,7 @@ title: 'Coding is Hard: The Unconventional Guide to Learning to Code'
 author: ''
 date: '2023-10-21'
 slug: coding-is-hard-the-unconventional-guide-to-learning-to-code
-description: 'Coding is Hard: The Unconventional Guide to Learning to Code'
+description: "Delve into the intricacies of learning to code, especially focusing on Python and the Data Analyst pathway. Discover why Python is often recommended, the benefits of focusing on real-world problems over languages, and unconventional ways to overcome coding frustrations. Whether you're a beginner or considering a career shift, explore a different perspective on coding education."
 categories: []
 tags: []
 ---

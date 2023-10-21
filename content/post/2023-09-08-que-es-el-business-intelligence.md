@@ -4,7 +4,7 @@ author: ''
 date: '2023-09-09'
 publishdate: '2023-09-09'
 slug: que-es-el-business-intelligence
-description: "Business Intelligence: qué es, para qué sirve y cómo se aplica"
+description: "Descubre el papel crucial del analista de Business Intelligence en el mundo de los datos. Aprende cómo se diferencia de la Ciencia de Datos y por qué este perfil es esencial para las empresas que buscan aprovechar el poder de sus datos para impulsar decisiones informadas y estratégicas. Te guiamos por las responsabilidades, herramientas y formación necesaria para entrar en este apasionante campo."
 ---
 
 Se habla mucho de Ciencia de Datos pero entrar en ese campo es exigente: requiere mucho esfuerzo y conocimientos de varias áreas (tecnología, matemáticas, estadísica, negocio, comunicación...). 

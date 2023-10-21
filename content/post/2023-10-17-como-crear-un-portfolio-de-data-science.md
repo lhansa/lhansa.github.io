@@ -4,6 +4,7 @@ author: ''
 date: '2023-10-18'
 publishDate: '2023-10-18'
 slug: por-que-no-deberias-crear-un-portfolio-de-data-science
+description: 'Descubre por qué no es esencial tener un portfolio de data science al buscar tu primer trabajo en el campo. Aprende qué es un portfolio, cómo crearlo y qué valor tiene realmente en los procesos de selección. ¡Entiende la verdadera importancia de demostrar tus habilidades y conocimientos!'
 categories: []
 tags: []
 ---

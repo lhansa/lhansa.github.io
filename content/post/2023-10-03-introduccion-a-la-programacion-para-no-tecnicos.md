@@ -4,6 +4,7 @@ author: ''
 date: '2023-10-05'
 publishDate: '2023-10-05'
 slug: introduccion-a-la-programacion-para-no-tecnicos
+description: "¿Te sientes frustrado aprendiendo programación o sientes que no avanzas? Descubre por qué muchos cursos de introducción no son efectivos y cómo enfocar tu aprendizaje para obtener resultados reales. Aprende a elegir cursos basados en aplicaciones prácticas y descubre si la programación es adecuada para ti basado en tus habilidades y metas profesionales."
 categories: []
 tags: []
 ---

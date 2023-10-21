@@ -3,7 +3,7 @@ title: Qué es el data mining
 author: ''
 date: '2023-09-10'
 slug: que-es-el-data-mining
-description: "Data mining: qué es, para qué sirve y cómo se aplica"
+description: "¿Confundido con los términos 'data mining', 'data science' y 'machine learning'? En este post, aclaramos las diferencias, las aplicaciones y la relevancia de la minería de datos en la actualidad. Descubre qué necesitas estudiar para adentrarte en este campo y qué herramientas son esenciales para llevar a cabo la minería de datos eficazmente."
 priority: 0.8
 ---
 
