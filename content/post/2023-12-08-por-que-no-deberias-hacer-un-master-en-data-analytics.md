@@ -37,7 +37,7 @@ Si no estás en ninguna de estas razones, entonces el máster quizá sí sea lo 
 - [La Alternativa para Estudiar Data Analytics: Máster, Bootcamps o Estudiar por tu Cuenta. ¿Qué es para Ti?](#section3)
 - [Conclusión: Invierte en Tu Futuro - Cómo Elegir el Máster Correcto en Data Analytics y Data Science](#section4)
 
-![Un máster todo en uno puede ser contraproducente](../../img/dall-e3-union.png)
+![Un máster todo en uno puede ser contraproducente](../../img/dalle3union.png)
 
 ## El Engaño del "Todo en Uno": Por Qué los Másteres en Business Intelligence y Big Data te Pueden Fallar {#section1}
 
@@ -56,7 +56,7 @@ Y sí, el claustro puede estar lleno de currículos rimbombantes , pero ¿cuánt
 
 El resumen hasta aquí es el que muchos másteres en Data prometen darte una caja de herramientas multiusos para cualquier proyecto de Data Analytics. Pero la realidad es que sales con un desorden de conocimientos que no sabes aplicar en la realidad. 
 
-![Aprender metodología debería preocuparte tanto como resolver proyectos](../../img/dall-e3-methodology.png)
+![Aprender metodología debería preocuparte tanto como resolver proyectos](../../img/dalle3methodology.png)
 
 ## Desentrañando la Metodología: Lo Que Realmente Deberías Buscar en un Máster de Data Analytics {#section2}
 
@@ -83,7 +83,7 @@ Así que, antes de sacar tu billetera y apostar tu futuro en un máster, hazte e
 
 Si las respuestas son sí, vas por buen camino. De lo contrario, sigue buscando. Porque en Data Science, como en la vida, no es solo lo que aprendes, sino cómo lo aprendes.
 
-![Tienes varias alternativas de estudio. Entiende cuál es la tuya](../../img/dall-e3-alternatives.png)
+![Tienes varias alternativas de estudio. Entiende cuál es la tuya](../../img/dalle3alternatives.png)
 
 
 ## La Alternativa para Estudiar Data Analytics: Máster, Bootcamps o Estudiar por tu Cuenta. ¿Qué es para Ti? {#section3}
