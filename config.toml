@@ -37,11 +37,6 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/soy-mediocre/"
     description = "Sobre mí"
     weight = 2
-[[menu.main]]
-    name = "Aprende Python"
-    url = "/muerde-a-la-serpiente/"
-    description = "Sobre mí"
-    weight = 3
 
 [privacy]
   [privacy.disqus]
