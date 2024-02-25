@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 08 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Feb 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Por qué convertir tu CSV puede ser mala idea</title>
+      <link>/post/por-qu%C3%A9-convertir-tu-csv-puede-ser-mala-idea/</link>
+      <pubDate>Sun, 25 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/post/por-qu%C3%A9-convertir-tu-csv-puede-ser-mala-idea/</guid>
+      <description>En todas las empresas se usan hojas de cálculo para todo lo relacionado con datos. El estándar suele ser Excel, pero seguro que te has encontrado con ficheros que no se comportan como Excel:
+ El icono en la carpeta es diferente. Si tiene muchas filas, Excel te las corta y te muestra &amp;ldquo;solo&amp;rdquo; 1 millón. Si haces tablas dinámicas, gráficos o creas varias pestañas, lo pierdes todo. Te escribe varias columnas de tus tablas en una sola columna de Excel (la A).</description>
+    </item>
     
     <item>
       <title>Por qué no deberías hacer un Máster en Data Analytics</title>

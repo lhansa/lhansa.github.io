@@ -1,6 +1,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
     <url>
+      <loc>https://leonardohansa.com/</loc>
+      <lastmod>2024-02-25T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/por-qu%C3%A9-convertir-tu-csv-puede-ser-mala-idea/</loc>
+      <lastmod>2024-02-25T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/</loc>
+      <lastmod>2024-02-25T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/</loc>
+      <lastmod>2024-02-25T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/tags/training/</loc>
+      <lastmod>2024-02-25T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
       <loc>https://leonardohansa.com/tags/formaci%C3%B3n/</loc>
       <lastmod>2023-12-08T00:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
@@ -9,39 +49,7 @@
     </url>
   
     <url>
-      <loc>https://leonardohansa.com/</loc>
-      <lastmod>2023-12-08T00:00:00+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
       <loc>https://leonardohansa.com/post/por-que-no-deberias-hacer-un-master-en-data-analytics/</loc>
-      <lastmod>2023-12-08T00:00:00+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2023-12-08T00:00:00+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/</loc>
-      <lastmod>2023-12-08T00:00:00+00:00</lastmod>
-      <changefreq>weekly</changefreq>
-      <priority>0.5</priority>
-      
-    </url>
-  
-    <url>
-      <loc>https://leonardohansa.com/tags/training/</loc>
       <lastmod>2023-12-08T00:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
