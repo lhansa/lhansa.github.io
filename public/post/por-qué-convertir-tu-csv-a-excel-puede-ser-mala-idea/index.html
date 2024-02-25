@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="../../favicon-alt.png">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="¿Oxidado en el trabajo? Te mando ideas semanales para que deje de ser así.">
+  
+
+  <title>
+    
+    
+     Por qué convertir tu CSV a Excel puede ser mala idea 
+    
+  </title>
+  <link rel="canonical" href="../../post/por-qu%C3%A9-convertir-tu-csv-a-excel-puede-ser-mala-idea/">
+
+  <link rel="stylesheet" href="../../css/fonts.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+  
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+
+<div id="cookie-notice">
+<span>Este sitio utiliza cookies propias y de terceros para analizar sus servicios. Tienes<a href="../../cookies" >más info aquí.</a></span>
+</br>
+<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
+<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a></div>
+<script>
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    if(readCookie('cookie-notice-option')=='true') {
+        
+        function loadScriptAsync(scriptSrc, callback) {
+            if (typeof callback !== 'function') {
+                throw new Error('Not a valid callback for async script load');
+            }
+            var script = document.createElement('script');
+            script.onload = callback;
+            script.src = scriptSrc;
+            document.head.appendChild(script);
+        }
+
+        
+
+        
+        
+        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); 
+        })
+
+        document.getElementById('cookie-notice').style.display = 'none';
+    } else if (readCookie('cookie-notice-option')=='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
+    }
+
+    document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+        createCookie('cookie-notice-option','true',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+    document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+        createCookie('cookie-notice-option','false',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+</script>
+
+
+</head>
+
+<body>
+<section id=nav>
+  <h1><a href="../../">Programo porque es resultón</a></h1>
+  <ul>
+    
+    <li><a href="../../post/"><strong>Newsletter</strong></a></li>
+    
+    <li><a href="../../soy-mediocre/"><strong>Mediocre</strong></a></li>
+    
+  </ul>
+</section>
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">9 min read</span>
+    
+
+    <h1 class="article-title">Por qué convertir tu CSV a Excel puede ser mala idea</h1>
+
+    
+    <span class="article-date">2024-02-25</span>
+    
+
+    <div class="article-content">
+      <p>En todas las empresas se usan hojas de cálculo para todo lo relacionado con datos. El estándar suele ser Excel, pero seguro que te has encontrado con ficheros que no se comportan como Excel:</p>
+<ul>
+<li>El icono en la carpeta es diferente.</li>
+<li>Si tiene muchas filas, Excel te las corta y te muestra &ldquo;solo&rdquo; 1 millón.</li>
+<li>Si haces tablas dinámicas, gráficos o creas varias pestañas, lo pierdes todo.</li>
+<li>Te escribe varias columnas de tus tablas en una sola columna de Excel (la A).</li>
+</ul>
+<p>Si te pasa cualquiera de esas cosas, es muy posible que estés tratando un fichero CSV como fichero Excel, y eso puede tener consecuencias.</p>
+<p>Aquí te cuento qué cosas puedes hacer y qué cosas no.</p>
+<h2 id="índice">Índice</h2>
+<ul>
+<li><a href="#section1">Qué es un fichero CSV</a></li>
+<li><a href="#section2">Cómo abrir CSV en Excel</a></li>
+<li><a href="#section3">Cómo convertir CSV a Excel</a></li>
+<li><a href="#section4">Cuándo no deberías convertir CSV a Excel</a></li>
+<li><a href="#section5">Cómo abrir un CSV en R</a>
+<ul>
+<li><a href="#section6">Cómo convertir CSV a Excel con R</a></li>
+</ul>
+</li>
+<li><a href="#section7">Cómo abrir un CSV con Python</a>
+<ul>
+<li><a href="#section8">Cómo convertir un CSV a Excel con Python</a></li>
+</ul>
+</li>
+<li><a href="#section9">Cómo crear un fichero CSV</a>
+<ul>
+<li><a href="#section10">Cómo crear un fichero CSV con Excel</a></li>
+<li><a href="#section11">Cómo crear un fichero CSV con R</a></li>
+<li><a href="#section12">Cómo crear un fichero CSV con Python</a></li>
+</ul>
+</li>
+<li><a href="#section13">Conclusiones</a></li>
+</ul>
+<h2 id="section1">Qué es un fichero CSV</h2>
+<p>Me gustaría que vieras la idea del fichero CSV como un formato. Es una forma estándar de guardar datos tabulares en un fichero. En un fichero de texto, casi casi como si estuvieras almacenando datos en un Word (aunque nunca lo abrirías con Word, pero sí con un Bloc de Notas).</p>
+<p>Es un formato para guardar tablas de datos en texto. Las columnas irán separadas por un signo (una coma en principio) y cada fila terminará cuando pulses la tecla Intro.</p>
+<p>Así quedaría:</p>
+<pre><code>columna_1,columna_2,columna_3
+1,&quot;Juan&quot;,45
+2,&quot;María&quot;,27
+3,&quot;Miguel&quot;,68
+4,&quot;Luisa&quot;,53
+</code></pre><p>Ahí tienes una tabla. Tiene 3 columnas y 4 filas y está en formato CSV. Las columnas (la primera es un ID, las segunda es un nombre y la tercera es una métrica que puede ser la edad) están separadas por coma (fíjate en que no hay espacios).</p>
+<p>Si eso lo guardas en un fichero, podrías decir <strong>que el fichero tiene formato CSV.</strong></p>
+<p><strong>Importante.</strong> Da igual la extensión del fichero en este caso. La extensión te puede resultar útil para que el ordenador sepa con qué fichero abrirlo, pero si tú indicas manualmente que lo quieres abrir con Excel, y le das a Excel esas indicaciones (es un fichero de texto con valores separados por coma), dará igual si el fichero tiene extensión CSV o no.</p>
+<p>Otra cosa: a Windows le gusta ocultar la extensión pero no es obligatorio. De hecho, <strong>te recomiendo que configures tu Windows para mostrar la extensión</strong> si trabajas con programación, porque te facilitará el tener claras las rutas a tus ficheros. Para ello, desde cualquier carpeta, haz click en la pestaña <code>View</code> (en español será <code>Vista</code>) y luego marca la opción <code>File name extensions</code> (no sé cómo lo han traducido, pero será parecido).</p>
+<p>CSV signfica <em>valores separados por coma</em> por sus siglas en inglés. Pero verás muchos ficheros CSV con valores separados por punto y coma (<code>;</code>). Esto ocurre especialmente en entornos hispanoparlantes , o francoparlantes, por ejemplo, en los que los decimales de los números se indican con comas. En estos casos, no sabríamos cuándo una coma hace referencia al decimal y cuándo a la columna. Así que se cambia el delimitador de columna (esto no pasa en inglés porque los anglosajones separan los decimales con punto).</p>
+<blockquote>
+<p>Aprovecho para recordar que los números en un ordenador, cuando los quieres usar para operaciones, no les separas los miles (eso es solo para escribir texto), así que no necesitas preocuparte por esos caracteres.</p>
+</blockquote>
+<h2 id="section2">Cómo abrir CSV en Excel</h2>
+<p>A ver, Excel es uno de los recursos más habituales para trabjar un fichero CSV. De hecho, Windows usa Excel como aplicación determinada para abrir un fichero con extensión CSV (si no tiene extensión, no tendrá aplicación determinada).</p>
+<p>Ahora bien, puede ser mala idea usar Excel por lo que te he dicho más arriba (todo concentrado en una columna, demasiadas filas, no guardas tablas dinámicas ni gráficos&hellip;).</p>
+<p>Si de todos modos Excel es tu única opción, y <strong>el fichero no supera el máximo de filas o columnas</strong>, puedes abrirlo y hacer operaciones.</p>
+<p>Luego puedes:</p>
+<ul>
+<li>guardar el fichero con los cambios, conservando su formato CSV (perderás las fórmulas pero se guardarán los valores nuevos que hayas calculado).</li>
+<li>guardar el fichero como Excel, en <code>Save As</code> o <code>Guardar como</code>.</li>
+</ul>
+<h2 id="section3">Cómo convertir CSV a Excel</h2>
+<p>Si abres el fichero con Excel y lo ves bien, podrás convertir el CSV a Excel haciendo click en <code>Archivo</code> y <code>Guardar como</code>. Ahí elige la opción <code>Excel</code>.</p>
+<p><img src="../../img/opcion-csv.png" alt="Para convertir un Elige la opción Excel en Guardar como"></p>
+<p>Si el archivo se puede abrir pero lo ves en una misma columna, se debe a que tu Excel está configurado para esperar que las columnas estén separadas por un signo (como una coma, por ejemplo) pero están separadas por otro (como un punto y coma). Eso es lo que pasa en el caso de esta imagen:</p>
+<p><img src="../../img/columa-a.PNG" alt="Excel leerá mal el CSV si la configuración no coincide"></p>
+<p>Tienes dos opciones en un caso así:</p>
+<ul>
+<li>Puedes usar la herramienta <code>Texto en columnas</code>, indicando cuál es el separador (en el caso de la imagen, puedes ver que las columnas las deberían separar los puntos y coma).</li>
+<li>Puedes cambiar tu configuración de Excel. Esto lo haces desde <code>Archivo</code>, luego <code>Opciones</code>. En la ventana que se te abra, eliges <code>Avanzadas</code>. La opción que tienes que cambiar es la de la imagen:</li>
+</ul>
+<p><img src="../../img/configuraci%C3%B3n-sistema.PNG" alt="Configura Excel para que separe las columnas"></p>
+<h2 id="section4">Cuándo no deberías convertir CSV a Excel</h2>
+<p>Si tu CSV tiene demasiadas filas o columnas, y lo conviertes a Excel, perderás información.</p>
+<p>En un caso así, no puedes abrir tu CSV como si fuera un Excel, usando la opción por defecto que te da Windows.</p>
+<p>Si lo que quieres es hacer algunas operaciones con tablas dinámicas, y Excel es tu única opción porque no sabes programar, puedes crear una conexión al fichero, sin llegar a cargarlo. Para ello, en la pestaña <code>Data</code> de Excel, elige la opción <code>From Text/CSV</code> a la izquierda de la pantalla.</p>
+<p>Luego sale una ventana mostrándote una muestra del fichero CSV. Debajo del todo, eliges <code>Load to</code> y verás la siguiente ventana. Elige las opciones que te muestro (sirven para no cargar el fichero en Excel, que ya sabes que no cabe, sino para solamente conectarte a él):</p>
+<p><img src="../../img/import-data.PNG" alt="Usa Excel para conectarte a un fichero CSV sin convertirlo"></p>
+<p>Ahora podrás crear una tabla dinámica sobre el fichero CSV, usando como fuente de la tabla dinámica la conexión que acabas de crear.</p>
+<h2 id="section5">Cómo abrir un CSV en R</h2>
+<p>Algunos lenguajes de programación son la forma genérica de trabajar con ficheros CSV sin convertirlos, de forma que conserves toda la información.</p>
+<p>En R, convertirás el CSV en un data frame. Un <code>data.frame</code> es la forma básica de trabajar con tablas en R.</p>
+<p>Para empezar, deberás saber la ruta al fichero CSV que quieres tratar como data frame. La forma directa es usar la función <code>read.csv()</code>.</p>
+<pre><code>datos &lt;- read.csv(&quot;~/Document/fichero.csv&quot;)
+</code></pre><p>Ahora podrías realizar tus exploraciones con toda la información del CSV. Si esto te interesa y no saber por dónde empezar, te recomiendo que:</p>
+<ul>
+<li>Sigas <a href="https://leonardohansa.com">mi newsletter</a>. Al suscriberte te mando mi Piedra Roseta y tendrás algunas pistas de cómo empezar.</li>
+<li>Estudies una introducción a <em>tidyverse</em>, una colección de herramientas para tratar tablas de datos con R. Concretamente, empieza por <a href="https://dplyr.tidyverse.org/">dplyr</a>.</li>
+</ul>
+<h3 id="section6">Cómo convertir CSV a Excel con R</h3>
+<p>Si tienes un fichero CSV que has trabajar con R, y luego quieres llevar el resultado de tus análisis a Excel, puedes hacerlo también con poco código.</p>
+<p>Tendrás que instalarte una librería pero te recomiendo <code>writexl</code>, que para convertir a Excel tablas sencillas, sin formato, no da problemas.</p>
+<p>Tu código sería así:</p>
+<pre><code># Esto primero lo ejecutarás una sola vez, para instalar la librería
+# install.packags(&quot;writexl&quot;) 
+
+library(writexl)
+write_excel(datos, &quot;~/Documentos/resultados.xlsx&quot;)
+</code></pre><p>Fíjate en que tienes que especificar al extensión.</p>
+<h2 id="section7">Cómo abrir un CSV con Python</h2>
+<p>Python es un lenguaje más usado que R y quizá por necesidades de mercado necesites trabajar con Python. Entonces te recomiendo que pruebes con <a href="https://pandas.pydata.org/">pandas</a>.</p>
+<p>El código de pandas para leer un CSV y cargarlo en R tiene detalles diferentes, pero la filosofía es  muy parecida.</p>
+<pre><code>import pandas as pd
+
+datos = pd.read_excel('~/Documents/fichero.csv')
+</code></pre><h3 id="section8">Cómo convertir un CSV a Excel con Python</h3>
+<p>Si hubieras trabajado tu <code>DataFrame</code> con pandas y ahora quisieras convertirlo a Excel, puedes usar pandas de nuevo:</p>
+<pre><code>datos.to_excel('~/Documents/resultados.xlsx')
+</code></pre><h2 id="section9">Cómo crear un fichero CSV</h2>
+<p>En el trabajo te tocará crear ficheros CSV. Puede ocurrir porque:</p>
+<ul>
+<li>Sea el protocolo porque ocupan menos que un fichero Excel.</li>
+<li>Porque son más cómodos para programación, así que algún desarrollador te pedirá datos en este formato.</li>
+<li>O porque trabajes con herramientas que necesitan este formato, y no Excel.</li>
+</ul>
+<p>Ya sabes convertir CSV a Excel, pero necesitas saber convertir de Excel a CSV o crear ficheros CSV desde cero.</p>
+<p>Si tienes un Excel, convertirlo a CSV consiste en Guardar como CSV. Ya está.</p>
+<p>Si tienes que crearlo desde cero, te explico cómo hacerlo con Excel, R y Python.</p>
+<h3 id="section10">Cómo crear un fichero CSV con Excel</h3>
+<p>Para crear un fichero CSV con Excel, trabajas con normalidad y tienes que acordarte de guardar al final como CSV, y no dejarlo en el formato que Excel tiene por defecto.</p>
+<p>Para ello, asegúrate de que:</p>
+<ul>
+<li>no tienes varias pestañas (se guardará solo la que tengas visible en el momento de guardar).</li>
+<li>no tienes gráficos.</li>
+<li>no tienes formatos en las celdas .</li>
+<li>no tienes tablas dinámicas.</li>
+</ul>
+<p>Si tienes alguna cosa de esas, cuando guardes a CSV Excel te dará un aviso. Si procedes, lo perderás todo.</p>
+<h3 id="section11">Cómo crear un fichero CSV con R</h3>
+<p>Si en R has creado un data frame (o has obtenido uno nuevo como resultado de una operación) y ahora quieres guardarlo en CSV, tienes varias opciones. La más directa es usar la función <code>write.csv()</code>, que está siempre disponible.</p>
+<p>No obstante, es lenta y crea una columna auxiliar poco intuitiva. Te recomiendo mejor la librería readr:</p>
+<pre><code>library(readr)
+write_csv(resultados, &quot;~/Documents/resultados.csv&quot;)
+</code></pre><h3 id="section12">Cómo crear un fichero CSV con Python</h3>
+<p>Puedes hacer la operación análoga con Python. De nuevo, te recomiendo que uses pandas porque es lo más extendido, aunque hay otras opciones.</p>
+<pre><code>resultados.to_csv('~/Documents/resultados.csv')
+</code></pre><h2 id="section13">Conclusiones</h2>
+<p>Mira, esto es solo una introducción por si estabas muy perdido. En el día a día, te encontrarás con pequeños detalles y lo que te he contado aquí no será suficiente.</p>
+<p>La experiencia te dará nuevas herramientas para esas situaciones, pero los conceptos sí los tienes todos aquí.</p>
+<p>En <a href="https://leonardohansa.com">mi newsletter</a> hablo de estas cosas todas las semanas. Las personas que están suscritas reciben muchas ideas, trucos y me preguntan dudas. A veces, respondo.</p>
+
+    </div>
+  </article>
+
+  <section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = '';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+  <section id=subscribe_final>
+  
+  </br>
+  </br>
+  </br>
+  
+<em>Si te ha gustado esto, te gustarán mis correos. Para recibirlos te suscribes aquí:</em>
+  
+<div class="ml-embedded" data-form="HwWIEu"></div>
+
+
+
+
+    
+
+
+
+</section>
+
+
+</main>
+
+  
+  
+
+  
+  
+  <div>
+  <p style="text-align:right;font-size:10px;">
+  <a href="https://leonardohansa.com/legal">Legal</a>
+  <a href="https://leonardohansa.com/condiciones">Contratación</a>
+  <a href="https://leonardohansa.com/cookies">Política de cookies</a>
+  </p>
+  
+  </div>
+  
+  
+</body>
+  
+<footer style="position:absolute;bottom:0;width:100%;">
+
+
+</footer>
+
+</html>
+

@@ -1,8 +1,8 @@
 ---
-title: Por qué convertir tu CSV puede ser mala idea
+title: Por qué convertir tu CSV a Excel puede ser mala idea
 author: ''
 date: '2024-02-25'
-slug: por-qué-convertir-tu-csv-puede-ser-mala-idea
+slug: por-que-convertir-tu-csv-a-excel-puede-ser-mala-idea
 categories: []
 tags:
   - training
@@ -223,6 +223,7 @@ La experiencia te dará nuevas herramientas para esas situaciones, pero los conc
 En [mi newsletter](https://leonardohansa.com) hablo de estas cosas todas las semanas. Las personas que están suscritas reciben muchas ideas, trucos y me preguntan dudas. A veces, respondo.
 
 
+{{< faqpage question1="¿Cómo convertir un Archivo CSV en una tabla de Excel?" answer1="La forma más directa es abrir el archivo con Excel, cosa que hace Windows por defecto. También puedes importar los datos de CSV a Excel desde la pestaña Datos, y la opción importar desde texto." question2="¿Cómo poner un CSV en Excel?" answer2="La forma más directa es abrir el archivo con Excel, cosa que hace Windows por defecto. También puedes importar los datos de CSV a Excel desde la pestaña Datos, y la opción importar desde texto." question3="¿Cómo pasar CSV a columnas?" answer3="Si has abierto un CSV con Excel y están todos los datos en la misma columna, puedes pasar todo a distintas columnas con la opción Texto a Columnas en la pestaña Datos, o puedes cambiar tu configuración de Excel en Archivos, Opciones en la pestaña Avanzadas." question4="¿Cómo abrir un CSV en Excel sin perder formato?" answer4="Un CSV no debería tener formato, más allá del dado por filas y columnas. Si la distribución de columnas no está bien, deberías elegir la opción de pasar texto a columnas.">}}
 
 
 
