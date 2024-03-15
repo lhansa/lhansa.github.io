@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 15 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Primeros pasos en analisis de datos</title>
+      <link>/post/primeros-pasos-en-analisis-de-datos/</link>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/post/primeros-pasos-en-analisis-de-datos/</guid>
+      <description>Si estás aquí, es que eres un profesional orientado a negocio y quieres ampliar tu campo.
+Si consigues basar tus recomendaciones de negocio en datos, tendrás más capacidad de convicción entre tus círculos.
+Para eso te sirve el análisis de datos. Y querrás formar en el tema, pero estarás saturado de la cantidad de oferta que hay y no saber por dónde empezar. Seguramente incluso ya te habrás planteado que tú ya haces análisis de datos, aunque tu puesto no sea de data analyst.</description>
+    </item>
     
     <item>
       <title>Por qué convertir tu CSV a Excel puede ser mala idea</title>
