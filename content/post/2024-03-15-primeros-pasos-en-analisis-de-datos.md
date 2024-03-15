@@ -1,5 +1,5 @@
 ---
-title: Primeros pasos en analisis de datos
+title: Primeros pasos en análisis de datos
 author: ''
 date: '2024-03-15'
 slug: primeros-pasos-en-analisis-de-datos
