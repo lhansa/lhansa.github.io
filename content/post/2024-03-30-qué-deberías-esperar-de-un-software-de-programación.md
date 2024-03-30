@@ -32,7 +32,7 @@ Para eso necesitas elegir bien tu software de programación. Y ten en cuenta que
 - [Comparativa: Python vs R vs Excel – ¿Cuál es el mejor para tu proyecto de datos?](#section7)
 - [Cómo elegir el software de programación adecuado para tus necesidades en ciencia de datos](#section8)
 
-![Es muy frustrante no sentir cómodo en el entorno de programación que uses.](../../img/estudiante-programacion-frustrado-munch.png)
+![Es muy frustrante no sentir cómodo en el entorno de programación que uses.](../../img/estudiante-programacion-frustrado-munch.jpg)
 
 ## Fundamentos de programación para análisis de datos: Lenguajes y herramientas clave {#section1}
 
