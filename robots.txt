@@ -1,1 +1,1 @@
-Sitemap: https://lhansa.github.io/picatostes/sitemap.xml
+Sitemap: https://lhansa.github.io/sitemap.xml
