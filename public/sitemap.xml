@@ -2,7 +2,7 @@
   
     <url>
       <loc>https://leonardohansa.com/</loc>
-      <lastmod>2024-03-15T00:00:00+00:00</lastmod>
+      <lastmod>2024-03-30T00:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
       
@@ -10,7 +10,15 @@
   
     <url>
       <loc>https://leonardohansa.com/post/</loc>
-      <lastmod>2024-03-15T00:00:00+00:00</lastmod>
+      <lastmod>2024-03-30T00:00:00+00:00</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+      
+    </url>
+  
+    <url>
+      <loc>https://leonardohansa.com/post/que-deberias-esperar-de-un-software-de-programacion/</loc>
+      <lastmod>2024-03-30T00:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
       
