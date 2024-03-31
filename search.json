@@ -782,5 +782,12 @@
     "title": "Statistical Rethinking (2)",
     "section": "",
     "text": "Hay un experimento en el que pones a unas personas en línea con una moneda. Cada persona tiene una moneda que lanza 16 veces.\nPor cada vez que sale cara, da un paso a la derecha; por cada vez que sale cruz, a la izquierda.\nCada paso será de una distancia aleatoria entre 0 y 1 metro. ¿Cuántos metros se ha desplazado cada persona con respecto al origen?\nEl experimento con una sola persona sería algo así:\n\ndistancia_por_paso &lt;- runif(16, -1, 1)\nsum(distancia_por_paso)\n\n[1] 2.171815\n\n\nNuestro sujeto ha recorrido 2.1718148 desde la línea.\nLo podemos extrapolar a 10000 sujetos:\n\npos &lt;- replicate(10000, sum(runif(16, -1, 1)))\n\nlibrary(ggplot2)\ntheme_set(theme_minimal())\nggplot() + \n  geom_histogram(aes(x = pos), fill = \"#800080\")"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Para dejarte a medias",
+    "section": "",
+    "text": "Quien tiene convicciones demasiado fuertes es porque no ha profundizado lo suficiente. (E. M. Cioran)"
   }
 ]
