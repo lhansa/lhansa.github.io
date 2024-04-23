@@ -10,7 +10,357 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.4.553</generator>
-<lastBuildDate>Sun, 21 Apr 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 22 Apr 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Cómo aplicar non standard evaluation con dplyr y rlang</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-04-22-empleo/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Tengo datos de empleos en el sector público y privado del INE. Y los quiero explorar con dplyr y ggplot2.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(dplyr)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(readr)</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(stringr)</span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb1-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_set</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_light</span>())</span></code></pre></div>
+</div>
+<p>Leer los ficheros del INE siempre es aventura con sus formatos, pero aquí tienes el código.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">df_empleo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> readr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_csv2</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../data/4262.csv"</span>, </span>
+<span id="cb2-2">                              <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">show_col_types =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">FALSE</span>,</span>
+<span id="cb2-3">                              <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locale =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">locale</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">encoding =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"latin1"</span>))</span>
+<span id="cb2-4"></span>
+<span id="cb2-5">df_empleo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> janitor<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">clean_names</span>(df_empleo) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb2-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rename</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">ccaa =</span> comunidades_y_ciudades_autonomas)</span>
+<span id="cb2-7"></span>
+<span id="cb2-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">head</span>(df_empleo)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 5
+  ccaa         sexo    tipo_de_sector periodo total
+  &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;          &lt;chr&gt;   &lt;dbl&gt;
+1 01 Andalucía Hombres Empleo público 2023T4   286.
+2 01 Andalucía Hombres Empleo público 2023T3   298.
+3 01 Andalucía Hombres Empleo público 2023T2   289 
+4 01 Andalucía Hombres Empleo público 2023T1   294.
+5 01 Andalucía Hombres Empleo público 2022T4   297 
+6 01 Andalucía Hombres Empleo público 2022T3   299 </code></pre>
+</div>
+</div>
+<section id="una-exploración-rápida" class="level2">
+<h2 class="anchored" data-anchor-id="una-exploración-rápida">Una exploración rápida</h2>
+<p>Esto es lo que te planteo explorar: una agregación trimestral por tipo de sector.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">df_agg <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df_empleo <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(periodo, tipo_de_sector) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">total =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(total), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">.groups =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"drop"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb4-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">convierte_periodo</span>() <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># función propia para convertir a fecha</span></span>
+<span id="cb4-5"></span>
+<span id="cb4-6">df_agg</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 24 × 3
+   periodo    tipo_de_sector  total
+   &lt;date&gt;     &lt;chr&gt;           &lt;dbl&gt;
+ 1 2021-01-01 Empleo privado 15809.
+ 2 2021-01-01 Empleo público  3397.
+ 3 2021-04-01 Empleo privado 16232.
+ 4 2021-04-01 Empleo público  3440.
+ 5 2021-07-01 Empleo privado 16547.
+ 6 2021-07-01 Empleo público  3484.
+ 7 2021-10-01 Empleo privado 16709.
+ 8 2021-10-01 Empleo público  3476.
+ 9 2022-01-01 Empleo privado 16617.
+10 2022-01-01 Empleo público  3468.
+# ℹ 14 more rows</code></pre>
+</div>
+</div>
+<p>Que devuelve un gráfico así.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df_agg) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb6-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> periodo, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> total, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col =</span> tipo_de_sector)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb6-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">scale_color_discrete</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Tipo de empleo"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb6-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(</span>
+<span id="cb6-5">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Trimestre"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Empleados"</span>, </span>
+<span id="cb6-6">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Evolución trimestral de empleados privados y públicos"</span>, </span>
+<span id="cb6-7">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Fuente: INE"</span></span>
+<span id="cb6-8">  )</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-04-22-empleo/index_files/figure-html/grafico-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="más-libertad" class="level2">
+<h2 class="anchored" data-anchor-id="más-libertad">Más libertad</h2>
+<p>Ahora voy a preparar una función para que un usuario pueda elegir una columna más con la que agregar.</p>
+<p>Lo que quiero es una función con la que funcione un código así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">agrega_empleo</span>(sexo)</span></code></pre></div>
+</div>
+<p>Si intentas plantear eso solo con dplyr te dará un error diciendo que cierto objeto no es nada. En el código siguiente, <code>grouping_var</code> no sería nada sino fuera por esa combinación de <code>enquo()</code> con otros elementos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(rlang)</span>
+<span id="cb8-2"></span>
+<span id="cb8-3">agrega_empleo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(grouping_var) {</span>
+<span id="cb8-4">  nombre_metrica <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as_name</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(grouping_var))</span>
+<span id="cb8-5">  nombre_metrica <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"total_por_"</span>, nombre_metrica)</span>
+<span id="cb8-6">  df_empleo <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb8-7">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(periodo, tipo_de_sector, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(grouping_var)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb8-8">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">nombre_metrica :=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(total), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">.groups =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"drop"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb8-9">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">convierte_periodo</span>() </span>
+<span id="cb8-10">}</span></code></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">agrega_empleo</span>(ccaa)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 456 × 4
+   periodo    tipo_de_sector ccaa                       total_por_ccaa
+   &lt;date&gt;     &lt;chr&gt;          &lt;chr&gt;                               &lt;dbl&gt;
+ 1 2021-01-01 Empleo privado 01 Andalucía                        2469.
+ 2 2021-01-01 Empleo privado 02 Aragón                            451.
+ 3 2021-01-01 Empleo privado 03 Asturias, Principado de           294 
+ 4 2021-01-01 Empleo privado 04 Balears, Illes                    416 
+ 5 2021-01-01 Empleo privado 05 Canarias                          626 
+ 6 2021-01-01 Empleo privado 06 Cantabria                         190.
+ 7 2021-01-01 Empleo privado 07 Castilla y León                   752 
+ 8 2021-01-01 Empleo privado 08 Castilla - La Mancha              658.
+ 9 2021-01-01 Empleo privado 09 Cataluña                         2913.
+10 2021-01-01 Empleo privado 10 Comunitat Valenciana             1671.
+# ℹ 446 more rows</code></pre>
+</div>
+</div>
+<p>En lo anterior, <code>!!enquo()</code> se encarga de evaluar la expresión dentro de grouping_var (<code>ccaa</code> en este caso) en el entorno adecuado.</p>
+<p>Si tienes muchas variables, necesitarás algo como lo siguiente (aunque aún no sé cómo afecta eso entonces a los nombres de nuevas columnas).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">agrega_empleo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(...) {</span>
+<span id="cb11-2">  df_empleo <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb11-3">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(periodo, tipo_de_sector, <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquos</span>(...)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb11-4">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">total=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(total), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">.groups =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"drop"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb11-5">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">convierte_periodo</span>() </span>
+<span id="cb11-6">}</span>
+<span id="cb11-7"></span>
+<span id="cb11-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">agrega_empleo</span>(ccaa, sexo)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 912 × 5
+   periodo    tipo_de_sector ccaa                       sexo    total
+   &lt;date&gt;     &lt;chr&gt;          &lt;chr&gt;                      &lt;chr&gt;   &lt;dbl&gt;
+ 1 2021-01-01 Empleo privado 01 Andalucía               Hombres 1474 
+ 2 2021-01-01 Empleo privado 01 Andalucía               Mujeres  995.
+ 3 2021-01-01 Empleo privado 02 Aragón                  Hombres  268 
+ 4 2021-01-01 Empleo privado 02 Aragón                  Mujeres  183.
+ 5 2021-01-01 Empleo privado 03 Asturias, Principado de Hombres  164.
+ 6 2021-01-01 Empleo privado 03 Asturias, Principado de Mujeres  130.
+ 7 2021-01-01 Empleo privado 04 Balears, Illes          Hombres  233.
+ 8 2021-01-01 Empleo privado 04 Balears, Illes          Mujeres  183.
+ 9 2021-01-01 Empleo privado 05 Canarias                Hombres  335.
+10 2021-01-01 Empleo privado 05 Canarias                Mujeres  291.
+# ℹ 902 more rows</code></pre>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2024-04-22-empleo/</guid>
+  <pubDate>Mon, 22 Apr 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Cómo procesas datos que no te caben en RAM</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -4144,115 +4494,6 @@ font-style: inherit;">"Source: keras::dataset_mnist()"</span></span>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2023-07-21-tidytuesday-oldest-people/</guid>
   <pubDate>Fri, 21 Jul 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>7 hábitos de la gente altamente efectiva</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-07-20-7-habitos-gente-altamente-efectiva/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="ideas-introductorias" class="level2">
-
-<ul>
-<li>Mapa y territorio. Un cambio de paradigma te puede ayudar a controlar mejor el territorio.
-<ul>
-<li>Mucha autoayuda falla porque enseñan un mapa sobre un territorio equivocado. Si estás usando un mapa que no se ajusta a tu territorio, no lo puedes aplicar.</li>
-</ul></li>
-<li>Inside-out. Las victorias personales van antes que las públicas. Para mejorar las relaciones con los demás debes mejorar antes la tuya contigo mismo.</li>
-</ul>
-</section>
-<section id="sé-proactivo" class="level2">
-<h2 class="anchored" data-anchor-id="sé-proactivo">1. Sé proactivo</h2>
-<ul>
-<li>El amor es un verbo. La gente proactiva se sacrifica por otros.</li>
-<li>Aplicación:
-<ol type="1">
-<li>Durante un día fíjate en tu lenguaje y el de los demás. “Cuántas veces escuchas no puedo”, “ojalá”, “tengo que”…</li>
-<li>Identifica una experiencia con la que si te encuentras reaccionarías de manera reactiva. ¿Cómo la convertirás en proactiva?</li>
-<li>Elige un problema personal o profesional que te frustre. ¿Qué puedes hacer que ayude a mejorarlo.</li>
-<li>Durante treinta días trabaja en tu círculo de influencia con pequeños compromisos: no juzgues, no critiques, no discutas, no culpes. Trabaja en las cosas sobre las que tienes control.</li>
-</ol></li>
-</ul>
-</section>
-<section id="empieza-con-el-final-en-mente" class="level2">
-<h2 class="anchored" data-anchor-id="empieza-con-el-final-en-mente">2. Empieza con el final en mente</h2>
-<ul>
-<li>En tu funeral van a decir unas palabras sobre ti. ¿Qué te gustaría que dijeran? ¿Cómo te gustaría que te recordaran?</li>
-<li>Empieza cada día con la imagen del final de tu vida, que ese sea tu criterio para evaluar tus acciones.</li>
-<li>Todo se crea en dos fases: una mental y otra física. Tú eres la segunda creación de tu propio diseño proactivo previo, o la segunda creación de los planes de otras personas, o circunstancias o costumbres pasadas.</li>
-<li>El hábito 1 es “tú eres el creador”. El hábito 2 es la primera creación.</li>
-<li>Solemos necesitar más un destino y una brújula (conjunto de principios y direcciones) y menos una hoja de ruta. <strong>El camino por delante no lo conocemos y necesitarás improvisar más de lo previsto.</strong></li>
-<li>Soy quien soy hoy por las decisiones que tomé ayer.</li>
-<li>Cuando quieras ser efectivo, piensa de manera amplia. No tiene sentido que te centres en tu éxito profesional si dejas de lado tu salud.</li>
-<li>Piensa en tu visión a largo y misión en varios roles. Eso te dará balance</li>
-</ul>
-</section>
-<section id="pon-primero-lo-primero" class="level2">
-<h2 class="anchored" data-anchor-id="pon-primero-lo-primero">3. Pon primero lo primero</h2>
-<ul>
-<li>Las personas exitosas tienen el hábito de hacer lo que los fracasados no quieren hacer.</li>
-<li>La gente poco efectiva dedica mucho tiempo a <strong>cosas urgentes poco importantes</strong> (en general, actividades con origen en otras personas). Luego desconectan un poco con actividades poco urgentes y poco importantes (Netflix…).</li>
-<li>No te hagas planes de organización diarios sino semanales.</li>
-</ul>
-</section>
-<section id="piensa-en-winwin" class="level2">
-<h2 class="anchored" data-anchor-id="piensa-en-winwin">4. Piensa en win/win</h2>
-<ul>
-<li>Busca soluciones que beneficien a todas las partes involucradas.</li>
-<li>Hay casos contrarios a eso:
-<ul>
-<li>Hay incentivos para pensar en <strong>win/lose</strong>. La ley está motivada por el que hay un enemigo al que hay que ganar, mediante abogados y juicios.</li>
-<li>El <strong>lose/lose</strong> ocurre cuando se juntan dos personas cuyo objetivo es hacer que su enemigo pierda, aunque sea a costa de su propio bienestar.</li>
-</ul></li>
-<li><strong>win/win or no deal.</strong> Si no podemos llegar a un acuerdo en el que los dos salgamos beneficiados, es mejor no cerrar acuerdo.</li>
-<li>la actitud de un individuo tiene dos dimensiones: valor y consideración. <strong>Win/win</strong> consiste en maximizar ambos.</li>
-<li><strong>Mentalidad de abundancia:</strong> hay suficiente para todos.</li>
-</ul>
-</section>
-<section id="busca-primero-entender-luego-ser-entendido" class="level2">
-<h2 class="anchored" data-anchor-id="busca-primero-entender-luego-ser-entendido">5. Busca primero entender, luego ser entendido</h2>
-<ul>
-<li>Imagina un óptico que recomienda a un cliente las gafas que tiene él, sin diagnosticar.</li>
-<li>Historia del Padre que no escucha a su hijo…</li>
-<li>Las necesidades cubiertas no motivan.</li>
-</ul>
-</section>
-<section id="sinergiza" class="level2">
-<h2 class="anchored" data-anchor-id="sinergiza">6. Sinergiza</h2>
-<ul>
-<li>Trabaja en equipo y crea sinergias para buscar equipos comunes.</li>
-<li>Ejemplo de los fundadores de Apple</li>
-</ul>
-</section>
-<section id="afila-la-sierra" class="level2">
-<h2 class="anchored" data-anchor-id="afila-la-sierra">7. Afila la sierra</h2>
-<ul>
-<li>Cuidar y mejorar continuamente los cuatro aspectos de tu vida: físico, mental, emocional y espiritual.
-<ul>
-<li>Queremos estar saludables pero no dedicamos 30 minutos al ejercicio.</li>
-<li>Queremos ser inteligentes pero no pasamos 20 minutos leyendo.</li>
-<li><strong>Trabajo, familia, relajación…</strong></li>
-</ul></li>
-<li>Cuatro dimensiones de control introspectivo: físico, mental, social y espiritual.</li>
-<li>Ejercicio de fuerza. Hay que apurar hasta el final porque es como el cuerpo sabrá que hay que regenerar fibras musculares más fuertes. Igual pasa con la paciencia.</li>
-<li>Aspecto espiritual: hay personas que encuentran en la inmersión en la música o literatura la misma satisfacción espiritual que otras personas en la meditación o en la lectura de escrituras sagradas.</li>
-<li>Prescripción médica: ve a un sitio que tengas buen recuerdo de niño. A las 9, escucha. A las 12, try reaching back (estudia el pasado). A las 3, explora tus motivos (si tus motivos están mal, entonces todo lo que haces está mal). A las 6, escribe tus preocupaciones en la arena.</li>
-<li>La lectura nos ayuda con el hábito de primero entender, ya que nos educa en el hábito de no poner nuestra autobiografía en medio de cada idea que nos llegue.</li>
-<li>Hans Selye: “una vida larga, sana y feliz es el resultado de hacer contribuciones”</li>
-<li>“Trata a una persona como es, y seguirá igual. Trata a un persona como puede ser, y llegará a ello” (Goethe)</li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <category>lecturas</category>
-  <guid>https://lhansa.github.io/posts/2023-07-20-7-habitos-gente-altamente-efectiva/</guid>
-  <pubDate>Thu, 20 Jul 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
