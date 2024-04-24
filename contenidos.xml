@@ -10,7 +10,585 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.4.553</generator>
-<lastBuildDate>Mon, 22 Apr 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 24 Apr 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Por qué puedes necesitar non standard evaluation en dplyr</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-04-24-por-que-nse/2024-04-24-por-que-nse.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Tienes los datos de <code>penguins</code> y quieres hacer una función con el código de una exploración sobre este conjunto de datos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">df_penguins <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> palmerpenguins<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span>penguins</span>
+<span id="cb1-2">df_penguins</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 344 × 8
+   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+ 1 Adelie  Torgersen           39.1          18.7               181        3750
+ 2 Adelie  Torgersen           39.5          17.4               186        3800
+ 3 Adelie  Torgersen           40.3          18                 195        3250
+ 4 Adelie  Torgersen           NA            NA                  NA          NA
+ 5 Adelie  Torgersen           36.7          19.3               193        3450
+ 6 Adelie  Torgersen           39.3          20.6               190        3650
+ 7 Adelie  Torgersen           38.9          17.8               181        3625
+ 8 Adelie  Torgersen           39.2          19.6               195        4675
+ 9 Adelie  Torgersen           34.1          18.1               193        3475
+10 Adelie  Torgersen           42            20.2               190        4250
+# ℹ 334 more rows
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+</div>
+<p>La situación que te planteo es que tienes que crear una función cuyo argumento sea el nombre de una de las columnas, y calcule la media de la longitud del pico (<code>bill_length_mm</code>) en función de esa columna. Con dplyr.</p>
+<section id="planteamiento-tidyselect" class="level2">
+<h2 class="anchored" data-anchor-id="planteamiento-tidyselect">Planteamiento <code>tidyselect</code></h2>
+<p>Una forma de hacerlo, aceptando que el nombre de la columna venga como <code>character</code>, es esta:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(dplyr)</span>
+<span id="cb3-2"></span>
+<span id="cb3-3">calcula_mediana_pico <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data, columna_grupos) {</span>
+<span id="cb3-4">  data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-5">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">pick</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">all_of</span>(columna_grupos))) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-6">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">mediana_long_pico =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">median</span>(bill_length_mm, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>))</span>
+<span id="cb3-7">}</span>
+<span id="cb3-8"></span>
+<span id="cb3-9">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-10">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana_pico</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"island"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  island    mediana_long_pico
+  &lt;fct&gt;                 &lt;dbl&gt;
+1 Biscoe                 45.8
+2 Dream                  44.7
+3 Torgersen              38.9</code></pre>
+</div>
+</div>
+<p>Le pongo una pega. Puede haber más pero yo le pongo solo una: que tengo que entrecomillar la columna con la que agrupo. O sea, no puedo hacer esto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb5-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana_pico</span>(island)</span>
+<span id="cb5-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Error: object 'island' not found</span></span></code></pre></div>
+</div>
+</section>
+<section id="planteamiento-rlang" class="level2">
+<h2 class="anchored" data-anchor-id="planteamiento-rlang">Planteamiento rlang</h2>
+<p>Me gustaría que ese código funcionara, porque con dplyr es normal escribir los nombres de columnas sin comillas:</p>
+<ul>
+<li>Puedes usar el autocompletado (con comillas no)</li>
+<li>Va a ser consistente con otras funciones de dplyr</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb6-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(island, bill_length_mm, year) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb6-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(year <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2007</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb6-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana_pico</span>(island)</span></code></pre></div>
+</div>
+<p>En un código como ese, no quiero tener que entrecomillar <code>island</code> porque no viene a cuento.</p>
+<p>Eso lo puedo solucionar con rlang. La función quedará algo así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(rlang)</span>
+<span id="cb7-2"></span>
+<span id="cb7-3">calcula_mediana_pico <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data, columna_grupos) {</span>
+<span id="cb7-4">  data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb7-5">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(columna_grupos)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb7-6">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">mediana_long_pico =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">median</span>(bill_length_mm, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>))</span>
+<span id="cb7-7">}</span></code></pre></div>
+</div>
+<p>Te destripo ese ingrediente que acabo de poner.</p>
+<section id="enquo" class="level3">
+<h3 class="anchored" data-anchor-id="enquo"><code>enquo</code></h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">f <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(argumento) {</span>
+<span id="cb8-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(argumento)</span>
+<span id="cb8-3">}</span>
+<span id="cb8-4"></span>
+<span id="cb8-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">f</span>(island)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;quosure&gt;
+expr: ^island
+env:  global</code></pre>
+</div>
+</div>
+<p><code>enquo()</code> me devuelve lo que se llama una <em>quosure</em> (ni idea de su traducción): lo puedes ver como una expresión con información sobre el entorno.</p>
+<p>Al evaluar <code>enquo()</code> dentro de una función con un argumento, obtenemos el valor que se le ha dado al argumento sin llegar a evaluarlo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">f</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;quosure&gt;
+expr: ^1 + 1
+env:  global</code></pre>
+</div>
+</div>
+<p>Para evaluarlo tenemos que:</p>
+<ul>
+<li>Añadir el operador <code>!!</code> (<em>bang bang</em>).</li>
+<li>Operar dentro de unas funciones determinadas, como muchas de dplyr.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1">selecciona <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(columna) {</span>
+<span id="cb12-2">  df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb12-3">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(columna))</span>
+<span id="cb12-4">}</span>
+<span id="cb12-5"></span>
+<span id="cb12-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">selecciona</span>(island) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb12-7">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">slice_head</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">n =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 1
+  island   
+  &lt;fct&gt;    
+1 Torgersen
+2 Torgersen
+3 Torgersen
+4 Torgersen
+5 Torgersen
+6 Torgersen</code></pre>
+</div>
+</div>
+<p>Que es justo lo que hacía en la función que te planteé más arriba:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">calcula_mediana_pico <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data, columna_grupos) {</span>
+<span id="cb14-2">  data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb14-3">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(columna_grupos)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb14-4">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">mediana_long_pico =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">median</span>(bill_length_mm, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>))</span>
+<span id="cb14-5">}</span>
+<span id="cb14-6"></span>
+<span id="cb14-7">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb14-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana_pico</span>(species)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  species   mediana_long_pico
+  &lt;fct&gt;                 &lt;dbl&gt;
+1 Adelie                 38.8
+2 Chinstrap              49.6
+3 Gentoo                 47.3</code></pre>
+</div>
+</div>
+<p>Ni que decir tiene que es compatible con otras operaciones de dplyr:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb16-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">select</span>(species, bill_length_mm, year) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb16-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(year <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2007</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb16-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana_pico</span>(species) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb16-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">arrange</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">desc</span>(mediana_long_pico))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  species   mediana_long_pico
+  &lt;fct&gt;                 &lt;dbl&gt;
+1 Chinstrap              49.7
+2 Gentoo                 47.5
+3 Adelie                 38.7</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><code>!!enquo()</code> puede reemplazarse por el operador <code>{{}}</code> (<em>curly curly</em>), con el que tus códigos quedarán más limpios, aunque a mí no termina de gustarme porque creo que se enienden peor los elemenos de la librería rlang.</p>
+</blockquote>
+</section>
+<section id="más-columnas" class="level3">
+<h3 class="anchored" data-anchor-id="más-columnas">Más columnas</h3>
+<p>Vale, ahora no solo quieres dar al usuario la posibilidad de que dé la columna de agrupación, sino también la métrica que agregamos.</p>
+<p>Si solo quieres eso, no necesitas más ingredientes, pero ya verás cómo sí quieres tener otra cosa:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1">calcula_mediana <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data, columna_grupos, metrica) {</span>
+<span id="cb18-2">  data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb18-3">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(columna_grupos)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb18-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># cambio nombre de la mediana</span></span>
+<span id="cb18-5">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">mediana =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">median</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(metrica), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>))</span>
+<span id="cb18-6">}</span>
+<span id="cb18-7"></span>
+<span id="cb18-8">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb18-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana</span>(species, bill_depth_mm)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  species   mediana
+  &lt;fct&gt;       &lt;dbl&gt;
+1 Adelie       18.4
+2 Chinstrap    18.4
+3 Gentoo       15  </code></pre>
+</div>
+</div>
+<p>Guay, ha funcionado. Puedo usar cualquier métrica y columna:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb20-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana</span>(year, flipper_length_mm)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+   year mediana
+  &lt;int&gt;   &lt;dbl&gt;
+1  2007     195
+2  2008     200
+3  2009     199</code></pre>
+</div>
+</div>
+<p>Lo que me falta ahora es poder cambiar el nombre también de la columna mediana en función de la métrica elegida.</p>
+</section>
+<section id="y-as_name" class="level3">
+<h3 class="anchored" data-anchor-id="y-as_name"><code>:=</code> y <code>as_name</code></h3>
+<p>La intuición podría decirte que hicieras algo parecido a la izquierda del igual, con <code>!!enquo()</code>. No te va a funcionar, salvo que añadas el operador. <code>:=</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1">calcula_mediana <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data, columna_grupos, metrica) {</span>
+<span id="cb22-2">  data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb22-3">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(columna_grupos)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb22-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># cambio nombre de la mediana</span></span>
+<span id="cb22-5">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(metrica) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span><span class="er" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">median</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(metrica), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>))</span>
+<span id="cb22-6">}</span>
+<span id="cb22-7"></span>
+<span id="cb22-8">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb22-9">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana</span>(island, bill_depth_mm)</span></code></pre></div>
+</div>
+<p>Un pequeño cambio y lo solucionas todo.</p>
+<p>Pero vamos incluso un paso más allá. Quieres que la métrica nueva no se llame igual que la columna que agregas sino <code>"mediana_"</code> pegado al nombre de la columna. Para eso necesitas la combinación de <code>as_name()</code>, que te va a permitir tratar como <code>character</code> el argumento que pasa el usuario:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as_name</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">quote</span>(bill_length_mm))</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "bill_length_mm"</code></pre>
+</div>
+</div>
+<p>Vamos a aplicar esto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1">calcula_mediana <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">function</span>(data, columna_grupos, metrica) {</span>
+<span id="cb25-2">  nuevo_nombre <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(</span>
+<span id="cb25-3">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"mediana_"</span>, </span>
+<span id="cb25-4">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as_name</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(metrica))</span>
+<span id="cb25-5">  )</span>
+<span id="cb25-6">  data <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb25-7">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(columna_grupos)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb25-8">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">nuevo_nombre :=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">median</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(metrica), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>))</span>
+<span id="cb25-9">}</span>
+<span id="cb25-10"></span>
+<span id="cb25-11">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb25-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana</span>(island, bill_depth_mm)</span></code></pre></div>
+</div>
+<p>O:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1">df_penguins <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb26-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_mediana</span>(year, body_mass_g)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+   year mediana
+  &lt;int&gt;   &lt;dbl&gt;
+1  2007    3900
+2  2008    4200
+3  2009    4000</code></pre>
+</div>
+</div>
+<hr>
+<p>Como decía más arriba, <code>!!enquo()</code> se puede reemplazar por <code>{{}}</code>, pero creo que dificulta ver el papel de <code>enquo()</code> en todo esto.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2024-04-24-por-que-nse/2024-04-24-por-que-nse.html</guid>
+  <pubDate>Wed, 24 Apr 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Cómo aplicar non standard evaluation con dplyr y rlang</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -4428,71 +5006,6 @@ font-style: inherit;">"Source: keras::dataset_mnist()"</span></span>
  ]]></description>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2023-07-21-muestreo-ii/</guid>
-  <pubDate>Fri, 21 Jul 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Personas centenarias [tidytuesday]</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-07-21-tidytuesday-oldest-people/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Exploración de datos del <a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-30/readme.md">tidytuesday del 30 de mayo de 2023.</a></p>
-<p>Sitúo por año de nacimiento a los centenarios. Habrá en los años más recientes, seguramente porque la población era mayor (en un periodo tan breve, no creo que los avances médicos supusieran tanta diferencia).</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-07-21-tidytuesday-oldest-people/index_files/figure-html/per-year-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="cómo-varía-en-función-de-las-variables-que-hay" class="level2">
-<h2 class="anchored" data-anchor-id="cómo-varía-en-función-de-las-variables-que-hay">¿Cómo varía en función de las variables que hay?</h2>
-<p>No tengo a mano los datos de población de los países pero me vale esto para hacerme una idea.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-07-21-tidytuesday-oldest-people/index_files/figure-html/per-country-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>No hay diferencia entre chico/chica:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Género</th>
-<th style="text-align: right;">Personas</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">female</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">male</td>
-<td style="text-align: right;">100</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-07-21-tidytuesday-oldest-people/</guid>
   <pubDate>Fri, 21 Jul 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
