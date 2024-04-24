@@ -459,6 +459,38 @@ env:  global</code></pre>
 </div>
 <hr>
 <p>Como decía más arriba, <code>!!enquo()</code> se puede reemplazar por <code>{{}}</code>, pero creo que dificulta ver el papel de <code>enquo()</code> en todo esto.</p>
+<hr>
+<p>Atención:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>nuevo_entorno <span class="ot">&lt;-</span> <span class="fu">new.env</span>()</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>nuevo_entorno<span class="sc">$</span><span class="st">`</span><span class="at">+</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="st">`</span><span class="at">-</span><span class="st">`</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>suma_expr <span class="ot">&lt;-</span> <span class="fu">expr</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>suma_expr</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 + 1</code></pre>
+</div>
+</div>
+<p>Y resulta que:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eval_tidy</span>(suma_expr, <span class="at">env =</span> nuevo_entorno)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0</code></pre>
+</div>
+</div>
+<p>¿O no?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">eval_tidy</span>(suma_expr)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="st">`</span><span class="at">+</span><span class="st">`</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (e1, e2)  .Primitive("+")</code></pre>
+</div>
+</div>
 
 
 </section>
