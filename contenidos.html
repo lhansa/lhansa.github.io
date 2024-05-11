@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
 </style>
@@ -49,13 +49,7 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -64,10 +58,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 <script>
@@ -112,71 +104,39 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
-  ,
-"language":"es"
   });
 });
 </script> 
   
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="alternate" type="application/rss+xml" title="Leonardo Hansa" href="contenidos.xml" data-external="1"></head>
+<link rel="alternate" type="application/rss+xml" title="Leonardo Hansa" href="contenidos.xml"></head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand " data-bs-theme="dark">
+    <nav class="navbar navbar-expand navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Leonardo Hansa</span>
     </a>
   </div>
           <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./contenidos.html" aria-current="page"> <i class="bi bi-book" role="img">
+    <a class="nav-link active" href="./contenidos.html" aria-current="page"><i class="bi bi-book" role="img">
 </i> 
-<span class="menu-text">Contenidos</span></a>
+ <span class="menu-text">Contenidos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://leonardohansa.com"> <i class="bi bi-balloon-heart" role="img">
+    <a class="nav-link" href="https://leonardohansa.com"><i class="bi bi-balloon-heart" role="img">
 </i> 
-<span class="menu-text">Cu-cu-trás</span></a>
+ <span class="menu-text">Cu-cu-trás</span></a>
   </li>  
 </ul>
-          <div class="quarto-navbar-tools">
-</div>
-            <div id="quarto-search" class="" title="Buscar"></div>
+            <div id="quarto-search" class="" title="Search"></div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -195,7 +155,7 @@ window.Quarto = {
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
     
   
@@ -203,15 +163,14 @@ window.Quarto = {
   </div>
   
 
-
 </header>
 
 
 
 
 
-
 <div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -227,447 +186,459 @@ Descripción
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="datos" data-listing-date-sort="1713916800000" data-listing-file-modified-sort="1713992980278" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="832" data-listing-title-sort="Por qué puedes necesitar non standard evaluation en dplyr" data-listing-filename-sort="2024-04-24-por-que-nse.qmd">
-<td>
-<a href="./posts/2024-04-24-por-que-nse/2024-04-24-por-que-nse.html" class="title listing-title">Por qué puedes necesitar non standard evaluation en dplyr</a>
+<tr data-index="0" data-categories="datos" data-listing-date-sort="1715205600000" data-listing-file-modified-sort="1715443629786" data-listing-reading-time-sort="2.25" data-listing-title-sort="Un problema habitual en ficheros CSV" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2024-05-09-csv/index.html" class="title">Un problema habitual en ficheros CSV</a>
 </td>
-<td>
-<span class="listing-date">24 abr 2024</span>
+<td class="listing-date">
+9 may 2024
 </td>
-<td>
-<span class="listing-description">Comparativa de non-stantard evaluation y tidyeval</span>
-</td>
-</tr>
-<tr data-index="1" data-categories="datos" data-listing-date-sort="1713744000000" data-listing-file-modified-sort="1713992980278" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="533" data-listing-title-sort="Cómo aplicar non standard evaluation con dplyr y rlang" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2024-04-22-empleo/index.html" class="title listing-title">Cómo aplicar non standard evaluation con dplyr y rlang</a>
-</td>
-<td>
-<span class="listing-date">22 abr 2024</span>
-</td>
-<td>
-<span class="listing-description">Cómo aplicar non standard evaluation con dplyr y rlang</span>
+<td class="listing-description">
+El formato de los ficheros CSV depende de cómo se separen las columnas y de cómo se indique la separación decimal. ues hay una mezcla horrorosa que no tiene ningún sentido.
 </td>
 </tr>
-<tr data-index="2" data-categories="datos" data-listing-date-sort="1713657600000" data-listing-file-modified-sort="1713992980278" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1485" data-listing-title-sort="Cómo procesas datos que no te caben en RAM" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2024-04-21-dataframes-inmemory/index.html" class="title listing-title">Cómo procesas datos que no te caben en RAM</a>
+<tr data-index="1" data-categories="datos" data-listing-date-sort="1713909600000" data-listing-file-modified-sort="1713992948666" data-listing-reading-time-sort="4.16" data-listing-title-sort="Por qué puedes necesitar non standard evaluation en dplyr" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2024-04-24-por-que-nse/index.html" class="title">Por qué puedes necesitar non standard evaluation en dplyr</a>
 </td>
-<td>
-<span class="listing-date">21 abr 2024</span>
+<td class="listing-date">
+24 abr 2024
 </td>
-<td>
-<span class="listing-description">Procesamiento de datos con más gigas que memoria RAM</span>
-</td>
-</tr>
-<tr data-index="3" data-categories="datos" data-listing-date-sort="1710720000000" data-listing-file-modified-sort="1713992980278" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="316" data-listing-title-sort="Relaciones espurias" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2024-03-18-correlation/index.html" class="title listing-title">Relaciones espurias</a>
-</td>
-<td>
-<span class="listing-date">18 mar 2024</span>
-</td>
-<td>
-<span class="listing-description">Exploración de relaciones espurias en datos de divorcios</span>
+<td class="listing-description">
+Comparativa de non-stantard evaluation y tidyeval
 </td>
 </tr>
-<tr data-index="4" data-categories="datos" data-listing-date-sort="1708732800000" data-listing-file-modified-sort="1713992980278" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="670" data-listing-title-sort="¿Cómo surge la distribución normal?" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2024-02-24-normality/index.html" class="title listing-title">¿Cómo surge la distribución normal?</a>
+<tr data-index="2" data-categories="datos" data-listing-date-sort="1713736800000" data-listing-file-modified-sort="1713811118969" data-listing-reading-time-sort="2.67" data-listing-title-sort="Cómo aplicar non standard evaluation con dplyr y rlang" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2024-04-22-empleo/index.html" class="title">Cómo aplicar non standard evaluation con dplyr y rlang</a>
 </td>
-<td>
-<span class="listing-date">24 feb 2024</span>
+<td class="listing-date">
+22 abr 2024
 </td>
-<td>
-<span class="listing-description">Exploración de la distribución normal con R</span>
-</td>
-</tr>
-<tr data-index="5" data-categories="datos" data-listing-date-sort="1706054400000" data-listing-file-modified-sort="1713992980278" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="114" data-listing-title-sort="Statistical Rethinking (2)" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2024-01-24-rethinking-2/index.html" class="title listing-title">Statistical Rethinking (2)</a>
-</td>
-<td>
-<span class="listing-date">24 ene 2024</span>
-</td>
-<td>
-<span class="listing-description">Por qué es importante la distribución normal</span>
+<td class="listing-description">
+Cómo aplicar non standard evaluation con dplyr y rlang
 </td>
 </tr>
-<tr data-index="6" data-categories="datos" data-listing-date-sort="1703980800000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="464" data-listing-title-sort="¿Cómo se usan las prioris conjugadas?" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-12-31-conjugate-prior/index.html" class="title listing-title">¿Cómo se usan las prioris conjugadas?</a>
+<tr data-index="3" data-categories="datos" data-listing-date-sort="1713650400000" data-listing-file-modified-sort="1713719017402" data-listing-reading-time-sort="7.42" data-listing-title-sort="Cómo procesas datos que no te caben en RAM" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2024-04-21-dataframes-inmemory/index.html" class="title">Cómo procesas datos que no te caben en RAM</a>
 </td>
-<td>
-<span class="listing-date">31 dic 2023</span>
+<td class="listing-date">
+21 abr 2024
 </td>
-<td>
-<span class="listing-description">Tutorial en R de cómo usar las prioris conjugadas en estadística bayesiana, con el ejemplo de lanzar una moneda</span>
-</td>
-</tr>
-<tr data-index="7" data-categories="datos" data-listing-date-sort="1703635200000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="383" data-listing-title-sort="Statistical Rethinking (1)" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-12-27-rethinking-1/index.html" class="title listing-title">Statistical Rethinking (1)</a>
-</td>
-<td>
-<span class="listing-date">27 dic 2023</span>
-</td>
-<td>
-<span class="listing-description">Introducción de métodos generativos en estadística bayesiana, basados en el libro Statistical Rethinking de Richard McElreath</span>
+<td class="listing-description">
+Procesamiento de datos con más gigas que memoria RAM
 </td>
 </tr>
-<tr data-index="8" data-categories="datos" data-listing-date-sort="1703203200000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="942" data-listing-title-sort="Introducción a análisis de supervivencia con R" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-12-22-survival-analysis/index.html" class="title listing-title">Introducción a análisis de supervivencia con R</a>
+<tr data-index="4" data-categories="datos" data-listing-date-sort="1710716400000" data-listing-file-modified-sort="1711745769094" data-listing-reading-time-sort="1.58" data-listing-title-sort="Relaciones espurias" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2024-03-18-correlation/index.html" class="title">Relaciones espurias</a>
 </td>
-<td>
-<span class="listing-date">22 dic 2023</span>
+<td class="listing-date">
+18 mar 2024
 </td>
-<td>
-<span class="listing-description">Ejemplo de introducción al análisis de supervivencia con R</span>
-</td>
-</tr>
-<tr data-index="9" data-categories="datos" data-listing-date-sort="1701907200000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5165" data-listing-title-sort="Comparativa pequeña entre tidyverse y R base" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-12-07-tidyverse-rbase/index.html" class="title listing-title">Comparativa pequeña entre tidyverse y R base</a>
-</td>
-<td>
-<span class="listing-date">7 dic 2023</span>
-</td>
-<td>
-<span class="listing-description">Una comparativa entre algunos códigos en R base y tidyverse para tratar un data frame</span>
+<td class="listing-description">
+Exploración de relaciones espurias en datos de divorcios
 </td>
 </tr>
-<tr data-index="10" data-categories="datos" data-listing-date-sort="1701475200000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="388" data-listing-title-sort="Advent of code (2)" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-12-05-adventofcode-ii/index.html" class="title listing-title">Advent of code (2)</a>
+<tr data-index="5" data-categories="datos" data-listing-date-sort="1708729200000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="3.375" data-listing-title-sort="¿Cómo surge la distribución normal?" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2024-02-24-normality/index.html" class="title">¿Cómo surge la distribución normal?</a>
 </td>
-<td>
-<span class="listing-date">2 dic 2023</span>
+<td class="listing-date">
+24 feb 2024
 </td>
-<td>
-<span class="listing-description">Ejercicio 2 de Advent of code 2023</span>
-</td>
-</tr>
-<tr data-index="11" data-categories="datos" data-listing-date-sort="1701388800000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="524" data-listing-title-sort="Advent of code (1)" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-12-01-adventofcode-i/index.html" class="title listing-title">Advent of code (1)</a>
-</td>
-<td>
-<span class="listing-date">1 dic 2023</span>
-</td>
-<td>
-<span class="listing-description">Ejercicio 1 de Advent of code 2023</span>
+<td class="listing-description">
+Exploración de la distribución normal con R
 </td>
 </tr>
-<tr data-index="12" data-categories="datos" data-listing-date-sort="1700956800000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="734" data-listing-title-sort="¿Qué formato de datos es más rápido de leer y escribir?" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-11-26-comparativa-tiempos-formatos-ficheros/index.html" class="title listing-title">¿Qué formato de datos es más rápido de leer y escribir?</a>
+<tr data-index="6" data-categories="datos" data-listing-date-sort="1706050800000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="0.57" data-listing-title-sort="Statistical Rethinking (2)" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2024-01-24-rethinking-2/index.html" class="title">Statistical Rethinking (2)</a>
 </td>
-<td>
-<span class="listing-date">26 nov 2023</span>
+<td class="listing-date">
+24 ene 2024
 </td>
-<td>
-<span class="listing-description">Experimentos para comparar tiempos de ejecución en lectura y escritura de distintos ficheros de datos con R y Python</span>
-</td>
-</tr>
-<tr data-index="13" data-categories="datos" data-listing-date-sort="1699660800000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1882" data-listing-title-sort="Cómo interpretas un intervalo de confianza" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-11-05-confianza/index.html" class="title listing-title">Cómo interpretas un intervalo de confianza</a>
-</td>
-<td>
-<span class="listing-date">11 nov 2023</span>
-</td>
-<td>
-<span class="listing-description">Cómo calcular e interpretar intervalos de confianza</span>
+<td class="listing-description">
+Por qué es importante la distribución normal
 </td>
 </tr>
-<tr data-index="14" data-categories="datos" data-listing-date-sort="1697760000000" data-listing-file-modified-sort="1713992980274" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="589" data-listing-title-sort="Pirámide de población española, desde 1971" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-10-20-piramide-de-poblacion/index.html" class="title listing-title">Pirámide de población española, desde 1971</a>
+<tr data-index="7" data-categories="datos" data-listing-date-sort="1703977200000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="2.32" data-listing-title-sort="¿Cómo se usan las prioris conjugadas?" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-12-31-conjugate-prior/index.html" class="title">¿Cómo se usan las prioris conjugadas?</a>
 </td>
-<td>
-<span class="listing-date">20 oct 2023</span>
+<td class="listing-date">
+31 dic 2023
 </td>
-<td>
-<span class="listing-description">Evolución de la población española por edades desde 1971, con R y ggplot2.</span>
-</td>
-</tr>
-<tr data-index="15" data-categories="datos" data-listing-date-sort="1697068800000" data-listing-file-modified-sort="1713992980258" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="825" data-listing-title-sort="Paseo en bicicleta eléctrica por Madrid" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-10-12-bicimad/index.html" class="title listing-title">Paseo en bicicleta eléctrica por Madrid</a>
-</td>
-<td>
-<span class="listing-date">12 oct 2023</span>
-</td>
-<td>
-<span class="listing-description">Últimamente tengo la sensación de que las estaciones de Bicimad, el servicio de bicis públicas de Madrid, están vacías.</span>
+<td class="listing-description">
+Tutorial en R de cómo usar las prioris conjugadas en estadística bayesiana, con el ejemplo de lanzar una moneda
 </td>
 </tr>
-<tr data-index="16" data-categories="datos" data-listing-date-sort="1696032000000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="434" data-listing-title-sort="Cómo visualizar cualquier conjunto de datos en 2 dimensiones" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-09-30-tsne/index.html" class="title listing-title">Cómo visualizar cualquier conjunto de datos en 2 dimensiones</a>
+<tr data-index="8" data-categories="datos" data-listing-date-sort="1703631600000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="1.915" data-listing-title-sort="Statistical Rethinking (1)" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-12-27-rethinking-1/index.html" class="title">Statistical Rethinking (1)</a>
 </td>
-<td>
-<span class="listing-date">30 sept 2023</span>
+<td class="listing-date">
+27 dic 2023
 </td>
-<td>
-<span class="listing-description">Uso de t-SNE para visualizar en 2 dimensiones un conjunto de datos, independientemente de cuántas variables tenga </span>
-</td>
-</tr>
-<tr data-index="17" data-categories="lecturas" data-listing-date-sort="1695859200000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1819" data-listing-title-sort="¿Existe la suerte?" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-09-28-fooled-by-randomness/index.html" class="title listing-title">¿Existe la suerte?</a>
-</td>
-<td>
-<span class="listing-date">28 sept 2023</span>
-</td>
-<td>
-<span class="listing-description">Notas sobre el libro Existe la suerte de Nassim Taleb</span>
+<td class="listing-description">
+Introducción de métodos generativos en estadística bayesiana, basados en el libro Statistical Rethinking de Richard McElreath
 </td>
 </tr>
-<tr data-index="18" data-categories="datos" data-listing-date-sort="1691971200000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="308" data-listing-title-sort="Muertes de humanos causadas por otros animales" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-08-14-muertes-humanas/index.html" class="title listing-title">Muertes de humanos causadas por otros animales</a>
+<tr data-index="9" data-categories="datos" data-listing-date-sort="1703199600000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="4.71" data-listing-title-sort="Introducción a análisis de supervivencia con R" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-12-22-survival-analysis/index.html" class="title">Introducción a análisis de supervivencia con R</a>
 </td>
-<td>
-<span class="listing-date">14 ago 2023</span>
+<td class="listing-date">
+22 dic 2023
 </td>
-<td>
-<span class="listing-description">Exploración de muertes de humanos anuales causadas por otros animales.</span>
-</td>
-</tr>
-<tr data-index="19" data-categories="datos" data-listing-date-sort="1689897600000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="873" data-listing-title-sort="Muestreo (II)" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-07-21-muestreo-ii/index.html" class="title listing-title">Muestreo (II)</a>
-</td>
-<td>
-<span class="listing-date">21 jul 2023</span>
-</td>
-<td>
-<span class="listing-description">Repaso a más conceptos introductorios al muestreo estadístico</span>
+<td class="listing-description">
+Ejemplo de introducción al análisis de supervivencia con R
 </td>
 </tr>
-<tr data-index="20" data-categories="datos" data-listing-date-sort="1689897600000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="238" data-listing-title-sort="Personas centenarias [tidytuesday]" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-07-21-tidytuesday-oldest-people/index.html" class="title listing-title">Personas centenarias [tidytuesday]</a>
+<tr data-index="10" data-categories="datos" data-listing-date-sort="1701903600000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="25.825" data-listing-title-sort="Comparativa pequeña entre tidyverse y R base" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-12-07-tidyverse-rbase/index.html" class="title">Comparativa pequeña entre tidyverse y R base</a>
 </td>
-<td>
-<span class="listing-date">21 jul 2023</span>
+<td class="listing-date">
+7 dic 2023
 </td>
-<td>
-<span class="listing-description">Exploración de datos de personas centenarias, con datos del tidytuesday de 2023-05-30</span>
-</td>
-</tr>
-<tr data-index="21" data-categories="lecturas" data-listing-date-sort="1689811200000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="867" data-listing-title-sort="7 hábitos de la gente altamente efectiva" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-07-20-7-habitos-gente-altamente-efectiva/index.html" class="title listing-title">7 hábitos de la gente altamente efectiva</a>
-</td>
-<td>
-<span class="listing-date">20 jul 2023</span>
-</td>
-<td>
-<span class="listing-description">Resumen con interpretación propia sobre el libro 7 hábitos de la gente altamente efectiva, de Stephen Covey</span>
+<td class="listing-description">
+Una comparativa entre algunos códigos en R base y tidyverse para tratar un data frame
 </td>
 </tr>
-<tr data-index="22" data-categories="lecturas" data-listing-date-sort="1689724800000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2019" data-listing-title-sort="12 reglas para la vida" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-07-19-12-reglas-para-la-vida/index.html" class="title listing-title">12 reglas para la vida</a>
+<tr data-index="11" data-categories="datos" data-listing-date-sort="1701471600000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="1.94" data-listing-title-sort="Advent of code (2)" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-12-05-adventofcode-ii/index.html" class="title">Advent of code (2)</a>
 </td>
-<td>
-<span class="listing-date">19 jul 2023</span>
+<td class="listing-date">
+2 dic 2023
 </td>
-<td>
-<span class="listing-description">Resumen con interpretación propia sobre el libro 12 reglas para al vida, de Jordan Peterson</span>
-</td>
-</tr>
-<tr data-index="23" data-categories="datos" data-listing-date-sort="1689638400000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1090" data-listing-title-sort="Muestreo (I)" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-07-18-muestreo/index.html" class="title listing-title">Muestreo (I)</a>
-</td>
-<td>
-<span class="listing-date">18 jul 2023</span>
-</td>
-<td>
-<span class="listing-description">Un repaso a algunos conceptos introductorios al muestreo estadístico</span>
+<td class="listing-description">
+Ejercicio 2 de Advent of code 2023
 </td>
 </tr>
-<tr data-index="24" data-categories="datos" data-listing-date-sort="1689465600000" data-listing-file-modified-sort="1713992980166" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="228" data-listing-title-sort="Matrimonios y nacimientos" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-07-16-matrimonios/index.html" class="title listing-title">Matrimonios y nacimientos</a>
+<tr data-index="12" data-categories="datos" data-listing-date-sort="1701385200000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="2.62" data-listing-title-sort="Advent of code (1)" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-12-01-adventofcode-i/index.html" class="title">Advent of code (1)</a>
 </td>
-<td>
-<span class="listing-date">16 jul 2023</span>
+<td class="listing-date">
+1 dic 2023
 </td>
-<td>
-<span class="listing-description">Evolución anual de matrimonios, nacimientos y defunciones en España. Los matrimonios están decreciendo. ¿Será porque la institución del matrimonio está caduca? ¿Será que ya no aporta nada? ¿O sí aporta pero los jóvenes no le vemos interés, ignorantes nosotros?</span>
-</td>
-</tr>
-<tr data-index="25" data-categories="datos" data-listing-date-sort="1689379200000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="223" data-listing-title-sort="Pernoctaciones" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-07-15-pernoctaciones/index.html" class="title listing-title">Pernoctaciones</a>
-</td>
-<td>
-<span class="listing-date">15 jul 2023</span>
-</td>
-<td>
-<span class="listing-description">Análisis de la evolución de pernoctaciones por CCAA</span>
+<td class="listing-description">
+Ejercicio 1 de Advent of code 2023
 </td>
 </tr>
-<tr data-index="26" data-categories="datos" data-listing-date-sort="1687564800000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="766" data-listing-title-sort="Cara o cruz, modo Bayes (I)" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-06-24-bayes-y-monedas/index.html" class="title listing-title">Cara o cruz, modo Bayes (I)</a>
+<tr data-index="13" data-categories="datos" data-listing-date-sort="1700953200000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="3.68" data-listing-title-sort="¿Qué formato de datos es más rápido de leer y escribir?" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-11-26-comparativa-tiempos-formatos-ficheros/index.html" class="title">¿Qué formato de datos es más rápido de leer y escribir?</a>
 </td>
-<td>
-<span class="listing-date">24 jun 2023</span>
+<td class="listing-date">
+26 nov 2023
 </td>
-<td>
-<span class="listing-description">Experimentos estadísticos frecuentistas y bayesianos en lanzamiento de monedas.</span>
-</td>
-</tr>
-<tr data-index="27" data-categories="datos" data-listing-date-sort="1686528000000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="206" data-listing-title-sort="Los hijos de padres altos son bajitos" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-06-12-regresion-a-la-media/index.html" class="title listing-title">Los hijos de padres altos son bajitos</a>
-</td>
-<td>
-<span class="listing-date">12 jun 2023</span>
-</td>
-<td>
-<span class="listing-description">La regresión a la media aplicada a alturas de padres e hijos.</span>
+<td class="listing-description">
+Experimentos para comparar tiempos de ejecución en lectura y escritura de distintos ficheros de datos con R y Python
 </td>
 </tr>
-<tr data-index="28" data-categories="datos" data-listing-date-sort="1685577600000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="673" data-listing-title-sort="Juegos con la correlación de la felicidad" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-06-01-juegos-correlacion/index.html" class="title listing-title">Juegos con la correlación de la felicidad</a>
+<tr data-index="14" data-categories="datos" data-listing-date-sort="1699657200000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="9.41" data-listing-title-sort="Cómo interpretas un intervalo de confianza" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-11-05-confianza/index.html" class="title">Cómo interpretas un intervalo de confianza</a>
 </td>
-<td>
-<span class="listing-date">1 jun 2023</span>
+<td class="listing-date">
+11 nov 2023
 </td>
-<td>
-<span class="listing-description">Las causualidades de la felicidad. Cacharreos con datos de felicidad</span>
-</td>
-</tr>
-<tr data-index="29" data-categories="lecturas" data-listing-date-sort="1685145600000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="760" data-listing-title-sort="Cómo ser un estoico" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-05-27-como-ser-un-estoico/index.html" class="title listing-title">Cómo ser un estoico</a>
-</td>
-<td>
-<span class="listing-date">27 may 2023</span>
-</td>
-<td>
-<span class="listing-description">Notas de lectura del libro de Massimo Pigliucci</span>
+<td class="listing-description">
+Cómo calcular e interpretar intervalos de confianza
 </td>
 </tr>
-<tr data-index="30" data-categories="exploraciones" data-listing-date-sort="1676764800000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="325" data-listing-title-sort="Diferencia de edad entre parejas sentimentales en películas" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2023-02-19-hollywood-age-gaps/index.html" class="title listing-title">Diferencia de edad entre parejas sentimentales en películas</a>
+<tr data-index="15" data-categories="datos" data-listing-date-sort="1697752800000" data-listing-file-modified-sort="1711745769090" data-listing-reading-time-sort="3" data-listing-title-sort="Pirámide de población española, desde 1971" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-10-20-piramide-de-poblacion/index.html" class="title">Pirámide de población española, desde 1971</a>
 </td>
-<td>
-<span class="listing-date">19 feb 2023</span>
+<td class="listing-date">
+20 oct 2023
 </td>
-<td>
-<span class="listing-description">Buenas diferencias de edades entre parejas en películas</span>
-</td>
-</tr>
-<tr data-index="31" data-categories="lecturas" data-listing-date-sort="1662854400000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="13" data-listing-word-count-sort="2455" data-listing-title-sort="Rompe la barrera del no" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2022-09-11-rompe-la-barrera-del-no/index.html" class="title listing-title">Rompe la barrera del no</a>
-</td>
-<td>
-<span class="listing-date">11 sept 2022</span>
-</td>
-<td>
-<span class="listing-description">Resumen del libro Rompe la barrera del no</span>
+<td class="listing-description">
+Evolución de la población española por edades desde 1971, con R y ggplot2.
 </td>
 </tr>
-<tr data-index="32" data-categories="lecturas" data-listing-date-sort="1662163200000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="533" data-listing-title-sort="27 aforismos de Nassim Taleb" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2022-09-03-el-lecho-de-procusto/index.html" class="title listing-title">27 aforismos de Nassim Taleb</a>
+<tr data-index="16" data-categories="datos" data-listing-date-sort="1697061600000" data-listing-file-modified-sort="1711745769058" data-listing-reading-time-sort="4.145" data-listing-title-sort="Paseo en bicicleta eléctrica por Madrid" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-10-12-bicimad/index.html" class="title">Paseo en bicicleta eléctrica por Madrid</a>
 </td>
-<td>
-<span class="listing-date">3 sept 2022</span>
+<td class="listing-date">
+12 oct 2023
 </td>
-<td>
-<span class="listing-description">Selección de aforismos de Taleb, del Lecho de Procusto</span>
-</td>
-</tr>
-<tr data-index="33" data-categories="lecturas" data-listing-date-sort="1660003200000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2373" data-listing-title-sort="Los peligros de la moralidad" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2022-08-09-los-problemas-de-la-moralidad/index.html" class="title listing-title">Los peligros de la moralidad</a>
-</td>
-<td>
-<span class="listing-date">9 ago 2022</span>
-</td>
-<td>
-<span class="listing-description">Resumen de Los peligros de la moralidad, de Pablo Malo</span>
+<td class="listing-description">
+Últimamente tengo la sensación de que las estaciones de Bicimad, el servicio de bicis públicas de Madrid, están vacías.
 </td>
 </tr>
-<tr data-index="34" data-categories="exploraciones" data-listing-date-sort="1659744000000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108" data-listing-title-sort="Mi IPC es (incluso) más alto" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2022-08-06-mi-ipc-es-incluso-m-s-alto/index.html" class="title listing-title">Mi IPC es (incluso) más alto</a>
+<tr data-index="17" data-categories="datos" data-listing-date-sort="1696024800000" data-listing-file-modified-sort="1711745768886" data-listing-reading-time-sort="2.165" data-listing-title-sort="Cómo visualizar cualquier conjunto de datos en 2 dimensiones" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-09-30-tsne/index.html" class="title">Cómo visualizar cualquier conjunto de datos en 2 dimensiones</a>
 </td>
-<td>
-<span class="listing-date">6 ago 2022</span>
+<td class="listing-date">
+30 sept 2023
 </td>
-<td>
-<span class="listing-description">Exploración de datos del IPC</span>
-</td>
-</tr>
-<tr data-index="35" data-categories="lecturas" data-listing-date-sort="1659657600000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2174" data-listing-title-sort="El sutil arte de que todo te importe una mierda" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2022-08-05-el-sutil-arte-de-que-todo-te-importe-una-mierda/index.html" class="title listing-title">El sutil arte de que todo te importe una mierda</a>
-</td>
-<td>
-<span class="listing-date">5 ago 2022</span>
-</td>
-<td>
-<span class="listing-description">Resumen del libro El sutil arte de que casi todo te importe una mierda</span>
+<td class="listing-description">
+Uso de t-SNE para visualizar en 2 dimensiones un conjunto de datos, independientemente de cuántas variables tenga
 </td>
 </tr>
-<tr data-index="36" data-categories="exploraciones" data-listing-date-sort="1640476800000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="552" data-listing-title-sort="Burbuja turística" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2021-12-26-burbuja-tur-stica/index.html" class="title listing-title">Burbuja turística</a>
+<tr data-index="18" data-categories="lecturas" data-listing-date-sort="1695852000000" data-listing-file-modified-sort="1711745768886" data-listing-reading-time-sort="9.095" data-listing-title-sort="¿Existe la suerte?" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-09-28-fooled-by-randomness/index.html" class="title">¿Existe la suerte?</a>
 </td>
-<td>
-<span class="listing-date">26 dic 2021</span>
+<td class="listing-date">
+28 sept 2023
 </td>
-<td>
-<span class="listing-description">Exploración de datos de turismo</span>
-</td>
-</tr>
-<tr data-index="37" data-categories="lecturas" data-listing-date-sort="1633046400000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="110" data-listing-title-sort="Asalariado, Taleb habla de ti" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2022-10-01-asalariado-taleb-habla-de-ti/index.html" class="title listing-title">Asalariado, Taleb habla de ti</a>
-</td>
-<td>
-<span class="listing-date">1 oct 2021</span>
-</td>
-<td>
-<span class="listing-description"><em>Un perro alardea ante un lobo de todos los lujos y comodidades a su disposición.</em></span>
+<td class="listing-description">
+Notas sobre el libro Existe la suerte de Nassim Taleb
 </td>
 </tr>
-<tr data-index="38" data-categories="lecturas" data-listing-date-sort="1628294400000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="366" data-listing-title-sort="Nate Silver describe el comienzo de una pandemia que no fue" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2022-08-07-nate-silver-describe-el-comienzo-de-una-pandemia-que-no-fue/index.html" class="title listing-title">Nate Silver describe el comienzo de una pandemia que no fue</a>
+<tr data-index="19" data-categories="datos" data-listing-date-sort="1691964000000" data-listing-file-modified-sort="1711745768886" data-listing-reading-time-sort="1.53" data-listing-title-sort="Muertes de humanos causadas por otros animales" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-08-14-muertes-humanas/index.html" class="title">Muertes de humanos causadas por otros animales</a>
 </td>
-<td>
-<span class="listing-date">7 ago 2021</span>
+<td class="listing-date">
+14 ago 2023
 </td>
-<td>
-<span class="listing-description">Párrafo de La señal y el ruido, sobre pandemias</span>
+<td class="listing-description">
+Exploración de muertes de humanos anuales causadas por otros animales.
 </td>
 </tr>
-<tr data-index="39" data-categories="lecturas" data-listing-date-sort="1590278400000" data-listing-file-modified-sort="1713992980162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="302" data-listing-title-sort="Literatura y totalitarismo" data-listing-filename-sort="index.qmd">
-<td>
-<a href="./posts/2020-05-24-literatura-y-totalitarismo/index.html" class="title listing-title">Literatura y totalitarismo</a>
+<tr data-index="20" data-categories="datos" data-listing-date-sort="1689890400000" data-listing-file-modified-sort="1711745768886" data-listing-reading-time-sort="1.23" data-listing-title-sort="Personas centenarias [tidytuesday]" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-07-21-tidytuesday-oldest-people/index.html" class="title">Personas centenarias [tidytuesday]</a>
 </td>
-<td>
-<span class="listing-date">24 may 2020</span>
+<td class="listing-date">
+21 jul 2023
 </td>
-<td>
-<span class="listing-description">Párrafo de un ensayo de George Orwell</span>
+<td class="listing-description">
+Exploración de datos de personas centenarias, con datos del tidytuesday de 2023-05-30
+</td>
+</tr>
+<tr data-index="21" data-categories="datos" data-listing-date-sort="1689890400000" data-listing-file-modified-sort="1711745768886" data-listing-reading-time-sort="4.365" data-listing-title-sort="Muestreo (II)" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-07-21-muestreo-ii/index.html" class="title">Muestreo (II)</a>
+</td>
+<td class="listing-date">
+21 jul 2023
+</td>
+<td class="listing-description">
+Repaso a más conceptos introductorios al muestreo estadístico
+</td>
+</tr>
+<tr data-index="22" data-categories="lecturas" data-listing-date-sort="1689804000000" data-listing-file-modified-sort="1711745768886" data-listing-reading-time-sort="4.335" data-listing-title-sort="7 hábitos de la gente altamente efectiva" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-07-20-7-habitos-gente-altamente-efectiva/index.html" class="title">7 hábitos de la gente altamente efectiva</a>
+</td>
+<td class="listing-date">
+20 jul 2023
+</td>
+<td class="listing-description">
+Resumen con interpretación propia sobre el libro 7 hábitos de la gente altamente efectiva, de Stephen Covey
+</td>
+</tr>
+<tr data-index="23" data-categories="lecturas" data-listing-date-sort="1689717600000" data-listing-file-modified-sort="1711745768886" data-listing-reading-time-sort="10.095" data-listing-title-sort="12 reglas para la vida" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-07-19-12-reglas-para-la-vida/index.html" class="title">12 reglas para la vida</a>
+</td>
+<td class="listing-date">
+19 jul 2023
+</td>
+<td class="listing-description">
+Resumen con interpretación propia sobre el libro 12 reglas para al vida, de Jordan Peterson
+</td>
+</tr>
+<tr data-index="24" data-categories="datos" data-listing-date-sort="1689631200000" data-listing-file-modified-sort="1711745768882" data-listing-reading-time-sort="5.45" data-listing-title-sort="Muestreo (I)" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-07-18-muestreo/index.html" class="title">Muestreo (I)</a>
+</td>
+<td class="listing-date">
+18 jul 2023
+</td>
+<td class="listing-description">
+Un repaso a algunos conceptos introductorios al muestreo estadístico
+</td>
+</tr>
+<tr data-index="25" data-categories="datos" data-listing-date-sort="1689458400000" data-listing-file-modified-sort="1711745768882" data-listing-reading-time-sort="1.13" data-listing-title-sort="Matrimonios y nacimientos" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-07-16-matrimonios/index.html" class="title">Matrimonios y nacimientos</a>
+</td>
+<td class="listing-date">
+16 jul 2023
+</td>
+<td class="listing-description">
+Evolución anual de matrimonios, nacimientos y defunciones en España. Los matrimonios están decreciendo. ¿Será porque la institución del matrimonio está caduca? ¿Será que ya no aporta nada? ¿O sí aporta pero los jóvenes no le vemos interés, ignorantes nosotros?
+</td>
+</tr>
+<tr data-index="26" data-categories="datos" data-listing-date-sort="1689372000000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="1.11" data-listing-title-sort="Pernoctaciones" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-07-15-pernoctaciones/index.html" class="title">Pernoctaciones</a>
+</td>
+<td class="listing-date">
+15 jul 2023
+</td>
+<td class="listing-description">
+Análisis de la evolución de pernoctaciones por CCAA
+</td>
+</tr>
+<tr data-index="27" data-categories="datos" data-listing-date-sort="1687557600000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="3.835" data-listing-title-sort="Cara o cruz, modo Bayes (I)" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-06-24-bayes-y-monedas/index.html" class="title">Cara o cruz, modo Bayes (I)</a>
+</td>
+<td class="listing-date">
+24 jun 2023
+</td>
+<td class="listing-description">
+Experimentos estadísticos frecuentistas y bayesianos en lanzamiento de monedas.
+</td>
+</tr>
+<tr data-index="28" data-categories="datos" data-listing-date-sort="1686520800000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="1.02" data-listing-title-sort="Los hijos de padres altos son bajitos" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-06-12-regresion-a-la-media/index.html" class="title">Los hijos de padres altos son bajitos</a>
+</td>
+<td class="listing-date">
+12 jun 2023
+</td>
+<td class="listing-description">
+La regresión a la media aplicada a alturas de padres e hijos.
+</td>
+</tr>
+<tr data-index="29" data-categories="datos" data-listing-date-sort="1685570400000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="3.36" data-listing-title-sort="Juegos con la correlación de la felicidad" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-06-01-juegos-correlacion/index.html" class="title">Juegos con la correlación de la felicidad</a>
+</td>
+<td class="listing-date">
+1 jun 2023
+</td>
+<td class="listing-description">
+Las causualidades de la felicidad. Cacharreos con datos de felicidad
+</td>
+</tr>
+<tr data-index="30" data-categories="lecturas" data-listing-date-sort="1685138400000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="3.8" data-listing-title-sort="Cómo ser un estoico" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-05-27-como-ser-un-estoico/index.html" class="title">Cómo ser un estoico</a>
+</td>
+<td class="listing-date">
+27 may 2023
+</td>
+<td class="listing-description">
+Notas de lectura del libro de Massimo Pigliucci
+</td>
+</tr>
+<tr data-index="31" data-categories="exploraciones" data-listing-date-sort="1676761200000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="1.615" data-listing-title-sort="Diferencia de edad entre parejas sentimentales en películas" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2023-02-19-hollywood-age-gaps/index.html" class="title">Diferencia de edad entre parejas sentimentales en películas</a>
+</td>
+<td class="listing-date">
+19 feb 2023
+</td>
+<td class="listing-description">
+Buenas diferencias de edades entre parejas en películas
+</td>
+</tr>
+<tr data-index="32" data-categories="lecturas" data-listing-date-sort="1662847200000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="12.275" data-listing-title-sort="Rompe la barrera del no" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2022-09-11-rompe-la-barrera-del-no/index.html" class="title">Rompe la barrera del no</a>
+</td>
+<td class="listing-date">
+11 sept 2022
+</td>
+<td class="listing-description">
+Resumen del libro Rompe la barrera del no
+</td>
+</tr>
+<tr data-index="33" data-categories="lecturas" data-listing-date-sort="1662156000000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="2.665" data-listing-title-sort="27 aforismos de Nassim Taleb" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2022-09-03-el-lecho-de-procusto/index.html" class="title">27 aforismos de Nassim Taleb</a>
+</td>
+<td class="listing-date">
+3 sept 2022
+</td>
+<td class="listing-description">
+Selección de aforismos de Taleb, del Lecho de Procusto
+</td>
+</tr>
+<tr data-index="34" data-categories="lecturas" data-listing-date-sort="1659996000000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="11.865" data-listing-title-sort="Los peligros de la moralidad" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2022-08-09-los-problemas-de-la-moralidad/index.html" class="title">Los peligros de la moralidad</a>
+</td>
+<td class="listing-date">
+9 ago 2022
+</td>
+<td class="listing-description">
+Resumen de Los peligros de la moralidad, de Pablo Malo
+</td>
+</tr>
+<tr data-index="35" data-categories="exploraciones" data-listing-date-sort="1659736800000" data-listing-file-modified-sort="1711745768874" data-listing-reading-time-sort="0.53" data-listing-title-sort="Mi IPC es (incluso) más alto" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2022-08-06-mi-ipc-es-incluso-m-s-alto/index.html" class="title">Mi IPC es (incluso) más alto</a>
+</td>
+<td class="listing-date">
+6 ago 2022
+</td>
+<td class="listing-description">
+Exploración de datos del IPC
+</td>
+</tr>
+<tr data-index="36" data-categories="lecturas" data-listing-date-sort="1659650400000" data-listing-file-modified-sort="1711745768874" data-listing-reading-time-sort="10.87" data-listing-title-sort="El sutil arte de que todo te importe una mierda" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2022-08-05-el-sutil-arte-de-que-todo-te-importe-una-mierda/index.html" class="title">El sutil arte de que todo te importe una mierda</a>
+</td>
+<td class="listing-date">
+5 ago 2022
+</td>
+<td class="listing-description">
+Resumen del libro El sutil arte de que casi todo te importe una mierda
+</td>
+</tr>
+<tr data-index="37" data-categories="exploraciones" data-listing-date-sort="1640473200000" data-listing-file-modified-sort="1711745768874" data-listing-reading-time-sort="2.775" data-listing-title-sort="Burbuja turística" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2021-12-26-burbuja-tur-stica/index.html" class="title">Burbuja turística</a>
+</td>
+<td class="listing-date">
+26 dic 2021
+</td>
+<td class="listing-description">
+Exploración de datos de turismo
+</td>
+</tr>
+<tr data-index="38" data-categories="lecturas" data-listing-date-sort="1633039200000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="0.55" data-listing-title-sort="Asalariado, Taleb habla de ti" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2022-10-01-asalariado-taleb-habla-de-ti/index.html" class="title">Asalariado, Taleb habla de ti</a>
+</td>
+<td class="listing-date">
+1 oct 2021
+</td>
+<td class="listing-description">
+<em>Un perro alardea ante un lobo de todos los lujos y comodidades a su disposición.</em>
+</td>
+</tr>
+<tr data-index="39" data-categories="lecturas" data-listing-date-sort="1628287200000" data-listing-file-modified-sort="1711745768878" data-listing-reading-time-sort="1.83" data-listing-title-sort="Nate Silver describe el comienzo de una pandemia que no fue" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2022-08-07-nate-silver-describe-el-comienzo-de-una-pandemia-que-no-fue/index.html" class="title">Nate Silver describe el comienzo de una pandemia que no fue</a>
+</td>
+<td class="listing-date">
+7 ago 2021
+</td>
+<td class="listing-description">
+Párrafo de La señal y el ruido, sobre pandemias
+</td>
+</tr>
+<tr data-index="40" data-categories="lecturas" data-listing-date-sort="1590271200000" data-listing-file-modified-sort="1711745768874" data-listing-reading-time-sort="1.51" data-listing-title-sort="Literatura y totalitarismo" data-listing-filename-sort="index.qmd">
+<td class="listing-title">
+<a href="./posts/2020-05-24-literatura-y-totalitarismo/index.html" class="title">Literatura y totalitarismo</a>
+</td>
+<td class="listing-date">
+24 may 2020
+</td>
+<td class="listing-description">
+Párrafo de un ensayo de George Orwell
 </td>
 </tr>
 </tbody>
+
 </table>
 <div class="listing-no-matching d-none">
 No hay resultados
@@ -703,23 +674,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -755,27 +712,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/lhansa\.github\.io\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -785,17 +725,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -807,245 +738,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1088,12 +783,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-
-<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookies</a></div></div>
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookies</a></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
@@ -1103,7 +793,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-
 
 
 

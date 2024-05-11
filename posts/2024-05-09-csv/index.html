@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leonardo Hansa">
-<meta name="description" content="Ejercicio 2 de Advent of code 2023">
+<meta name="description" content="Cómo leer ficheros CSV que te dan problemas">
 
-<title>Leonardo Hansa - Advent of code (2)</title>
+<title>Leonardo Hansa - Un problema habitual en ficheros CSV</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -176,10 +176,10 @@ cookieconsent.run({
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Advent of code (2)</h1>
+      <h1 class="title">Un problema habitual en ficheros CSV</h1>
                   <div>
         <div class="description">
-          Ejercicio 2 de Advent of code 2023
+          El formato de los ficheros CSV depende de cómo se separen las columnas y de cómo se indique la separación decimal. ues hay una mezcla horrorosa que no tiene ningún sentido.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -201,7 +201,7 @@ cookieconsent.run({
       <div>
       <div class="quarto-title-meta-heading">Fecha de publicación</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">2 de diciembre de 2023</p>
+        <p class="date">9 de mayo de 2024</p>
       </div>
     </div>
     
@@ -219,109 +219,112 @@ cookieconsent.run({
 
 
 
-<p>Segundo ejercicio de <a href="https://adventofcode.com/">Advent of Code</a> de 2023. Voy con retraso, lo sé.</p>
-<section id="parte-1" class="level2">
-<h2 class="anchored" data-anchor-id="parte-1">Parte 1</h2>
-<p>Mi propuesta con R base:</p>
+<div class="cell" data-python.reticulate="false">
+
+</div>
+<p>Tienes el conjunto de datos <em>iris</em> en un fichero de texto plano con esta pinta:</p>
+<pre><code>sepal length (cm);sepal width (cm);petal length (cm);petal width (cm);species
+5.1;3.5;1.4;0.2;0;1,000.23
+4.9;3.0;1.4;0.2;0;1,000.23
+4.7;3.2;1.3;0.2;0;1,000.23
+4.6;3.1;1.5;0.2;0;1,000.23
+5.0;3.6;1.4;0.2;0;1,000.23
+5.4;3.9;1.7;0.4;0;1,000.23</code></pre>
+<p>Como verás, lo he tuneado un poco: le he añadido una columna con valor constante 1000.23, escrito con el formato anglosajón de separador de miles usando comas.</p>
+<p>Maravilloso. A ver cómo lo leemos.</p>
+<section id="r" class="level2">
+<h2 class="anchored" data-anchor-id="r">R</h2>
+<p>En R, puedes tener la tentación de leerlo así:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>total_cubes <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">red =</span> <span class="dv">12</span>, <span class="at">green =</span> <span class="dv">13</span>, <span class="at">blue =</span> <span class="dv">14</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">readLines</span>(<span class="st">"2023-02.txt"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>df_iris <span class="ot">&lt;-</span>  <span class="fu">read_csv</span>(<span class="st">"iris.txt"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>df_iris</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Game 1: 12 red, 2 green, 5 blue; 9 red, 6 green, 4 blue; 10 red, 2 green, 5 blue; 8 blue, 9 red"
-[2] "Game 2: 3 green, 7 red; 3 blue, 5 red; 2 green, 1 blue, 6 red; 3 green, 2 red, 3 blue"          
-[3] "Game 3: 12 red, 18 blue, 3 green; 14 red, 4 blue, 2 green; 4 green, 15 red"                     
-[4] "Game 4: 14 blue, 8 red, 10 green; 7 green, 9 blue, 4 red; 4 green, 5 red"                       
-[5] "Game 5: 2 red, 1 blue, 4 green; 1 blue, 1 red, 5 green; 6 green, 3 red; 10 blue, 4 green, 1 red"</code></pre>
+<pre><code># A tibble: 150 × 1
+   sepal length (cm);sepal width (cm);petal length (cm);petal width (cm);speci…¹
+   &lt;chr&gt;                                                                        
+ 1 5.1;3.5;1.4;0.2;0;1,000.23                                                   
+ 2 4.9;3.0;1.4;0.2;0;1,000.23                                                   
+ 3 4.7;3.2;1.3;0.2;0;1,000.23                                                   
+ 4 4.6;3.1;1.5;0.2;0;1,000.23                                                   
+ 5 5.0;3.6;1.4;0.2;0;1,000.23                                                   
+ 6 5.4;3.9;1.7;0.4;0;1,000.23                                                   
+ 7 4.6;3.4;1.4;0.3;0;1,000.23                                                   
+ 8 5.0;3.4;1.5;0.2;0;1,000.23                                                   
+ 9 4.4;2.9;1.4;0.2;0;1,000.23                                                   
+10 4.9;3.1;1.5;0.1;0;1,000.23                                                   
+# ℹ 140 more rows
+# ℹ abbreviated name:
+#   ¹​`sepal length (cm);sepal width (cm);petal length (cm);petal width (cm);species;extra`</code></pre>
 </div>
 </div>
-<p>Para cada juego (o sea, cada elemento en <code>data</code>) tengo que comprobar si las extracciones son posibles dada la cantidad de cubos original mencionada: 12 rojos, 13 verdes y 14 azules.</p>
+<p>Todo horrible porque está todo dentro de una columna. La función no ha sabido separar en columnas porque esperaba la coma como delimitador. La coma está en los valores de la columna <code>extra</code> pero no en la primera fila, con los nombres de columnas. Así que <code>read_csv</code> entiende que solo hay una columna.</p>
+<p><code>read.csv()</code> se hace bastante lío y daría error con algo así.</p>
+<p>Un clásico cuando no te funciona <code>read_csv()</code> es probar <code>read_csv2()</code>, que asume que la separación es <code>";"</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>validate_game <span class="ot">&lt;-</span> <span class="cf">function</span>(fila, <span class="at">.total_cubes =</span> total_cubes){</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  fila <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"Game [0-9]+: "</span>, <span class="st">""</span>, fila)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  fila <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">""</span>, fila)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  is_valid_extract <span class="ot">&lt;-</span> <span class="fu">vapply</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">strsplit</span>(fila, <span class="st">";"</span>)[[<span class="dv">1</span>]], </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    validate_extract, </span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">logical</span>(<span class="dv">1</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(is_valid_extract)</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>validate_extract <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">.total_cubes =</span> total_cubes) {</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  lgl_out <span class="ot">&lt;-</span> <span class="fu">vapply</span>(</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>),</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(color, <span class="at">text =</span> x) {</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>      <span class="co"># Extract with regex the number preceding word blue</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>      pattern <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"[0-9]+(?=%s)"</span>, color)</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>      count_txt <span class="ot">&lt;-</span> <span class="fu">regmatches</span>(text, <span class="at">m =</span> <span class="fu">regexpr</span>(pattern, text, <span class="at">perl =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (<span class="fu">length</span>(count_txt) <span class="sc">==</span> <span class="dv">0</span>) {</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(<span class="cn">TRUE</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span>  {</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>        count <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(count_txt)</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>        <span class="fu">return</span>(count <span class="sc">&lt;=</span> total_cubes[[color]]  )</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    }, </span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">logical</span>(<span class="dv">1</span>)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">all</span>(lgl_out)</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>valid_games <span class="ot">&lt;-</span> <span class="fu">vapply</span>(</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  data, </span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  validate_game, </span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">logical</span>(<span class="dv">1</span>)</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Count IDs of valid games</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">which</span>(valid_games))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_iris <span class="ot">&lt;-</span>  <span class="fu">read_csv2</span>(<span class="st">"iris.txt"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_iris)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2600</code></pre>
+<pre><code># A tibble: 6 × 6
+  `sepal length (cm)` `sepal width (cm)` `petal length (cm)` `petal width (cm)`
+                &lt;dbl&gt;              &lt;dbl&gt;               &lt;dbl&gt; &lt;chr&gt;             
+1                  51                 35                  14 0.2               
+2                  49                 30                  14 0.2               
+3                  47                 32                  13 0.2               
+4                  46                 31                  15 0.2               
+5                  50                 36                  14 0.2               
+6                  54                 39                  17 0.4               
+# ℹ 2 more variables: species &lt;dbl&gt;, extra &lt;dbl&gt;</code></pre>
 </div>
 </div>
+<p>Tampoco funciona.</p>
+<p>Las columnas sí están separadas, pero los valores no tienens sentido. <code>read_csv2()</code> ha usado la coma como separador decimal. Y los puntos que había en los números, se los ha pasado por ahí. Y la columna <code>extra</code> la ha puesto como si la coma fuera el separador decimal, cuando realmente es el separador de miles.</p>
+<p>Así que mal.</p>
+<p>Si usaras R base con <code>read.csv2()</code> tendrías también un poco de lío, con columnas identificadas como texto en lugar de número.</p>
+<p>En estos casos, yo tiro de <code>readr::read_delim()</code> especificando cuál es el separador de miles y cuál el decimal (algo equivalente puedes hacer en R base con <code>read.table()</code>).</p>
+<p>Con la función <code>readr::locale()</code> especifico estos separadores.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_iris <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(<span class="st">"iris.txt"</span>, <span class="at">delim =</span> <span class="st">";"</span>, <span class="at">locale =</span> <span class="fu">locale</span>(<span class="at">decimal_mark =</span> <span class="st">"."</span>, <span class="at">grouping_mark =</span> <span class="st">","</span>))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_iris)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 6
+  `sepal length (cm)` `sepal width (cm)` `petal length (cm)` `petal width (cm)`
+                &lt;dbl&gt;              &lt;dbl&gt;               &lt;dbl&gt;              &lt;dbl&gt;
+1                 5.1                3.5                 1.4                0.2
+2                 4.9                3                   1.4                0.2
+3                 4.7                3.2                 1.3                0.2
+4                 4.6                3.1                 1.5                0.2
+5                 5                  3.6                 1.4                0.2
+6                 5.4                3.9                 1.7                0.4
+# ℹ 2 more variables: species &lt;dbl&gt;, extra &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Es un esperpento anti-estandarizaciones, pero ocurre. Debe de haber algunas herramientas de estas que descargan informes en texto plano que tienen esta configuración horrorosa, porque me llegan ficheros así cada dos por tres.</p>
+<p>Y como no son estándar, las funciones habituales de lectura de CSVs se hacen bastante lío.</p>
+<p>Para casos así, intento <strong>ser muy explícito con el código</strong> y <code>read_delim()</code> me obliga a ello por sistema.</p>
 </section>
-<section id="parte-2" class="level2">
-<h2 class="anchored" data-anchor-id="parte-2">Parte 2</h2>
-<p>Debería poner los enunciados aquí… pero paso.</p>
-<p>Mi propuesta para la parte 2, siempre con R base:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>compute_power_game <span class="ot">&lt;-</span> <span class="cf">function</span>(fila){</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  fila <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"Game [0-9]+: "</span>, <span class="st">""</span>, fila)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  fila <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" "</span>, <span class="st">""</span>, fila)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  color_counts <span class="ot">&lt;-</span> <span class="fu">vapply</span>(</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="st">"blue"</span>, <span class="st">"green"</span>, <span class="st">"red"</span>),</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">function</span>(color) {</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      pattern <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">"[0-9]+(?=%s)"</span>, color)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>      color_count <span class="ot">&lt;-</span> <span class="fu">regmatches</span>(fila, <span class="at">m =</span> <span class="fu">gregexpr</span>(pattern, fila, <span class="at">perl =</span> <span class="cn">TRUE</span>))[[<span class="dv">1</span>]]</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      color_count <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(color_count)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">max</span>(color_count)    </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    }, </span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">numeric</span>(<span class="dv">1</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Reduce</span>(<span class="st">`</span><span class="at">*</span><span class="st">`</span>, color_counts)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>game_powers <span class="ot">&lt;-</span> <span class="fu">vapply</span>(</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  data, </span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>  compute_power_game, </span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">numeric</span>(<span class="dv">1</span>)</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="co"># part 2 solution</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(game_powers)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 86036</code></pre>
+<section id="con-python" class="level2">
+<h2 class="anchored" data-anchor-id="con-python">Con Python</h2>
+<p>En Python usaría directamente la función de pandas <code>pd.read_csv()</code> especificando todo.</p>
+<p>Por defecto no funciona:</p>
+<div class="cell" data-python.reticulate="false">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df_iris <span class="op">=</span> pd.read_csv(<span class="st">'iris.txt'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>df_iris.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Pero cada cosa tiene su argumento:</p>
+<div class="cell" data-python.reticulate="false">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df_iris <span class="op">=</span> pd.read_csv(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">'iris.txt'</span>, </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  sep<span class="op">=</span><span class="st">';'</span>, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  decimal<span class="op">=</span><span class="st">'.'</span>, <span class="co">#no necesario en este caso</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  thousands<span class="op">=</span><span class="st">','</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>df_iris.head()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>La función <code>pd.read_csv()</code> ya asume que el separador decimal es el punto, así que no hace falta especificar nada de eso esta vez…</p>
 
 
 </section>
