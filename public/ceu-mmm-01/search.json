@@ -1,0 +1,345 @@
+[
+  {
+    "objectID": "ceu-slides-01.html#parte-1",
+    "href": "ceu-slides-01.html#parte-1",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Parte 1",
+    "text": "Parte 1\n\n\n\n\nTitulado en matemáticas que quería hacer cosas avanzadas con datos.\nSe da cuenta de que las empresas buscan entender, buscan porqués.\nLas cosas avanzadas en las que quería trabajar el matemático no sirven.\nCambio de prioridades."
+  },
+  {
+    "objectID": "ceu-slides-01.html#parte-2",
+    "href": "ceu-slides-01.html#parte-2",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Parte 2",
+    "text": "Parte 2"
+  },
+  {
+    "objectID": "ceu-slides-01.html#me-pagan-por-explicar-no-por-predecir",
+    "href": "ceu-slides-01.html#me-pagan-por-explicar-no-por-predecir",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Me pagan por explicar, no por predecir",
+    "text": "Me pagan por explicar, no por predecir"
+  },
+  {
+    "objectID": "ceu-slides-01.html#necesito-modelos-fáciles-de-interpretar",
+    "href": "ceu-slides-01.html#necesito-modelos-fáciles-de-interpretar",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Necesito modelos fáciles de interpretar",
+    "text": "Necesito modelos fáciles de interpretar\n\nlm()\nglm()\nbrms, rstanarm, …"
+  },
+  {
+    "objectID": "ceu-slides-01.html#el-inconveniente-es-que-estos-modelos-son-lineales",
+    "href": "ceu-slides-01.html#el-inconveniente-es-que-estos-modelos-son-lineales",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "El inconveniente es que estos modelos son lineales",
+    "text": "El inconveniente es que estos modelos son lineales\nPor lo menos en cierto sentido…\n\\[\np = \\frac{1}{1 + e^{\\beta_0 + \\beta_1x_1 + ... + \\beta_n x_n }}\n\\] \\[\n\\log(\\frac{p}{1-p}) = \\beta_0 + \\beta_1x_1 + ... + \\beta_n x_n\n\\]"
+  },
+  {
+    "objectID": "ceu-slides-01.html#en-la-de-sesión-de-hoy-veremos-cómo-buscar-patrones-no-lineales-en-modelos-lineales",
+    "href": "ceu-slides-01.html#en-la-de-sesión-de-hoy-veremos-cómo-buscar-patrones-no-lineales-en-modelos-lineales",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "En la de sesión de hoy veremos cómo buscar patrones no lineales en modelos lineales",
+    "text": "En la de sesión de hoy veremos cómo buscar patrones no lineales en modelos lineales"
+  },
+  {
+    "objectID": "ceu-slides-01.html#en-la-sesión-de-mañana-veremos-cómo-lanzar-varios-modelos-lineales-en-uno",
+    "href": "ceu-slides-01.html#en-la-sesión-de-mañana-veremos-cómo-lanzar-varios-modelos-lineales-en-uno",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "En la sesión de mañana veremos cómo lanzar varios modelos (¿lineales?) en uno",
+    "text": "En la sesión de mañana veremos cómo lanzar varios modelos (¿lineales?) en uno"
+  },
+  {
+    "objectID": "ceu-slides-01.html#toc-1",
+    "href": "ceu-slides-01.html#toc-1",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "TOC",
+    "text": "TOC\n\nQué necesito que sepas sobre mi sector\nQué estadística usamos en mi sector\nEfecto ad-stock\nRendimientos decrecientes\nOtros ejemplos"
+  },
+  {
+    "objectID": "ceu-slides-01.html#más-cosas",
+    "href": "ceu-slides-01.html#más-cosas",
+    "title": "R Shiny",
+    "section": "Más cosas",
+    "text": "Más cosas\n\n\nEn ui.R escribes la interfaz."
+  },
+  {
+    "objectID": "ceu-slides-01.html#parte-3",
+    "href": "ceu-slides-01.html#parte-3",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Parte 3",
+    "text": "Parte 3"
+  },
+  {
+    "objectID": "ceu-slides-01.html#primero-cuál-es-mi-sector",
+    "href": "ceu-slides-01.html#primero-cuál-es-mi-sector",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Primero, cuál es mi sector",
+    "text": "Primero, cuál es mi sector\nMarketing Mix Modelling, cuantificamos la eficacia publicitaria.\n\n\nDicho de otra forma, calculamos cuánto negocio te ha traído la inversión publicitaria (ROI, return on investment)."
+  },
+  {
+    "objectID": "ceu-slides-01.html#podrías-ver-esto-como-asunciones-del-sector",
+    "href": "ceu-slides-01.html#podrías-ver-esto-como-asunciones-del-sector",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Podrías ver esto como asunciones del sector",
+    "text": "Podrías ver esto como asunciones del sector\n\n\nModelos explicativos\nTe acuerdas de la publi\nNo inviertas infinito"
+  },
+  {
+    "objectID": "ceu-slides-01.html#usamos-modelos-con-coeficientes",
+    "href": "ceu-slides-01.html#usamos-modelos-con-coeficientes",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Usamos modelos con coeficientes",
+    "text": "Usamos modelos con coeficientes\nEstos coeficientes sirven para cuantificar el efecto de la publi.\n\nRegresión lineal\nRegresión ridge y/o lasso\nARIMA\nModelos jerárquicos\nRegresión bayesiana\n…"
+  },
+  {
+    "objectID": "ceu-slides-01.html#inconveniente-de-estos-modelos-que-son-lineales.",
+    "href": "ceu-slides-01.html#inconveniente-de-estos-modelos-que-son-lineales.",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Inconveniente de estos modelos: que son lineales.",
+    "text": "Inconveniente de estos modelos: que son lineales.\nLos efectos no lineales de las asunciones los buscamos tratando los datos.\n\n\nOtra opción sería ajustar modelos más complejos, pero entonces no serían fáciles de interpretar, lo que choca con la primera asunción."
+  },
+  {
+    "objectID": "ceu-slides-01.html#qué-vas-a-hacer-hoy",
+    "href": "ceu-slides-01.html#qué-vas-a-hacer-hoy",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Qué vas a hacer hoy",
+    "text": "Qué vas a hacer hoy\nVas a ver ejemplos de cómo buscar comportamientos no lineales en un modelo lineal (complejidad controlada)."
+  },
+  {
+    "objectID": "ceu-slides-01.html#cómo-representamos-el-efecto-ad-stock",
+    "href": "ceu-slides-01.html#cómo-representamos-el-efecto-ad-stock",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Cómo representamos el efecto ad-stock",
+    "text": "Cómo representamos el efecto ad-stock"
+  },
+  {
+    "objectID": "ceu-slides-01.html#ahora-en-datos-reales",
+    "href": "ceu-slides-01.html#ahora-en-datos-reales",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Ahora en datos reales",
+    "text": "Ahora en datos reales"
+  },
+  {
+    "objectID": "ceu-slides-01.html#otros-ejemplos-no-lineales-1",
+    "href": "ceu-slides-01.html#otros-ejemplos-no-lineales-1",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Otros ejemplos no lineales",
+    "text": "Otros ejemplos no lineales\n\nPartir variables\nEfecto anticipación o recuerdo de un evento\n\nCOVID\nCampeonatos\nEventos\n\nSuavizar variables\nSeparar variables por niveles"
+  },
+  {
+    "objectID": "ceu-slides-01.html#live-code",
+    "href": "ceu-slides-01.html#live-code",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Live code",
+    "text": "Live code\n\nAprende a aplicar esto\nArregla la escala\nEscala el trabajo"
+  },
+  {
+    "objectID": "ceu-slides-01.html#según-un-modelo-lineal-cuanto-más-inviertes-más-ganas-hasta-el-infinito",
+    "href": "ceu-slides-01.html#según-un-modelo-lineal-cuanto-más-inviertes-más-ganas-hasta-el-infinito",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Según un modelo lineal, cuanto más inviertes más ganas… hasta el infinito",
+    "text": "Según un modelo lineal, cuanto más inviertes más ganas… hasta el infinito"
+  },
+  {
+    "objectID": "ceu-slides-01.html#pero-la-publicidad-real-no-es-así",
+    "href": "ceu-slides-01.html#pero-la-publicidad-real-no-es-así",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Pero la publicidad real no es así",
+    "text": "Pero la publicidad real no es así"
+  },
+  {
+    "objectID": "ceu-slides-01.html#todo-junto",
+    "href": "ceu-slides-01.html#todo-junto",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Todo junto",
+    "text": "Todo junto"
+  },
+  {
+    "objectID": "ceu-slides-01.html#live-code-1",
+    "href": "ceu-slides-01.html#live-code-1",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Live code",
+    "text": "Live code\n\nUna idea para programar esto\nCómo combinarlo con otras transformaciones\nEscala el trabajo"
+  },
+  {
+    "objectID": "ceu-slides-02.html#un-modelo-y-beta_0-beta_1-x_1-...-beta_n-x_n",
+    "href": "ceu-slides-02.html#un-modelo-y-beta_0-beta_1-x_1-...-beta_n-x_n",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Un modelo: \\(y = \\beta_0 + \\beta_1 x_1 + ... + \\beta_n x_n\\)",
+    "text": "Un modelo: \\(y = \\beta_0 + \\beta_1 x_1 + ... + \\beta_n x_n\\)\n\n\n\n\n\ndate\nsales_retail_region1\nm_cmpny_oh_spnd\nm_cmpny_rd_spnd\n\n\n\n\n2013-01-07\n625952.2\n132\n61279.05\n\n\n2013-01-14\n382404.7\n132\n0.00\n\n\n2013-01-21\n523826.9\n132\n66221.00"
+  },
+  {
+    "objectID": "ceu-slides-02.html#varios-modelos-yk-beta_0-beta_1-x_1k-...-beta_n-x_nk",
+    "href": "ceu-slides-02.html#varios-modelos-yk-beta_0-beta_1-x_1k-...-beta_n-x_nk",
+    "title": "Tratamiento de …",
+    "section": "Varios modelos: \\(y^{(k)} = \\beta_0 + \\beta_1 x_1^{(k)} + ... + \\beta_n x_n^{(k)}\\)",
+    "text": "Varios modelos: \\(y^{(k)} = \\beta_0 + \\beta_1 x_1^{(k)} + ... + \\beta_n x_n^{(k)}\\)\n\n\n\n\n\n\n\n\n\n\n\n\ndate\nname\nvalue\nm_cmpny_oh_spnd\nm_cmpny_rd_spnd\n\n\n\n\n2013-01-07\nsales_retail_region1\n625952.2\n132\n61279.05\n\n\n2013-01-14\nsales_retail_region1\n382404.7\n132\n0.00\n\n\n2013-01-21\nsales_retail_region1\n523826.9\n132\n66221.00\n\n\n2013-01-07\nsales_retail_region2\n1610594.6\n132\n61279.05\n\n\n2013-01-14\nsales_retail_region2\n1004288.6\n132\n0.00\n\n\n2013-01-21\nsales_retail_region2\n1505610.1\n132\n66221.00"
+  },
+  {
+    "objectID": "ceu-slides-02.html#una-única-tabla",
+    "href": "ceu-slides-02.html#una-única-tabla",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Una única tabla",
+    "text": "Una única tabla\n\nlm(y ~ x1 + x2, data = df_con_todo)\n\nVamos a ello…"
+  },
+  {
+    "objectID": "ceu-slides-02.html#dos-opciones",
+    "href": "ceu-slides-02.html#dos-opciones",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Dos opciones",
+    "text": "Dos opciones\n\nUn coeficiente para una variable\nDos (o más) coeficientes para una variable"
+  },
+  {
+    "objectID": "ceu-slides-02.html#un-coeficiente",
+    "href": "ceu-slides-02.html#un-coeficiente",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Un coeficiente",
+    "text": "Un coeficiente\n\n\nTable 1: data.frame para un coeficiente para la variable medio\n\n\nkpi\nvalor\nmedio\n\n\n\n\nregion1\n100\n250\n\n\nregion1\n120\n275\n\n\nregion2\n50\n250\n\n\nregion2\n60\n275"
+  },
+  {
+    "objectID": "ceu-slides-02.html#varios-coeficiente",
+    "href": "ceu-slides-02.html#varios-coeficiente",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Varios coeficiente",
+    "text": "Varios coeficiente\n\n\nTable 2: data.frame para varios coeficiente para la variable medio\n\n\nkpi\nvalor\nmedio_region1\nmedio_region2\n\n\n\n\nregion1\n100\n250\n0\n\n\nregion1\n120\n275\n0\n\n\nregion2\n50\n0\n250\n\n\nregion2\n60\n0\n275"
+  },
+  {
+    "objectID": "ceu-slides-03.html#has-ajustado-un-modelo-estadístico-pero",
+    "href": "ceu-slides-03.html#has-ajustado-un-modelo-estadístico-pero",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Has ajustado un modelo estadístico pero…",
+    "text": "Has ajustado un modelo estadístico pero…"
+  },
+  {
+    "objectID": "ceu-slides-03.html#eso-no-es-útil",
+    "href": "ceu-slides-03.html#eso-no-es-útil",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "eso no es útil",
+    "text": "eso no es útil\nPorque no lo entiende nadie"
+  },
+  {
+    "objectID": "ceu-slides-03.html#tu-empresa-necesita-algo-en-su-idioma",
+    "href": "ceu-slides-03.html#tu-empresa-necesita-algo-en-su-idioma",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Tu empresa necesita algo en su idioma",
+    "text": "Tu empresa necesita algo en su idioma\nY eso es lo que le vas a dar hoy"
+  },
+  {
+    "objectID": "ceu-slides-03.html#hoy-vas-a-calcular",
+    "href": "ceu-slides-03.html#hoy-vas-a-calcular",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Hoy vas a calcular:",
+    "text": "Hoy vas a calcular:\n\nCuántas ventas ha traído la publi\nCuántas ventas he conseguido por cada euro invertido en publi\n\n\n\nAhora vemos qué es cada cosa"
+  },
+  {
+    "objectID": "ceu-slides-03.html#cuántas-ventas-ha-traído-la-publi-1",
+    "href": "ceu-slides-03.html#cuántas-ventas-ha-traído-la-publi-1",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Cuántas ventas ha traído la publi",
+    "text": "Cuántas ventas ha traído la publi\n\n\nSi estás modelizando ventas, a cada variable se le atribuye un porcentaje de esas ventas.\nA esa cantidad de ventas la llamamos contribución o aporte.\nEn un modelo como el nuestro, es un cálculo casi directo."
+  },
+  {
+    "objectID": "ceu-slides-03.html#cómo-interpretas-un-modelo",
+    "href": "ceu-slides-03.html#cómo-interpretas-un-modelo",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "¿Cómo interpretas un modelo?",
+    "text": "¿Cómo interpretas un modelo?\nSupón que no has hecho ninguna transformación de variables. ¿Cuántas ventas ha traído el medio 1?\n\\[\ny = \\beta_0 + \\beta_1 · \\mbox{medio}_1 + \\beta_2 · \\mbox{medio}_2 + ... + \\beta_nx_n\n\\]"
+  },
+  {
+    "objectID": "ceu-slides-03.html#en-un-modelo-lineal-la-contribución-de-una-variable-es-esa-variable-por-su-coeficiente",
+    "href": "ceu-slides-03.html#en-un-modelo-lineal-la-contribución-de-una-variable-es-esa-variable-por-su-coeficiente",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "En un modelo lineal, la contribución de una variable es esa variable por su coeficiente",
+    "text": "En un modelo lineal, la contribución de una variable es esa variable por su coeficiente\n\\[\n\\mbox{contribución del medio}_1 = \\beta_1 · \\mbox{medio}_1\n\\]"
+  },
+  {
+    "objectID": "ceu-slides-03.html#con-números",
+    "href": "ceu-slides-03.html#con-números",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Con números",
+    "text": "Con números\n\n\n\n\n\nfecha\nmedio\ninversion\ncoeficiente\ncontribucion\n\n\n\n\n2024-01-01\nmedio1\n1000\n2.1\n2100\n\n\n2024-01-08\nmedio1\n2000\n2.1\n4200\n\n\n2024-01-01\nmedio2\n30000\n3.5\n105000\n\n\n2024-01-08\nmedio2\n50000\n3.5\n175000"
+  },
+  {
+    "objectID": "ceu-slides-03.html#cuando-transformas-la-variable-dependiente-la-cosa-cambia",
+    "href": "ceu-slides-03.html#cuando-transformas-la-variable-dependiente-la-cosa-cambia",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Cuando transformas la variable dependiente, la cosa cambia",
+    "text": "Cuando transformas la variable dependiente, la cosa cambia\n\\[\n\\log(y) = \\beta_0 + \\beta_1 · \\mbox{medio}_1 + \\beta_2 · \\mbox{medio}_2 + ... + \\beta_nx_n\n\\]\n\\[\n\\beta_1 · \\mbox{medio}_1 = \\mbox{contribución al logaritmo}\n\\]\n\n\nY ahora, ¿qué hacemos?"
+  },
+  {
+    "objectID": "ceu-slides-03.html#cuando-modelas-el-logaritmo-de-las-ventas-el-cálculo-es-menos-directo",
+    "href": "ceu-slides-03.html#cuando-modelas-el-logaritmo-de-las-ventas-el-cálculo-es-menos-directo",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Cuando modelas el logaritmo de las ventas, el cálculo es menos directo",
+    "text": "Cuando modelas el logaritmo de las ventas, el cálculo es menos directo\nMás o menos, la idea es esta (comentaremos más en el código):\n\\[\n\\mbox{contribución} = \\exp(\\beta_1 · \\mbox{medio}_1)\n\\]"
+  },
+  {
+    "objectID": "ceu-slides-03.html#si-las-transformación-es-en-los-medios-no-afecta-porque-la-contribución-sigue-estando-en-unidades-de-la-variable-dependiente.",
+    "href": "ceu-slides-03.html#si-las-transformación-es-en-los-medios-no-afecta-porque-la-contribución-sigue-estando-en-unidades-de-la-variable-dependiente.",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Si las transformación es en los medios, no afecta porque la contribución sigue estando en unidades de la variable dependiente.",
+    "text": "Si las transformación es en los medios, no afecta porque la contribución sigue estando en unidades de la variable dependiente."
+  },
+  {
+    "objectID": "ceu-slides-03.html#cuanta-más-inversión-mejor",
+    "href": "ceu-slides-03.html#cuanta-más-inversión-mejor",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Cuanta más inversión, ¿mejor?",
+    "text": "Cuanta más inversión, ¿mejor?"
+  },
+  {
+    "objectID": "ceu-slides-03.html#invertir-mucho-no-tiene-por-qué-ser-bueno-porque-la-inversión-deja-de-rendir",
+    "href": "ceu-slides-03.html#invertir-mucho-no-tiene-por-qué-ser-bueno-porque-la-inversión-deja-de-rendir",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Invertir mucho no tiene por qué ser bueno, porque la inversión deja de rendir",
+    "text": "Invertir mucho no tiene por qué ser bueno, porque la inversión deja de rendir\nPara comparar la contribución de medios de distintos niveles de inversión, usas el ROI, retorno de la inversión."
+  },
+  {
+    "objectID": "ceu-slides-03.html#el-roi-te-dice-cuánto-negocio-has-generado-por-cada-euro-de-inversión",
+    "href": "ceu-slides-03.html#el-roi-te-dice-cuánto-negocio-has-generado-por-cada-euro-de-inversión",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "El ROI te dice cuánto negocio has generado por cada euro de inversión",
+    "text": "El ROI te dice cuánto negocio has generado por cada euro de inversión\n\\[\n\\mbox{ROI} = \\frac{\\mbox{contribución}}{\\mbox{inversión}}\n\\]"
+  },
+  {
+    "objectID": "ceu-slides-03.html#con-números-1",
+    "href": "ceu-slides-03.html#con-números-1",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Con números",
+    "text": "Con números\n\n\n\n\n\nmedio\ninversion_total\ncontribucion_total\nroi\n\n\n\n\nmedio1\n3000\n6300\n2.1\n\n\nmedio2\n80000\n280000\n3.5\n\n\n\n\n\n\n\nSí, aquí sale igual que el coeficiente porque no hemos hecho transformaciones, pero no simpre es tan fácil."
+  },
+  {
+    "objectID": "ceu-slides-02.html#varios-modelos-yk-beta_0k-beta_1-x_1k-...-beta_n-x_nk",
+    "href": "ceu-slides-02.html#varios-modelos-yk-beta_0k-beta_1-x_1k-...-beta_n-x_nk",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Varios modelos: \\(y^{(k)} = \\beta_0^{(k)} + \\beta_1 x_1^{(k)} + ... + \\beta_n x_n^{(k)}\\)",
+    "text": "Varios modelos: \\(y^{(k)} = \\beta_0^{(k)} + \\beta_1 x_1^{(k)} + ... + \\beta_n x_n^{(k)}\\)\n\n\n\n\n\n\n\n\n\n\n\n\ndate\nname\nvalue\nm_cmpny_oh_spnd\nm_cmpny_rd_spnd\n\n\n\n\n2013-01-07\nsales_retail_region1\n625952.2\n132\n61279.05\n\n\n2013-01-14\nsales_retail_region1\n382404.7\n132\n0.00\n\n\n2013-01-21\nsales_retail_region1\n523826.9\n132\n66221.00\n\n\n2013-01-07\nsales_retail_region2\n1610594.6\n132\n61279.05\n\n\n2013-01-14\nsales_retail_region2\n1004288.6\n132\n0.00\n\n\n2013-01-21\nsales_retail_region2\n1505610.1\n132\n66221.00"
+  },
+  {
+    "objectID": "ceu-slides-02.html#transforma-tu-variable-objetivo",
+    "href": "ceu-slides-02.html#transforma-tu-variable-objetivo",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Transforma tu variable objetivo",
+    "text": "Transforma tu variable objetivo"
+  },
+  {
+    "objectID": "ceu-slides-02.html#ahora-haz-tú-todo",
+    "href": "ceu-slides-02.html#ahora-haz-tú-todo",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Ahora haz tú todo",
+    "text": "Ahora haz tú todo\nHaz un modelo incluyendo las variables de los ficheros que hemos visto en clase (no todas; solo las que consideres).\n\nModela solo los KPIs de retail.\nAplica a los medios las transformaciones adstock y saturación\n\nal de competidor aplica solo adstock.\n\nAl cci aplícale un logaritmo o una media móvil.\nLas transformaciones a las variables generales las tienes en el código..\nUsa un intercept diferente por cada región."
+  },
+  {
+    "objectID": "ceu-slides-02.html#un-modelo",
+    "href": "ceu-slides-02.html#un-modelo",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Un modelo",
+    "text": "Un modelo\n\\[\ny = \\beta_0 + \\beta_1 x_1 + ... + \\beta_n x_n\n\\]\n\n\n\n\n\ndate\nsales_retail_region1\nm_cmpny_oh_spnd\nm_cmpny_rd_spnd\n\n\n\n\n2013-01-07\n625952.2\n132\n61279.05\n\n\n2013-01-14\n382404.7\n132\n0.00\n\n\n2013-01-21\n523826.9\n132\n66221.00"
+  },
+  {
+    "objectID": "ceu-slides-02.html#varios-modelos",
+    "href": "ceu-slides-02.html#varios-modelos",
+    "title": "Análisis y modelización de la eficacia publicitaria",
+    "section": "Varios modelos",
+    "text": "Varios modelos\n\\[\ny^{(k)} = \\beta_0^{(k)} + \\beta_1 x_1^{(k)} + ... + \\beta_n x_n^{(k)}\n\\]\n\n\n\n\n\n\n\n\n\n\n\n\ndate\nname\nvalue\nm_cmpny_oh_spnd\nm_cmpny_rd_spnd\n\n\n\n\n2013-01-07\nsales_retail_region1\n625952.2\n132\n61279.05\n\n\n2013-01-14\nsales_retail_region1\n382404.7\n132\n0.00\n\n\n2013-01-21\nsales_retail_region1\n523826.9\n132\n66221.00\n\n\n2013-01-07\nsales_retail_region2\n1610594.6\n132\n61279.05\n\n\n2013-01-14\nsales_retail_region2\n1004288.6\n132\n0.00\n\n\n2013-01-21\nsales_retail_region2\n1505610.1\n132\n66221.00"
+  }
+]
