@@ -27,7 +27,7 @@ La información que se obtiene se refiere, por ejemplo, al número de páginas v
 
 Puede obtener más información sobre las cookies, la información sobre la privacidad, o consultar la descripción del tipo de cookies que se utiliza, sus principales características, periodo de expiración, etc. en el siguiente(s) enlace(s):
 
-Mailchimp: https://mailchimp.com/legal/cookies/
+Mailerlite: https://www.mailerlite.com/help/which-cookies-are-used-by-mailerlite-forms
 
 La(s) entidad(es) encargada(s) del suministro de cookies podrá(n) ceder esta información a terceros, siempre y cuando lo exija la ley o sea un tercero el que procese esta información para dichas entidades.
 
@@ -37,37 +37,13 @@ Este sitio usa las siguientes cookies:
 
 | Nombre      |  Duración | Tipo | Finalidad |
 |-------------|----------|------|-----------|
-| _ga         | 2 años   | Estadística| Cuenta visitas    |
-| _uetvid     | 13 meses  | Performance    |            Seguimiento de visitas |
-| _pin_unauth | 1 día     | Marketing    |  Desconocida    |
-| _abck  | 1 año | Funcional   | Protección frente a hackers   |
-| MC_USER_INFO | 1 mes  | Personalización   | Preferencias del visitante como el correo electrónico de registro          |
-| QSI_SI_b89mZSIW5HDkNCZ_intercept | 3 meses   | De terceros| Necesaria para el sitio web |
-| OptanonConsent | 1 año  | Necesaria  |   Información sobre cookies   |
-| _uetsid | 1 año    | Targeting|      |  Bing la usa para mostrar anuncios relevantes para el usuario     |
-| fs_cid |   -   |   -   |     -      |
-| _gid |  1 día     |   Estadística   |  Conteo de visitas    |
-| MC_PLUMS_PERSONALIZED |   - | -  |   -   |    -  |
-| MC_GAUID |    -   |     -      | -|
-| _ga_N5HD1RTH6E |    -   |      -|-     |
-| _clck |   -    |    -       | -|
-| MC_USER_PROFILE |   -   |      -|  -   |
-| fs_uid |   -    |     -      |-|
-| _ttp |    -   |       -    | -|
-| _mc_lang |  -     |     -      |-|
-| optimizelyEndUserId |    -   |     -    |-|
-| _tt_enable_cookie |     -  |      -     |-|
-| _gcl_au |    -   |      -     |-|
-| nmstat |    -   |       -    |-|
-| _mcid |     -  |        -   |-|
-| _mc_anon_id | -     |    -       |-|
-| OptanonAlertBoxClosed |     -  |    -       |-|
-
+| cookie-notice-option     | 1 mes  | Necesaria   |  Aceptación de cookies |
+| mailerlite:forms:shown:98763870045209786 | 1 mes     | De terceros    |  Registro correo    |
 
 
 ## Deshabilitar, rechazar y eliminar cookies
 El Usuario puede deshabilitar, rechazar y eliminar las cookies —total o parcialmente— instaladas en su dispositivo mediante la configuración de su navegador (entre los que se encuentran, por ejemplo, Chrome, Firefox, Safari, Explorer). En este sentido, los procedimientos para rechazar y eliminar las cookies pueden diferir de un navegador de Internet a otro. En consecuencia, el Usuario debe acudir a las instrucciones facilitadas por el propio navegador de Internet que esté utilizando. En el supuesto de que rechace el uso de cookies —total o parcialmente— podrá seguir usando el Sitio Web, si bien podrá tener limitada la utilización de algunas de las prestaciones del mismo.
 
-Este documento de Política de Cookies ha sido creado mediante el generador de plantilla de política de cookies online el día 10/08/2022.
+Este documento de Política de Cookies ha sido creado mediante el generador de plantilla de política de cookies online el día 10/08/2022 y actualizado el 24/05/2024.
 
 ***
