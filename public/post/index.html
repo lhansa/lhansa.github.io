@@ -53,10 +53,11 @@
 
 
 <div id="cookie-notice">
-<span>Este sitio utiliza cookies propias y de terceros para analizar sus servicios. Tienes<a href="../cookies" >más info aquí.</a></span>
+<span>Este sitio utiliza cookies propias y de terceros. Tienes<a href="../cookies" >más info aquí.</a></span>
 </br>
-<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
-<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a></div>
+<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Vale</a>
+<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a>
+</div>
 <script>
     function createCookie(name,value,days) {
         var expires = "";
@@ -97,12 +98,8 @@
 
         
         
-        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); 
-        })
+        
+
 
         document.getElementById('cookie-notice').style.display = 'none';
     } else if (readCookie('cookie-notice-option')=='false'){
@@ -131,7 +128,7 @@
   <h1><a href="../">Programo porque es resultón</a></h1>
   <ul>
     
-    <li><a href="../post/"><strong>Newsletter</strong></a></li>
+    <li><a href="../post/"><strong>Contenido</strong></a></li>
     
     <li><a href="../soy-mediocre/"><strong>Mediocre</strong></a></li>
     
@@ -146,6 +143,23 @@
     
     
     
+    
+    <article class="archive-item">
+      <h3 href="../post/ejemplos-de-analisis-de-datos/" class="archive-item-link">Ejemplos de análisis de datos</h3>
+      
+        <div>
+        <p>
+        Descubre ejemplos prácticos de análisis de datos en diversas industrias. Aprende cómo el análisis de datos mejora negocios, salud, educación, finanzas y más.
+Introducción al Análisis de Datos ¿Qué es el análisis de datos? El análisis de datos es un proceso con el que examinas conjuntos de datos. Pero no sin razón. Normamente tendrás un objetivo:
+ encontrar información útil, tomar decisiones informadas respaldar la toma de decisiones.  Este proceso incluye la recopilación, limpieza, transformación y modelado de datos.
+        
+        <div>
+          <a style="font-size:12px;" href="../post/ejemplos-de-analisis-de-datos/">Sigue por aquí…</a>
+        </div>
+          
+        </p>
+      </div>
+    </article>
     
     <article class="archive-item">
       <h3 href="../post/cuanto-se-tarda-en-aprender-python/" class="archive-item-link">Cuánto se tarda en aprender Python</h3>

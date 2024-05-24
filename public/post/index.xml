@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ejemplos de análisis de datos</title>
+      <link>/post/ejemplos-de-analisis-de-datos/</link>
+      <pubDate>Fri, 24 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/post/ejemplos-de-analisis-de-datos/</guid>
+      <description>Descubre ejemplos prácticos de análisis de datos en diversas industrias. Aprende cómo el análisis de datos mejora negocios, salud, educación, finanzas y más.
+Introducción al Análisis de Datos ¿Qué es el análisis de datos? El análisis de datos es un proceso con el que examinas conjuntos de datos. Pero no sin razón. Normamente tendrás un objetivo:
+ encontrar información útil, tomar decisiones informadas respaldar la toma de decisiones.  Este proceso incluye la recopilación, limpieza, transformación y modelado de datos.</description>
+    </item>
     
     <item>
       <title>Cuánto se tarda en aprender Python</title>

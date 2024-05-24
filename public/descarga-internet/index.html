@@ -53,10 +53,11 @@
 
 
 <div id="cookie-notice">
-<span>Este sitio utiliza cookies propias y de terceros para analizar sus servicios. Tienes<a href="../cookies" >más info aquí.</a></span>
+<span>Este sitio utiliza cookies propias y de terceros. Tienes<a href="../cookies" >más info aquí.</a></span>
 </br>
-<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Acepto</a>
-<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a></div>
+<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Vale</a>
+<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a>
+</div>
 <script>
     function createCookie(name,value,days) {
         var expires = "";
@@ -97,12 +98,8 @@
 
         
         
-        loadScriptAsync('https://www.googletagmanager.com/gtag/js?id=G-5WBGM7TKK6', function () {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-5WBGM7TKK6', { 'anonymize_ip': true }); 
-        })
+        
+
 
         document.getElementById('cookie-notice').style.display = 'none';
     } else if (readCookie('cookie-notice-option')=='false'){
@@ -131,7 +128,7 @@
   <h1><a href="../">Programo porque es resultón</a></h1>
   <ul>
     
-    <li><a href="../post/"><strong>Newsletter</strong></a></li>
+    <li><a href="../post/"><strong>Contenido</strong></a></li>
     
     <li><a href="../soy-mediocre/"><strong>Mediocre</strong></a></li>
     
