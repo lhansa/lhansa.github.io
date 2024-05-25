@@ -10,13 +10,354 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.4.554</generator>
-<lastBuildDate>Thu, 09 May 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 25 May 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Evolución de compraventa mensual en España</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-05-25-viviendas/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>El INE tiene datos mensuales sobre compraventa de viviendas por Comunidades Autónomas (lo tiene por provincias pero he pasado de ese nivel):</p>
+<div id="cell-lectura" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">df_viviendas <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(</span>
+<span id="cb1-4">  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ine-compraventa.csv'</span>, </span>
+<span id="cb1-5">  sep<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">';'</span>, </span>
+<span id="cb1-6">  thousands<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'.'</span>,</span>
+<span id="cb1-7">  encoding<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'iso-8859-1'</span></span>
+<span id="cb1-8">)</span>
+<span id="cb1-9"></span>
+<span id="cb1-10">df_viviendas <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (</span>
+<span id="cb1-11">  df_viviendas</span>
+<span id="cb1-12">  .drop([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Régimen y estado'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total Nacional'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Provincias'</span>], axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb1-13">  .rename(</span>
+<span id="cb1-14">    columns<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">lambda</span> x: x.lower().replace(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">' '</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'_'</span>).encode(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ascii'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ignore'</span>).decode(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'utf-8'</span>))</span>
+<span id="cb1-15">)</span>
+<span id="cb1-16"></span>
+<span id="cb1-17">df_viviendas.head()</span></code></pre></div>
+<div id="lectura" class="cell-output cell-output-display" data-execution_count="1">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">comunidades_y_ciudades_autnomas</th>
+<th data-quarto-table-cell-role="th">periodo</th>
+<th data-quarto-table-cell-role="th">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>01 Andalucía</td>
+<td>2024M03</td>
+<td>8805</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>01 Andalucía</td>
+<td>2024M02</td>
+<td>9606</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>01 Andalucía</td>
+<td>2024M01</td>
+<td>10290</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>01 Andalucía</td>
+<td>2023M12</td>
+<td>7519</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>01 Andalucía</td>
+<td>2023M11</td>
+<td>9857</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p>Vamos a tratarlo un poco (tampoco mucho, que es sábado):</p>
+<div id="cell-algo-tratamiento" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">df_viviendas[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.to_datetime(df_viviendas[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>], <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'%YM%m'</span>)</span>
+<span id="cb2-2"></span>
+<span id="cb2-3">df_viviendas[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'comunidades_y_ciudades_autnomas'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_viviendas[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'comunidades_y_ciudades_autnomas'</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>.replace(<span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">r'\d</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{2}</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> '</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>, regex<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb2-4"></span>
+<span id="cb2-5"></span>
+<span id="cb2-6">df_viviendas <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (</span>
+<span id="cb2-7">  df_viviendas</span>
+<span id="cb2-8">  .rename(columns<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'comunidades_y_ciudades_autnomas'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ccaa'</span>})</span>
+<span id="cb2-9">)</span>
+<span id="cb2-10"></span>
+<span id="cb2-11">df_viviendas.head()</span></code></pre></div>
+<div id="algo-tratamiento" class="cell-output cell-output-display" data-execution_count="2">
+<div>
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ccaa</th>
+<th data-quarto-table-cell-role="th">periodo</th>
+<th data-quarto-table-cell-role="th">total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Andalucía</td>
+<td>2024-03-01</td>
+<td>8805</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Andalucía</td>
+<td>2024-02-01</td>
+<td>9606</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Andalucía</td>
+<td>2024-01-01</td>
+<td>10290</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Andalucía</td>
+<td>2023-12-01</td>
+<td>7519</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Andalucía</td>
+<td>2023-11-01</td>
+<td>9857</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<p>Mucho mejor. Ahora toca visualizar esto.</p>
+<p>El siguiente código es de ChatGPT… y sinceramente, creo que está mal, que pinta lo que le da la gana y no lo que yo quiero (concretamente, se inventa el orden del eje x).</p>
+<p>Pero llevo horas con problemas de VSCode, versiones de Python, entornos virtuales y paso de dedicarle más tiempo a esto hoy (cosa que en R habrían sido 5 minutos).</p>
+<p>Otro día.</p>
+<div id="cell-evolucion" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> seaborn <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sns</span>
+<span id="cb3-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb3-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.dates <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> mdates</span>
+<span id="cb3-4"></span>
+<span id="cb3-5">g <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sns.FacetGrid(</span>
+<span id="cb3-6">  df_viviendas, </span>
+<span id="cb3-7">  col<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ccaa'</span>, </span>
+<span id="cb3-8">  col_wrap<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, </span>
+<span id="cb3-9">  hue<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ccaa'</span>, </span>
+<span id="cb3-10">  sharey<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>,</span>
+<span id="cb3-11">)  </span>
+<span id="cb3-12"></span>
+<span id="cb3-13">g.map_dataframe(sns.lineplot, x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'total'</span>)</span>
+<span id="cb3-14"></span>
+<span id="cb3-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Ajustar las etiquetas y el layout</span></span>
+<span id="cb3-16"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> ax <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> g.axes.flatten():</span>
+<span id="cb3-17">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Ajustar los locators para que solo se muestren unos pocos ticks</span></span>
+<span id="cb3-18">    ax.xaxis.set_major_locator(mdates.MonthLocator(interval<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>))  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Ajusta el intervalo según sea necesario</span></span>
+<span id="cb3-19">    ax.xaxis.set_major_formatter(mdates.DateFormatter(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'%Y-%m'</span>))</span>
+<span id="cb3-20">    ax.tick_params(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, rotation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">45</span>)</span>
+<span id="cb3-21"></span>
+<span id="cb3-22">g.set_axis_labels(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Fecha'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total'</span>)</span>
+<span id="cb3-23"></span>
+<span id="cb3-24">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-05-25-viviendas/index_files/figure-html/evolucion-output-1.png" id="evolucion" width="1441" height="1179" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2024-05-25-viviendas/</guid>
+  <pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Un problema habitual en ficheros CSV</title>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2024-05-09-csv/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -208,7 +549,6 @@ font-style: inherit;">','</span></span>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2024-04-24-por-que-nse/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -852,7 +1192,6 @@ font-style: inherit;">eval_tidy</span>(suma_expr)</span></code></pre></div>
 
 
 
-
 <p>Tengo datos de empleos en el sector público y privado del INE. Y los quiero explorar con dplyr y ggplot2.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
@@ -1198,7 +1537,6 @@ font-style: inherit;">agrega_empleo</span>(ccaa, sexo)</span></code></pre></div>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2024-04-21-dataframes-inmemory/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -1956,7 +2294,6 @@ font-style: inherit;">collect</span>()</span>
 
 
 
-
 <p>Tienes un datos de divorcio en estados de Estados Unidos (<a href="https://xcelab.net/rm/statistical-rethinking/">fuente</a>).</p>
 <p>Parece que hay correlación entre el ratio de divorcio por estado y la edad mediana a la que se casa la gente:</p>
 <div class="cell">
@@ -2175,7 +2512,6 @@ font-style: inherit;">0.4</span>) )</span></code></pre></div>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2024-02-24-normality/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -2580,7 +2916,6 @@ font-style: inherit;">"#800080"</span>)</span></code></pre></div>
 
 
 
-
 <section id="por-qué-lo-normal-es-normal" class="level2">
 <h2 class="anchored" data-anchor-id="por-qué-lo-normal-es-normal">Por qué lo normal es normal</h2>
 <section id="normal-por-adición" class="level3">
@@ -2680,7 +3015,6 @@ font-style: inherit;">"#800080"</span>)</span></code></pre></div>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2023-12-31-conjugate-prior/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -3046,7 +3380,6 @@ font-style: inherit;">"blue"</span>)</span></code></pre></div>
 
 
 
-
 <p>En <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a> Richard McEalreath presenta los métodos generativos en estadística bayesiana.</p>
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
@@ -3278,7 +3611,6 @@ font-style: inherit;">"%i puntos"</span>, grid_size))</span></code></pre></div>
 
 
 
-
 <p>El nombre del análisis de supervivencia apunta maneras. Inevitablemente, yo lo relaciono con la muerte, porque seguramente se originara para saber cuánto tiempo le quedaba de vida a un paciente con alguna enfermedad.</p>
 <p>Pero no sirve solo para eso.</p>
 <p>Algunos ejemplos de casos que puedes resolver con análisis de supervivencia son:</p>
@@ -3465,7 +3797,6 @@ font-style: inherit;">::</span>geom_line)</span></code></pre></div>
 
 
 
-
 <p>Me gusta leer <a href="https://github.com/matloff/TidyverseSkeptic">críticas contra tidyverse</a>. ¿Porque lo odio?</p>
 <p>No, lo uso todo el rato. Todos los días. Mi trabajo se basa en <a href="https://www.tidyverse.org/">el tidyverse</a>.</p>
 <p>¿Por qué leo críticas entonces?</p>
@@ -3548,7 +3879,6 @@ font-style: inherit;">::</span>geom_line)</span></code></pre></div>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2023-12-05-adventofcode-ii/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -3904,7 +4234,6 @@ font-style: inherit;">sum</span>(game_powers)</span></code></pre></div>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2023-12-01-adventofcode-i/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -4336,7 +4665,6 @@ font-style: inherit;">sum</span>(numbers2)</span></code></pre></div>
 
 
 
-
 <p>He leído <a href="https://www.blog.dailydoseofds.com/p/the-most-overlooked-source-of-optimization">aquí</a> una comparativa entre tiempos de ejecución de lectura y escritura de varios tipos de ficheros de datos. Con Python.</p>
 <p>Y he pensado:</p>
 <blockquote class="blockquote">
@@ -4502,7 +4830,6 @@ font-style: inherit;">10</span>L</span>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2023-11-05-confianza/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -4716,7 +5043,6 @@ font-style: inherit;">compute_interval</span>(sample_size, population_mean, popu
 
 
 
-
 <p>Te traigo una película de terror, llamada <em>La quiebra de las pensiones en España</em>.</p>
 <p>Es un GIF que he hecho con la librería ggplot2 de R, y gganimate.</p>
 <p>Si quieres el código, me lo pides y te lo mando (o lo buscas en mi GitHub).</p>
@@ -4753,7 +5079,6 @@ font-style: inherit;">compute_interval</span>(sample_size, population_mean, popu
 
 
 
-
 <p>Últimamente tengo la sensación de que las estaciones de Bicimad, el servicio de bicis públicas de Madrid, están vacías.</p>
 <p>Cuando abro la app, veo que las estaciones de la mitad sur de Madrid están llenas, y las de la mitad norte están vacías.</p>
 <p>Quería ver si los datos públicos me decían algo pero:</p>
@@ -4777,7 +5102,6 @@ font-style: inherit;">compute_interval</span>(sample_size, population_mean, popu
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2023-09-30-tsne/</link>
   <description><![CDATA[ 
-
 
 
 
@@ -5050,7 +5374,6 @@ font-style: inherit;">"Source: keras::dataset_mnist()"</span></span>
 
 
 
-
 <ul>
 <li><p><strong>Probabilidad:</strong> falta de certidumbre en nuestro conocimiento y el desarrollo de métodos para lidiar con nuestra ignorancia. en el mundo real muchas veces tienes que averiguar el problema más que la solución.</p></li>
 <li><p>De la misma forma que un antepasado se rescaba la nariz y veía llover, pensaba que el rascarse la nariz inducía lluvia, acualmente ligamos la prosperidad económica a un recorte de los bancos centrales.</p></li>
@@ -5122,48 +5445,6 @@ font-style: inherit;">"Source: keras::dataset_mnist()"</span></span>
   <category>lecturas</category>
   <guid>https://lhansa.github.io/posts/2023-09-28-fooled-by-randomness/</guid>
   <pubDate>Thu, 28 Sep 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Muertes de humanos causadas por otros animales</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-08-14-muertes-humanas/</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>Siempre me ha fascinado el dato que te voy a enseñar ahora.</p>
-<p><strong>¿Cuál es el animal que más humanos mata al año?</strong></p>
-<p>Hay gente que se come el coco sin llegar a nada. Otros dicen que el humano.</p>
-<p>Pero no.</p>
-<p>El gráfico siguiente además ayudar a desmitificar peligros, como los tiburones.</p>
-<p><strong>Observación.</strong> No consigo encontrar la fuente original de los datos. No es el único sitio donde lo he visto y me gusta la idea general, pero los números quizá no sean fiables (y la traducciones menos todavía, porque esas las he hecho yo, así que eso sí que no xD)</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-08-14-muertes-humanas/index_files/figure-html/everything-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Hay 5 ideas que me encantan de esto:</p>
-<ul>
-<li>Los insectos matan a mazo, mazo de humanos.</li>
-<li>Los tiburones, mal vistos por películas, no suponen mucho problema.</li>
-<li>Los humanos matamos mucho, pero no somos lo peor (casi sí).</li>
-<li>Los perros, ellos tan amigos, pero cuidado con ellos.</li>
-<li>¿Algo parecido a regla de Pareto?</li>
-</ul>
-<p>La fuente es <a href="https://www.cbsnews.com/pictures/the-20-deadliest-animals-on-earth-ranked/">esta.</a></p>
-
-
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-08-14-muertes-humanas/</guid>
-  <pubDate>Mon, 14 Aug 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
