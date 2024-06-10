@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" href="../../favicon-alt.png">
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="¿Confundido con los términos &#39;data mining&#39;, &#39;data science&#39; y &#39;machine learning&#39;? En este post, aclaramos las diferencias, las aplicaciones y la relevancia de la minería de datos en la actualidad. Descubre qué necesitas estudiar para adentrarte en este campo y qué herramientas son esenciales para llevar a cabo la minería de datos eficazmente.">
+  
+
+  <title>
+    
+    
+     Qué es el data mining y cómo funciona 
+    
+  </title>
+  <link rel="canonical" href="../../post/que-es-el-data-mining-y-como-funciona/">
+
+  <link rel="stylesheet" href="../../css/fonts.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+
+  
+  
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '504889');
+</script>
+
+
+
+
+<div id="cookie-notice">
+<span>Este sitio utiliza cookies propias y de terceros. Tienes<a href="../../cookies" >más info aquí.</a></span>
+</br>
+<a id="cookie-notice-accept" class="btn btn-primary btn-sm">Vale</a>
+<a id="cookie-notice-deny" class="btn btn-primary btn-sm">Rechazo</a>
+</div>
+<script>
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        createCookie(name,"",-1);
+    }
+
+    if(readCookie('cookie-notice-option')=='true') {
+        
+        function loadScriptAsync(scriptSrc, callback) {
+            if (typeof callback !== 'function') {
+                throw new Error('Not a valid callback for async script load');
+            }
+            var script = document.createElement('script');
+            script.onload = callback;
+            script.src = scriptSrc;
+            document.head.appendChild(script);
+        }
+
+        
+
+        
+        
+        
+
+
+        document.getElementById('cookie-notice').style.display = 'none';
+    } else if (readCookie('cookie-notice-option')=='false'){
+        document.getElementById('cookie-notice').style.display = 'none';
+    }
+
+    document.getElementById('cookie-notice-accept').addEventListener("click",function() {
+        createCookie('cookie-notice-option','true',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+    document.getElementById('cookie-notice-deny').addEventListener("click",function() {
+        createCookie('cookie-notice-option','false',31);
+        document.getElementById('cookie-notice').style.display = 'none';
+        
+    });
+
+</script>
+
+
+</head>
+
+<body>
+<section id=nav>
+  <h1><a href="../../">Programo porque es resultón</a></h1>
+  <ul>
+    
+    <li><a href="../../post/"><strong>Contenido</strong></a></li>
+    
+    <li><a href="../../soy-mediocre/"><strong>Mediocre</strong></a></li>
+    
+  </ul>
+</section>
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">13 min read</span>
+    
+
+    <h1 class="article-title">Qué es el data mining y cómo funciona</h1>
+
+    
+    <span class="article-date">2023-09-10</span>
+    
+
+    <div class="article-content">
+      <p>Con los años han surgido muchos nombres para llamar a la misma cosa. Y es importante aclarar algunos conceptos, aunque no se usen mucho, porque las pocas veces que se usan se dicen solo tonterías.</p>
+<p>En este post te cuento en qué consiste eso que algunos siguen llamando <em>data mining,</em> con conceptos incluidos.</p>
+<h2 id="índice">Índice</h2>
+<ul>
+<li><a href="#section1">Introducción. Qué es lo primero que tienes que saber sobre data mining</a></li>
+<li><a href="#section2">Historia y evolución de la minería de datos</a></li>
+<li><a href="#section3">Principios Básicos de la Minería de Datos</a></li>
+<li><a href="#section4">Proceso de data mining</a></li>
+<li><a href="#section5">Herramientas y Software para Data Mining</a></li>
+<li><a href="#section6">Para qué sirve la minería de datos. Aplicaciones del data mining</a></li>
+<li><a href="#section7">Beneficios y Desafíos de la Minería de Datos</a></li>
+<li><a href="#section8">En qué se diferencia la ciencia de datos y la minería de datos</a></li>
+<li><a href="#section9">Futuro de la Minería de Datos</a></li>
+<li><a href="#section10">Recursos y formación en data mining. Qué tengo que estudiar para hacer data mining</a></li>
+<li><a href="#section11">Conclusión</a></li>
+</ul>
+<h2 id="section1">Introducción. Qué es lo primero que tienes que saber sobre data mining</h2>
+<p>Lo primero que tienes que saber sobre data mining es que nadie lo llama así.</p>
+<p>Di estadística. Punto.</p>
+<p>Eso, si quieres decir la verdad.</p>
+<p>Si quieres encontrar trabajo, es mejor que digas <em>data science</em> o <em>machine learning.</em></p>
+<p>Pero vamos, que es estadística.</p>
+<p>Puedes ver a la minería de datos como un subconjunto de la estadística, una rama de la estadística: nada de una rama de las ciencias de la computación.</p>
+<p>Aproximadamente, una definición de data mining diría que es una rama de la estadística que busca patrones en los datos a partir de modelos. Los modelos son ecuaciones matemáticas que obtienen un número a partir de una expresión. Esta expresión está basada en los datos que tengas.</p>
+<h2 id="section2">Historia y Evolución del Data Mining</h2>
+<p>Pues dado que el data mining es estadística, podríamos decir que el origen del data mining es de hace mucho. Aunque no toda la estadística es data mining.</p>
+<p>Creo que lo más antiguo que yo he utilizado de <em>data mining</em> es la regresión lineal, que tal y como la entendemos se <a href="https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal">originó</a> a comienzos del siglo XIX.</p>
+<p>Por aquella época los cálculos se hacían, como te puedes imaginar, a mano. La llegada de los ordenadores, bien avanzado el siglo XX, evolucionó el data mining gracias a metodologías como las que te enseñarán hoy en el día en el <em>bootcamp</em> de ciencia de datos que hagas: <em>random forest</em>, XGBoost, etc.</p>
+<h2 id="section3">Principios Básicos de la Minería de Datos</h2>
+<p>El principio fundamental del data mining es que tu análisis sea relevante para negocio. Si no lo es, olvídate y ponte a hacer otra cosa.</p>
+<p>El fundamento de data mining es el negocio. A ver, no digo que solo sirva para empresas: me refiero a su aplicación práctica. <strong>No tiene sentido que analices</strong> por amor al arte. Está bien para estudiar, sí, pero nadie te va a pagar por ello.</p>
+<p>Las técnicas de data mining que aprendas tienes que saber interpretarlas para que sean útiles para negocio.</p>
+<p>Estas técnicas las puedes agrupar según su utilidad.</p>
+<ul>
+<li>Por ejemplo, algo muy habitual, aunque quizá poco válido, es etiquetar a cada observación en un grupo. Así tendrás etiquetadas a distintas observaciones en un mismo grupo y esos significará que se parecen, de acuerdo a sus variables. Eso es <strong>segmentación</strong> o <strong>clustering.</strong> Para eso, todos seguimos haciendo kmeans, aunque si estamos muy motivados probamos otras cosas teóricamente más interesantes, aunque en la práctica no dan mejores resultados, como Clara (más robusto), DBSCAN (útil para clusters con formas complejas), borrosos (para etiquetar con varias etiquetas a la vez y probabilidades&hellip;)</li>
+<li>Quizá quieras predecir las ventas de un negocio, o saber cuál es el valor esperado de un nuevo cliente. Esos son análisis de <strong>regresíón</strong> y puedes hacer una regresión lineal o modelos más complejos, como basados en árboles (random forest, xgboost, un árbol sin más, cosa que no hace nadie) o incluso una red neuronal.</li>
+<li>Otro caso clásico es clasificar. Lo más habitual es un caso binario, sí o no, aunque también puede ser en varias categorías. Hay tipos de regresión que también hacen esto, aunque lo normal es que veas a gente tirar de nuevo de modelos basados en árboles o redes.</li>
+</ul>
+<p>Esas son algunas técnicas de data mining que deben sonarte para modelado. Creo que el data mining siempre incluye modelado (si no, sería un análisis).</p>
+<h2 id="section4">Proceso de data mining</h2>
+<p>En la Wikipedia tienes una explicación de cómo es un proceso de data mining, que a mí me suena a refrito irreal.</p>
+<ul>
+<li>En un proceso de data mining, o proyecto, lo <strong>primero</strong> que tienes que hacer es entender qué se busca analizar.
+<ul>
+<li>De todas las etapas del data mining, entender tu función en la primera. Cuidado, no digo que esperes que alguien te diga qué modelo aplicar y sobre qué datos. Lo que necesitas es entender qué va a hacer negocio con tu análisis. Con <em>negocio</em> me refiero a la empresa, el departamento, el cliente para el que trabajes.</li>
+</ul>
+</li>
+<li>El <strong>segundo paso</strong> del data mining es entender qué datos tienes para responder esa pregunta de negocio. A ver, no digo que los explores, que hagas un EDA como dicen ahora. No. Digo que exijas saber qué datos hay.
+<ul>
+<li>Si esos dos pasos se hicieran bien, el resto de pasos del data mining irían solos.</li>
+</ul>
+</li>
+<li>Sí, toca estudiar los <strong>datos</strong>, analizarlos, validarlos, ¿hay valores faltantes? ¿hay duplicados sin sentido?, ¿las variables aportan información?, ¿hay variabilidad?</li>
+<li>Y <strong>después</strong> te toca elegir qué modelo haces (más sobre esto, <a href="#section3">arriba</a>). Después de ajustar el modelo (te puede llevar días), tendrás que explorar en detalle los resultados desde un punto de vista de negocio y presentarlos.</li>
+</ul>
+<p>No es poco, ya. Pero los dos primeros puntos son los pasos más importantes del data mining.</p>
+<h2 id="section5">Herramientas y Software para Data Mining</h2>
+<p>Un principio del data mining debería ser que la herramienta da igual. Pero no, últimamente todos se decantan por lo mismo.</p>
+<h3 id="python">Python</h3>
+<p>A ver, vuelvo a lo de arriba: ya nadie hace <em>data mining,</em> todo el mundo hace data science o data analytics, o business intelligence&hellip; cosas así. El nombre ha cambiado.</p>
+<p>Y además el campo se ha llenado de informáticos e ingenieros. Nada contra ellos, pero ellos vienen del mundo de la computación, no de la estadística, así que usan software para data mining que les suene, y no quieren aprender herramientas orientadas a estadística.</p>
+<p>Por eso se usa tanto Python en este campo. Si tuvieras que empezar desde cero, y tu objetivo es encontrar curro, <a href="https://leonardohansa.com/post/cuanto-se-tarda-en-aprender-python/">aprende Python.</a></p>
+<h3 id="r">R</h3>
+<p>R no lo veas solo como un lenguaje de programación, sino como un software para estadística, un software para data mining.</p>
+<p>Es un entorno de trabajo. Si te centras en usarlo con RStudio, casi ni tendrás que salir de ahí.</p>
+<p>Si no fuera porque el mercado está copado de ingenieros, R sería la mejor opción para data mining porque está pensado justo para eso.</p>
+<h3 id="sas">SAS</h3>
+<p>Es caro. Hay empresas que lo siguen usando porque no se atreven a mover sus ecosistemas monstruosos a Python o R. Huye de esas empresas.</p>
+<h3 id="spss-stata-etc">SPSS, Stata, etc</h3>
+<p>Estos programas para data mining se siguen enseñando en las universidades porque los profesores no conocen otra cosa. Pero solo los usan esos profesores, así que no te servirá de nada aprenderlos.</p>
+<h2 id="section6">Para qué sirve la minería de datos. Aplicaciones del data mining</h2>
+<p>La minería de datos te servirá para encontrar relaciones entre tus datos.</p>
+<p>Esas relaciones sirven para explicar unas variables en función de otras. Concretamente, cuantificas el efecto de una variable frente a otra.</p>
+<p>Esto lo puedes traducir en aplicaciones concretas del data mining, desde un punto de vista de negocio.</p>
+<p>Por ejemplo, ¿en cuánto aumenta la probilidad de tener cáncer de pulmón si una persona es fumadora frente a otra que no lo es? ¿O cuál es el valor esperado de este cliente? ¿O cuánta hipoteca estoy como banco dispuesto a prestar a este potencial cliente?</p>
+<p>Eso son ejemplos de data mining, ejemplos de proyectos que podrías resolver con las técnicas de data mining de las que estoy hablando.</p>
+<p>Como te puedes hacer idea, hay usos del data mining tanto en negocios como en sectores más científicos.</p>
+<h2 id="section7">Beneficios y Desafíos de la Minería de Datos</h2>
+<p>Los beneficios del data mining son, principalmente, que podrás encontrar patrones en tus datos que no podrás encontrar de otra forma.</p>
+<p>Sí, la ciencia de datos hace eso, pero podrías ver el data mining como una parte de la data science: la parte de modelar.</p>
+<p>Los desafíos son la calidad de los datos. Si tus datos son malos, tu data mining también lo será. Y además, cuando empiezas un proyecto, es posible que tu cliente te diga que los datos están muy bien pero sea mentira. Y te des cuenta tarde. Luego, a saber cómo te organizas.</p>
+<p>Con la calidad de los datos no me refiero a conceptos técnicos de data science como el <strong>data quality</strong>, sino a cosas básicas como que los datos no estén en una hoja de papel (a mí me pasó).</p>
+<h2 id="section8">En qué se diferencia la ciencia de datos y la minería de datos</h2>
+<p>Hasta donde yo sé, en nada.</p>
+<p>Se dice que un científico de datos debe ser un buen programador, un buen matemático y un analista de negocio.</p>
+<p>De un minero de datos no se dice nada. Sin más. Es que ya nadie usa ese término. Es como antiguo.</p>
+<p>Lo importante es que todos ellos, sea en la actualidad o sea hace 30 años, usan estadística para responder a las preguntas de negocio.</p>
+<p>Y usan un ordenador para ejecutar esa estadística (porque a mano no se puede hacer).</p>
+<p>Sí he sugerido antes que el data mining se puede ver como una subsección de la ciencia de datos, pero es solo una opinión mía. No hay claras diferencias entre el data mining y data science porque lo primero ya no se usa.</p>
+<p>Si buscas trabajo, fórmate en lo segundo.</p>
+<h2 id="section9">Futuro de la Minería de Datos</h2>
+<p>No creo que haya un futuro del data mining. Las tendencias en datos están ligadas al machine learning, la inteligencia artificial, la ciencia de datos&hellip; ya nadie habla de minería de datos.</p>
+<p>Eso no significa que lo que aprendas de data mining no te sirva. En cierto modo, a un científico de datos le pagan por lo que sabe hacer de data mining, aunque en la práctica lo que hace principalmente es procesar datos.</p>
+<p>Los avances en data mining vienen en el campo del machine learning y la inteligencia artificial. Así que, si por cualquier cosa vives en el pasado y te ha llamado la atención la mineria de datos, estudia estadística y a correr.</p>
+<h2 id="section10">Recursos y formación en data mining. ¿Qué tengo que estudiar para hacer data mining?</h2>
+<p>Para saber qué estudiar si te quieres dedicar al <em>data mining</em> te recomiendo que leas <a href="https://leonardohansa.com/post/que-es-el-business-intelligence/">este otro post</a> en el que te hablo de <em>business intelligence</em>. No es lo mismo pero ahí hago un resumen de perfiles en el mundo de datos y menciono esto.</p>
+<p>El resumen es que lo normal es estudiar matemáticas, informática, estadística o alguna ingeniería, pero hay gente muy buena que viene de economía, administración y dirección de empresas y otras áreas más vinculadas a negocio, y luego han hecho un posgrado sobre <em>data mining</em>.</p>
+<p>Otra opción es que te formes por tu cuenta, con cursos de data mining y vayas ganando experiencia trabajando como analista de datos y te vayas empapando de lo que hacen tus compañeros más orientados a la ciencia de datos.</p>
+<p>En cualquier caso, si tu prioridad es la formación en data mining, céntrate en estudiar ciencia de datos que es como se llama ahora.</p>
+<h2 id="section11">Conclusión</h2>
+<p>En este texto te he puesto sobre la mesa el mejor resumen de data mining que verás por ahí, principalmente porque ya nadie habla de eso.</p>
+<p>Esa debería ser la conclusión: que ya nadie dice data mining y tendrás que saber si lo que te interesa es lo que llaman data science o data analysis.</p>
+<p>Y sobre todo, estudia <strong>estadística.</strong> No te líes con la locura de todos de la inteligencia artificial generativa.</p>
+<style>
+.faq-section {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.08);
+    border-radius: 4px;
+    background: #fff;
+    margin: 2em auto;
+    width: 100%;
+    overflow: hidden;
+    padding: 1em;
+    box-sizing: border-box;
+}
+</style>
+
+<div class="faq-section" >
+    <h2 class="faq-question">¿Qué hace la minería de datos?</h2>
+    <p class="faq-answer">La minería de datos da respuestas a problemas de negocio o de ciencia en los que hace falta estadística para poder entender los datos y las relaciones entre las variables. Normalmente construye modelos con capacidad predictora.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Qué es el data mining y cuáles son sus principales características?</h2>
+    <p class="faq-answer">El data mining es un conjunto de técnicas estadísticas que permiten ajustar modelos a un conjunto de datos para poder lanzar predicciones sobre ellos. Sus características vienen dadas por conceptos estadísticos y las necesidades del software que se utilice.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cómo se hace el data mining?</h2>
+    <p class="faq-answer">Si bien necesitas una buena base estadística para hacer data mining, es imprescindible un mínimo de potencia computacional. No hace falta ser programador, aunque saber un poco de ayudará a usar R y Python (herramientas gratuitas y muy completas). Si no sabes programar, puedes usar SPSS, SAS, Orange Data Mining... aunque todo ello es software propietario y caro.</p>
+</div>
+<div class="faq-section" >
+    <h2 class="faq-question">¿Cuál es la diferencia entre big data y data mining?</h2>
+    <p class="faq-answer">El data mining hace referencia al conjunto de técnicas estadísticas para ajustar los modelos predictivos. Con Big Data se suele hacer referencia a las técnicas computacionales que necesitas para tratar datos de cierto volumen o cierta complejidad. Si estás haciendo data mining con un volumen de datos muy grande, es posible que necesites herramientas de Big Data para aplicar la estadística a todos esos datos (como Spark) pero las técnicas estadísticas no cambian: el Big Data solo hace que la computación que hay detrás sea diferente, pero como minero de datos no deberías preocuparte tanto por eso. Eso lo aprenderás igual que aprendes un idioma: lo importante es que tengas claros los fundamentos estadísticos.</p>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué hace la minería de datos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La minería de datos da respuestas a problemas de negocio o de ciencia en los que hace falta estadística para poder entender los datos y las relaciones entre las variables. Normalmente construye modelos con capacidad predictora."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es el data mining y cuáles son sus principales características?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El data mining es un conjunto de técnicas estadísticas que permiten ajustar modelos a un conjunto de datos para poder lanzar predicciones sobre ellos. Sus características vienen dadas por conceptos estadísticos y las necesidades del software que se utilice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se hace el data mining?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si bien necesitas una buena base estadística para hacer data mining, es imprescindible un mínimo de potencia computacional. No hace falta ser programador, aunque saber un poco de ayudará a usar R y Python (herramientas gratuitas y muy completas). Si no sabes programar, puedes usar SPSS, SAS, Orange Data Mining... aunque todo ello es software propietario y caro."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuál es la diferencia entre big data y data mining?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El data mining hace referencia al conjunto de técnicas estadísticas para ajustar los modelos predictivos. Con Big Data se suele hacer referencia a las técnicas computacionales que necesitas para tratar datos de cierto volumen o cierta complejidad. Si estás haciendo data mining con un volumen de datos muy grande, es posible que necesites herramientas de Big Data para aplicar la estadística a todos esos datos (como Spark) pero las técnicas estadísticas no cambian: el Big Data solo hace que la computación que hay detrás sea diferente, pero como minero de datos no deberías preocuparte tanto por eso. Eso lo aprenderás igual que aprendes un idioma: lo importante es que tengas claros los fundamentos estadísticos."
+      }
+    }
+  ]
+}
+</script>
+
+
+    </div>
+  </article>
+
+  <section id="comments">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+      
+      
+      if (window.location.hostname == "localhost")
+                return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = '';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+  <section id=subscribe_final>
+  
+  </br>
+  </br>
+  </br>
+  
+<em>Si te ha gustado esto, te gustarán mis correos. Para recibirlos te suscribes aquí:</em>
+  
+<div class="ml-embedded" data-form="HwWIEu"></div>
+
+
+
+
+    
+
+
+
+</section>
+
+
+</main>
+
+  
+  
+
+  
+  
+  <div>
+  <p style="text-align:right;font-size:10px;">
+  <a href="https://leonardohansa.com/legal">Legal</a>
+  <a href="https://leonardohansa.com/condiciones">Contratación</a>
+  <a href="https://leonardohansa.com/cookies">Política de cookies</a>
+  </p>
+  
+  </div>
+  
+  
+</body>
+  
+<footer style="position:absolute;bottom:0;width:100%;">
+
+
+</footer>
+
+</html>
+
