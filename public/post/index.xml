@@ -6,10 +6,20 @@
     <description>Recent content in Posts on Leonardo Hansa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 24 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jul 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Guía sobre Tablas Dinámicas en Excel</title>
+      <link>/post/guia-sobre-tablas-dinamicas-en-excel/</link>
+      <pubDate>Thu, 11 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>/post/guia-sobre-tablas-dinamicas-en-excel/</guid>
+      <description>Introducción a las Tablas Dinámicas en Excel Las tablas dinámicas en Excel las verás una y otra vez si trabajas con este programa. Es una herramienta interactiva para explorar tablas de datos, especialmente cuando esta exploración está relacionada con la operación de agrupación &amp;mdash;el GROUP BY de SQL.
+Cuando lees acerca de tablas dinámicas en Excel, la referencia suele ser la propia herramienta, disponible en el botón Tabla dinámica o Pivot table (si lo tienes en inglés).</description>
+    </item>
     
     <item>
       <title>Ejemplos de análisis de datos</title>
