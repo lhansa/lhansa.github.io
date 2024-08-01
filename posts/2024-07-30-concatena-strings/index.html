@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leonardo Hansa">
-<meta name="description" content="Introducción de métodos generativos en estadística bayesiana, basados en el libro Statistical Rethinking de Richard McElreath">
+<meta name="description" content="Comparativa con microbenchmark de distintas formas de concatenar strings con R">
 
-<title>Statistical Rethinking (1) – Leonardo Hansa</title>
+<title>Concatenación de strings con R, con benchmark – Leonardo Hansa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -165,7 +165,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistical Rethinking (1)</h1>
+<h1 class="title">Concatenación de strings con R, con benchmark</h1>
   <div class="quarto-categories">
     <div class="quarto-category">datos</div>
   </div>
@@ -173,7 +173,7 @@ cookieconsent.run({
 
 <div>
   <div class="description">
-    Introducción de métodos generativos en estadística bayesiana, basados en el libro Statistical Rethinking de Richard McElreath
+    Comparativa con microbenchmark de distintas formas de concatenar strings con R
   </div>
 </div>
 
@@ -190,7 +190,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">27 de diciembre de 2023</p>
+      <p class="date">30 de julio de 2024</p>
     </div>
   </div>
   
@@ -202,88 +202,77 @@ cookieconsent.run({
 </header>
 
 
-<p>En <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a> Richard McEalreath presenta los métodos generativos en estadística bayesiana.</p>
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>El problema que plantea es el de estimar la proporción de agua que hay en la Tierra.</p>
-<p>El procedimiento consiste en mirar en varios puntos de la Tierra y ver si hay agua o tierra. De esa forma obtienes una secuencia de valores: <code>"A", "A", "T", "A", "T", ...</code> y usas esos datos para estimar la proporción real.</p>
-<p>Concretamente, en 9 observaciones has obtenido 6 porciones de agua.</p>
-<p>Hay tres formas de ajustar un modelo estadístico. Las ejemplificaremos con ese problema de la proporción de agua.</p>
-<p>Los códigos serán los del libro.</p>
-</section>
-<section id="mallado" class="level2">
-<h2 class="anchored" data-anchor-id="mallado">Mallado</h2>
-<p>La primera forma de ajustar un modelo estadístico es mediante mallado. Computacionalmente es costoso pero es más educativo que el resto de métodos.</p>
-<p>Lo que vas a hacer es proponer unos posibles valores para el parámetro que buscas (la proporción de agua) y les das una distribución a priori a estos valores (no pasa nada ahora por que la distribución a priori no sume 1 porque luego estandarizarás el resultado final).</p>
+<p>Tienes una variable con un texto que tienes que introducirlo dentro de otro texto. Este ocurre habitualmente cuando un usuario pone algún parámetro de tipo texto y tienes que incluir en un párrafo preconstruido, o interactuar de alguna forma con ese nombre, por ejemmplo, un chatbot clásico que recibía como entrada el nombre del usuario y luego le preguntaba “¿Qué tal estás, <nombre de="" usuario="">?” (no sé si eso es tan clásico o sigue siendo orden del día).</nombre></p>
+<p>En este post comparo tiempos de ejecución de varias opciones que tienes en R.</p>
+<p>La idea general te la da este código:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>grid_size <span class="ot">&lt;-</span> <span class="dv">20</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># define grid</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">0</span>, <span class="at">to =</span> <span class="dv">1</span>, <span class="at">length.out =</span> grid_size)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># define prior</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span> , grid_size)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Tus priori (20 proporciones equiprobables) ya están definidas y ahora te sirven para generar posibles escenarios. La idea es ver la verosimilitud de tus datos observados ante los distintos posibles valores del parámetro.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">&lt;-</span> <span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">prob =</span> p_grid)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>likelihood</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nombre_entrada <span class="ot">&lt;-</span> <span class="st">"Pepito"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Hola,"</span>, nombre_entrada)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.000000e+00 1.518149e-06 8.185093e-05 7.772923e-04 3.598575e-03
- [6] 1.116095e-02 2.668299e-02 5.292110e-02 9.082698e-02 1.383413e-01
-[11] 1.897686e-01 2.361147e-01 2.666113e-01 2.714006e-01 2.450051e-01
-[16] 1.897686e-01 1.179181e-01 5.026670e-02 8.853845e-03 0.000000e+00</code></pre>
+<pre><code>[1] "Hola, Pepito"</code></pre>
 </div>
 </div>
-<p>Ahora calculas la posteriori, ponderando estas verosimilitudes por los prioris que tenías antes. Como los prioris no seguían una distribución de probabilidad, te toca estandarizar el resultado.</p>
+<p>Voy a crear varias funciones con distintas formas de hacer esto y luego cuento tiempos de cómputo.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>unstd_posterior <span class="ot">&lt;-</span> likelihood <span class="sc">*</span> prior</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> unstd_posterior <span class="sc">/</span> <span class="fu">sum</span>(unstd_posterior)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>posterior</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>con_paste <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) <span class="fu">paste</span>(<span class="st">"Hola,"</span>, nombre_entrada)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>con_sprintf <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) <span class="fu">sprintf</span>(<span class="st">"Hola, %s"</span>, nombre_entrada)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>con_glue <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Hola, {nombre_entrada}"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>con_gsub <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"nombre_entrada"</span>, nombre_entrada, <span class="st">"Hola, nombre_entrada"</span>) </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Y aquí los tiempos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_paste =</span> <span class="fu">con_paste</span>(<span class="st">"Pepito"</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_sprintf =</span> <span class="fu">con_sprintf</span>(<span class="st">"Pepito"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_glue =</span> <span class="fu">con_glue</span>(<span class="st">"Pepito"</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_gsub =</span> <span class="fu">con_gsub</span>(<span class="st">"Pepito"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.000000e+00 7.989837e-07 4.307717e-05 4.090797e-04 1.893887e-03
- [6] 5.873873e-03 1.404294e-02 2.785174e-02 4.780115e-02 7.280739e-02
-[11] 9.987296e-02 1.242643e-01 1.403143e-01 1.428349e-01 1.289433e-01
-[16] 9.987296e-02 6.205890e-02 2.645477e-02 4.659673e-03 0.000000e+00</code></pre>
+<pre><code>Unit: nanoseconds
+        expr   min       lq      mean   median       uq      max neval
+   con_paste  1764   1998.5   9806.22   2405.0   2610.5   741342   100
+ con_sprintf   902   1047.0   8898.64   1548.0   1769.0   735801   100
+    con_glue 98764 100853.0 358770.21 102766.5 105016.0 24665337   100
+    con_gsub  7645   8345.5  18853.14  10289.0  10955.5   881844   100</code></pre>
 </div>
 </div>
+<p>En casos más complicados, <code>glue::glue()</code> puede parecer más intuitivo. ¿Es ese el único motivo para usarlo?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p_grid, posterior, <span class="at">type =</span> <span class="st">"b"</span>,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Probabidad de agua"</span> , </span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Posteriori"</span>)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="st">"20 puntos"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/mallado-plot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Ahora bien, ten en cuenta que <strong>los prioris forman parte del modelo</strong>. Deberías tener un criterio para elegir unos u otros.</p>
-<p>Los puedes cambiar y los resultados se verán afectados.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p_grid <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="at">length.out =</span> grid_size)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>prior <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">5</span> <span class="sc">*</span> <span class="fu">abs</span>(p_grid <span class="sc">-</span> <span class="fl">0.5</span>))</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>likelihood <span class="ot">=</span> <span class="fu">dbinom</span>(<span class="dv">6</span>, <span class="dv">9</span>, <span class="at">prob =</span> p_grid)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>unstd_posterior <span class="ot">&lt;-</span>  likelihood <span class="sc">*</span> prior</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>posterior <span class="ot">&lt;-</span> unstd_posterior <span class="sc">/</span> <span class="fu">sum</span>(unstd_posterior)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(p_grid, posterior, <span class="at">type =</span> <span class="st">"b"</span>,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Probabidad de agua"</span> , </span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Posteriori"</span>)</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">mtext</span>(<span class="fu">sprintf</span>(<span class="st">"%i puntos"</span>, grid_size))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>con_paste <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="st">"Hola, "</span>, nombre_entrada, <span class="st">". ¿Cómo estás, "</span>, nombre_entrada, <span class="st">"?"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>con_sprintf <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">"Hola, %s. ¿Cómo estás, %s?"</span>, nombre_entrada, nombre_entrada)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>con_glue <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Hola, {nombre_entrada}. ¿Cómo estás, {nombre_entrada}?"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>con_gsub <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"nombre_entrada"</span>, nombre_entrada, <span class="st">"Hola, nombre_entrada. ¿Cómo estás, nombre_entrada?"</span>) </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>(</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_paste =</span> <span class="fu">con_paste</span>(<span class="st">"Pepito"</span>),</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_sprintf =</span> <span class="fu">con_sprintf</span>(<span class="st">"Pepito"</span>),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_glue =</span> <span class="fu">con_glue</span>(<span class="st">"Pepito"</span>),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_gsub =</span> <span class="fu">con_gsub</span>(<span class="st">"Pepito"</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Unit: microseconds
+        expr     min       lq      mean   median       uq      max neval
+   con_paste   2.074   2.3050  12.14760   2.6450   2.8600  947.366   100
+ con_sprintf   1.142   1.4380  10.59625   2.1040   2.3295  861.516   100
+    con_glue 125.764 127.6230 140.47355 130.1775 132.9275  896.851   100
+    con_gsub   8.977   9.7435  23.17805  12.4185  13.0090 1109.598   100</code></pre>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
