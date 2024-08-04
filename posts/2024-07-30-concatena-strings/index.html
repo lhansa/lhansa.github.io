@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -232,11 +232,11 @@ cookieconsent.run({
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: nanoseconds
-        expr   min       lq      mean   median       uq      max neval
-   con_paste  1764   1998.5   9806.22   2405.0   2610.5   741342   100
- con_sprintf   902   1047.0   8898.64   1548.0   1769.0   735801   100
-    con_glue 98764 100853.0 358770.21 102766.5 105016.0 24665337   100
-    con_gsub  7645   8345.5  18853.14  10289.0  10955.5   881844   100</code></pre>
+        expr    min       lq      mean   median       uq      max neval
+   con_paste   2202   2650.5  12954.99   3401.0   4201.0   850801   100
+ con_sprintf    901   1250.5  11382.94   2101.0   3151.0   790101   100
+    con_glue 135902 143701.0 591651.04 154401.0 180501.5 41454102   100
+    con_gsub  10301  12150.0  30976.88  14801.5  18202.0  1449701   100</code></pre>
 </div>
 </div>
 <p>En casos más complicados, <code>glue::glue()</code> puede parecer más intuitivo. ¿Es ese el único motivo para usarlo?</p>
@@ -265,10 +265,10 @@ cookieconsent.run({
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: microseconds
         expr     min       lq      mean   median       uq      max neval
-   con_paste   2.074   2.3050  12.14760   2.6450   2.8600  947.366   100
- con_sprintf   1.142   1.4380  10.59625   2.1040   2.3295  861.516   100
-    con_glue 125.764 127.6230 140.47355 130.1775 132.9275  896.851   100
-    con_gsub   8.977   9.7435  23.17805  12.4185  13.0090 1109.598   100</code></pre>
+   con_paste   2.701   3.2010  14.34601   4.0010   4.4005 1040.201   100
+ con_sprintf   1.200   1.7015  15.13189   2.6515   3.2010 1225.901   100
+    con_glue 149.201 157.8510 182.23310 162.9015 168.9510 1041.801   100
+    con_gsub  13.601  15.5005  33.93807  18.0510  19.5515 1564.500   100</code></pre>
 </div>
 </div>
 
