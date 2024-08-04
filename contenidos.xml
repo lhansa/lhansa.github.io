@@ -12,6 +12,155 @@
 <generator>quarto-1.5.56</generator>
 <lastBuildDate>Sun, 04 Aug 2024 00:00:00 GMT</lastBuildDate>
 <item>
+  <title>Pernotaciones por Comunidades Autónomas</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-08-04-viajeros/</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(readr)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(dplyr)</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span></code></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">df_pernoctaciones <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">read_csv2</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"~/../Downloads/2941 (1).csv"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locale =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">locale</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">encoding =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"latin1"</span>))</span>
+<span id="cb2-2"></span>
+<span id="cb2-3">df_pernoctaciones <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> janitor<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">clean_names</span>(df_pernoctaciones)</span></code></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">df_series <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> df_pernoctaciones <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span></span>
+<span id="cb3-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mutate</span>(</span>
+<span id="cb3-3">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">periodo =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste0</span>(periodo, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"D01"</span>), </span>
+<span id="cb3-4">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">periodo =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.Date</span>(periodo, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">format =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"%YM%mD%d"</span>), </span>
+<span id="cb3-5">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">total =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">parse_number</span>(total, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">locale =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">locale</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">grouping_mark =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"."</span>))</span>
+<span id="cb3-6">  ) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-7">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">group_by</span>(comunidades_y_ciudades_autonomas, periodo) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb3-8">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pernoctaciones =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>(total, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">.groups =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"drop"</span>)</span></code></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df_series) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb4-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">x =</span> periodo, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">y =</span> pernoctaciones)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb4-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">facet_wrap</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> comunidades_y_ciudades_autonomas, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">scales =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"free_y"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-08-04-viajeros/index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2024-08-04-viajeros/</guid>
+  <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
   <title>Papel del punto en R</title>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</link>
@@ -5438,33 +5587,6 @@ font-style: inherit;">compute_interval</span>(sample_size, population_mean, popu
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2023-10-20-piramide-de-poblacion/</guid>
   <pubDate>Fri, 20 Oct 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Paseo en bicicleta eléctrica por Madrid</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-10-12-bicimad/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Últimamente tengo la sensación de que las estaciones de Bicimad, el servicio de bicis públicas de Madrid, están vacías.</p>
-<p>Cuando abro la app, veo que las estaciones de la mitad sur de Madrid están llenas, y las de la mitad norte están vacías.</p>
-<p>Quería ver si los datos públicos me decían algo pero:</p>
-<ul>
-<li>He tardado casi dos horas en leer el json de datos, porque está escrito como si… no sé. O sea, se suele decir que los datos en json están semiestructurados. Pues mira, los datos de una fotografía tienen más estructura que el json de estos datos públicos.</li>
-<li>Los datos que me he puesto a ver (los de estaciones) solo están hasta diciembre de 2022. Como me di cuenta de esto en verano, he cogido los datos de julio de 2022.</li>
-</ul>
-<p>Los datos de junio los he agregado a nivel horario y calculo la proporción media horaria de bases disponibles.</p>
-<p>Eso es lo que puedes ver aquí:</p>
-<p><img src="https://lhansa.github.io/posts/2023-10-12-bicimad/output.gif" class="img-fluid"></p>
-
-
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-10-12-bicimad/</guid>
-  <pubDate>Thu, 12 Oct 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
