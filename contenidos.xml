@@ -73,17 +73,29 @@ background-color: null;
 font-style: inherit;">&lt;-</span> df_pernoctaciones <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span></span>
-<span id="cb2-2">  <span class="fu" style="color: #4758AB;
+<span id="cb2-2">  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Quito NAs porque son el total</span></span>
+<span id="cb2-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">is.na</span>(comunidades_y_ciudades_autonomas)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb2-4">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">mutate</span>(</span>
-<span id="cb2-3">    <span class="at" style="color: #657422;
+<span id="cb2-5">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">periodo =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">paste0</span>(periodo, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"D01"</span>), </span>
-<span id="cb2-4">    <span class="at" style="color: #657422;
+<span id="cb2-6">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">periodo =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -92,11 +104,13 @@ background-color: null;
 font-style: inherit;">format =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"%YM%mD%d"</span>), </span>
-<span id="cb2-5">  <span class="at" style="color: #657422;
+<span id="cb2-7">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">total =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">parse_number</span>(total, <span class="at" style="color: #657422;
+font-style: inherit;">parse_number</span>(</span>
+<span id="cb2-8">      total, </span>
+<span id="cb2-9">      <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">locale =</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -104,16 +118,26 @@ font-style: inherit;">locale</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">grouping_mark =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"."</span>))</span>
-<span id="cb2-6">  ) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"."</span>),</span>
+<span id="cb2-10">      <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">na =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"."</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">".."</span>)</span>
+<span id="cb2-11">    )</span>
+<span id="cb2-12">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
-<span id="cb2-7">    <span class="fu" style="color: #4758AB;
+<span id="cb2-13">    <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">group_by</span>(comunidades_y_ciudades_autonomas, periodo) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">|&gt;</span> </span>
-<span id="cb2-8">    <span class="fu" style="color: #4758AB;
+<span id="cb2-14">    <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
 background-color: null;
@@ -152,77 +176,83 @@ background-color: null;
 font-style: inherit;">"k"</span>)</span>
 <span id="cb3-2"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">ggplot</span>(df_series) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb3-3">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_line</span>(</span>
-<span id="cb3-4">    <span class="fu" style="color: #4758AB;
+font-style: inherit;">ggplot</span>(df_series, <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> periodo, <span class="at" style="color: #657422;
 background-color: null;
-font-style: inherit;">y =</span> pernoctaciones), </span>
-<span id="cb3-5">    <span class="at" style="color: #657422;
+font-style: inherit;">y =</span> pernoctaciones)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb3-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"#800080"</span></span>
-<span id="cb3-6">  ) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">"#800080"</span>) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb3-7">  <span class="fu" style="color: #4758AB;
+<span id="cb3-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">method =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"loess"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb3-5">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">labels =</span> formato) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb3-8">  <span class="fu" style="color: #4758AB;
+<span id="cb3-6">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">facet_wrap</span>(</span>
-<span id="cb3-9">    <span class="sc" style="color: #5E5E5E;
+<span id="cb3-7">    <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span>comunidades_y_ciudades_autonomas, </span>
-<span id="cb3-10">    <span class="at" style="color: #657422;
+<span id="cb3-8">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">scales =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"free_y"</span>, </span>
-<span id="cb3-11">    <span class="at" style="color: #657422;
+<span id="cb3-9">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">ncol =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">2</span></span>
-<span id="cb3-12">  ) <span class="sc" style="color: #5E5E5E;
+font-style: inherit;">3</span></span>
+<span id="cb3-10">  ) <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> </span>
-<span id="cb3-13">  <span class="fu" style="color: #4758AB;
+<span id="cb3-11">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">labs</span>(</span>
-<span id="cb3-14">    <span class="at" style="color: #657422;
+<span id="cb3-12">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Pernoctaciones mensuales por CCAA"</span>, </span>
-<span id="cb3-15">    <span class="at" style="color: #657422;
+<span id="cb3-13">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Fuente: INE"</span>, </span>
-<span id="cb3-16">    <span class="at" style="color: #657422;
+<span id="cb3-14">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Pernoctaciones (miles)"</span>, </span>
-<span id="cb3-17">    <span class="at" style="color: #657422;
+<span id="cb3-15">    <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">""</span></span>
-<span id="cb3-18">  )</span></code></pre></div>
+<span id="cb3-16">  )</span></code></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
