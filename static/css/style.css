@@ -302,12 +302,13 @@ ul li {
 /* COOKIES */
 
 #cookie-notice {font-size: smaller; padding: 0.5rem 1rem; display: block; position: fixed; margin: 20px 0;
-text-align: center; bottom: 0; left: 0; width: 100%; background: rgb(255, 255, 255);border:1px solid #BBBBBB;
+text-align: center; bottom: 0; left: 10; width: 80%; background: rgb(255, 255, 255);border:1px solid #BBBBBB;
 color: #333333;}
 
 #cookie-notice a {font-weight: 100; display: inline-flex; cursor: pointer; margin-left: 0.5rem;}
-#cookie-notice-accept {color:#800080}
+#cookie-notice-accept {color:#800080; text-decoration:underline}
 #cookie-notice-deny {color:#800080}
+#cookie-masinfo {color:#333333; text-decoration:none}
 /*@media (max-width: 767px) {
     #cookie-notice span {display: block; padding-top: 3px; margin-bottom: 1rem;}
     #cookie-notice a {position: relative; bottom: 4px;}
