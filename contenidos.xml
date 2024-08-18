@@ -35,24 +35,37 @@ font-style: inherit;">"concatenar"</span></span></code></pre></div>
 <pre><code>[1] "hola, puedo concatenar"</code></pre>
 </div>
 </div>
+<p>Pero:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">library</span>(rlang)</span>
-<span id="cb3-2">opera <span class="ot" style="color: #003B4F;
+<span id="cb5-2">opera <span class="ot" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">function</span>(data, entrada) {</span>
-<span id="cb3-3">  <span class="fu" style="color: #4758AB;
+<span id="cb5-3">  <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">eval_tidy</span>(<span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">enexpr</span>(entrada), data)</span>
-<span id="cb3-4">}</span>
-<span id="cb3-5"></span>
-<span id="cb3-6"><span class="fu" style="color: #4758AB;
+<span id="cb5-4">}</span>
+<span id="cb5-5"></span>
+<span id="cb5-6"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">opera</span>(iris, Sepal.Length <span class="sc" style="color: #5E5E5E;
 background-color: null;
