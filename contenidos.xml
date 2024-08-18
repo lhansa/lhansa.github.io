@@ -10,7 +10,74 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.5.56</generator>
-<lastBuildDate>Fri, 16 Aug 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sat, 17 Aug 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Evaluación de expresiones en R</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-08-17-evaluacion-expresiones/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Levanta la mano si a ti también te gusta concatenar caracteres con <code>+</code> como en Python.</p>
+<p>Me refiero a que en Python puedes hacer <code>'Hola ' + ' Leo'</code> pero en R no.</p>
+<p>¿O sí?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"hola, puedo "</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"concatenar"</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "hola, puedo concatenar"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(rlang)</span>
+<span id="cb3-2">opera <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(data, entrada) {</span>
+<span id="cb3-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">eval_tidy</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enexpr</span>(entrada), data)</span>
+<span id="cb3-4">}</span>
+<span id="cb3-5"></span>
+<span id="cb3-6"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">opera</span>(iris, Sepal.Length <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> Sepal.Width)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1]  8.6  7.9  7.9  7.7  8.6  9.3  8.0  8.4  7.3  8.0  9.1  8.2  7.8  7.3  9.8
+ [16] 10.1  9.3  8.6  9.5  8.9  8.8  8.8  8.2  8.4  8.2  8.0  8.4  8.7  8.6  7.9
+ [31]  7.9  8.8  9.3  9.7  8.0  8.2  9.0  8.5  7.4  8.5  8.5  6.8  7.6  8.5  8.9
+ [46]  7.8  8.9  7.8  9.0  8.3 10.2  9.6 10.0  7.8  9.3  8.5  9.6  7.3  9.5  7.9
+ [61]  7.0  8.9  8.2  9.0  8.5  9.8  8.6  8.5  8.4  8.1  9.1  8.9  8.8  8.9  9.3
+ [76]  9.6  9.6  9.7  8.9  8.3  7.9  7.9  8.5  8.7  8.4  9.4  9.8  8.6  8.6  8.0
+ [91]  8.1  9.1  8.4  7.3  8.3  8.7  8.6  9.1  7.6  8.5  9.6  8.5 10.1  9.2  9.5
+[106] 10.6  7.4 10.2  9.2 10.8  9.7  9.1  9.8  8.2  8.6  9.6  9.5 11.5 10.3  8.2
+[121] 10.1  8.4 10.5  9.0 10.0 10.4  9.0  9.1  9.2 10.2 10.2 11.7  9.2  9.1  8.7
+[136] 10.7  9.7  9.5  9.0 10.0  9.8 10.0  8.5 10.0 10.0  9.7  8.8  9.5  9.6  8.9</code></pre>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2024-08-17-evaluacion-expresiones/</guid>
+  <pubDate>Sat, 17 Aug 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Estadísticos en regresión lineal por variable</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6181,444 +6248,6 @@ font-style: inherit;">sum</span>(game_powers)</span></code></pre></div>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2023-12-05-adventofcode-ii/</guid>
   <pubDate>Sat, 02 Dec 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Advent of code (1)</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-12-01-adventofcode-i/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Nunca he jugado con el <a href="https://adventofcode.com/">Advent of code</a>. Hoy me ha apetecido.</p>
-<p>Para el ejercicio de hoy, me he empeñado <strong>en hacerlo en R base.</strong></p>
-<section id="parte-1" class="level2">
-<h2 class="anchored" data-anchor-id="parte-1">Parte 1</h2>
-<p>El día 1 del <a href="https://adventofcode.com/2023">Advent of code 2023</a> nos pide que sumemos los números que aparecen en un texto.</p>
-<p>El texto tiene una pinta así: <code>"four95qvkvveight5"</code>, y hay 1.000 como ese.</p>
-<p>La idea es:</p>
-<ul>
-<li>tomar el primer dígito, 9,</li>
-<li>y el último, 5</li>
-<li>y concatenarlos: 95</li>
-</ul>
-<p>Así obtendrás 1000 números. La solución es la suma de esos 1.000 números.</p>
-<p>Mi propuesta:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">data <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">readLines</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"2023-01.txt"</span>)</span>
-<span id="cb1-2"></span>
-<span id="cb1-3">get_number <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(x) {</span>
-<span id="cb1-4">  str_number <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">gsub</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"[^0-9]"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>, x)</span>
-<span id="cb1-5">  len <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">nchar</span>(str_number)</span>
-<span id="cb1-6">  str_number <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste0</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">substr</span>(str_number, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>), <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">substr</span>(str_number, len, len))</span>
-<span id="cb1-7">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">return</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.numeric</span>(str_number))</span>
-<span id="cb1-8">}</span>
-<span id="cb1-9">numbers <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">vapply</span>(</span>
-<span id="cb1-10">  data, </span>
-<span id="cb1-11">  get_number,</span>
-<span id="cb1-12">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">numeric</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb1-13">)</span>
-<span id="cb1-14"></span>
-<span id="cb1-15"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(numbers)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 55208</code></pre>
-</div>
-</div>
-</section>
-<section id="parte-2" class="level2">
-<h2 class="anchored" data-anchor-id="parte-2">Parte 2</h2>
-<p>Ahora hay un matiz. Fíjate de nuevo en el texto: <code>"four95qvkvveight5"</code>. Realmente, el primer número es <code>"four"</code>, o sea, 4. Lo que hay que hacer ahora es identificar el primer dígito y el último pero tanto si viene en número como en texto.</p>
-<p>Luego igual, concatenarlos y sumarlos.</p>
-<p>Mi propuesta:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># a character vector with the numbers from zero to nine in letters</span></span>
-<span id="cb3-2">words <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"zero"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"one"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"two"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"three"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"four"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"five"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"six"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"seven"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"eight"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"nine"</span>)</span>
-<span id="cb3-3"></span>
-<span id="cb3-4">split_words <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">strsplit</span>(words, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>)</span>
-<span id="cb3-5">words_inv <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">vapply</span>(</span>
-<span id="cb3-6">  split_words, </span>
-<span id="cb3-7">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(x) <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste0</span>(x[<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">length</span>(x)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>], <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">collapse =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>), </span>
-<span id="cb3-8">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">character</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb3-9">)</span>
-<span id="cb3-10"></span>
-<span id="cb3-11">words_regex <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste0</span>(words, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">collapse =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"|"</span>)</span>
-<span id="cb3-12">words_inv_regex <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste0</span>(words_inv, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">collapse =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"|"</span>)</span>
-<span id="cb3-13"></span>
-<span id="cb3-14">pattern <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"[0-9]"</span>, words_regex, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">sep =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"|"</span>)</span>
-<span id="cb3-15">pattern_inv <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"[0-9]"</span>, words_inv_regex, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">sep =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"|"</span>)</span>
-<span id="cb3-16"></span>
-<span id="cb3-17"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Change the order of a text</span></span>
-<span id="cb3-18">invert <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(x) {</span>
-<span id="cb3-19">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">nchar</span>(x) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>) {</span>
-<span id="cb3-20">    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">return</span>(x)</span>
-<span id="cb3-21">  } <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span> {</span>
-<span id="cb3-22">    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">return</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste0</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">strsplit</span>(x, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>)[[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>]][<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">nchar</span>(x)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>], <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">collapse =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span>) )</span>
-<span id="cb3-23">  }</span>
-<span id="cb3-24">}</span>
-<span id="cb3-25"></span>
-<span id="cb3-26"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Convert a text to a number, based on the words and words_inv vectors</span></span>
-<span id="cb3-27">to_numeric <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(x, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words =</span> words, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words_inv =</span> words_inv) {</span>
-<span id="cb3-28">  <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> (<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">nchar</span>(x) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>) {</span>
-<span id="cb3-29">    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">return</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.numeric</span>(x))</span>
-<span id="cb3-30">  } <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> (x <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%in%</span> words) {</span>
-<span id="cb3-31">    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">return</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">which</span>(words <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> x) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb3-32">  } <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span> {</span>
-<span id="cb3-33">    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">return</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">which</span>(words_inv <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> x) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb3-34">  }</span>
-<span id="cb3-35">}</span>
-<span id="cb3-36"></span>
-<span id="cb3-37">get_number2 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(x, </span>
-<span id="cb3-38">                        pattern, </span>
-<span id="cb3-39">                        pattern_inv,</span>
-<span id="cb3-40">                        words, </span>
-<span id="cb3-41">                        words_inv) {</span>
-<span id="cb3-42">  </span>
-<span id="cb3-43">  first <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">regmatches</span>(x, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">m =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">regexpr</span>(pattern, x))</span>
-<span id="cb3-44">  first <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">to_numeric</span>(first, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words =</span> words, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words_inv =</span> words_inv)</span>
-<span id="cb3-45">  </span>
-<span id="cb3-46">  x_inv <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">invert</span>(x)</span>
-<span id="cb3-47">  last <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">regmatches</span>(x_inv, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">m =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">regexpr</span>(pattern_inv, x_inv))</span>
-<span id="cb3-48">  last <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">invert</span>(last)</span>
-<span id="cb3-49">  last <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">to_numeric</span>(last, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words =</span> words, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words_inv =</span> words_inv)</span>
-<span id="cb3-50">  </span>
-<span id="cb3-51">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">return</span>(first <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> last)</span>
-<span id="cb3-52">  </span>
-<span id="cb3-53">}</span>
-<span id="cb3-54"></span>
-<span id="cb3-55"></span>
-<span id="cb3-56">numbers2 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">vapply</span>(</span>
-<span id="cb3-57">  data, </span>
-<span id="cb3-58">  get_number2,</span>
-<span id="cb3-59">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">pattern =</span> pattern,</span>
-<span id="cb3-60">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">pattern_inv =</span> pattern_inv,</span>
-<span id="cb3-61">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words =</span> words, </span>
-<span id="cb3-62">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">words_inv =</span> words_inv,</span>
-<span id="cb3-63">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">FUN.VALUE =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">numeric</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb3-64">)</span>
-<span id="cb3-65"></span>
-<span id="cb3-66"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(numbers2)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 54578</code></pre>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-12-01-adventofcode-i/</guid>
-  <pubDate>Fri, 01 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
