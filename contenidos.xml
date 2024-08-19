@@ -48,6 +48,9 @@ font-style: inherit;">3</span></span></code></pre></div>
 <pre><code>[1] 4</code></pre>
 </div>
 </div>
+<section id="justificación-de-quosures" class="level2">
+<h2 class="anchored" data-anchor-id="justificación-de-quosures">Justificación de <code>quosures</code></h2>
+<p>La idea detrás de funciones como <code>base::subset()</code> o <code>dplyr::mutate()</code> es que puedes escribir operaciones dentro de data frames haciendo referencia directamente a las columnas, sin usar la sintaxis <code>df$columna</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -65,26 +68,131 @@ background-color: null;
 font-style: inherit;">enexpr</span>(entrada), data)</span>
 <span id="cb5-4">}</span>
 <span id="cb5-5"></span>
-<span id="cb5-6"><span class="fu" style="color: #4758AB;
+<span id="cb5-6">nuevo_calculo <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">opera</span>(iris, Sepal.Length <span class="sc" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">+</span> Sepal.Width)</span></code></pre></div>
+font-style: inherit;">+</span> Sepal.Width)</span>
+<span id="cb5-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">head</span>(nuevo_calculo)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  [1]  8.6  7.9  7.9  7.7  8.6  9.3  8.0  8.4  7.3  8.0  9.1  8.2  7.8  7.3  9.8
- [16] 10.1  9.3  8.6  9.5  8.9  8.8  8.8  8.2  8.4  8.2  8.0  8.4  8.7  8.6  7.9
- [31]  7.9  8.8  9.3  9.7  8.0  8.2  9.0  8.5  7.4  8.5  8.5  6.8  7.6  8.5  8.9
- [46]  7.8  8.9  7.8  9.0  8.3 10.2  9.6 10.0  7.8  9.3  8.5  9.6  7.3  9.5  7.9
- [61]  7.0  8.9  8.2  9.0  8.5  9.8  8.6  8.5  8.4  8.1  9.1  8.9  8.8  8.9  9.3
- [76]  9.6  9.6  9.7  8.9  8.3  7.9  7.9  8.5  8.7  8.4  9.4  9.8  8.6  8.6  8.0
- [91]  8.1  9.1  8.4  7.3  8.3  8.7  8.6  9.1  7.6  8.5  9.6  8.5 10.1  9.2  9.5
-[106] 10.6  7.4 10.2  9.2 10.8  9.7  9.1  9.8  8.2  8.6  9.6  9.5 11.5 10.3  8.2
-[121] 10.1  8.4 10.5  9.0 10.0 10.4  9.0  9.1  9.2 10.2 10.2 11.7  9.2  9.1  8.7
-[136] 10.7  9.7  9.5  9.0 10.0  9.8 10.0  8.5 10.0 10.0  9.7  8.8  9.5  9.6  8.9</code></pre>
+<pre><code>[1] 8.6 7.9 7.9 7.7 8.6 9.3</code></pre>
+</div>
+</div>
+<p>El inconveniente es que <code>enexpr()</code> puede no ser suficiente porque no tiene en cuenta información del entorno.</p>
+<p>Por ejemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">df <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col1 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>))</span>
+<span id="cb7-2">factor <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb7-3"></span>
+<span id="cb7-4">opera2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(data, entrada) {</span>
+<span id="cb7-5">  factor <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span></span>
+<span id="cb7-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">eval_tidy</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enexpr</span>(entrada), data)</span>
+<span id="cb7-7">}</span>
+<span id="cb7-8"></span>
+<span id="cb7-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Con enquo no sabes cuál es el entorno original de la variable</span></span>
+<span id="cb7-10"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">opera2</span>(df, col1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> factor)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 50 60 70</code></pre>
+</div>
+</div>
+<p>Una solución que se te puede ocurrir es: <em>no pongas en la expresión variables que estén definidas en la función</em>. Ya, ¿y si no sabes lo que hay en la función? ¿Y si el código es tan largo que no te da para revisarlo?</p>
+<p>Pues lo arreglas con <code>enquo()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">df <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col1 =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>))</span>
+<span id="cb9-2">factor <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb9-3"></span>
+<span id="cb9-4">opera3 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(data, entrada) {</span>
+<span id="cb9-5">  factor <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span></span>
+<span id="cb9-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">eval_tidy</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">enquo</span>(entrada), data)</span>
+<span id="cb9-7">}</span>
+<span id="cb9-8"></span>
+<span id="cb9-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Con enquo usas el entorno donde se definió la variable original</span></span>
+<span id="cb9-10"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">opera3</span>(df, col1 <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> factor)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10 12 14</code></pre>
 </div>
 </div>
 
 
+</section>
 
  ]]></description>
   <category>datos</category>
