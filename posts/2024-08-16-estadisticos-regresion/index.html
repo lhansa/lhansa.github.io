@@ -261,25 +261,25 @@ y = \beta_0 + \beta_1 \cdot x + \varepsilon,
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.520
-Model:                            OLS   Adj. R-squared:                  0.520
-Method:                 Least Squares   F-statistic:                 1.082e+04
-Date:                Sun, 18 Aug 2024   Prob (F-statistic):               0.00
-Time:                        18:09:08   Log-Likelihood:                -37243.
-No. Observations:               10000   AIC:                         7.449e+04
-Df Residuals:                    9998   BIC:                         7.450e+04
+Dep. Variable:                      y   R-squared:                       0.527
+Model:                            OLS   Adj. R-squared:                  0.527
+Method:                 Least Squares   F-statistic:                 1.115e+04
+Date:                Mon, 19 Aug 2024   Prob (F-statistic):               0.00
+Time:                        23:37:26   Log-Likelihood:                -37190.
+No. Observations:               10000   AIC:                         7.438e+04
+Df Residuals:                    9998   BIC:                         7.440e+04
 Df Model:                           1                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-const         -5.0204      0.362    -13.873      0.000      -5.730      -4.311
-x1             3.0175      0.029    104.021      0.000       2.961       3.074
+const         -5.0025      0.357    -14.009      0.000      -5.702      -4.303
+x1             3.0140      0.029    105.585      0.000       2.958       3.070
 ==============================================================================
-Omnibus:                        0.879   Durbin-Watson:                   1.972
-Prob(Omnibus):                  0.644   Jarque-Bera (JB):                0.900
-Skew:                          -0.022   Prob(JB):                        0.638
-Kurtosis:                       2.983   Cond. No.                         45.3
+Omnibus:                        7.083   Durbin-Watson:                   2.023
+Prob(Omnibus):                  0.029   Jarque-Bera (JB):                7.775
+Skew:                          -0.014   Prob(JB):                       0.0205
+Kurtosis:                       3.134   Cond. No.                         45.0
 ==============================================================================
 
 Notes:
@@ -303,14 +303,14 @@ Notes:
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>standard_error <span class="op">=</span> np.sqrt(np.<span class="bu">sum</span>(model.resid <span class="op">**</span> <span class="dv">2</span>) <span class="op">/</span> (<span class="bu">len</span>(x) <span class="op">-</span> <span class="dv">2</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>standard_error_x <span class="op">=</span> standard_error <span class="op">/</span> np.sqrt(nobs)  <span class="op">/</span> np.std(x)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>El error estándar de los residuos es 10.028521904785437 y el de la variable es 0.029008370883186262.</p>
+<p>El error estándar de los residuos es 9.975818941126349 y el de la variable es 0.028545857080981202.</p>
 <blockquote class="blockquote">
 <p>El error estándar del intercept es más lío de calcular e interpretar; la idea intuitiva es que tiene en cuenta la varianza de todas las variables explicativas a la vez.</p>
 </blockquote>
 <div id="cell-standard-error-int" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>standard_error <span class="op">*</span> np.sqrt(<span class="dv">1</span> <span class="op">/</span> nobs <span class="op">+</span> np.mean(x) <span class="op">**</span> <span class="dv">2</span> <span class="op">/</span> np.<span class="bu">sum</span>((x <span class="op">-</span> np.mean(x)) <span class="op">**</span> <span class="dv">2</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="standard-error-int" class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>0.3618959071001899</code></pre>
+<pre><code>0.3570820876215312</code></pre>
 </div>
 </div>
 </section>
@@ -325,12 +325,12 @@ t = \frac{\mbox{coef}\ x}{\mbox{std error}\ x}.
 <li>A su vez, si el coeficiente es alto (en valor absoluto), entonces también crece.</li>
 <li>El estadístico decrece con coeficientes bajos o con errores altos (es decir, la variable parecerá no significativa).</li>
 </ul>
-<div id="575e98bc" class="cell" data-execution_count="6">
+<div id="4d9e3c12" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># label: t-stat</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>t_stat_x <span class="op">=</span> np.<span class="bu">abs</span>(model.params[<span class="dv">1</span>]) <span class="op">/</span> standard_error_x</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>t_stat_x</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>104.02117567793877</code></pre>
+<pre><code>105.58474083439029</code></pre>
 </div>
 </div>
 </section>
@@ -338,7 +338,7 @@ t = \frac{\mbox{coef}\ x}{\mbox{std error}\ x}.
 <h2 class="anchored" data-anchor-id="p-valor">p-valor</h2>
 <p>Ahora hay que ver qué valor es esperable para el estadístico <span class="math inline">\(t\)</span>.</p>
 <p>Pon que trabajas al nivel de confianza del 90%. Hace falta calcular el <span class="math inline">\(t\)</span> que deja el 5% a un lado de la distribución, y el que lo deja al otro lado. Como la distribución es simétrica, solo calculo uno:</p>
-<div id="19514061" class="cell" data-execution_count="7">
+<div id="8fdabede" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>percentile <span class="op">=</span> stats.t.ppf(<span class="fl">0.95</span>, nobs <span class="op">-</span> <span class="dv">2</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>percentile</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -363,7 +363,7 @@ t = \frac{\mbox{coef}\ x}{\mbox{std error}\ x}.
 </div>
 </div>
 <p>Concretamente, la probabilidad para el estadístico <span class="math inline">\(t\)</span> que has obtenido es muy muy baja.</p>
-<div id="b6a15302" class="cell" data-execution_count="9">
+<div id="0d1b6ed0" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># p value for coefficient, extracted from</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># t distribution</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>stats.t.sf(t_stat_x, nobs <span class="op">-</span> <span class="dv">2</span>) <span class="op">*</span> <span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -397,6 +397,8 @@ t = \frac{\mbox{coef}\ x}{\mbox{std error}\ x}.
 </section>
 <section id="un-ejemplo-más-extremo" class="level2">
 <h2 class="anchored" data-anchor-id="un-ejemplo-más-extremo">Un ejemplo más extremo</h2>
+<p>En lugar de utilizar la propia variable <span class="math inline">\(x\)</span> para ajustar el modelo, podemos alterar <span class="math inline">\(x\)</span> introduciendo ruido en ella. Eso lo haré metiendo ruido en la variable, con media 0 y una desviación típica que variaré en varias pruebas.</p>
+<p>Por ahora, la desviación típica del ruido sobre <span class="math inline">\(x\)</span> es 1.</p>
 <div id="cell-genera-escenario" class="cell" data-execution_count="10">
 <div class="cell-output cell-output-display">
 <div>
@@ -406,11 +408,36 @@ t = \frac{\mbox{coef}\ x}{\mbox{std error}\ x}.
 </div>
 </div>
 </div>
-<div id="cell-prueba-variables" class="cell" data-execution_count="11">
+<p>Voy a poner mucho más ruido. Fíjate en cuánto decrece el estadístico <span class="math inline">\(t\)</span> (y en consecuencia cuánto aumenta el p-valor).</p>
+<div id="cell-genera-escenario2" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/prueba-variables-output-1.png" id="prueba-variables" width="575" height="431" class="figure-img"></p>
+<p><img src="index_files/figure-html/genera-escenario2-output-1.png" id="genera-escenario2" width="579" height="431" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-genera-escenario3" class="cell" data-execution_count="12">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/genera-escenario3-output-1.png" id="genera-escenario3" width="579" height="431" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-comprobacion-pvalor" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>stats.t.sf(<span class="fl">0.5341</span>, <span class="dv">9998</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="comprobacion-pvalor" class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>0.29664211233560395</code></pre>
+</div>
+</div>
+<div id="cell-prueba-variables" class="cell" data-execution_count="14">
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/prueba-variables-output-1.png" id="prueba-variables" width="586" height="431" class="figure-img"></p>
 </figure>
 </div>
 </div>
