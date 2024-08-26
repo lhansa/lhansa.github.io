@@ -346,7 +346,7 @@ h_i \sim \cal{N}(\mu, \sigma)
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sample_sigma <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="fl">1e4</span>, <span class="dv">0</span>, <span class="dv">50</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>prior_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e4</span>, sample_mu, sample_sigma)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dens</span>(prior_h, <span class="at">col =</span> <span class="st">"#800080"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(prior_h, <span class="at">col =</span> <span class="st">"#800080"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -361,7 +361,7 @@ h_i \sim \cal{N}(\mu, \sigma)
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sample_mu <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e4</span>, <span class="dv">178</span>, <span class="dv">100</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>prior_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e4</span>, sample_mu, sample_sigma)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dens</span>(prior_h, <span class="at">col =</span> <span class="st">"#800080"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(prior_h, <span class="at">col =</span> <span class="st">"#800080"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -383,11 +383,14 @@ h_i \sim \cal{N}(\mu, \sigma)
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_altura)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           mean        sd       5.5%      94.5%
-mu    154.65453 0.4172154 153.987737 155.321319
-sigma   7.76233 0.2950801   7.290735   8.233925</code></pre>
+<pre><code>            mean        sd       5.5%      94.5%
+mu    154.654539 0.4172190 153.987743 155.321336
+sigma   7.762397 0.2950864   7.290792   8.234002</code></pre>
 </div>
 </div>
+<p>Obtenemos un modelo normal con una media cuya media es 154 y su desviación típica es 0.42. Sí, el resultado de para la media de de la población es una distribución: no conocemos el valor exacto de la media sino que hemos estimado la distribución a la que pertenece.</p>
+<p>Lo mismo con la desviación típica.</p>
+<p>Concretamente, esta distribución de la <strong>media</strong> es la que muestra este histograma.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>posterior_h <span class="ot">&lt;-</span> <span class="fu">extract.samples</span>(fit_altura, <span class="at">n =</span> <span class="fl">1e4</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(posterior_h<span class="sc">$</span>mu, <span class="at">col =</span> <span class="st">"#800080"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -399,8 +402,45 @@ sigma   7.76233 0.2950801   7.290735   8.233925</code></pre>
 </div>
 </div>
 </div>
+<section id="ajuste-de-prioris" class="level3">
+<h3 class="anchored" data-anchor-id="ajuste-de-prioris">Ajuste de prioris</h3>
+<p>La priori no informativa que sugerimos antes no tenía sentido porque daba lugar a valores de alturas inhumanas, como negativos o demasiados altos.</p>
+<p>Podemos proponer también una priori más restrictica.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sample_mu <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e4</span>, <span class="dv">178</span>, <span class="fl">0.1</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>prior_h <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="fl">1e4</span>, sample_mu, sample_sigma)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(prior_h, <span class="at">col =</span> <span class="st">"#800080"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/prioris-ajustadas-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esta priori fuerza a la media a quedarse mucho más centrada en la media propuesta. Y esto cambia el modelo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fit_altura2 <span class="ot">&lt;-</span> <span class="fu">quap</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">alist</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    height <span class="sc">~</span> <span class="fu">dnorm</span>(mu, sigma), </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    mu <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">178</span>, <span class="fl">0.1</span>), </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    sigma <span class="sc">~</span> <span class="fu">dunif</span>(<span class="dv">0</span>, <span class="dv">50</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  ), </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> adultos</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_altura2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           mean        sd      5.5%     94.5%
+mu    177.86598 0.1002314 177.70579 178.02617
+sigma  24.48463 0.9356079  22.98935  25.97991</code></pre>
+</div>
+</div>
+<p>La media <span class="math inline">\(\mu\)</span> apenas se ha movido del prior ahora. Sin embargo, el valor de <span class="math inline">\(\sigma\)</span> ha cambiado mucho porque el modelo lo calcula condicionada a la restricción del otro parámetro.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

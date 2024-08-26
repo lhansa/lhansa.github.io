@@ -5089,7 +5089,7 @@ background-color: null;
 font-style: inherit;">1e4</span>, sample_mu, sample_sigma)</span>
 <span id="cb9-5"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">dens</span>(prior_h, <span class="at" style="color: #657422;
+font-style: inherit;">hist</span>(prior_h, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -5126,7 +5126,7 @@ background-color: null;
 font-style: inherit;">1e4</span>, sample_mu, sample_sigma)</span>
 <span id="cb10-4"><span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">dens</span>(prior_h, <span class="at" style="color: #657422;
+font-style: inherit;">hist</span>(prior_h, <span class="at" style="color: #657422;
 background-color: null;
 font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -5182,11 +5182,14 @@ font-style: inherit;">data =</span> adultos</span>
 background-color: null;
 font-style: inherit;">precis</span>(fit_altura)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           mean        sd       5.5%      94.5%
-mu    154.65453 0.4172154 153.987737 155.321319
-sigma   7.76233 0.2950801   7.290735   8.233925</code></pre>
+<pre><code>            mean        sd       5.5%      94.5%
+mu    154.654539 0.4172190 153.987743 155.321336
+sigma   7.762397 0.2950864   7.290792   8.234002</code></pre>
 </div>
 </div>
+<p>Obtenemos un modelo normal con una media cuya media es 154 y su desviación típica es 0.42. Sí, el resultado de para la media de de la población es una distribución: no conocemos el valor exacto de la media sino que hemos estimado la distribución a la que pertenece.</p>
+<p>Lo mismo con la desviación típica.</p>
+<p>Concretamente, esta distribución de la <strong>media</strong> es la que muestra este histograma.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">posterior_h <span class="ot" style="color: #003B4F;
 background-color: null;
@@ -5214,8 +5217,97 @@ font-style: inherit;">"#800080"</span>)</span></code></pre></div>
 </div>
 </div>
 </div>
+<section id="ajuste-de-prioris" class="level3">
+<h3 class="anchored" data-anchor-id="ajuste-de-prioris">Ajuste de prioris</h3>
+<p>La priori no informativa que sugerimos antes no tenía sentido porque daba lugar a valores de alturas inhumanas, como negativos o demasiados altos.</p>
+<p>Podemos proponer también una priori más restrictica.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">sample_mu <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1e4</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">178</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span>)</span>
+<span id="cb14-2"></span>
+<span id="cb14-3">prior_h <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1e4</span>, sample_mu, sample_sigma)</span>
+<span id="cb14-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">hist</span>(prior_h, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#800080"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/prioris-ajustadas-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esta priori fuerza a la media a quedarse mucho más centrada en la media propuesta. Y esto cambia el modelo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">fit_altura2 <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">quap</span>(</span>
+<span id="cb15-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alist</span>(</span>
+<span id="cb15-3">    height <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(mu, sigma), </span>
+<span id="cb15-4">    mu <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">178</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span>), </span>
+<span id="cb15-5">    sigma <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dunif</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>)</span>
+<span id="cb15-6">  ), </span>
+<span id="cb15-7">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> adultos</span>
+<span id="cb15-8">)</span>
+<span id="cb15-9"></span>
+<span id="cb15-10"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">precis</span>(fit_altura2)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           mean        sd      5.5%     94.5%
+mu    177.86598 0.1002314 177.70579 178.02617
+sigma  24.48463 0.9356079  22.98935  25.97991</code></pre>
+</div>
+</div>
+<p>La media <img src="https://latex.codecogs.com/png.latex?%5Cmu"> apenas se ha movido del prior ahora. Sin embargo, el valor de <img src="https://latex.codecogs.com/png.latex?%5Csigma"> ha cambiado mucho porque el modelo lo calcula condicionada a la restricción del otro parámetro.</p>
 
 
+</section>
 </section>
 
  ]]></description>
