@@ -10,10 +10,9 @@ No sé en tu caso, pero en el mío también he llegado a donde estoy gracias a l
 
 El **anti CV** contiene mis experiencias profesionales y educativas negativas; aquellas vivencias de las que no se me ocurre presumir, porque son errores, decisiones equivocadas, pero que han contribuido a mi aprendizaje. Por ello, les debo mucho. 
 
-## Leonardo Hansa - Anti CV
+## Leonardo Hansa
 
 - Copio y pego código de Stack Overflow y ChatGPT. 
-- Dirijo un equipo (de una persona: yo) y me cuesta horrores gestionarlo.
 
 ## Resumen
 
