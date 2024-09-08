@@ -9,8 +9,225 @@
 <link>https://lhansa.github.io/contenidos.html</link>
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
-<generator>quarto-1.5.56</generator>
-<lastBuildDate>Fri, 23 Aug 2024 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.5.57</generator>
+<lastBuildDate>Sun, 08 Sep 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Introducción práctica a Rust</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-09-08-rust/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>No tengo ni idea de Rust, pero he oído que es muy rápido y gestiona la RAM de manera más automática que C++. C++ es fácil de aprovechar con R para utilizar su velocidad pero me tienta probar cosas nuevas.</p>
+<p>Para usar R y Rust <a href="https://extendr.github.io/rextendr/">he leído</a> sobre el paquete <strong>rextendr</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(rextendr)</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># create a Rust function</span></span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rust_function</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"fn add(a:f64, b:f64) -&gt; f64 { a + b }"</span>)</span>
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># call it from R</span></span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">add</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4.7</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.2</code></pre>
+</div>
+</div>
+<p>Ese código básico funciona. Se ha creado un objeto nuevo <code>add</code> que es de tipo <code>function</code>.</p>
+<section id="cálculo-de-r2-con-rust" class="level2">
+<h2 class="anchored" data-anchor-id="cálculo-de-r2-con-rust">Cálculo de R2 con Rust</h2>
+<p>Ahora creo una función que, dados dos vectores, calcule el R2 de ambos, como si uno fuese la predicción que un modelo hace para el otro.</p>
+<p><strong>Observación.</strong> Yo no sé Rust pero ChatGPT y otras IIAA sí saben.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">code <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> r<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"(</span></span>
+<span id="cb3-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    #[extendr]</span></span>
+<span id="cb3-3"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    fn calcula_r2_rust(actual: &amp;[f64], predicted: &amp;[f64]) -&gt; f64 {</span></span>
+<span id="cb3-4"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">     </span></span>
+<span id="cb3-5"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        let n = actual.len() as f64;</span></span>
+<span id="cb3-6"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        let mean_actual = actual.iter().sum::&lt;f64&gt;() / n;</span></span>
+<span id="cb3-7"></span>
+<span id="cb3-8"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        let ssr = actual.iter().enumerate().map(|(i, x)| (x - predicted[i]).powi(2)).sum::&lt;f64&gt;();</span></span>
+<span id="cb3-9"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        let sst = actual.iter().map(|(x)| (x - mean_actual).powi(2)).sum::&lt;f64&gt;();</span></span>
+<span id="cb3-10"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">        1.0 - ssr / sst</span></span>
+<span id="cb3-11"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    </span></span>
+<span id="cb3-12"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">    }</span></span>
+<span id="cb3-13"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">)"</span></span>
+<span id="cb3-14"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rust_source</span>(</span>
+<span id="cb3-15">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">code =</span> code, </span>
+<span id="cb3-16">)</span></code></pre></div>
+</div>
+<p>Ahora me invento unos <em>datos</em> y aplico la función.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">nsize <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1e6</span></span>
+<span id="cb4-2">valor_real <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(nsize, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb4-3">valor_pred <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> valor_real <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(nsize, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>)</span>
+<span id="cb4-4"></span>
+<span id="cb4-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_r2_rust</span>(valor_real, valor_pred)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7492446</code></pre>
+</div>
+</div>
+</section>
+<section id="comparativa-de-tiempos-de-ejecución" class="level2">
+<h2 class="anchored" data-anchor-id="comparativa-de-tiempos-de-ejecución">Comparativa de tiempos de ejecución</h2>
+<p>Creo una función para calcular eso mismo con R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">calcula_r2_r <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(actual, pred) {</span>
+<span id="cb6-2">    numerador <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>((actual <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> pred) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb6-3">    mean_actual <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mean</span>(actual)</span>
+<span id="cb6-4">    denominador <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sum</span>((actual <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> mean_actual) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb6-5"></span>
+<span id="cb6-6">    <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> numerador <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> denominador</span>
+<span id="cb6-7">}</span>
+<span id="cb6-8"></span>
+<span id="cb6-9"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_r2_r</span>(valor_real, valor_pred)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7492446</code></pre>
+</div>
+</div>
+<p>Y ahora lo divertido, comparo tiempos. Que, por supuesto, no tienen ningún sentido.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1">microbenchmark<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">microbenchmark</span>(</span>
+<span id="cb8-2">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">rust =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_r2_rust</span>(valor_real, valor_pred), </span>
+<span id="cb8-3">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">r =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">calcula_r2_r</span>(valor_real, valor_pred)</span>
+<span id="cb8-4">)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Unit: milliseconds
+ expr      min       lq     mean   median       uq      max neval
+ rust 60.86050 62.41938 67.36861 64.71865 72.43868 86.67186   100
+    r 16.77276 17.47662 24.79657 23.71143 30.52387 50.23770   100</code></pre>
+</div>
+</div>
+<p>Ya, otro día comparo con Rcpp y lo llevo a Python.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2024-09-08-rust/</guid>
+  <pubDate>Sun, 08 Sep 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Más sobre evaluación de expresiones en R</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6195,92 +6412,6 @@ font-style: inherit;">::</span>geom_line)</span></code></pre></div>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2023-12-22-survival-analysis/</guid>
   <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Comparativa pequeña entre tidyverse y R base</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-12-07-tidyverse-rbase/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Me gusta leer <a href="https://github.com/matloff/TidyverseSkeptic">críticas contra tidyverse</a>. ¿Porque lo odio?</p>
-<p>No, lo uso todo el rato. Todos los días. Mi trabajo se basa en <a href="https://www.tidyverse.org/">el tidyverse</a>.</p>
-<p>¿Por qué leo críticas entonces?</p>
-<p>Porque no entiendo que las haya. Así que me obligo a leer otros puntos de vista para ver en qué estoy equivocado.</p>
-<p>Por ahora, gano yo. El link que publico al principio no es convincente. Un día le responderé al autor. Mientras tanto, estudio R base.</p>
-<p>Me parece entretenido. Incluso bonito.</p>
-<p>Y bromas aparte, le reconozco una cosa: <strong>me quita toda la gestión de dependencias.</strong> Cuando ejecuto este blog en GitHub Actions o cuando creo una librería, quitar dependencias simplifica mucho el trabajo y el proceso.</p>
-<p>Eso sí me gusta de R base.</p>
-<p>Pero para el día a día es un infierno.</p>
-<p>Así que se me ha ocurrido hacerme un diccionario de R base y tidyverse, de cosas que consulto a veces.</p>
-<p>Es un mini diccionario: faltarán muchas cosas aquí que te harán falta. Pero aquí encontrarás algunas que quizá te hagan falta. Y oye, si es así, tu búsqueda ha terminado.</p>
-<section id="conversión-r-base---tidyverse" class="level2">
-<h2 class="anchored" data-anchor-id="conversión-r-base---tidyverse">Conversión R base - Tidyverse</h2>
-<p>Para simplificar dependencias trabajaré, por supuesto, con <code>iris</code>.</p>
-<table class="caption-top table">
-<caption>Comparativa R base - Tidyverse</caption>
-<colgroup>
-<col style="width: 39%">
-<col style="width: 18%">
-<col style="width: 41%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong>Operación</strong></td>
-<td><strong>Tidyverse</strong></td>
-<td><strong>R base</strong></td>
-</tr>
-<tr class="even">
-<td>Calcula la media de una métrica por grupo.</td>
-<td><p><code>iris |&gt;</code></p>
-<p><code>group_by(Species) |&gt;</code></p>
-<p><code>summarise(mean(Sepal.Length))</code></p></td>
-<td><p><code>aggregate(</code></p>
-<p><code>Sepal.Length ~ Species,</code></p>
-<p><code>iris,</code></p>
-<p><code>mean)</code></p></td>
-</tr>
-<tr class="odd">
-<td>Extrae los números de un texto (aplica a cualquer patrón, como DNI, razón social, etc).</td>
-<td><p><code>str_extract(</code></p>
-<p><code>"cosa123cosa",</code></p>
-<p><code>"\\d+")</code></p></td>
-<td><p><code>regmatches(</code></p>
-<p><code>"cosa123cosa",</code></p>
-<p><code>m = regexpr("\\d+", "cosa123cosa", perl = TRUE))</code></p></td>
-</tr>
-<tr class="even">
-<td>Quédate con las observaciones cuyo valor (en una métrica) sea mayor que la media de su grupo.</td>
-<td><p><code>iris |&gt;</code></p>
-<p><code>group_by(Species) |&gt;</code></p>
-<p><code>filter(Sepal.Lengh &gt;= mean(Sepal.Length))</code></p></td>
-<td><p><code>do.call("rbind",</code></p>
-<p><code>lapply(split(iris, iris$Species),</code></p>
-<p><code>function(df) {               subset(df, Sepal.Length &gt;= mean(df$Sepal.Length)) }))</code></p></td>
-</tr>
-<tr class="odd">
-<td>(*) Pasa de formato ancho a formato largo - Transformación <em>melt</em> - Pasa métricas a filas</td>
-<td><p><code>iris |&gt;</code></p>
-<p><code>pivot_longer(-Species)</code></p></td>
-<td><p><code>iris$id &lt;- 1:nrow(iris)</code><br>
-<code>reshape(iris,</code></p>
-<p><code>idvar="id",</code></p>
-<p><code>direction="long",          varying=list(1:4),         v.names = "value",         timevar="metric")</code></p></td>
-</tr>
-</tbody>
-</table>
-<p>En la 4ª he puesto un asterisco porque está mal. No soy capaz de hacer eso en R base de una manera razonablemente cómoda para mí.</p>
-<p>Pero yo lo sigo intentando.</p>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-12-07-tidyverse-rbase/</guid>
-  <pubDate>Thu, 07 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
