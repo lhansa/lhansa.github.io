@@ -10,7 +10,169 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Sun, 08 Sep 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 04 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Procesos ergódicos</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-10-04-ergodicidad/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>[Leo a Gil Bellosta] sobre ergocidad y he querido plantear lo que comenta.</p>
+<p>El define la ergodicidad mucho mejor de lo que lo podría hacer yo, salvo que lo copiara. Pero para copiarlo, mejor ve a su web.</p>
+<p>Planteo aquí el código de su ejemplo.</p>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span></code></pre></div>
+</div>
+<section id="lanzamiento-de-una-moneda" class="level2">
+<h2 class="anchored" data-anchor-id="lanzamiento-de-una-moneda">Lanzamiento de una moneda</h2>
+<div id="params" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">n_individuos <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="cb2-2">n_veces <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span></span></code></pre></div>
+</div>
+<p>Tienes a <code>py n_individuos</code> que lanzan una moneda al aire <code>py n_veces</code> cada uno. Eso hace un total de <code>py n_individuos * n_veces</code> lanzamientos, en los que la probablidad teórica de obtener cara (resultado igual a 1 en este caso) es <img src="https://latex.codecogs.com/png.latex?0,5">.</p>
+<div id="cell-sim-lanzamientos" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">np.random.seed(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb3-2">lanzamientos <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>n_individuos <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> n_veces)</span>
+<span id="cb3-3">lanzamientos <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> lanzamientos.reshape(n_individuos, n_veces)</span>
+<span id="cb3-4">lanzamientos.shape</span></code></pre></div>
+<div id="sim-lanzamientos" class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>(100, 1000)</code></pre>
+</div>
+</div>
+<p>Este es un proceso estocástico ergódico porque:</p>
+<ul>
+<li>Para cualquier individuo <img src="https://latex.codecogs.com/png.latex?i">, la probabilidad de obtener cara en todos sus lanzamientos es 0,5, y</li>
+<li>para cualquier lanzamiento <img src="https://latex.codecogs.com/png.latex?k">, la probabilidad de obtener cara entre los <img src="https://latex.codecogs.com/png.latex?k">-ésimos lanzamientos de todos los individuos es <img src="https://latex.codecogs.com/png.latex?0,5">.</li>
+</ul>
+<p>Por ejemplo, la probabilidad de obtener cara para el individuo 2 (el tercero, porque esto es Python y piensan raro) es:</p>
+<div id="cell-individuo2" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">np.mean(lanzamientos[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, :])</span></code></pre></div>
+<div id="individuo2" class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>0.494</code></pre>
+</div>
+</div>
+<p>A su vez, la probabilidad de que obtengan cara entre todos los individuos en el lanzamiento 50 (el 51 xD) es:</p>
+<div id="cell-lanzamiento50" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">np.mean(lanzamientos[:, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>])</span></code></pre></div>
+<div id="lanzamiento50" class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>0.53</code></pre>
+</div>
+</div>
+</section>
+<section id="ejemplo-de-proceso-no-ergódico" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-de-proceso-no-ergódico">Ejemplo de proceso no ergódico</h2>
+<p>Supón ahora este proceso:</p>
+<ol type="1">
+<li>Partes de un capital de 1.</li>
+<li>Tiras una moneda al aire.</li>
+<li>Si sale cara, multiplicas el capital por 1,5; si sale cruz, por 0,6</li>
+<li>Ve al paso 2.</li>
+</ol>
+<p>La simulación de lanzamientos de monedas con sus resultados <img src="https://latex.codecogs.com/png.latex?1,5"> y <img src="https://latex.codecogs.com/png.latex?0,6"> se puede hacer así:</p>
+<div id="multiplicadores" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">multiplicadores_capital <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.choice([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.6</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.5</span>], size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>n_individuos <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> n_veces)</span>
+<span id="cb9-2">multiplicadores_capital <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> multiplicadores_capital.reshape(n_individuos, n_veces)</span></code></pre></div>
+</div>
+<p>Y la evolución del capital se calcula así:</p>
+<div id="capital-evolution" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">capitales <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> multiplicadores_capital.cumprod(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span></code></pre></div>
+</div>
+<p>El capital de cada individuo (<code>py n_individuos</code>) empezaba en 1, por lo que el capital medio por individuo era de 1. Tras el primer lanzamiento, el capital medio queda en:</p>
+<div id="cell-capital1" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">capitales[:, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>].mean()</span></code></pre></div>
+<div id="capital1" class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>1.0499999999999998</code></pre>
+</div>
+</div>
+<p>Ten en cuenta que la media teórica sería <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1,50%20+%200,60%7D%7B2%7D%20=%201,05">.</p>
+<p>La evolución de capitales medios:</p>
+<div id="cell-capital-societario" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># compute mean per column on numpy array capitales</span></span>
+<span id="cb13-2">evolucion_capital_medio <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> capitales.mean(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb13-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb13-4">plt.plot(evolucion_capital_medio)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-04-ergodicidad/index_files/figure-html/capital-societario-output-1.png" id="capital-societario" width="566" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2024-10-04-ergodicidad/</guid>
+  <pubDate>Fri, 04 Oct 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Introducción práctica a Rust</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -1937,101 +2099,6 @@ font-style: inherit;">"free_y"</span>)</span></code></pre></div>
   <pubDate>Mon, 05 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Papel del punto en R</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Guillermo Luijk <a href="https://www.linkedin.com/feed/update/urn:li:activity:7225379882355044352?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7225379882355044352%2C7225391436190371840%29&amp;replyUrn=urn%3Ali%3Acomment%3A%28activity%3A7225379882355044352%2C7225459855812120576%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287225391436190371840%2Curn%3Ali%3Aactivity%3A7225379882355044352%29&amp;dashReplyUrn=urn%3Ali%3Afsd_comment%3A%287225459855812120576%2Curn%3Ali%3Aactivity%3A7225379882355044352%29">criticaba</a> el punto en R porque se permite usar en el nombre de variables, lo que limita su uso fuera de ellas.</p>
-<p>He intentado crear un operador en R con <code>.</code> que sirviera para sustituir en cierto modo al operador <code>$</code>. Imposible.</p>
-<p>Pero comparto avances porque quizá, aunque sea al Leo del futuro, le puede venir bien.</p>
-<section id="operadores-infix-propios-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="operadores-infix-propios-en-r">Operadores <em>infix</em> propios en R</h2>
-<p>Todo lo que haces en R es una función. Pero no todas las funciones necesitan paréntesis. Por ejemplo, puedes sumar de dos formas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">+</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>La primera opción creo que se llama <em>infix</em>. Hay operaciones que se entienden mucho mejor así escritas que escritas como la segunda opción.</p>
-<p>De hecho, esa es la filosofía del <em>pipe</em>. El <em>pipe</em> está disponible desde R 4.1.0 con <code>|&gt;</code> pero antiguamente había que usar la librería <strong>magrittr</strong>.</p>
-<p>Como esta librería no formaba parte de lo fundamentos del lenguaje, todos los operadores tenían que ser propios y para hacer eso hay que usar una sintaxis muy particular.</p>
-<p>Los pipes de magrittr van acotados por <code>%</code>, porque esa es la sintaxis obligatoria para cualquier operador que quieras hacer y usar <em>infix</em>. Así resultó en <code>%&gt;%</code>.</p>
-</section>
-<section id="creación-de-un-operador-propio" class="level2">
-<h2 class="anchored" data-anchor-id="creación-de-un-operador-propio">Creación de un operador propio</h2>
-<p>Mi objetivo era un operador <code>.</code> con el que pudiera hacer <code>df.columna</code>, por ejemplo, que <code>mtcars.cyl</code> obtuviera resultado. Sería algo así:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">mtcars.cyl</span></code></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
-</div>
-</div>
-<p>Si intentas ejecutar eso, te dará error. Y no he dado con ninguna forma de hacerlo funcionar. Porque cualquier operador propio tiene que ir rodeado de <code>%</code>.</p>
-<p>Por ello, esto es lo que he conseguido:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">%.%</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span> <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(df, columna) {</span>
-<span id="cb7-2">    df[[<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.character</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">substitute</span>(columna))]]</span>
-<span id="cb7-3">}</span>
-<span id="cb7-4"></span>
-<span id="cb7-5">mtcars<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%.%</span>cyl</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</guid>
-  <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
   <title>Pernotaciones por Comunidades Autónomas</title>
   <dc:creator>Leonardo Hansa</dc:creator>
   <link>https://lhansa.github.io/posts/2024-08-04-viajeros/</link>
@@ -2287,6 +2354,101 @@ font-style: inherit;">""</span></span>
  ]]></description>
   <category>exploraciones</category>
   <guid>https://lhansa.github.io/posts/2024-08-04-viajeros/</guid>
+  <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Papel del punto en R</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Guillermo Luijk <a href="https://www.linkedin.com/feed/update/urn:li:activity:7225379882355044352?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7225379882355044352%2C7225391436190371840%29&amp;replyUrn=urn%3Ali%3Acomment%3A%28activity%3A7225379882355044352%2C7225459855812120576%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287225391436190371840%2Curn%3Ali%3Aactivity%3A7225379882355044352%29&amp;dashReplyUrn=urn%3Ali%3Afsd_comment%3A%287225459855812120576%2Curn%3Ali%3Aactivity%3A7225379882355044352%29">criticaba</a> el punto en R porque se permite usar en el nombre de variables, lo que limita su uso fuera de ellas.</p>
+<p>He intentado crear un operador en R con <code>.</code> que sirviera para sustituir en cierto modo al operador <code>$</code>. Imposible.</p>
+<p>Pero comparto avances porque quizá, aunque sea al Leo del futuro, le puede venir bien.</p>
+<section id="operadores-infix-propios-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="operadores-infix-propios-en-r">Operadores <em>infix</em> propios en R</h2>
+<p>Todo lo que haces en R es una función. Pero no todas las funciones necesitan paréntesis. Por ejemplo, puedes sumar de dos formas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">+</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>La primera opción creo que se llama <em>infix</em>. Hay operaciones que se entienden mucho mejor así escritas que escritas como la segunda opción.</p>
+<p>De hecho, esa es la filosofía del <em>pipe</em>. El <em>pipe</em> está disponible desde R 4.1.0 con <code>|&gt;</code> pero antiguamente había que usar la librería <strong>magrittr</strong>.</p>
+<p>Como esta librería no formaba parte de lo fundamentos del lenguaje, todos los operadores tenían que ser propios y para hacer eso hay que usar una sintaxis muy particular.</p>
+<p>Los pipes de magrittr van acotados por <code>%</code>, porque esa es la sintaxis obligatoria para cualquier operador que quieras hacer y usar <em>infix</em>. Así resultó en <code>%&gt;%</code>.</p>
+</section>
+<section id="creación-de-un-operador-propio" class="level2">
+<h2 class="anchored" data-anchor-id="creación-de-un-operador-propio">Creación de un operador propio</h2>
+<p>Mi objetivo era un operador <code>.</code> con el que pudiera hacer <code>df.columna</code>, por ejemplo, que <code>mtcars.cyl</code> obtuviera resultado. Sería algo así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">mtcars.cyl</span></code></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
+</div>
+</div>
+<p>Si intentas ejecutar eso, te dará error. Y no he dado con ninguna forma de hacerlo funcionar. Porque cualquier operador propio tiene que ir rodeado de <code>%</code>.</p>
+<p>Por ello, esto es lo que he conseguido:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">%.%</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">function</span>(df, columna) {</span>
+<span id="cb7-2">    df[[<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">as.character</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">substitute</span>(columna))]]</span>
+<span id="cb7-3">}</span>
+<span id="cb7-4"></span>
+<span id="cb7-5">mtcars<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%.%</span>cyl</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</guid>
   <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
@@ -6226,192 +6388,6 @@ font-style: inherit;">"%i puntos"</span>, grid_size))</span></code></pre></div>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2023-12-27-rethinking-1/</guid>
   <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Introducción a análisis de supervivencia con R</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-12-22-survival-analysis/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>El nombre del análisis de supervivencia apunta maneras. Inevitablemente, yo lo relaciono con la muerte, porque seguramente se originara para saber cuánto tiempo le quedaba de vida a un paciente con alguna enfermedad.</p>
-<p>Pero no sirve solo para eso.</p>
-<p>Algunos ejemplos de casos que puedes resolver con análisis de supervivencia son:</p>
-<ul>
-<li>¿Cuál es la probabilidad de que un paciente con cáncer de mama viva más de 5 años?</li>
-<li>¿Cuál es el tiempo de espera típico cuando llamas a un taxi?</li>
-<li>De 100 parados, ¿cuántos esperas que encuentren trabajo pasados 2 meses?</li>
-</ul>
-<section id="teoría-del-análisis-de-supervivencia" class="level2">
-<h2 class="anchored" data-anchor-id="teoría-del-análisis-de-supervivencia">Teoría del análisis de supervivencia</h2>
-<p>Los modelos de supervivencia buscan modelizar la función de supervivencia, dada por esta ecuación:</p>
-<p><img src="https://latex.codecogs.com/png.latex?S(t)%20=%201%20-%20F(t)%20=%20P(T%20%3E%20t)"></p>
-<p>Viene a interpretarse como <strong>la probabilidad de que la duración del experimento sea mayor de <img src="https://latex.codecogs.com/png.latex?t"></strong>. <img src="https://latex.codecogs.com/png.latex?F(t)"> representa la función de distribución del evento.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-22-survival-analysis/index_files/figure-html/surv-func-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Esa gráfica ya daría algo de información. Por ejemplo:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-22-survival-analysis/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Sabemos que la probabilidad de la probabilidad de superar el instante <img src="https://latex.codecogs.com/png.latex?t%20=%203"> es de 0,97.</li>
-<li>Sabemos que el tercer cuartil es 5,65.</li>
-</ul>
-<p><strong>El objetivo del análisis de supervivencia es estimar esta función de supervivencia.</strong></p>
-</section>
-<section id="el-método-keplen-meier-para-estimar-la-función-de-supervivencia" class="level2">
-<h2 class="anchored" data-anchor-id="el-método-keplen-meier-para-estimar-la-función-de-supervivencia">El método Keplen-Meier para estimar la función de supervivencia</h2>
-<p>La fórmula que usa este método para estimar la función de supervivencia en <img src="https://latex.codecogs.com/png.latex?t"> es:</p>
-<p><img src="https://latex.codecogs.com/png.latex?S(t)%20=%20%5Cprod_%7Bi:%20t_i%5Cleq%20t%7D%5Cfrac%7Bn_i%20-%20d_i%7D%7Bn_i%7D"></p>
-<p>donde <img src="https://latex.codecogs.com/png.latex?t_i"> representa a cada uno de los instantes anteriores al instante <img src="https://latex.codecogs.com/png.latex?t">, <img src="https://latex.codecogs.com/png.latex?n_i"> es el número de individuos en <img src="https://latex.codecogs.com/png.latex?t_i"> y <img src="https://latex.codecogs.com/png.latex?d_i"> es el número de defunciones en <img src="https://latex.codecogs.com/png.latex?t_i">.</p>
-<p>Lo podemos ver mejor con numeritos y este gráfico:</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-22-survival-analysis/index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><img src="https://latex.codecogs.com/png.latex?%0A%5Chat%7BS%7D(t)%20=%20%20%5Cprod_%7Bi:%20t_i%5Cleq%20t%7D%5Cfrac%7Bn_i%20-%20d_i%7D%7Bn_i%7D%20%5C%5C%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5Chat%7BS%7D(2)%20=%20%5Cfrac%7B5-0%7D%7B5%7D%20=%20%5Cfrac%7B5%7D%7B5%7D%20=%201%20%5C%5C%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5Chat%7BS%7D(3)%20=%20%5Cfrac%7B4-0%7D%7B4%7D%20=%20%5Cfrac%7B4%7D%7B4%7D%20=%201%20%5C%5C%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5Chat%7BS%7D(4)%20=%20%5Cfrac%7B4-2%7D%7B4%7D%20=%20%5Cfrac%7B2%7D%7B4%7D%20=%200,5%20%5C%5C%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5Chat%7BS%7D(5)%20=%20%5Cfrac%7B1%7D%7B2%7D%20%5Ccdot%20%5Cfrac%7B2-1%7D%7B2%7D%20=%20%5Cfrac%7B1%7D%7B4%7D%20=%200,25%20%5C%5C%0A"> <img src="https://latex.codecogs.com/png.latex?%0A%5Chat%7BS%7D(6)%20=%20%5Cfrac%7B1%7D%7B4%7D%20%5Ccdot%20%5Cfrac%7B1-0%7D%7B1%7D%20=%20%5Cfrac%7B1%7D%7B4%7D%20=%200,25%0A"></p>
-<p>Aunque después de avanzar un poco con el curso, me entero de que Keplen-Meier se usa principalmente con fines descritivos.</p>
-</section>
-<section id="método-weibull" class="level2">
-<h2 class="anchored" data-anchor-id="método-weibull">Método Weibull</h2>
-<p>Un método que sí se usa para estimar la curva es el de Weibull. Sinceramente, <strong>ni idea de cómo funciona.</strong></p>
-<p>Pero una forma directa de ajustar y visualizarlo es esta (para visualizar simplifica mucho si usas la librería <strong>survminer</strong>):</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(survival)</span>
-<span id="cb1-2">wb <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">survreg</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">Surv</span>(time, status) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, lung)</span>
-<span id="cb1-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Retrieve survival curve from model</span></span>
-<span id="cb1-4">surv <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(.<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">99</span>, .<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">01</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">by =</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>.<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">01</span>)</span>
-<span id="cb1-5"></span>
-<span id="cb1-6"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Get time for each probability</span></span>
-<span id="cb1-7">t <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">predict</span>(wb, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"quantile"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">p =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> surv, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">newdata =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">data.frame</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>))</span>
-<span id="cb1-8"></span>
-<span id="cb1-9"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Create data frame with the information needed for ggsurvplot_df</span></span>
-<span id="cb1-10">surv_wb <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">data.frame</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">time =</span> t, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">surv =</span> surv, </span>
-<span id="cb1-11">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">upper =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">NA</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">lower =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">NA</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">std.err =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">NA</span>)</span>
-<span id="cb1-12"></span>
-<span id="cb1-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Plot</span></span>
-<span id="cb1-14"></span>
-<span id="cb1-15">survminer<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ggsurvplot_df</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">fit =</span> surv_wb, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">surv.geom =</span> ggplot2<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span>geom_line)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-22-survival-analysis/index_files/figure-html/weibull-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-12-22-survival-analysis/</guid>
-  <pubDate>Fri, 22 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
