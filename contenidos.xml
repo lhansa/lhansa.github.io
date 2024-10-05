@@ -20,7 +20,7 @@
 
 
 
-<p>[Leo a Gil Bellosta] sobre ergocidad y he querido plantear lo que comenta.</p>
+<p><a href="https://www.datanalytics.com/2024/10/03/ergodicidad-utilitarismo/">Leo a Gil Bellosta</a> sobre ergocidad y he querido plantear lo que comenta.</p>
 <p>El define la ergodicidad mucho mejor de lo que lo podría hacer yo, salvo que lo copiara. Pero para copiarlo, mejor ve a su web.</p>
 <p>Planteo aquí el código de su ejemplo.</p>
 <div id="libs" class="cell" data-execution_count="1">
@@ -28,7 +28,12 @@
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
 background-color: null;
-font-style: inherit;">as</span> np</span></code></pre></div>
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span></code></pre></div>
 </div>
 <section id="lanzamiento-de-una-moneda" class="level2">
 <h2 class="anchored" data-anchor-id="lanzamiento-de-una-moneda">Lanzamiento de una moneda</h2>
@@ -44,7 +49,7 @@ font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1000</span></span></code></pre></div>
 </div>
-<p>Tienes a <code>py n_individuos</code> que lanzan una moneda al aire <code>py n_veces</code> cada uno. Eso hace un total de <code>py n_individuos * n_veces</code> lanzamientos, en los que la probablidad teórica de obtener cara (resultado igual a 1 en este caso) es <img src="https://latex.codecogs.com/png.latex?0,5">.</p>
+<p>Tienes a <code>python n_individuos</code> que lanzan una moneda al aire <code>python n_veces</code> cada uno. Eso hace un total de <code>python n_individuos * n_veces</code> lanzamientos, en los que la probablidad teórica de obtener cara (resultado igual a 1 en este caso) es <img src="https://latex.codecogs.com/png.latex?0,5">.</p>
 <div id="cell-sim-lanzamientos" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">np.random.seed(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -128,7 +133,7 @@ font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span></code></pre></div>
 </div>
-<p>El capital de cada individuo (<code>py n_individuos</code>) empezaba en 1, por lo que el capital medio por individuo era de 1. Tras el primer lanzamiento, el capital medio queda en:</p>
+<p>El capital de cada individuo (<code>python n_individuos</code>) empezaba en 1, por lo que el capital medio por individuo era de 1. Tras el primer lanzamiento, el capital medio queda en:</p>
 <div id="cell-capital1" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">capitales[:, <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -150,20 +155,60 @@ background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>)</span>
-<span id="cb13-3"><span class="im" style="color: #00769E;
+<span id="cb13-3"></span>
+<span id="cb13-4">plt.plot(evolucion_capital_medio[<span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+font-style: inherit;">0</span>:<span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">as</span> plt</span>
-<span id="cb13-4">plt.plot(evolucion_capital_medio)</span></code></pre></div>
+font-style: inherit;">150</span>, ], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'#800080'</span>)</span>
+<span id="cb13-5">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Tiempo'</span>)</span>
+<span id="cb13-6">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Capital medio'</span>)</span>
+<span id="cb13-7">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Evolución del capital medio'</span>)</span>
+<span id="cb13-8">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-10-04-ergodicidad/index_files/figure-html/capital-societario-output-1.png" id="capital-societario" width="566" height="411" class="figure-img"></p>
+<p><img src="https://lhansa.github.io/posts/2024-10-04-ergodicidad/index_files/figure-html/capital-societario-output-1.png" id="capital-societario" width="585" height="450" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
+<p>Si pongo de límite hasta la tirada 100, el capital medio ha crecido:</p>
+<div id="cell-tirada100" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">n_tirada <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="cb14-2">evolucion_capital_medio[n_tirada, ]</span></code></pre></div>
+<div id="tirada100" class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>16.859029246380643</code></pre>
+</div>
+</div>
+<p>Sin embargo, solo un 11% de los individuos ha visto su capital crecer:</p>
+<div id="cell-tirada100-2" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1">(capitales[:, n_tirada] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>).<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>()</span></code></pre></div>
+<div id="tirada100-2" class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>11</code></pre>
+</div>
+</div>
+<p>En un proceso no ergódico (¿cuántos hay así en una sociedad occidental?), puedes ver crecimiento global, pero solo de unos pocos.</p>
 
 
 </section>
