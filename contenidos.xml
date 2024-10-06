@@ -10,7 +10,659 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Fri, 04 Oct 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 06 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Ejemplo de regresión múltiple con Python</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Aquí sigo un ejercicio de regresión lineal con Python del libro <em>Introduction to Statistical Learning with Python.</em></p>
+<section id="código-del-ajuste-del-modelo" class="level2">
+<h2 class="anchored" data-anchor-id="código-del-ajuste-del-modelo">Código del ajuste del modelo</h2>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> subplots</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> statsmodels.api <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sm</span>
+<span id="cb1-6"></span>
+<span id="cb1-7"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> statsmodels.stats.outliers_influence <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> variance_inflation_factor <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> VIF</span>
+<span id="cb1-8"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> statsmodels.stats.anova <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> anova_lm</span>
+<span id="cb1-9"></span>
+<span id="cb1-10"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> ISLP <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> load_data</span>
+<span id="cb1-11"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> ISLP.models <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> (ModelSpec <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> MS, summarize, poly)</span></code></pre></div>
+</div>
+<div id="cell-load-data" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">boston <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> load_data(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Boston'</span>)</span>
+<span id="cb2-2">boston.head()</span></code></pre></div>
+<div id="load-data" class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">crim</th>
+<th data-quarto-table-cell-role="th">zn</th>
+<th data-quarto-table-cell-role="th">indus</th>
+<th data-quarto-table-cell-role="th">chas</th>
+<th data-quarto-table-cell-role="th">nox</th>
+<th data-quarto-table-cell-role="th">rm</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">dis</th>
+<th data-quarto-table-cell-role="th">rad</th>
+<th data-quarto-table-cell-role="th">tax</th>
+<th data-quarto-table-cell-role="th">ptratio</th>
+<th data-quarto-table-cell-role="th">lstat</th>
+<th data-quarto-table-cell-role="th">medv</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.00632</td>
+<td>18.0</td>
+<td>2.31</td>
+<td>0</td>
+<td>0.538</td>
+<td>6.575</td>
+<td>65.2</td>
+<td>4.0900</td>
+<td>1</td>
+<td>296</td>
+<td>15.3</td>
+<td>4.98</td>
+<td>24.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.02731</td>
+<td>0.0</td>
+<td>7.07</td>
+<td>0</td>
+<td>0.469</td>
+<td>6.421</td>
+<td>78.9</td>
+<td>4.9671</td>
+<td>2</td>
+<td>242</td>
+<td>17.8</td>
+<td>9.14</td>
+<td>21.6</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.02729</td>
+<td>0.0</td>
+<td>7.07</td>
+<td>0</td>
+<td>0.469</td>
+<td>7.185</td>
+<td>61.1</td>
+<td>4.9671</td>
+<td>2</td>
+<td>242</td>
+<td>17.8</td>
+<td>4.03</td>
+<td>34.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.03237</td>
+<td>0.0</td>
+<td>2.18</td>
+<td>0</td>
+<td>0.458</td>
+<td>6.998</td>
+<td>45.8</td>
+<td>6.0622</td>
+<td>3</td>
+<td>222</td>
+<td>18.7</td>
+<td>2.94</td>
+<td>33.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.06905</td>
+<td>0.0</td>
+<td>2.18</td>
+<td>0</td>
+<td>0.458</td>
+<td>7.147</td>
+<td>54.2</td>
+<td>6.0622</td>
+<td>3</td>
+<td>222</td>
+<td>18.7</td>
+<td>5.33</td>
+<td>36.2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Estos datos son un clásico, que incluso han tenido ya <em>haters</em> por no sé qué variable que hace al conjunto racista. Pero yo voy a seguir con el ejemplo de ISLP porque no me quiero complicar ahora.</p>
+<p>El libro ajusta una regresión lineal de <code>'medv'</code> frente a <code>'lstat'</code>. Por supuesto, ni idea de qué es cada una. Pero solo quier practicar código Python; el resultado nos da igual.</p>
+<div id="cell-datos" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'intercept'</span>: np.ones(boston.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]),</span>
+<span id="cb3-2">                  <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lstat'</span>: boston[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lstat'</span>]})</span>
+<span id="cb3-3"></span>
+<span id="cb3-4">X.head()                  </span></code></pre></div>
+<div id="datos" class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">intercept</th>
+<th data-quarto-table-cell-role="th">lstat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>4.98</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1.0</td>
+<td>9.14</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.0</td>
+<td>4.03</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1.0</td>
+<td>2.94</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1.0</td>
+<td>5.33</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="cell-ols1" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> boston[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'medv'</span>]</span>
+<span id="cb4-2">model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sm.OLS(y, X)</span>
+<span id="cb4-3">results <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model.fit()</span>
+<span id="cb4-4">results.summary()</span></code></pre></div>
+<div id="ols1" class="cell-output cell-output-display" data-execution_count="4">
+<table class="simpletable caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>OLS Regression Results</caption>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Dep. Variable:</td>
+<td>medv</td>
+<td data-quarto-table-cell-role="th">R-squared:</td>
+<td>0.544</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Model:</td>
+<td>OLS</td>
+<td data-quarto-table-cell-role="th">Adj. R-squared:</td>
+<td>0.543</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Method:</td>
+<td>Least Squares</td>
+<td data-quarto-table-cell-role="th">F-statistic:</td>
+<td>601.6</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Date:</td>
+<td>Sun, 06 Oct 2024</td>
+<td data-quarto-table-cell-role="th">Prob (F-statistic):</td>
+<td>5.08e-88</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Time:</td>
+<td>19:11:15</td>
+<td data-quarto-table-cell-role="th">Log-Likelihood:</td>
+<td>-1641.5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">No. Observations:</td>
+<td>506</td>
+<td data-quarto-table-cell-role="th">AIC:</td>
+<td>3287.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Df Residuals:</td>
+<td>504</td>
+<td data-quarto-table-cell-role="th">BIC:</td>
+<td>3295.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Df Model:</td>
+<td>1</td>
+<td data-quarto-table-cell-role="th"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Covariance Type:</td>
+<td>nonrobust</td>
+<td data-quarto-table-cell-role="th"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="simpletable caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td></td>
+<td data-quarto-table-cell-role="th">coef</td>
+<td data-quarto-table-cell-role="th">std err</td>
+<td data-quarto-table-cell-role="th">t</td>
+<td data-quarto-table-cell-role="th">P&gt;|t|</td>
+<td data-quarto-table-cell-role="th">[0.025</td>
+<td data-quarto-table-cell-role="th">0.975]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">intercept</td>
+<td>34.5538</td>
+<td>0.563</td>
+<td>61.415</td>
+<td>0.000</td>
+<td>33.448</td>
+<td>35.659</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">lstat</td>
+<td>-0.9500</td>
+<td>0.039</td>
+<td>-24.528</td>
+<td>0.000</td>
+<td>-1.026</td>
+<td>-0.874</td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="simpletable caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Omnibus:</td>
+<td>137.043</td>
+<td data-quarto-table-cell-role="th">Durbin-Watson:</td>
+<td>0.892</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Prob(Omnibus):</td>
+<td>0.000</td>
+<td data-quarto-table-cell-role="th">Jarque-Bera (JB):</td>
+<td>291.373</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Skew:</td>
+<td>1.453</td>
+<td data-quarto-table-cell-role="th">Prob(JB):</td>
+<td>5.36e-64</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Kurtosis:</td>
+<td>5.319</td>
+<td data-quarto-table-cell-role="th">Cond. No.</td>
+<td>29.7</td>
+</tr>
+</tbody>
+</table>
+<br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+</div>
+</div>
+<p>Una forma más generalizable de preparar los datos es con la función <code>MS()</code>, que funciona al estilo <code>sklearn</code>.</p>
+<div id="cell-fit-tranform" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">design <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> MS([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lstat'</span>])</span>
+<span id="cb5-2">design <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> design.fit(boston)</span>
+<span id="cb5-3">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> design.transform(boston)</span>
+<span id="cb5-4">X.head()</span></code></pre></div>
+<div id="fit-tranform" class="cell-output cell-output-display" data-execution_count="5">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">intercept</th>
+<th data-quarto-table-cell-role="th">lstat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>4.98</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1.0</td>
+<td>9.14</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.0</td>
+<td>4.03</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1.0</td>
+<td>2.94</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1.0</td>
+<td>5.33</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>También se puede acortar con <code>fit_transform()</code>.</p>
+<p>A partir del modelo, guardado en <code>results</code>, y un conjunto de datos, puedes obtener predicciones.</p>
+<div id="a84999c8" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">new_df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lstat'</span>: [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>]})</span>
+<span id="cb6-2">newX <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> design.transform(new_df)</span>
+<span id="cb6-3">newX</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">intercept</th>
+<th data-quarto-table-cell-role="th">lstat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1.0</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1.0</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1.0</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Y ahora predices:</p>
+<div id="cell-predicciones" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">new_predictions <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> results.get_prediction(newX)</span>
+<span id="cb7-2">new_predictions.conf_int(alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.95</span>)</span></code></pre></div>
+<div id="predicciones" class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>array([[29.7781697 , 29.82901852],
+       [25.03485131, 25.07184337],
+       [20.28485052, 20.32135063]])</code></pre>
+</div>
+</div>
+</section>
+<section id="gráfico" class="level2">
+<h2 class="anchored" data-anchor-id="gráfico">Gráfico</h2>
+<div id="plot" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> abline(ax, b, m, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>args, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>kwargs):</span>
+<span id="cb9-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"Add a line with slope m and intercept b to ax"</span></span>
+<span id="cb9-3">    xlim <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> ax.get_xlim()</span>
+<span id="cb9-4">    ylim <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [m <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> xlim[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> b, m <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> xlim[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> b]</span>
+<span id="cb9-5">    ax.plot(xlim, ylim, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>args, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span>kwargs)</span>
+<span id="cb9-6"></span>
+<span id="cb9-7">ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> boston.plot.scatter(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lstat'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'medv'</span>)</span>
+<span id="cb9-8">abline(ax, </span>
+<span id="cb9-9">       results.params[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>],</span>
+<span id="cb9-10">       results.params[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>], </span>
+<span id="cb9-11">       <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'r--'</span>, </span>
+<span id="cb9-12">       linewidth<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb9-13">ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> subplots(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>))[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb9-14">ax.scatter(results.fittedvalues, results.resid)</span>
+<span id="cb9-15">ax.set_xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Fitted value'</span>)</span>
+<span id="cb9-16">ax.set_ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Residual'</span>)</span>
+<span id="cb9-17">ax.axhline(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, c<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'k'</span>, ls<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'--'</span>)</span>
+<span id="cb9-18">infl <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> results.get_influence()</span>
+<span id="cb9-19">ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> subplots(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>))[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb9-20">ax.scatter(np.arange(X.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]), infl.hat_matrix_diag)</span>
+<span id="cb9-21">ax.set_xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Index'</span>)</span>
+<span id="cb9-22">ax.set_ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Leverage'</span>)</span>
+<span id="cb9-23">np.argmax(infl.hat_matrix_diag)</span></code></pre></div>
+<div id="plot-1" class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>374</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-output-2.png" id="plot-2" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-output-3.png" id="plot-3" width="670" height="651" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-output-4.png" id="plot-4" width="680" height="651" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/</guid>
+  <pubDate>Sun, 06 Oct 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Procesos ergódicos</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6202,237 +6854,6 @@ font-style: inherit;">"blue"</span>)</span></code></pre></div>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2023-12-31-conjugate-prior/</guid>
   <pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Statistical Rethinking (1)</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-12-27-rethinking-1/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>En <a href="https://xcelab.net/rm/statistical-rethinking/">Statistical Rethinking</a> Richard McEalreath presenta los métodos generativos en estadística bayesiana.</p>
-<section id="introducción" class="level2">
-<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
-<p>El problema que plantea es el de estimar la proporción de agua que hay en la Tierra.</p>
-<p>El procedimiento consiste en mirar en varios puntos de la Tierra y ver si hay agua o tierra. De esa forma obtienes una secuencia de valores: <code>"A", "A", "T", "A", "T", ...</code> y usas esos datos para estimar la proporción real.</p>
-<p>Concretamente, en 9 observaciones has obtenido 6 porciones de agua.</p>
-<p>Hay tres formas de ajustar un modelo estadístico. Las ejemplificaremos con ese problema de la proporción de agua.</p>
-<p>Los códigos serán los del libro.</p>
-</section>
-<section id="mallado" class="level2">
-<h2 class="anchored" data-anchor-id="mallado">Mallado</h2>
-<p>La primera forma de ajustar un modelo estadístico es mediante mallado. Computacionalmente es costoso pero es más educativo que el resto de métodos.</p>
-<p>Lo que vas a hacer es proponer unos posibles valores para el parámetro que buscas (la proporción de agua) y les das una distribución a priori a estos valores (no pasa nada ahora por que la distribución a priori no sume 1 porque luego estandarizarás el resultado final).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">grid_size <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span></span>
-<span id="cb1-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># define grid</span></span>
-<span id="cb1-3">p_grid <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">from =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">to =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">length.out =</span> grid_size)</span>
-<span id="cb1-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># define prior</span></span>
-<span id="cb1-5">prior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rep</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span> , grid_size)</span></code></pre></div>
-</div>
-<p>Tus priori (20 proporciones equiprobables) ya están definidas y ahora te sirven para generar posibles escenarios. La idea es ver la verosimilitud de tus datos observados ante los distintos posibles valores del parámetro.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">likelihood <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dbinom</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">6</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">9</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">prob =</span> p_grid)</span>
-<span id="cb2-2">likelihood</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.000000e+00 1.518149e-06 8.185093e-05 7.772923e-04 3.598575e-03
- [6] 1.116095e-02 2.668299e-02 5.292110e-02 9.082698e-02 1.383413e-01
-[11] 1.897686e-01 2.361147e-01 2.666113e-01 2.714006e-01 2.450051e-01
-[16] 1.897686e-01 1.179181e-01 5.026670e-02 8.853845e-03 0.000000e+00</code></pre>
-</div>
-</div>
-<p>Ahora calculas la posteriori, ponderando estas verosimilitudes por los prioris que tenías antes. Como los prioris no seguían una distribución de probabilidad, te toca estandarizar el resultado.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">unstd_posterior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> likelihood <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> prior</span>
-<span id="cb4-2">posterior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> unstd_posterior <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(unstd_posterior)</span>
-<span id="cb4-3">posterior</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.000000e+00 7.989837e-07 4.307717e-05 4.090797e-04 1.893887e-03
- [6] 5.873873e-03 1.404294e-02 2.785174e-02 4.780115e-02 7.280739e-02
-[11] 9.987296e-02 1.242643e-01 1.403143e-01 1.428349e-01 1.289433e-01
-[16] 9.987296e-02 6.205890e-02 2.645477e-02 4.659673e-03 0.000000e+00</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>(p_grid, posterior, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"b"</span>,</span>
-<span id="cb6-2">     <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xlab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Probabidad de agua"</span> , </span>
-<span id="cb6-3">     <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">ylab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Posteriori"</span>)</span>
-<span id="cb6-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mtext</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"20 puntos"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-27-rethinking-1/index_files/figure-html/mallado-plot-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Ahora bien, ten en cuenta que <strong>los prioris forman parte del modelo</strong>. Deberías tener un criterio para elegir unos u otros.</p>
-<p>Los puedes cambiar y los resultados se verán afectados.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">p_grid <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">length.out =</span> grid_size)</span>
-<span id="cb7-2">prior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">exp</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">abs</span>(p_grid <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>))</span>
-<span id="cb7-3"></span>
-<span id="cb7-4">likelihood <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dbinom</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">9</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">prob =</span> p_grid)</span>
-<span id="cb7-5"></span>
-<span id="cb7-6">unstd_posterior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span>  likelihood <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> prior</span>
-<span id="cb7-7">posterior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> unstd_posterior <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(unstd_posterior)</span>
-<span id="cb7-8"></span>
-<span id="cb7-9"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>(p_grid, posterior, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"b"</span>,</span>
-<span id="cb7-10">     <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xlab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Probabidad de agua"</span> , </span>
-<span id="cb7-11">     <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">ylab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Posteriori"</span>)</span>
-<span id="cb7-12"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mtext</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sprintf</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"%i puntos"</span>, grid_size))</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-27-rethinking-1/index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-12-27-rethinking-1/</guid>
-  <pubDate>Wed, 27 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
