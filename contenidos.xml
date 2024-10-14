@@ -21,8 +21,10 @@
 
 
 <p>Aquí sigo un ejercicio de regresión lineal con Python del libro <em>Introduction to Statistical Learning with Python.</em></p>
-<section id="código-del-ajuste-del-modelo" class="level2">
-<h2 class="anchored" data-anchor-id="código-del-ajuste-del-modelo">Código del ajuste del modelo</h2>
+<section id="regresión-simple" class="level2">
+<h2 class="anchored" data-anchor-id="regresión-simple">Regresión simple</h2>
+<section id="código-del-ajuste-del-modelo" class="level3">
+<h3 class="anchored" data-anchor-id="código-del-ajuste-del-modelo">Código del ajuste del modelo</h3>
 <div id="libs" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
@@ -250,6 +252,7 @@ font-style: inherit;">'lstat'</span>]})</span>
 </div>
 </div>
 </div>
+<p>En <strong>statsmodels</strong> el <em>intercept</em> no se incluye por defecto y es el usuario quien tiene que incluirlo.</p>
 <div id="cell-ols1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">y <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -287,13 +290,13 @@ font-style: inherit;">=</span> model.fit()</span>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">Date:</td>
-<td>Sun, 06 Oct 2024</td>
+<td>Mon, 14 Oct 2024</td>
 <td data-quarto-table-cell-role="th">Prob (F-statistic):</td>
 <td>5.08e-88</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">Time:</td>
-<td>19:11:15</td>
+<td>11:25:22</td>
 <td data-quarto-table-cell-role="th">Log-Likelihood:</td>
 <td>-1641.5</td>
 </tr>
@@ -389,7 +392,7 @@ font-style: inherit;">=</span> model.fit()</span>
 <br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 </div>
 </div>
-<p>Una forma más generalizable de preparar los datos es con la función <code>MS()</code>, que funciona al estilo <code>sklearn</code>.</p>
+<p>Una forma más generalizable de preparar los datos es con la función <code>MS()</code>, que funciona al estilo <code>sklearn</code>. Pero es algo propio del libro así que no sé si le haré mucho caso.</p>
 <div id="cell-fit-tranform" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">design <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -449,7 +452,7 @@ font-style: inherit;">=</span> design.transform(boston)</span>
 </div>
 <p>También se puede acortar con <code>fit_transform()</code>.</p>
 <p>A partir del modelo, guardado en <code>results</code>, y un conjunto de datos, puedes obtener predicciones.</p>
-<div id="a84999c8" class="cell" data-execution_count="6">
+<div id="21a25317" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">new_df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.DataFrame({<span class="st" style="color: #20794D;
@@ -516,9 +519,10 @@ font-style: inherit;">0.95</span>)</span></code></pre></div>
 </div>
 </div>
 </section>
-<section id="gráfico" class="level2">
-<h2 class="anchored" data-anchor-id="gráfico">Gráfico</h2>
-<div id="plot" class="cell" data-execution_count="8">
+<section id="gráfico" class="level3">
+<h3 class="anchored" data-anchor-id="gráfico">Gráfico</h3>
+<p>El primer gráfico muestra la regresión calculada.</p>
+<div id="cell-plot-regression" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -575,8 +579,19 @@ font-style: inherit;">'r--'</span>, </span>
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">3</span>)</span>
-<span id="cb9-13">ax <span class="op" style="color: #5E5E5E;
+font-style: inherit;">3</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-regression-output-1.png" id="plot-regression" width="585" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>El segundo gráfico compara los residuos frente a los valores ajustados.</p>
+<p>Parece que los valores ajustados más pequeños están asociados a residuos negativos y altos. En valores más altos de ajuste, hay residuos tanto positivos como negativos, pero se concentran muchos más en casos negativos.</p>
+<div id="cell-residuals" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> subplots(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -587,14 +602,14 @@ background-color: null;
 font-style: inherit;">8</span>))[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]</span>
-<span id="cb9-14">ax.scatter(results.fittedvalues, results.resid)</span>
-<span id="cb9-15">ax.set_xlabel(<span class="st" style="color: #20794D;
+<span id="cb10-2">ax.scatter(results.fittedvalues, results.resid)</span>
+<span id="cb10-3">ax.set_xlabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Fitted value'</span>)</span>
-<span id="cb9-16">ax.set_ylabel(<span class="st" style="color: #20794D;
+<span id="cb10-4">ax.set_ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Residual'</span>)</span>
-<span id="cb9-17">ax.axhline(<span class="dv" style="color: #AD0000;
+<span id="cb10-5">ax.axhline(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>, c<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -604,11 +619,22 @@ font-style: inherit;">'k'</span>, ls<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'--'</span>)</span>
-<span id="cb9-18">infl <span class="op" style="color: #5E5E5E;
+font-style: inherit;">'--'</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/residuals-output-1.png" id="residuals" width="670" height="651" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>El <em>leverage</em> es una métrica que indica cuánto se aleja un punto del centroide de toda la nube de puntos. Puntos muy alejados tendrán una mayor influencia en el cálculo del coeficiente que puntos cercanos.</p>
+<p>El gráfico muestra el <em>leverage</em> contra el índice del punto, lo que ayuda a identificar puntos más influyentes (en el caso de una serie temporal, se podría ver como una evolución).</p>
+<div id="plot-levarage" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">infl <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> results.get_influence()</span>
-<span id="cb9-19">ax <span class="op" style="color: #5E5E5E;
+<span id="cb11-2">ax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> subplots(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -619,39 +645,180 @@ background-color: null;
 font-style: inherit;">8</span>))[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]</span>
-<span id="cb9-20">ax.scatter(np.arange(X.shape[<span class="dv" style="color: #AD0000;
+<span id="cb11-3">ax.scatter(np.arange(X.shape[<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span>]), infl.hat_matrix_diag)</span>
-<span id="cb9-21">ax.set_xlabel(<span class="st" style="color: #20794D;
+<span id="cb11-4">ax.set_xlabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Index'</span>)</span>
-<span id="cb9-22">ax.set_ylabel(<span class="st" style="color: #20794D;
+<span id="cb11-5">ax.set_ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Leverage'</span>)</span>
-<span id="cb9-23">np.argmax(infl.hat_matrix_diag)</span></code></pre></div>
-<div id="plot-1" class="cell-output cell-output-display" data-execution_count="8">
+<span id="cb11-6">np.argmax(infl.hat_matrix_diag)</span></code></pre></div>
+<div id="plot-levarage-1" class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>374</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-output-2.png" id="plot-2" width="585" height="429" class="figure-img"></p>
+<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-levarage-output-2.png" id="plot-levarage-2" width="680" height="651" class="figure-img"></p>
 </figure>
 </div>
 </div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-output-3.png" id="plot-3" width="670" height="651" class="figure-img"></p>
-</figure>
 </div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-10-06-regresion-multiple-python/index_files/figure-html/plot-output-4.png" id="plot-4" width="680" height="651" class="figure-img"></p>
-</figure>
-</div>
+</section>
+</section>
+<section id="regresión-múltiple" class="level2">
+<h2 class="anchored" data-anchor-id="regresión-múltiple">Regresión múltiple</h2>
+<p>Ahora enfrentan <code>'medv'</code> a <code>'lstat'</code> y <code>'age'</code>.</p>
+<div id="cell-multiple" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> MS([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lstat'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'age'</span>]).fit_transform(boston)</span>
+<span id="cb13-2">model1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sm.OLS(y, X)</span>
+<span id="cb13-3">results1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model1.fit()</span>
+<span id="cb13-4">results1.summary()</span></code></pre></div>
+<div id="multiple" class="cell-output cell-output-display" data-execution_count="11">
+<table class="simpletable caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>OLS Regression Results</caption>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Dep. Variable:</td>
+<td>medv</td>
+<td data-quarto-table-cell-role="th">R-squared:</td>
+<td>0.551</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Model:</td>
+<td>OLS</td>
+<td data-quarto-table-cell-role="th">Adj. R-squared:</td>
+<td>0.549</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Method:</td>
+<td>Least Squares</td>
+<td data-quarto-table-cell-role="th">F-statistic:</td>
+<td>309.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Date:</td>
+<td>Mon, 14 Oct 2024</td>
+<td data-quarto-table-cell-role="th">Prob (F-statistic):</td>
+<td>2.98e-88</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Time:</td>
+<td>11:25:23</td>
+<td data-quarto-table-cell-role="th">Log-Likelihood:</td>
+<td>-1637.5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">No. Observations:</td>
+<td>506</td>
+<td data-quarto-table-cell-role="th">AIC:</td>
+<td>3281.</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Df Residuals:</td>
+<td>503</td>
+<td data-quarto-table-cell-role="th">BIC:</td>
+<td>3294.</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Df Model:</td>
+<td>2</td>
+<td data-quarto-table-cell-role="th"></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Covariance Type:</td>
+<td>nonrobust</td>
+<td data-quarto-table-cell-role="th"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="simpletable caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td></td>
+<td data-quarto-table-cell-role="th">coef</td>
+<td data-quarto-table-cell-role="th">std err</td>
+<td data-quarto-table-cell-role="th">t</td>
+<td data-quarto-table-cell-role="th">P&gt;|t|</td>
+<td data-quarto-table-cell-role="th">[0.025</td>
+<td data-quarto-table-cell-role="th">0.975]</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">intercept</td>
+<td>33.2228</td>
+<td>0.731</td>
+<td>45.458</td>
+<td>0.000</td>
+<td>31.787</td>
+<td>34.659</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">lstat</td>
+<td>-1.0321</td>
+<td>0.048</td>
+<td>-21.416</td>
+<td>0.000</td>
+<td>-1.127</td>
+<td>-0.937</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">age</td>
+<td>0.0345</td>
+<td>0.012</td>
+<td>2.826</td>
+<td>0.005</td>
+<td>0.011</td>
+<td>0.059</td>
+</tr>
+</tbody>
+</table>
+
+
+<table class="simpletable caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Omnibus:</td>
+<td>124.288</td>
+<td data-quarto-table-cell-role="th">Durbin-Watson:</td>
+<td>0.945</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Prob(Omnibus):</td>
+<td>0.000</td>
+<td data-quarto-table-cell-role="th">Jarque-Bera (JB):</td>
+<td>244.026</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Skew:</td>
+<td>1.362</td>
+<td data-quarto-table-cell-role="th">Prob(JB):</td>
+<td>1.02e-53</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Kurtosis:</td>
+<td>5.038</td>
+<td data-quarto-table-cell-role="th">Cond. No.</td>
+<td>201.</td>
+</tr>
+</tbody>
+</table>
+<br><br>Notes:<br>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 </div>
 </div>
 
