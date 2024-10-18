@@ -10,7 +10,203 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Sun, 06 Oct 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 18 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Quita caracteres raros en tus variables</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-10-18-quita-caracteres-raros-en-tus-variables/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>La programación está pensada con el alfabeto anglosajón. Cuando tienes datos en español, francés, turco, etc., aunque el alfabeto tiene casi todo en común con el anglosajón, tiene demasiados elementos molestos en algunos casos.</p>
+<p>Sin ir más lejos, estas líneas están llenas de tildes (y alguna eñe caerá). En las filas de una columna pueden no molestarte (dependerá del análisis que vayas hacer), pero si tienes que pasar esos valores a nombres de columnas, puede ser muy mala idea que tengas alguna llamada <code>año</code>.</p>
+<p>Veamos formas de solucionarlo.</p>
+<section id="a-mano" class="level2">
+<h2 class="anchored" data-anchor-id="a-mano">A mano</h2>
+<p>Forma horrible.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">nombres <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Campaña veintitrés"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C'est très petite"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alışveriş Arabası Önü Giydirme"</span>)</span>
+<span id="cb1-2">nombres <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rep</span>(nombres, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb1-3">nombres</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Campaña veintitrés"             "C'est très petite"             
+[3] "Alışveriş Arabası Önü Giydirme" "Campaña veintitrés"            
+[5] "C'est très petite"              "Alışveriş Arabası Önü Giydirme"</code></pre>
+</div>
+</div>
+<p>Tienes una columna con esos valores. Tienen textos en español, francés y turco. Y repetidos. Quieres adaptarlo a alfabeto anglosajón. Por ejemplo, <code>"campaña"</code> pasará a ser <code>"campana"</code> (habrá niños en el cuerpo de un adulto que se pondrían nerviosos si estuviera la palabra <code>"año"</code> por allí).</p>
+<p>Puedes plantear algún <code>replace</code>, pero como intentes hacerlo carácter a carácter, vas a querer dejar tu trabajo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">stringr<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">str_replace</span>(nombres, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ñ"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"n"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Campana veintitrés"             "C'est très petite"             
+[3] "Alışveriş Arabası Önü Giydirme" "Campana veintitrés"            
+[5] "C'est très petite"              "Alışveriş Arabası Önü Giydirme"</code></pre>
+</div>
+</div>
+<p>Eso puede serte útil si tienes algún maestro que te dijera como cambiar carácter. Pero no tiene sentido que tengas que hacerlo letra a letra (aunque es muy posible que la mejor forma de construir ese maestro es hacerlo letra a letra la primera vez).</p>
+</section>
+<section id="conversiones" class="level2">
+<h2 class="anchored" data-anchor-id="conversiones"><em>Conversiones</em></h2>
+<p>No sé cómo llamar a esto, pero hay un par de funciones que pueden ayudarte… en cierto modo.</p>
+<p>Matizo: te pueden quitar los caracteres raros, pero no va a ser suficiente para que los textos te sirvan como nombres de columnas.</p>
+<p>Ten en cuenta que los nombres de columnas deberían ser en minúsculas y con barras bajas (o quizá con mayúscula la primera letra de cada palabra, si barras), no solo sin tildes ni caracteres raros.</p>
+<p>Pero vamos a ver cómo queda.</p>
+<p>En R base tienes la función <code>iconv()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">iconv</span>(nombres, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ASCII//TRANSLIT"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Campana veintitres"             "C'est tres petite"             
+[3] "Alisveris Arabasi Onu Giydirme" "Campana veintitres"            
+[5] "C'est tres petite"              "Alisveris Arabasi Onu Giydirme"</code></pre>
+</div>
+</div>
+<p>No está mal, que me ha incluso simplificado las íes turcas. Pero esto sigue sin valerme a mí.</p>
+<p>Si te vale a ti, una alternativa es:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">stringi<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">stri_trans_general</span>(nombres, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"latin-ascii"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Campana veintitres"             "C'est tres petite"             
+[3] "Alisveris Arabasi Onu Giydirme" "Campana veintitres"            
+[5] "C'est tres petite"              "Alisveris Arabasi Onu Giydirme"</code></pre>
+</div>
+</div>
+<p>Pero:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">microbenchmark<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">microbenchmark</span>(</span>
+<span id="cb9-2">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">base =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">iconv</span>(nombres, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">to =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ASCII//TRANSLIT"</span>), </span>
+<span id="cb9-3">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">stringi =</span> stringi<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">stri_trans_general</span>(nombres, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"latin-ascii"</span>)</span>
+<span id="cb9-4">)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Unit: microseconds
+    expr   min     lq    mean median     uq    max neval
+    base  48.8  92.40  93.886   97.7 107.70  138.3   100
+ stringi 340.3 422.45 708.301  868.9 880.25 1161.3   100</code></pre>
+</div>
+</div>
+</section>
+<section id="mi-solución" class="level2">
+<h2 class="anchored" data-anchor-id="mi-solución">Mi solución</h2>
+<p>Insisto que lo que quiero no es solo unificar caracteres, cosa que podría ser útil en algún proyecto de procesamiento de lenguaje natural, sino convertir esos textos a algo útil como nombres de columnas de una tabla (con sus minúsculas, sus barras bajas en lugar de espacios, etc).</p>
+<p>Para esto me gusta la librería <strong>janitor</strong>. La función con la que la conocí es <code>clean_names()</code>.</p>
+<p>Recuerda que los nombres de columnas del data frame <code>iris</code> son Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species. Pero:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(janitor)</span>
+<span id="cb11-2">iris <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb11-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">clean_names</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">|&gt;</span> </span>
+<span id="cb11-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">names</span>()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "sepal_length" "sepal_width"  "petal_length" "petal_width"  "species"     </code></pre>
+</div>
+</div>
+<p>Esta librería tiene la función <code>make_clean_names()</code>, que actúa sobre vectores.</p>
+<p>Pero ten en cuenta una cosa: que su utilidad principal es para nombres de columnas, y <strong>en una tabla nunca debería haber dos columnas con el mismo nombre</strong>, así que evita duplicados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make_clean_names</span>(nombres)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "campana_veintitres"               "cest_tres_petite"                
+[3] "alisveris_arabasi_onu_giydirme"   "campana_veintitres_2"            
+[5] "cest_tres_petite_2"               "alisveris_arabasi_onu_giydirme_2"</code></pre>
+</div>
+</div>
+<p>Tú puedes no querer eso. Pero hay un argumento que te soluciona el problema:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make_clean_names</span>(nombres, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">allow_dupes =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "campana_veintitres"             "cest_tres_petite"              
+[3] "alisveris_arabasi_onu_giydirme" "campana_veintitres"            
+[5] "cest_tres_petite"               "alisveris_arabasi_onu_giydirme"</code></pre>
+</div>
+</div>
+</section>
+<section id="python" class="level2">
+<h2 class="anchored" data-anchor-id="python">Python</h2>
+<p>En algún momento, haré esto en Python.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2024-10-18-quita-caracteres-raros-en-tus-variables/</guid>
+  <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Ejemplo de regresión múltiple con Python</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6660,367 +6856,6 @@ font-style: inherit;">"#800080"</span>)</span></code></pre></div>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2024-01-24-rethinking-2/</guid>
   <pubDate>Wed, 24 Jan 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>¿Cómo se usan las prioris conjugadas?</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2023-12-31-conjugate-prior/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>En estadística bayesiana, cuando buscas estimar un parámetro, lo que vas a obtener es una distribución de este parámetro. O sea, no obtienes un valor preciso, sino unas probabilidades asociadas a varios valores, de forma que algunos serán más probables que otros.</p>
-<p>Un método intuitivo de conseguir esta distribución es usar el método del mallado ( <em>grid approximation</em> ). Con este método, relacionas todos los casos posibles, calculas una verosimilitud para cada caso, y lo multiplicas por una probabilidad a priori que decidas. Ese producto es la distribución que buscas para tu parámetro, la posteriori.</p>
-<p>En algunas situaciones, usar una priori en concreto te puede simplificar luego el cálculo, ya que no te hará falta aplicar los cálculos del mallado: puedes, pero el resultado será el mismo.</p>
-<section id="prioris-conjugados" class="level2">
-<h2 class="anchored" data-anchor-id="prioris-conjugados">Prioris conjugados</h2>
-<p>En el caso de lanzar una moneda, estás trabajando con una binomial: tienes ciertos éxitos ante un número posible de casos.</p>
-<p>Si en este caso, usas como priori la distribución beta, entonces surgirá la magia.</p>
-<p>La distribución es</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">monedas <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span></span>
-<span id="cb1-2">caras <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, monedas, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb1-3">p_cara <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">seq</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.01</span>)</span>
-<span id="cb1-4">sample_size <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span></span>
-<span id="cb1-5"></span>
-<span id="cb1-6">beta_alpha <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span></span>
-<span id="cb1-7">beta_beta <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span></span>
-<span id="cb1-8"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rbeta</span>(sample_size, beta_alpha, beta_beta), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-31-conjugate-prior/index_files/figure-html/setup-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">df <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.data.frame</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">expand.grid</span>(caras, p_cara))</span>
-<span id="cb2-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">names</span>(df) <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"caras"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"p_cara"</span>)</span></code></pre></div>
-</div>
-<p>Y podemos simular la posteriori con el método del mallado:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>prior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dbeta</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara, beta_alpha, beta_beta)</span>
-<span id="cb3-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># df$prior &lt;- dunif(df$p_cara)</span></span>
-<span id="cb3-3"></span>
-<span id="cb3-4">df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>likelihood <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dbinom</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras, monedas, df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara)</span>
-<span id="cb3-5"></span>
-<span id="cb3-6">df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>posteriori <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>likelihood <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>prior</span>
-<span id="cb3-7">df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>std_posteriori <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>posteriori <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>posteriori)</span>
-<span id="cb3-8"></span>
-<span id="cb3-9"></span>
-<span id="cb3-10">caras_observadas <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">70</span></span>
-<span id="cb3-11"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas], </span>
-<span id="cb3-12">     df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>posteriori[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas] <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>posteriori[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas]), </span>
-<span id="cb3-13">     <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"o"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xlab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Probabilidad de cara"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">ylab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Probabilidad"</span>)</span>
-<span id="cb3-14"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">lines</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas], </span>
-<span id="cb3-15">      df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>prior[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas] <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>prior[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas]), </span>
-<span id="cb3-16">      <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"red"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-31-conjugate-prior/index_files/figure-html/posterior1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>La magia está en que, dado que la distribución a priori es una beta, no necesitamos simular la posteriori, sino que sabemos que ya seguirá una distribución en concreto (una beta también, con pequeños cambios en sus parámetros);</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">posteriori_simulation <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dbeta</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas], </span>
-<span id="cb4-2">                               beta_alpha <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> caras_observadas, </span>
-<span id="cb4-3">                               beta_beta <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> monedas <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> caras_observadas)</span>
-<span id="cb4-4"></span>
-<span id="cb4-5">posteriori_simulation <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> posteriori_simulation <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(posteriori_simulation)</span>
-<span id="cb4-6"></span>
-<span id="cb4-7"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas], </span>
-<span id="cb4-8">     df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>posteriori[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas] <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>posteriori[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas]), </span>
-<span id="cb4-9">     <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">type =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"o"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xlab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Probabilidad de cara"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">ylab =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Probabilidad"</span>)</span>
-<span id="cb4-10"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">lines</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas], </span>
-<span id="cb4-11">      df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>prior[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas] <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>prior[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas]), </span>
-<span id="cb4-12">      <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"red"</span>)</span>
-<span id="cb4-13"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">lines</span>(df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>p_cara[df<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>caras <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> caras_observadas], </span>
-<span id="cb4-14">      posteriori_simulation, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"blue"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2023-12-31-conjugate-prior/index_files/figure-html/posteriori-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2023-12-31-conjugate-prior/</guid>
-  <pubDate>Sun, 31 Dec 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
