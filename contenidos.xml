@@ -10,7 +10,195 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Fri, 18 Oct 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 23 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Juego probabilístico con números aleatorios</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-10-23-random-numbers/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Para trabajar con números aleatorios en Python parece que la referencia es usar <strong>numpy</strong>.</p>
+<div id="librerias" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span></code></pre></div>
+</div>
+<section id="numpy-básico" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-básico">numpy básico</h2>
+<p>Vamos a simular muchos lanzamientos de 4 monedas y vamos a ver en qué proporción ocurre que las cuatro monedas muestran cara. O sea, lanzo 4 monedas y apunto si todas han salido cara; las lanzo otra vez y vuelvo a apuntar; las lanzo otra vez y vuelvo a apuntar; y así 10.000 veces.</p>
+<div id="cell-generacion-lanzamientos-monedas" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">total_runs <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span></span>
+<span id="cb2-2">n_all_heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span></span>
+<span id="cb2-3"></span>
+<span id="cb2-4"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> _ <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(total_runs):</span>
+<span id="cb2-5">    heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.random(size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>)</span>
+<span id="cb2-6">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Si &lt;0.5, cara; si no, cruz</span></span>
+<span id="cb2-7">    heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span></span>
+<span id="cb2-8">    n_heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> heads.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>()</span>
+<span id="cb2-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> n_heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>:</span>
+<span id="cb2-10">        n_all_heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb2-11"></span>
+<span id="cb2-12">n_all_heads <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> total_runs</span></code></pre></div>
+<div id="generacion-lanzamientos-monedas" class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>0.0597</code></pre>
+</div>
+</div>
+</section>
+<section id="algo-de-visualización" class="level2">
+<h2 class="anchored" data-anchor-id="algo-de-visualización">Algo de visualización</h2>
+<p>En una moneda la probabilidad de obtener cara es 0.5, pero puedes tener una moneda trucada con una probabilidad diferente (¿puedes?).</p>
+<p>Vamos a ver cómo se distribuye el obtener cara en distintos casos. El ejemplo ahora consiste en lanzar una moneda 100 veces, y en esas 100 veces veo cuántas caras he obtenido. Así veré cómo de esperable es obtener muy pocas caras o muchas caras, en función de cuán trucada esté la moneda.</p>
+<div id="function-lanzamientos" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> visualizacion_experimentos(probabilidad, lanzamientos, total_experimentos):</span>
+<span id="cb4-2">    caras_obtenidas <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.empty(total_experimentos)</span>
+<span id="cb4-3"></span>
+<span id="cb4-4">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(total_experimentos):</span>
+<span id="cb4-5">        caras_obtenidas[i] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(np.random.random(lanzamientos) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&lt;</span> probabilidad)</span>
+<span id="cb4-6">    </span>
+<span id="cb4-7">    plt.hist(caras_obtenidas)</span>
+<span id="cb4-8">    plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Caras obtenidas'</span>)</span>
+<span id="cb4-9">    plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Conteo'</span>)</span>
+<span id="cb4-10">    plt.title(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'Lanzamientos por experimento: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>lanzamientos<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">. Probabilidad: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>probabilidad<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb4-11">    plt.show()</span></code></pre></div>
+</div>
+<p>En <code>caras_obtenidas</code> tenemos guardado el número de caras que hemos obtenido en cada experimento (cada uno consiste en 100 lanzamientos de una moneda cuya probabilidad de cara es 0.5).</p>
+<div id="cell-experimento0.5" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">visualizacion_experimentos(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-23-random-numbers/index_files/figure-html/experimento0.5-output-1.png" id="experimento0.5" width="602" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Lo que más peso tiene está en torno a 50 caras (frente a 100 totales). Es raro bajar de 40 o superar 60. Y parece imposible bajar de 30 o superar 70.</p>
+<p>Vamos a cambiar la probabilidad:</p>
+<div id="cell-experimento0.1" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">visualizacion_experimentos(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-23-random-numbers/index_files/figure-html/experimento0.1-output-1.png" id="experimento0.1" width="602" height="449" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2024-10-23-random-numbers/</guid>
+  <pubDate>Wed, 23 Oct 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Quita caracteres raros en tus variables</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6753,109 +6941,6 @@ sigma  24.48463 0.9356079  22.98935  25.97991</code></pre>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2024-02-24-normality/</guid>
   <pubDate>Sat, 24 Feb 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Statistical Rethinking (2)</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-01-24-rethinking-2/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="por-qué-lo-normal-es-normal" class="level2">
-<h2 class="anchored" data-anchor-id="por-qué-lo-normal-es-normal">Por qué lo normal es normal</h2>
-<section id="normal-por-adición" class="level3">
-<h3 class="anchored" data-anchor-id="normal-por-adición">Normal por adición</h3>
-<p>Hay un experimento en el que pones a unas personas en línea con una moneda. Cada persona tiene una moneda que lanza 16 veces.</p>
-<p>Por cada vez que sale cara, da un paso a la derecha; por cada vez que sale cruz, a la izquierda.</p>
-<p>Cada paso será de una distancia aleatoria entre 0 y 1 metro. ¿Cuántos metros se ha desplazado cada persona con respecto al origen?</p>
-<p>El experimento con una sola persona sería algo así:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">distancia_por_paso <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">16</span>, <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(distancia_por_paso)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.171815</code></pre>
-</div>
-</div>
-<p>Nuestro sujeto ha recorrido 2.1718148 desde la línea.</p>
-<p>Lo podemos extrapolar a 10000 sujetos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">pos <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">replicate</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10000</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">16</span>, <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)))</span>
-<span id="cb3-2"></span>
-<span id="cb3-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(ggplot2)</span>
-<span id="cb3-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_set</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_minimal</span>())</span>
-<span id="cb3-5"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ggplot</span>() <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb3-6">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_histogram</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> pos), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-01-24-rethinking-2/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2024-01-24-rethinking-2/</guid>
-  <pubDate>Wed, 24 Jan 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
