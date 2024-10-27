@@ -10,7 +10,363 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Wed, 23 Oct 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 27 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Evolución de la población por provincias en España</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-10-27-poblacion-evolutivo/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>El INE tiene datos de evolución <del>trimestral</del> semestral de la población por provincias en España.</p>
+<p>En un formato horrible, por supuesto.</p>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> locale</span></code></pre></div>
+</div>
+<div id="cell-read-data" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">locale.setlocale(locale.LC_TIME, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'es_ES.UTF-8'</span>)</span>
+<span id="cb2-2"></span>
+<span id="cb2-3">df_ine <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(</span>
+<span id="cb2-4">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ine-poblacion-provincias.csv'</span>, </span>
+<span id="cb2-5">    sep<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">';'</span>, </span>
+<span id="cb2-6">    header<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, </span>
+<span id="cb2-7">    names<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'edad'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'provincia'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sexo'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'residentes'</span>]</span>
+<span id="cb2-8">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># usecols=['provincia', 'periodo', 'residentes']</span></span>
+<span id="cb2-9">)</span>
+<span id="cb2-10"></span>
+<span id="cb2-11">condicion <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (df_ine[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'edad'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Todas las edades'</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&amp;</span> (df_ine[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sexo'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total'</span>)</span>
+<span id="cb2-12">df_ine <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_ine.loc[condicion, [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'provincia'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'residentes'</span>]]</span>
+<span id="cb2-13"></span>
+<span id="cb2-14">df_ine[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'residentes'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.to_numeric(df_ine[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'residentes'</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>.replace(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'.'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>))</span>
+<span id="cb2-15">df_ine[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.to_datetime(df_ine[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>], <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%d</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> de %B de %Y'</span>)</span>
+<span id="cb2-16"></span>
+<span id="cb2-17">df_ine.head()</span></code></pre></div>
+<div id="read-data" class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">provincia</th>
+<th data-quarto-table-cell-role="th">periodo</th>
+<th data-quarto-table-cell-role="th">residentes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Total Nacional</td>
+<td>2023-01-01</td>
+<td>48085361.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Total Nacional</td>
+<td>2022-10-01</td>
+<td>47940295.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Total Nacional</td>
+<td>2022-07-01</td>
+<td>47781354.0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Total Nacional</td>
+<td>2022-04-01</td>
+<td>47609145.0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Total Nacional</td>
+<td>2022-01-01</td>
+<td>47486727.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>Si los tratas un poco, puedes usar mi librería favorita para hacer gráficos, matplotlib, en la que si tuviera que trabajar dejaría mi trabajo, me pagaran lo que me pagaran.</p>
+<div id="prepara-plot" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">df_solo_provincias <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_ine[df_ine[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'provincia'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total Nacional'</span>]</span>
+<span id="cb3-2">df_solo_provincias[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'residentes'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_solo_provincias[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'residentes'</span>].fillna(method<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ffill'</span>)</span>
+<span id="cb3-3"></span>
+<span id="cb3-4">provincias_destacadas <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'28 Madrid'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'08 Barcelona'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'46 Valencia/València'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'29 Málaga'</span>]</span>
+<span id="cb3-5"></span>
+<span id="cb3-6">df_solo_provincias[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'destacada'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_solo_provincias[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'provincia'</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">apply</span>(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">lambda</span> x: x <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> x <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> provincias_destacadas <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Otras'</span>)</span></code></pre></div>
+</div>
+<p>Dicen que construyendo más vivienda se solucionan los problemas de precios.</p>
+<div id="cell-plot" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">colors <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'28 Madrid'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'blue'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'08 Barcelona'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'red'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'46 Valencia/València'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'green'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'29 Málaga'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'orange'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Otras'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lightgray'</span>}</span>
+<span id="cb4-2"></span>
+<span id="cb4-3">df_pivot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_solo_provincias.pivot(index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'periodo'</span>, columns<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'provincia'</span>, values<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'residentes'</span>)</span>
+<span id="cb4-4"></span>
+<span id="cb4-5">fig, ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>))</span>
+<span id="cb4-6"></span>
+<span id="cb4-7"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> provincia <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> df_pivot.columns:</span>
+<span id="cb4-8">    color <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> colors[provincia] <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> provincia <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> provincias_destacadas <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> colors[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Otras'</span>]</span>
+<span id="cb4-9">    label <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> provincia <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> provincia <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> provincias_destacadas <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'_nolegend_'</span></span>
+<span id="cb4-10">    df_pivot[provincia].plot(ax<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ax, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>color, label<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>label)</span>
+<span id="cb4-11"></span>
+<span id="cb4-12">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Evolución de la población por provincias en España'</span>)</span>
+<span id="cb4-13">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Residentes (millones)'</span>)</span>
+<span id="cb4-14">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">''</span>)</span>
+<span id="cb4-15">plt.legend()</span>
+<span id="cb4-16">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2024-10-27-poblacion-evolutivo/index_files/figure-html/plot-output-1.png" id="plot" width="799" height="506" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Suerte con pillar el ritmo a la demanda.</p>
+
+
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2024-10-27-poblacion-evolutivo/</guid>
+  <pubDate>Sun, 27 Oct 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Juego probabilístico con números aleatorios</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -97,7 +453,7 @@ font-style: inherit;">1</span></span>
 background-color: null;
 font-style: inherit;">/</span> total_runs</span></code></pre></div>
 <div id="generacion-lanzamientos-monedas" class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>0.0597</code></pre>
+<pre><code>0.0629</code></pre>
 </div>
 </div>
 </section>
@@ -6449,498 +6805,6 @@ font-style: inherit;">0.4</span>) )</span></code></pre></div>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2024-03-18-correlation/</guid>
   <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>¿Cómo surge la distribución normal?</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-02-24-normality/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>La distribución normal siempre me ha parecido demasiado perfecta para esperar verla en unos datos reales.</p>
-<p>Pero claro, eso me pasa por no saber de dónde viene.</p>
-<p>Te cuento.</p>
-<p>Imagina un grupo de personas que parten de una línea. Cada uno lanza una moneda al aire; si sale cara, da un paso a la izquierda, de máximo 1 metro; si no, lo da a la derecha. Los pasos estarán entre 0 y 1 metro. Al cabo de 16 lanzamientos, ¿a qué distancia estará del origen?</p>
-<p>Será la suma de las distancias de esos pasos.</p>
-<p>Podemos calcular esto para 1000 personas.</p>
-<p>Primero si dan 4 pasos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">pos <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">replicate</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">4</span>, <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)))</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(pos)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/pasos4-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Ahora si dan 8 pasos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">pos <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">replicate</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">8</span>, <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)))</span>
-<span id="cb2-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(pos)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/pasos8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Ahora si dan 16:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">pos <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">replicate</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">runif</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">16</span>, <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)))</span>
-<span id="cb3-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(pos)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/pasos16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Realmente, casi con cualquier distribución puedes hacer esto. La suma de valores de cualquier distribución seguirá una distribución normal (con algunas necesitarás una muestra más grande que con otras).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">replicate</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span>, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rpois</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>))))</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/suma-pois-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="ejemplo-de-modelo-basado-en-la-normalidad" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo-de-modelo-basado-en-la-normalidad">Ejemplo de modelo basado en la normalidad</h2>
-<p>La altura de varias personas adultas es esperable que se distribuya como una distribución normal.</p>
-<p>La idea intuitiva es que la altura de una persona adulta es el resultado de muchos pequeños aumentos que se suman. Para distintos individuos, estas sumas darán resultados distintos, porque los aumentos progresivos entre ellos serán distintos al cabo de los años. Pero el conjunto de todas ellas será normal, si has esperado suficientes años para que los casos más altos (aumentos más grandes acumulados) se compensen con los más bajos (aumentos más pequeños).</p>
-<p>Vamos a trabajar con una muestra de personas, de las que conocemos su altura.</p>
-<p>Queremos modelizar la altura como una distribución normal, o sea, estimaremos la media y desviación típica.</p>
-<p>El método bayesiano considerará todas las medias y desviaciones típicas posibles (realmente haremos una aproximación), y evaluaremos cada una en función de cómo de plausibles son, dados los datos que tenemos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(rethinking)</span>
-<span id="cb5-2"></span>
-<span id="cb5-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">data</span>(Howell1)</span>
-<span id="cb5-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">head</span>(Howell1)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   height   weight age male
-1 151.765 47.82561  63    1
-2 139.700 36.48581  63    0
-3 136.525 31.86484  65    0
-4 156.845 53.04191  41    1
-5 145.415 41.27687  51    0
-6 163.830 62.99259  35    1</code></pre>
-</div>
-</div>
-<p>Por ahora, vamos a centrarnos solo en los casos adultos, porque la altura de los niños no se distribuye normalmente, sino que está correlada con la edad.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">adultos <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> Howell1[Howell1<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>age <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">18</span>, ]</span>
-<span id="cb7-2"></span>
-<span id="cb7-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(adultos<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>height, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Queremos modelizar la altura <img src="https://latex.codecogs.com/png.latex?h_i"> de cada individuo <img src="https://latex.codecogs.com/png.latex?i"> como <img src="https://latex.codecogs.com/png.latex?h_i%20%5Csim%20%5Ccal%7BN%7D(%5Cmu,%20%5Csigma)">. <strong>El objetivo es estimar</strong> <img src="https://latex.codecogs.com/png.latex?%5Cmu"> y <img src="https://latex.codecogs.com/png.latex?%5Csigma">.</p>
-<p>Como estamos en un modelo bayesiano, necesitamos unos prioris para ambos parámetros. Los prioris son distribuciones de estos parámetros que consideramos razonables.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0Ah_i%20%5Csim%20%5Ccal%7BN%7D(%5Cmu,%20%5Csigma)%0A%5C%5C%0A%5Cmu%20%5Csim%20%5Ccal%7BN%7D(178,%2020)%0A%5C%5C%0A%5Csigma%20%5Csim%20%5Ccal%7BU%7D(0,%2050)%0A"></p>
-<p>Estamos dando como distribución a priori de la media una normal centrada en <img src="https://latex.codecogs.com/png.latex?%5Ccal%7B178%7D"> y con un rango de <img src="https://latex.codecogs.com/png.latex?%5Ccal%7B40%7D">cm con una probablidad de 95%.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">curve</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>(x, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">178</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">from =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">to =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">250</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">lwd =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/howell1-priori-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>La priori sobre la desviación típica es plana, en el sentido de que no sabemos dar más importancia a unos valores frente a otros, dentro los propuestos en el intervalo de la uniforme.</p>
-<p>Podemos simular cómo serían unos datos a partir de estas prioris.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">sample_mu <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">178</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>)</span>
-<span id="cb9-2">sample_sigma <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">runif</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span>)</span>
-<span id="cb9-3"></span>
-<span id="cb9-4">prior_h <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>, sample_mu, sample_sigma)</span>
-<span id="cb9-5"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(prior_h, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/simulacion-prioris-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Lo que hemos hecho es simular 10.000 pares de <img src="https://latex.codecogs.com/png.latex?%5Cmu"> y <img src="https://latex.codecogs.com/png.latex?%5Csigma"> y para cada par hemos simulado una altura. Así tenemos 10.000 alturas, cada una originada a partir de una población normal distinta (pero todas las poblaciones normales son tan plausibles como indica nuestra priori).</p>
-<p>Si cambiáramos la priori, la simulación a priori de la altura se vería afectada:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1">sample_mu <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">178</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>)</span>
-<span id="cb10-2"></span>
-<span id="cb10-3">prior_h <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>, sample_mu, sample_sigma)</span>
-<span id="cb10-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(prior_h, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/simulacion-prioris2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Esa es una priori menos informativa, con una media mucho más dispersa. Pero puedes ver que las alturas que derivarían de unas prioris así no son realistas, dado que hay casos de altura negativa o también demasiado altos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1">fit_altura <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">quap</span>( </span>
-<span id="cb11-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">alist</span>(</span>
-<span id="cb11-3">    height <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>( mu , sigma ) ,</span>
-<span id="cb11-4">    mu <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>( <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">178</span> , <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span> ) ,</span>
-<span id="cb11-5">    sigma <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dunif</span>( <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span> , <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span> )</span>
-<span id="cb11-6">  ), </span>
-<span id="cb11-7">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">data =</span> adultos</span>
-<span id="cb11-8">)</span>
-<span id="cb11-9"></span>
-<span id="cb11-10"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">precis</span>(fit_altura)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>            mean        sd       5.5%      94.5%
-mu    154.654539 0.4172190 153.987743 155.321336
-sigma   7.762397 0.2950864   7.290792   8.234002</code></pre>
-</div>
-</div>
-<p>Obtenemos un modelo normal con una media cuya media es 154 y su desviación típica es 0.42. Sí, el resultado de para la media de de la población es una distribución: no conocemos el valor exacto de la media sino que hemos estimado la distribución a la que pertenece.</p>
-<p>Lo mismo con la desviación típica.</p>
-<p>Concretamente, esta distribución de la <strong>media</strong> es la que muestra este histograma.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1">posterior_h <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">extract.samples</span>(fit_altura, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">n =</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>)</span>
-<span id="cb13-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(posterior_h<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">$</span>mu, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/altura-posteriori-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="ajuste-de-prioris" class="level3">
-<h3 class="anchored" data-anchor-id="ajuste-de-prioris">Ajuste de prioris</h3>
-<p>La priori no informativa que sugerimos antes no tenía sentido porque daba lugar a valores de alturas inhumanas, como negativos o demasiados altos.</p>
-<p>Podemos proponer también una priori más restrictica.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1">sample_mu <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">178</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.1</span>)</span>
-<span id="cb14-2"></span>
-<span id="cb14-3">prior_h <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">rnorm</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1e4</span>, sample_mu, sample_sigma)</span>
-<span id="cb14-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">hist</span>(prior_h, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-02-24-normality/index_files/figure-html/prioris-ajustadas-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Esta priori fuerza a la media a quedarse mucho más centrada en la media propuesta. Y esto cambia el modelo.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1">fit_altura2 <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">quap</span>(</span>
-<span id="cb15-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">alist</span>(</span>
-<span id="cb15-3">    height <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>(mu, sigma), </span>
-<span id="cb15-4">    mu <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">178</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.1</span>), </span>
-<span id="cb15-5">    sigma <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dunif</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span>)</span>
-<span id="cb15-6">  ), </span>
-<span id="cb15-7">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">data =</span> adultos</span>
-<span id="cb15-8">)</span>
-<span id="cb15-9"></span>
-<span id="cb15-10"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">precis</span>(fit_altura2)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>           mean        sd      5.5%     94.5%
-mu    177.86598 0.1002314 177.70579 178.02617
-sigma  24.48463 0.9356079  22.98935  25.97991</code></pre>
-</div>
-</div>
-<p>La media <img src="https://latex.codecogs.com/png.latex?%5Cmu"> apenas se ha movido del prior ahora. Sin embargo, el valor de <img src="https://latex.codecogs.com/png.latex?%5Csigma"> ha cambiado mucho porque el modelo lo calcula condicionada a la restricción del otro parámetro.</p>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2024-02-24-normality/</guid>
-  <pubDate>Sat, 24 Feb 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
