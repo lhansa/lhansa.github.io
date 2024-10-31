@@ -10,7 +10,141 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Sun, 27 Oct 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 31 Oct 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Quita caracteres raros en tus variables (2)</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2024-10-31-pyjanitor/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>El otro día <a href="https://lhansa.github.io/posts/2024-10-18-quita-caracteres-raros-en-tus-variables/">te compartí ideas</a> de cómo adaptar valores de texto que no te sirven como nombres de columnas. En R.</p>
+<p><a href="https://muestrear-no-es-pecado.netlify.app/">José Luis Cañadas</a> me habló de la librería <strong>pyjanitor</strong> como alternativa en Python. Me sonaba lejanamente pero nunca la había usado.</p>
+<p>Aporta muchas más cosas aparte de cambiar textos para que cumplan con ciertas reglas de estilo. En cierto modo te da toda una nueva sintaxis para hacer las operaciones que haces con pandas de una forma más parecida al <strong>tidyverse</strong>.</p>
+<p>Ahora mismo no es lo busco. Lo que busco es replicar el ejercicio del otro día.</p>
+<p>Así que vamos a ello.</p>
+<section id="pyjanitor" class="level2">
+<h2 class="anchored" data-anchor-id="pyjanitor"><code>pyjanitor</code></h2>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> janitor</span></code></pre></div>
+</div>
+<p>Teníamos un listado de nombres que en un proyecto real vendrían como valores de la columna de un data frame. Y están repetidos.</p>
+<div id="66e8f447" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">nombres <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Campaña veintitrés"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"C'est très petite"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Alışveriş Arabası Önü Giydirme"</span>]</span>
+<span id="cb2-2">nombres <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> nombres <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb2-3">nombres</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>['Campaña veintitrés',
+ "C'est très petite",
+ 'Alışveriş Arabası Önü Giydirme',
+ 'Campaña veintitrés',
+ "C'est très petite",
+ 'Alışveriş Arabası Önü Giydirme']</code></pre>
+</div>
+</div>
+<p>Queremos reescribirlos para que sigan un estilo válido como nombres de columnas. Este estilo es opinable, pero para ir al grano asumiré que lo que quiero es esto:</p>
+<ul>
+<li><em>snake case</em>, es decir, todo en minúscula con palabras separadas por barras bajas.</li>
+<li>Sin tildes, ni eñes ni otros caracteres raros (donde raro es no anglosajón).</li>
+<li>… Y más cosas que ahora me dan igual.</li>
+</ul>
+<p>La librería janitor está pensada para trabajar directamente con un data frame. Pero no es lo que busco ahora. Es más: la funcionalidad de limpiar valores de una columna (no nombres) ni siquiera está a mano.</p>
+</section>
+<section id="la-función-escondida" class="level2">
+<h2 class="anchored" data-anchor-id="la-función-escondida">La función escondida</h2>
+<p>He <a href="https://github.com/pyjanitor-devs/pyjanitor/blob/dev/janitor/functions/clean_names.py">curioseado el código fuente</a> y he encontrado la función que limpia los nombres de las columnas, es decir, el código que aplica las reglas de limpieza.</p>
+<p>Este código está un poco escondido, pero lo puedes llamar directamenmte sobre una serie de pandas (es decir, lo que podría llegar a ser una columna de un data frame).</p>
+<p>La función es <code>_clean_names</code> y su primer argumento es la serie que quieres editar. Ninguno de los argumentos de configuración tiene valor por defecto, así que hay que especificarlos todos.</p>
+<div id="95174804" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> janitor.functions.clean_names <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> _clean_names</span>
+<span id="cb4-2"></span>
+<span id="cb4-3">nombres <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.Series(nombres)</span>
+<span id="cb4-4">nuevos_nombres <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> _clean_names(</span>
+<span id="cb4-5">    nombres,</span>
+<span id="cb4-6">    strip_underscores<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, </span>
+<span id="cb4-7">    case_type<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'snake'</span>, </span>
+<span id="cb4-8">    remove_special<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, </span>
+<span id="cb4-9">    strip_accents<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, </span>
+<span id="cb4-10">    enforce_string<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, </span>
+<span id="cb4-11">    truncate_limit<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb4-12"></span>
+<span id="cb4-13">nuevos_nombres</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>0            campaa_veintitrs
+1             cest_trs_petite
+2    alveri_arabas_n_giydirme
+3            campaa_veintitrs
+4             cest_trs_petite
+5    alveri_arabas_n_giydirme
+dtype: object</code></pre>
+</div>
+</div>
+<p>No queda igual que en el caso de R (por ejemplo, las eñes las quita pero no las convierte a enes) pero para lo que quiero hacer aquí me vale.</p>
+<p>Gracias, José Luis, como siempre, que incluso con Python me ayudas.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2024-10-31-pyjanitor/</guid>
+  <pubDate>Thu, 31 Oct 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Evolución de la población por provincias en España</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6581,230 +6715,6 @@ font-style: inherit;">collect</span>()</span>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2024-04-21-dataframes-inmemory/</guid>
   <pubDate>Sun, 21 Apr 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Relaciones espurias</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-03-18-correlation/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Tienes un datos de divorcio en estados de Estados Unidos (<a href="https://xcelab.net/rm/statistical-rethinking/">fuente</a>).</p>
-<p>Parece que hay correlación entre el ratio de divorcio por estado y la edad mediana a la que se casa la gente:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(ggplot2)</span>
-<span id="cb1-2"></span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_set</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_light</span>())</span>
-<span id="cb1-4"></span>
-<span id="cb1-5"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ggplot</span>(d, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> MedianAgeMarriage, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> Divorce)) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb1-6">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_point</span>() <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb1-7">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">method =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"lm"</span>)</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-03-18-correlation/index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>El ratio de divorcio por estado dada la mediana de edad de casarse podrías modelizarlo como:</p>
-<p><img src="https://latex.codecogs.com/png.latex?%0AD_i%20%5Csim%20%5Ctext%7BNormal%7D(%5Cmu_i,%20%5Csigma)%0A%5C%5C%0A%5Cmu_i%20=%20%5Calpha%20+%20%5Cbeta_AA_i%0A%5C%5C%0A%5Calpha%20%5Csim%20%5Ctext%7BNormal(0,%200,2)%7D%0A%5C%5C%0A%5Cbeta_A%20%5Csim%20%5Ctext%7BNormal(0,%200,5)%7D%0A%5C%5C%0A%5Csigma%20%5Csim%20%5Ctext%7BExponential(1)%7D%0A"></p>
-<ul>
-<li><img src="https://latex.codecogs.com/png.latex?D_i"> el ratio de divorcio estandarizado (media 0, desviación típica 1) para el Estado <img src="https://latex.codecogs.com/png.latex?i">.</li>
-<li><img src="https://latex.codecogs.com/png.latex?A_i"> es la edad mediana a la que se casa la gente en el Estado <img src="https://latex.codecogs.com/png.latex?i">.</li>
-<li>Como el ratio que modelizamos está centrado en 0, el intercept del modelo es esperable que sea cercano a 0.</li>
-<li>Sobre <img src="https://latex.codecogs.com/png.latex?%5Cbeta_A">, si fuera igual a 1, estaríamos diciendo que por cada cambio de una desviación estándar de la edad, observaríamos un cambio de una desviación estándar en el ratio del divorcio. La desviación estándar de la edad es 1.2436303, por lo que si <img src="https://latex.codecogs.com/png.latex?%5Cbeta_A%20=%201">, un cambio de <img src="https://latex.codecogs.com/png.latex?%7B1,2%7D"> años en la mediana de edad de casarse aumentaría el ratio de divorcio en una desviación estándar, lo que parece ser demasiado fuerte.</li>
-</ul>
-<p>Ahora podemos ajustar el modelo y simular:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">m5<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">.1</span> <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">quap</span>(</span>
-<span id="cb2-2">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">alist</span>(</span>
-<span id="cb2-3">    D <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>(mu, sigma), </span>
-<span id="cb2-4">    mu <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> a <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> bA <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> A, </span>
-<span id="cb2-5">    a <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.2</span>), </span>
-<span id="cb2-6">    bA <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>), </span>
-<span id="cb2-7">    sigma <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">dexp</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb2-8">  ), </span>
-<span id="cb2-9">  <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">data =</span> d</span>
-<span id="cb2-10">)</span></code></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">set.seed</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>)</span>
-<span id="cb3-2">prior <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">extract.prior</span>(m5<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">.1</span>)</span>
-<span id="cb3-3">mu <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">link</span>( m5<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">.1</span> , <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">post=</span>prior , <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">data=</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">list</span>( <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">A=</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) ) )</span>
-<span id="cb3-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">plot</span>( <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">NULL</span> , <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">xlim=</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) , <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">ylim=</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) )</span>
-<span id="cb3-5"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> ( i <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span> ) <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">lines</span>( <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">2</span>) , mu[i,] , <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col=</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">col.alpha</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"black"</span>,<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.4</span>) )</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-03-18-correlation/index_files/figure-html/extract-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2024-03-18-correlation/</guid>
-  <pubDate>Mon, 18 Mar 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
