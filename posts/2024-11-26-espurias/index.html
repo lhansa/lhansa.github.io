@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leonardo Hansa">
-<meta name="description" content="Notas sobre Existe la suerte o Fooled by randomness de Nassim Taleb">
+<meta name="description" content="Ejemplos de relaciones espurias con Statistical Rethinking">
 
-<title>¿Existe la suerte? – Leonardo Hansa</title>
+<title>Relaciones espurias de datos de divorcios – Leonardo Hansa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -130,15 +164,15 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">¿Existe la suerte?</h1>
+<h1 class="title">Relaciones espurias de datos de divorcios</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">lecturas</div>
+    <div class="quarto-category">exploraciones</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Notas sobre el libro Existe la suerte de Nassim Taleb
+    Ejemplos de relaciones espurias con Statistical Rethinking
   </div>
 </div>
 
@@ -155,7 +189,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">28 de septiembre de 2023</p>
+      <p class="date">26 de noviembre de 2024</p>
     </div>
   </div>
   
@@ -167,70 +201,141 @@ cookieconsent.run({
 </header>
 
 
+<p>En el libro <em>Statistical Rethinking</em> el autor estudia la relación entre el divorcio y dos variables:</p>
 <ul>
-<li><p><strong>Probabilidad:</strong> falta de certidumbre en nuestro conocimiento y el desarrollo de métodos para lidiar con nuestra ignorancia. en el mundo real muchas veces tienes que averiguar el problema más que la solución.</p></li>
-<li><p>De la misma forma que un antepasado se rescaba la nariz y veía llover, pensaba que el rascarse la nariz inducía lluvia, acualmente ligamos la prosperidad económica a un recorte de los bancos centrales.</p></li>
-<li><p>Presentamos conjeturas como verdades porque no manejamos bien las probabilidades.</p></li>
-<li><p>Lo que obtienes por suerte es fácil que te desaparezca por azar. Lo que obtienes sin la cción de la suerte es más robusto a la incertidumbre.</p></li>
-<li><p>Dos problemas ante un estado:</p>
-<ul>
-<li>Los cisnes negros.</li>
-<li>La simetría (de poco sirven muchos éxitos si un fracaso te lo quita todo)</li>
-</ul></li>
-<li><p>Experimento s xix. Paciente amnésica, hay que presentarse cada 15 minutos. Un día, estrechan la mano con una chincheta. Al día siguiente, la paciente no recuerda al interlocutor pero retira la mano de manera instintiva.</p></li>
-<li><p>Nos fijamos en los éxitos (como tecnologías que han cambiado nuestra vida) pero no en los fracasos (como patentes que se han quedado en el olvido)</p></li>
-<li><p>El ratio de información no verificada frente a la verificada aumenta.</p>
-<ul>
-<li>Misma idea de <em>la señal y el ruido</em> de Nate Silver.</li>
-</ul></li>
-<li><p>En la Italia renacentista, las aseguradoras cobraban la misma tasa a un varón de 20 años que a uno de 50, porque su vida extra esperada era la misma (alguien que sobrepasaba los 40 había demostrado resistencia a muchos obstáculos y posiblemente ya llegaría a viejo).</p></li>
-<li><p>Lo que uno observa en los mercados financieros es, en el mejor de los casos, varianza más retornos, no solo retornos.</p></li>
-<li><p>Centrarse en la aleatoriedad, en el corto plazo, desgasta, quema, frustra y deprime, por la constante exposición a sus golpes de dolor.</p></li>
-<li><p>my problem is that I’m not rational and I’m extremely prone to drown in randomness and to incur emotional torture. My only advantage in life is that i know some of my weaknesses, mostly that I’m incapable of taming my emotions facing news and incapable of seeing a performance with a clear head. Silence is far better.</p></li>
-<li><p>Fashionable nonsense, by alan sokal</p></li>
-<li><p><em>and such a crowd</em> (y esta banda)</p></li>
-<li><p>si lo siguiente se parece a un discurso de un mandamás de tu empresa, búscate otro trabajo:</p></li>
+<li>La edad media en la que la pareja se casa.</li>
+<li>La cantidad de gente que se casa.</li>
 </ul>
-<blockquote class="blockquote">
-<p>We look after our customer’s interests/the road ahead / our assets are our people / creation of shareholder value / our vision / our expertise lies in / we provide interactive solutions / we position ourselves in this market / how to serve our customers better / short- term pain for long-term gain/we will be rewarded in the long run / we play from our strength and improve our weaknesses / courage and determination will prevail / we are committed to innovation and technology / a happy employee is a productive employee / commitment to excellence / strategic plan / our work ethics.</p>
-</blockquote>
-<ul>
-<li><p>Le preguntaron en un evento si creía que el mercado iba a subir o bajar en la próxima semana. Dijo que subiría. Y respondieron que entonces por qué estaba en corto. Por asimetría. Él creía que había mucha probabilidad de que subiera (pero muy poco, solo un 1%). - Pero había una probabilidad de 30% de bajar 10%. Con todo, el resultado esperado era una bajada.</p></li>
-<li><p>we could either be too lax or too stringent in accepting past information as a prediction of the future. I need a lot more than data. My major reason is the rare event, but i have plenty of others.</p></li>
-<li><p>la historia nos enseña que cosas que nunca han ocurrido ocurren.</p></li>
-<li><p>Tiendes a ser más sensible a la presencia o ausencia de un estímulo que a la variación en su magnitud. Esto implica (en mercados financieros) que una pérdida es al principio solo una pérdida, con drásticas consecuencias a la larga</p></li>
-<li><p>Emocionalmente, prefieres muchas ganancias y pocas pérdidas, aunque en magnitud eso no tenga que ser bueno.</p></li>
-<li><p>En ciencia, puedes estar haciendo experimentos fallidos muchas veces, hasta que una por fin sale un resultado exitoso.</p></li>
-<li><p>La serie temporal de éxito puede parecer plana con un pico al final, pero se puede ver como una probabilidad acumulada (relación con James Clear)</p></li>
-<li><p>Esto mismo se puede aplicar al mercado editorial, a entrenamiento físico (basado en el ritmo de cazadores recolectores del paleolítico) o inversión para aprovechar crisis.</p></li>
-<li><p>La estadística nos falla cuando tenemos distribuciones asimétricas: imagina una urna con bolas rojas y negras, pero en la que sacar bola roja tiene una probabilidad muy muy baja. Si quiero saber si hay bolas rojas y mi método consiste en ir sacando bolas (por probabilidad, serán casi siempre negras), el aumentar el tamaño muestral no me ayuda a estar más seguro de si hay bolas rojas o no si siempre saco bolas negras. Y si saco una roja, aumentar el tamaño muestral tampoco me aporta más información.</p></li>
-<li><p>Lo importante de esto es que aumentar progresivamente el tamaño muestral no garantiza que aumente la información</p></li>
-<li><p>Robert Lucas: si la gente fuera racional, entonces aplicarían es razón para entender patrones del pasado y adaptarse, de forma que la información pasada seria inutil para predecir el futuro.</p></li>
-<li><p>Aprende a gestionar la aleatoriedad manteniendo una mente abierta y cambiando de opinión sin que te dé vergüenza.</p></li>
-<li><p>Usaré la estadística cuando me beneficie y la evitaré cuando me perjudique. Aprenderé del pasado pero sin caer en sus peligros. Por ello usaré la estadística para hacer apuestas agresivas (estadísticamente, qué probabilidad hay de que algo poco probable pero beneficioso ocurra) pero no la usaré para protegerme frente a riesgos (que algo malo históricamente nunca haya ocurrido no significa que no vaya a ocurrir).</p></li>
-<li><p>El coste de estar equivocado en una apuesta tiene que ser asumible y estar limitado.</p></li>
-<li><p>Si juntas a infinitos monos frente a un teclado, alguno acabará tecleando la Iliada. Ahora bien, ¿cuál es la probabilidad de que ese mono esceiba a continuación la Odisea? Dicho de otra forma, ¿hasta qué punto el rendimiento pasado es un buen indicador del rendimiento futuro?</p></li>
-<li><p>De cara a valorar una empresa, si tienes muchas empresas, es probable que alguna lo esté haciendo bien por casualidad, no por capacidad. ¿Cómo sabes cuál es para no invertir en ella? y en inversiones, ves a inversores que les sale bien su inversión, pero ¿cómo sabes que no es por casualidad? Además, solo ves a los buenos. Los fracasados están escondidos y no conoces la probabilidad de ser bueno.</p></li>
-<li><p>El sesgo del superviviente es habitual porque estamos acostumbrados a aprovechar la información que tenemos delante de nosotros e ignorar la que no vemos.</p></li>
-<li><p>Nadie acepta la aleatoriedad en su éxito; solo en su fracaso.</p></li>
-<li><p>Si la nariz de Cleopatra hubiera sido distinta el mundo sería totalmente diferente (porque Julio César quedó prendado por su nariz). - (Pascal, ejemplo de caos)</p></li>
-<li><p>what has gone wrong with the development of economics as a science? Answer: there was a bunch of inteligent people who felt compelled to use mathematics just to tell themselves that they were rigorous in their thinking, that theirs was a science.</p></li>
-<li><p>El camino hacia el éxito no tiene por qué depender de la suerte, sino de la constancia. La constancia en un camino sin frutos es la que acaba llevándote al evento raro, al momento en que ves que has avanzado y progresado. El camino hacia el éxito puede no ser alestorio, pero muy poca gente tiene la entereza de seguirlo hasta el final. Aquellos que dan el paso extra son los recompensados.</p></li>
-<li><p>Me estoy dando cuenta del efecto no lineal tras el éxito en cualquier campo. Es mejor tener unos pocos entusiastas de tu trabajo que muchos seguidores a los que les pareces bien. Mejor ser amado por una docena que gustar a cientos.</p></li>
-<li><p>El valor esperado es aquel en el que si te quieres ir de vacaciones a París o al Caribe, puedes imaginarte a la vez tumbado en una playa paridisíaca visitando el museo de Orsay. O sea, algo imposible pero que se usa una y otra vez para cuantificar escenarios. las reglas tienen su utilidad. No las seguimos porque sean correctas, sino porque nos ahorran tiempo y esfuerzo (por ejemplo, salir corriendo cuando ves algo que pueda ser un depredador, lo sea o no lo sea).</p></li>
-<li><p>Sesgos cognitivos: si vemos un número, tendemos a anclarnos a él en nuestras estimaciones. Las emociones son atajos para tomar decisiones. Una decisión puramente matemática requeriría tiempo infinito por la cantidad de información que hay que procesar.</p></li>
-<li><p>Si estás pensando en equipaje para un viaje, la varianza en la temperatura puede condicionarte más que el valor esperado.</p></li>
-<li><p>No soy tan inteligente ni tan fuerte como para controlar mis emociones. Es más, las necesito para tomar decisiones y ejecutarlas.</p></li>
-<li><p>Si mides una mesa con una regla de cuya precisión no te fías, obtienes más información de la regla que de la mesa. Si lees una valoración de un usuario al que no conoces, obtienes más información del usuario que del contenido revisado. tratado sobre la risa, henri Bergson</p></li>
-<li><p>A los 25, ignoraba totalmente la ciencia del comportamiento. Me habían hecho creer erróneamente en mi juventud que mis supersticiones eran culturales, y que por ello podía deshacerme de ellas mediante el uso del raciocinio.</p></li>
-<li><p>La ciencia está bien; los científicos son humanos. Un científico puede tener que actuar como un picapleitos defensor de una causa sin sentido en lugar de limitarse a buscar la verdad.</p></li>
-<li><p>No culpes a otros por tu destino (incluso aunque tengan algo de culpa).</p></li>
-<li><p>Lo único de ti sobre lo que no tiene control la suerte es tu comportamiento.</p></li>
-<li><p>Cuanto más asciendes profesionalmente, más te pagan. Esto puede estar justificado, ya que tiene sentido pagar a un trabajador acorde a su contribución. Sin embargo, cuanto más asciendes, la evidencia de esta contribución disminuye.</p></li>
-<li><p>Un empleado en un nivel bajo en la jerarquía (un perfil técnico) se le evalúa tanto por sus resultados como por su metodología. A medida que asciende, se le evalúa más por resultados. En niveles altos, cómo llegar a buenos resultados da igual, con tal de que se llegue a buenos resultados. Pero el jefe de una gran compañía se puede enfrentar a unas cuantas grandes decisiones cuyo método no se puede repetir (porque las circunstancias del mercado y de la empresa no se repitan). Así, “ser CEO” puede no requerir unas habilidades especiales para conseguir buenos resultados, ya que estos dependen en gran medida de que la empresa esté en las circunstancias adecuadas. Y lo que requiere realmente es tener el carisma y las habilidades sociales correspondientes para caer bien, sin más.</p></li>
-<li><p>Si algo se rige por normas aleatorias, viene a funcionarte de la misma forma que si no lo conocieras.</p></li>
-<li><p>Valoramos lo visible, lo asentado, lo personal, lo narrado, lo medible, lo tangible; desdeñamos lo abstracto.</p></li>
-</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rethinking)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">theme_set</span>(ggplot2<span class="sc">::</span><span class="fu">theme_bw</span>())</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(WaffleDivorce)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>df_divorce <span class="ot">&lt;-</span> WaffleDivorce</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df_divorce)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    Location Loc Population MedianAgeMarriage Marriage Marriage.SE Divorce
+1    Alabama  AL       4.78              25.3     20.2        1.27    12.7
+2     Alaska  AK       0.71              25.2     26.0        2.93    12.5
+3    Arizona  AZ       6.33              25.8     20.3        0.98    10.8
+4   Arkansas  AR       2.92              24.3     26.4        1.70    13.5
+5 California  CA      37.25              26.8     19.1        0.39     8.0
+6   Colorado  CO       5.03              25.7     23.5        1.24    11.6
+  Divorce.SE WaffleHouses South Slaves1860 Population1860 PropSlaves1860
+1       0.79          128     1     435080         964201           0.45
+2       2.05            0     0          0              0           0.00
+3       0.74           18     0          0              0           0.00
+4       1.22           41     1     111115         435450           0.26
+5       0.24            0     0          0         379994           0.00
+6       0.94           11     0          0          34277           0.00</code></pre>
+</div>
+</div>
+<p>Primero estudia ambas variables por separado, como explicativas de la variable objetivo. Y luego usa las dos a la vez.</p>
+<p>Los modelos los plantea con las variables escaladas, con media 0 y desviación típica 1.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_divorce<span class="sc">$</span>A <span class="ot">&lt;-</span> <span class="fu">scale</span>(df_divorce<span class="sc">$</span>MedianAgeMarriage)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_divorce<span class="sc">$</span>D <span class="ot">&lt;-</span> <span class="fu">scale</span>(df_divorce<span class="sc">$</span>Divorce)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df_divorce<span class="sc">$</span>M <span class="ot">&lt;-</span> <span class="fu">scale</span>(df_divorce<span class="sc">$</span>Marriage)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df_divorce) <span class="sc">+</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(D), <span class="at">binwidth =</span> <span class="fl">0.3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/pre-procesado-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fit_edad <span class="ot">&lt;-</span> rethinking<span class="sc">::</span><span class="fu">quap</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alist</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        D <span class="sc">~</span> <span class="fu">dnorm</span>(mu, sigma), </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        mu <span class="ot">&lt;-</span> a <span class="sc">+</span> bA <span class="sc">*</span> A, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        a <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.2</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        bA <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.5</span>),</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        sigma <span class="sc">~</span> <span class="fu">dexp</span>(<span class="dv">1</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    ), </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_divorce</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               mean         sd       5.5%      94.5%
+a     -9.020604e-09 0.09737878 -0.1556301  0.1556301
+bA    -5.684034e-01 0.10999983 -0.7442044 -0.3926024
+sigma  7.883259e-01 0.07801138  0.6636486  0.9130031</code></pre>
+</div>
+</div>
+<p>Parece que edades tempranas de matrimonio se asocian a un mayor ratio de divorcios.</p>
+<p>Por otro lado:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fit_casados <span class="ot">&lt;-</span> <span class="fu">quap</span>(</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alist</span>(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        D <span class="sc">~</span> <span class="fu">dnorm</span>(mu, sigma), </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        mu <span class="ot">&lt;-</span> a <span class="sc">+</span> bM <span class="sc">*</span> M,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>        bM <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        a <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.2</span>),</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        sigma <span class="sc">~</span> <span class="fu">dexp</span>(<span class="dv">1</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    ), </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_divorce</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_casados)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>              mean         sd       5.5%     94.5%
+bM    3.500856e-01 0.12592821  0.1488280 0.5513432
+a     5.241909e-05 0.10824705 -0.1729473 0.1730521
+sigma 9.102729e-01 0.08986422  0.7666525 1.0538933</code></pre>
+</div>
+</div>
+<p>El ratio de matrimonios también muestra una relación (positiva en este caso) con los divorcios. Parece razonable: cuanta más gente se case, más divorcios habrá.</p>
+<p>Ahora bien, ¿es esto útil para predecir divorcios?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fit_ambas <span class="ot">&lt;-</span> <span class="fu">quap</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alist</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        D <span class="sc">~</span> <span class="fu">dnorm</span>(mu, sigma),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        mu  <span class="ot">&lt;-</span> a <span class="sc">+</span> bA <span class="sc">*</span> A <span class="sc">+</span> bM <span class="sc">*</span> M,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        bA <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.5</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        bM <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), </span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>        a <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.2</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        sigma <span class="sc">~</span> <span class="fu">dexp</span>(<span class="dv">1</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    ), </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_divorce</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">coeftab</span>(fit_edad, fit_casados, fit_ambas), <span class="at">par =</span> <span class="fu">c</span>(<span class="st">"bA"</span>, <span class="st">"bM"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/modelo-ambos-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Cuando están ambas variables, el ratio de matrimonios no tiene una relación significativa con el ratio de divorcios; no aporta información que la edad al casarse no esté aportando ya.</p>
+<p>Queda ahora pendiente ver si hay relación entre la edad al casarse y la cantidad de matrimonios.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fit_edad_casados <span class="ot">&lt;-</span> <span class="fu">quap</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alist</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>        M <span class="sc">~</span> <span class="fu">dnorm</span>(mu, sigma), </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        mu <span class="ot">&lt;-</span> a <span class="sc">+</span> bA <span class="sc">*</span> A, </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        bA <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.5</span>), </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        a <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">0</span>, <span class="fl">0.5</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>        sigma <span class="sc">~</span> <span class="fu">dexp</span>(<span class="dv">1</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    ), </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df_divorce</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_edad_casados)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>               mean         sd       5.5%      94.5%
+bA    -6.947375e-01 0.09572690 -0.8477276 -0.5417474
+a      1.159330e-07 0.09466825 -0.1512980  0.1512983
+sigma  6.817367e-01 0.06758001  0.5737308  0.7897426</code></pre>
+</div>
+</div>
 
 
 
