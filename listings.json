@@ -2,6 +2,8 @@
   {
     "listing": "/contenidos.html",
     "items": [
+      "/posts/2024-12-11-contraste-bayesiano/index.html",
+      "/posts/2024-12-06-bootstrap-and-bayes-regression/index.html",
       "/posts/2024-11-26-espurias/index.html",
       "/posts/2024-10-31-pyjanitor/index.html",
       "/posts/2024-10-27-poblacion-evolutivo/index.html",
