@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leonardo Hansa">
-<meta name="description" content="Comparativa con microbenchmark de distintas formas de concatenar strings con R">
+<meta name="description" content="Experimentos con autocolinealidad para ver si siempre es tan mala como se dice en la regresión lineal">
 
-<title>Concatenación de strings con R, con benchmark – Leonardo Hansa</title>
+<title>Experimento con autocolinealidad – Leonardo Hansa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -123,6 +123,35 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -164,7 +193,7 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Concatenación de strings con R, con benchmark</h1>
+<h1 class="title">Experimento con autocolinealidad</h1>
   <div class="quarto-categories">
     <div class="quarto-category">datos</div>
   </div>
@@ -172,7 +201,7 @@ cookieconsent.run({
 
 <div>
   <div class="description">
-    Comparativa con microbenchmark de distintas formas de concatenar strings con R
+    Experimentos con autocolinealidad para ver si siempre es tan mala como se dice en la regresión lineal
   </div>
 </div>
 
@@ -189,7 +218,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">30 de julio de 2024</p>
+      <p class="date">16 de enero de 2025</p>
     </div>
   </div>
   
@@ -201,77 +230,107 @@ cookieconsent.run({
 </header>
 
 
-<p>Tienes una variable con un texto que tienes que introducirlo dentro de otro texto. Este ocurre habitualmente cuando un usuario pone algún parámetro de tipo texto y tienes que incluir en un párrafo preconstruido, o interactuar de alguna forma con ese nombre, por ejemmplo, un chatbot clásico que recibía como entrada el nombre del usuario y luego le preguntaba “¿Qué tal estás, <nombre de="" usuario="">?” (no sé si eso es tan clásico o sigue siendo orden del día).</nombre></p>
-<p>En este post comparo tiempos de ejecución de varias opciones que tienes en R.</p>
-<p>La idea general te la da este código:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nombre_entrada <span class="ot">&lt;-</span> <span class="st">"Pepito"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"Hola,"</span>, nombre_entrada)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="autocolinealidad-en-la-regresión-lineal-con-muestras-grandes" class="level2">
+<h2 class="anchored" data-anchor-id="autocolinealidad-en-la-regresión-lineal-con-muestras-grandes">Autocolinealidad en la regresión lineal con muestras grandes</h2>
+<p>Tienes una variable <span class="math inline">\(y\)</span> que depende de dos variables <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span>. Pero <span class="math inline">\(x_2\)</span> es una combinación lineal de <span class="math inline">\(x_1\)</span>.</p>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.regression.linear_model <span class="im">import</span> OLS</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="datos" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">10</span>, n)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x1 <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> x2 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>¿Qué pasa si usas <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> en una regresión lineal?</p>
+<div id="regresion" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.column_stack((x1, x2))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> OLS(y, X).fit()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modelo.summary())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Hola, Pepito"</code></pre>
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.967
+Model:                            OLS   Adj. R-squared:                  0.967
+Method:                 Least Squares   F-statistic:                 1.452e+05
+Date:                Thu, 16 Jan 2025   Prob (F-statistic):               0.00
+Time:                        22:53:56   Log-Likelihood:                -37256.
+No. Observations:               10000   AIC:                         7.452e+04
+Df Residuals:                    9997   BIC:                         7.454e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          1.9362      0.513      3.778      0.000       0.931       2.941
+x1             2.9751      0.014    208.083      0.000       2.947       3.003
+x2             4.0514      0.020    201.997      0.000       4.012       4.091
+==============================================================================
+Omnibus:                        0.939   Durbin-Watson:                   1.984
+Prob(Omnibus):                  0.625   Jarque-Bera (JB):                0.963
+Skew:                          -0.006   Prob(JB):                        0.618
+Kurtosis:                       2.954   Cond. No.                         291.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 </div>
-<p>Voy a crear varias funciones con distintas formas de hacer esto y luego cuento tiempos de cómputo.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>con_paste <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) <span class="fu">paste</span>(<span class="st">"Hola,"</span>, nombre_entrada)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>con_sprintf <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) <span class="fu">sprintf</span>(<span class="st">"Hola, %s"</span>, nombre_entrada)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>con_glue <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Hola, {nombre_entrada}"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>con_gsub <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"nombre_entrada"</span>, nombre_entrada, <span class="st">"Hola, nombre_entrada"</span>) </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pues aparentemente nada. Los coeficientes son los esperados y las <span class="math inline">\(t\)</span>-stats son altas.</p>
+</section>
+<section id="autocolinealidad-en-la-regresión-lineal-con-muestras-pequeñas" class="level2">
+<h2 class="anchored" data-anchor-id="autocolinealidad-en-la-regresión-lineal-con-muestras-pequeñas">Autocolinealidad en la regresión lineal con muestras pequeñas</h2>
+<p>Antes tenías una muestra de tamaño <code>python n</code>. Vamos a cambiar eso.</p>
+<div id="datos-pequenos" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">10</span>, n)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x1 <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> x2 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Y aquí los tiempos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_paste =</span> <span class="fu">con_paste</span>(<span class="st">"Pepito"</span>),</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_sprintf =</span> <span class="fu">con_sprintf</span>(<span class="st">"Pepito"</span>),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_glue =</span> <span class="fu">con_glue</span>(<span class="st">"Pepito"</span>),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_gsub =</span> <span class="fu">con_gsub</span>(<span class="st">"Pepito"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Con estos datos, aparentemente los mismos pero con menor muestra, ajusto la regresión.</p>
+<div id="regresion-pequena" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.column_stack((x1, x2))</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> OLS(y, X).fit()</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modelo.summary())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Unit: nanoseconds
-        expr    min       lq      mean   median       uq      max neval
-   con_paste   2202   2650.5  12954.99   3401.0   4201.0   850801   100
- con_sprintf    901   1250.5  11382.94   2101.0   3151.0   790101   100
-    con_glue 135902 143701.0 591651.04 154401.0 180501.5 41454102   100
-    con_gsub  10301  12150.0  30976.88  14801.5  18202.0  1449701   100</code></pre>
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.971
+Model:                            OLS   Adj. R-squared:                  0.970
+Method:                 Least Squares   F-statistic:                     1608.
+Date:                Thu, 16 Jan 2025   Prob (F-statistic):           4.26e-75
+Time:                        22:53:56   Log-Likelihood:                -367.71
+No. Observations:                 100   AIC:                             741.4
+Df Residuals:                      97   BIC:                             749.2
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -2.9188      5.129     -0.569      0.571     -13.098       7.260
+x1             3.1849      0.141     22.585      0.000       2.905       3.465
+x2             3.7938      0.188     20.143      0.000       3.420       4.168
+==============================================================================
+Omnibus:                        3.931   Durbin-Watson:                   2.372
+Prob(Omnibus):                  0.140   Jarque-Bera (JB):                3.710
+Skew:                          -0.253   Prob(JB):                        0.156
+Kurtosis:                       3.796   Cond. No.                         309.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
 </div>
 </div>
-<p>En casos más complicados, <code>glue::glue()</code> puede parecer más intuitivo. ¿Es ese el único motivo para usarlo?</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>con_paste <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste0</span>(<span class="st">"Hola, "</span>, nombre_entrada, <span class="st">". ¿Cómo estás, "</span>, nombre_entrada, <span class="st">"?"</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>con_sprintf <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sprintf</span>(<span class="st">"Hola, %s. ¿Cómo estás, %s?"</span>, nombre_entrada, nombre_entrada)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>} </span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>con_glue <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  glue<span class="sc">::</span><span class="fu">glue</span>(<span class="st">"Hola, {nombre_entrada}. ¿Cómo estás, {nombre_entrada}?"</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>con_gsub <span class="ot">&lt;-</span> <span class="cf">function</span>(nombre_entrada) {</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gsub</span>(<span class="st">"nombre_entrada"</span>, nombre_entrada, <span class="st">"Hola, nombre_entrada. ¿Cómo estás, nombre_entrada?"</span>) </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>microbenchmark<span class="sc">::</span><span class="fu">microbenchmark</span>(</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_paste =</span> <span class="fu">con_paste</span>(<span class="st">"Pepito"</span>),</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_sprintf =</span> <span class="fu">con_sprintf</span>(<span class="st">"Pepito"</span>),</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_glue =</span> <span class="fu">con_glue</span>(<span class="st">"Pepito"</span>),</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">con_gsub =</span> <span class="fu">con_gsub</span>(<span class="st">"Pepito"</span>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Unit: microseconds
-        expr     min       lq      mean   median       uq      max neval
-   con_paste   2.701   3.2010  14.34601   4.0010   4.4005 1040.201   100
- con_sprintf   1.200   1.7015  15.13189   2.6515   3.2010 1225.901   100
-    con_glue 149.201 157.8510 182.23310 162.9015 168.9510 1041.801   100
-    con_gsub  13.601  15.5005  33.93807  18.0510  19.5515 1564.500   100</code></pre>
-</div>
-</div>
+<p>Los coeficientes de <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> no son horribles, pero el intercept ya no tiene sentido.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

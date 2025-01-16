@@ -9,8 +9,240 @@
 <link>https://lhansa.github.io/contenidos.html</link>
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
-<generator>quarto-1.6.39</generator>
-<lastBuildDate>Wed, 11 Dec 2024 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.6.40</generator>
+<lastBuildDate>Thu, 16 Jan 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Experimento con autocolinealidad</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2025-01-16-autocolinealidad/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="autocolinealidad-en-la-regresión-lineal-con-muestras-grandes" class="level2">
+<h2 class="anchored" data-anchor-id="autocolinealidad-en-la-regresión-lineal-con-muestras-grandes">Autocolinealidad en la regresión lineal con muestras grandes</h2>
+<p>Tienes una variable <img src="https://latex.codecogs.com/png.latex?y"> que depende de dos variables <img src="https://latex.codecogs.com/png.latex?x_1"> y <img src="https://latex.codecogs.com/png.latex?x_2">. Pero <img src="https://latex.codecogs.com/png.latex?x_2"> es una combinación lineal de <img src="https://latex.codecogs.com/png.latex?x_1">.</p>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> statsmodels.api <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sm</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> statsmodels.regression.linear_model <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> OLS</span></code></pre></div>
+</div>
+<div id="datos" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span></span>
+<span id="cb2-2">x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, n)</span>
+<span id="cb2-3">x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, n)</span>
+<span id="cb2-4">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, n)</span></code></pre></div>
+</div>
+<p>¿Qué pasa si usas <img src="https://latex.codecogs.com/png.latex?x_1"> y <img src="https://latex.codecogs.com/png.latex?x_2"> en una regresión lineal?</p>
+<div id="regresion" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.column_stack((x1, x2))</span>
+<span id="cb3-2">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sm.add_constant(X)</span>
+<span id="cb3-3"></span>
+<span id="cb3-4">modelo <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> OLS(y, X).fit()</span>
+<span id="cb3-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(modelo.summary())</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.967
+Model:                            OLS   Adj. R-squared:                  0.967
+Method:                 Least Squares   F-statistic:                 1.452e+05
+Date:                Thu, 16 Jan 2025   Prob (F-statistic):               0.00
+Time:                        22:53:56   Log-Likelihood:                -37256.
+No. Observations:               10000   AIC:                         7.452e+04
+Df Residuals:                    9997   BIC:                         7.454e+04
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const          1.9362      0.513      3.778      0.000       0.931       2.941
+x1             2.9751      0.014    208.083      0.000       2.947       3.003
+x2             4.0514      0.020    201.997      0.000       4.012       4.091
+==============================================================================
+Omnibus:                        0.939   Durbin-Watson:                   1.984
+Prob(Omnibus):                  0.625   Jarque-Bera (JB):                0.963
+Skew:                          -0.006   Prob(JB):                        0.618
+Kurtosis:                       2.954   Cond. No.                         291.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+<p>Pues aparentemente nada. Los coeficientes son los esperados y las <img src="https://latex.codecogs.com/png.latex?t">-stats son altas.</p>
+</section>
+<section id="autocolinealidad-en-la-regresión-lineal-con-muestras-pequeñas" class="level2">
+<h2 class="anchored" data-anchor-id="autocolinealidad-en-la-regresión-lineal-con-muestras-pequeñas">Autocolinealidad en la regresión lineal con muestras pequeñas</h2>
+<p>Antes tenías una muestra de tamaño <code>python n</code>. Vamos a cambiar eso.</p>
+<div id="datos-pequenos" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="cb5-2">x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, n)</span>
+<span id="cb5-3">x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, n)</span>
+<span id="cb5-4">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x1 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, n)</span></code></pre></div>
+</div>
+<p>Con estos datos, aparentemente los mismos pero con menor muestra, ajusto la regresión.</p>
+<div id="regresion-pequena" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.column_stack((x1, x2))</span>
+<span id="cb6-2">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> sm.add_constant(X)</span>
+<span id="cb6-3"></span>
+<span id="cb6-4">modelo <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> OLS(y, X).fit()</span>
+<span id="cb6-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(modelo.summary())</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                      y   R-squared:                       0.971
+Model:                            OLS   Adj. R-squared:                  0.970
+Method:                 Least Squares   F-statistic:                     1608.
+Date:                Thu, 16 Jan 2025   Prob (F-statistic):           4.26e-75
+Time:                        22:53:56   Log-Likelihood:                -367.71
+No. Observations:                 100   AIC:                             741.4
+Df Residuals:                      97   BIC:                             749.2
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P&gt;|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         -2.9188      5.129     -0.569      0.571     -13.098       7.260
+x1             3.1849      0.141     22.585      0.000       2.905       3.465
+x2             3.7938      0.188     20.143      0.000       3.420       4.168
+==============================================================================
+Omnibus:                        3.931   Durbin-Watson:                   2.372
+Prob(Omnibus):                  0.140   Jarque-Bera (JB):                3.710
+Skew:                          -0.253   Prob(JB):                        0.156
+Kurtosis:                       3.796   Cond. No.                         309.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</code></pre>
+</div>
+</div>
+<p>Los coeficientes de <img src="https://latex.codecogs.com/png.latex?x_1"> y <img src="https://latex.codecogs.com/png.latex?x_2"> no son horribles, pero el intercept ya no tiene sentido.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2025-01-16-autocolinealidad/</guid>
+  <pubDate>Thu, 16 Jan 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Contraste de medias, estilo bayesiano</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -5982,197 +6214,6 @@ font-style: inherit;">'Total'</span>)</span>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2024-05-25-viviendas/</guid>
   <pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Un problema habitual en ficheros CSV</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-05-09-csv/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Tienes el conjunto de datos <em>iris</em> en un fichero de texto plano con esta pinta:</p>
-<pre><code>sepal length (cm);sepal width (cm);petal length (cm);petal width (cm);species
-5.1;3.5;1.4;0.2;0;1,000.23
-4.9;3.0;1.4;0.2;0;1,000.23
-4.7;3.2;1.3;0.2;0;1,000.23
-4.6;3.1;1.5;0.2;0;1,000.23
-5.0;3.6;1.4;0.2;0;1,000.23
-5.4;3.9;1.7;0.4;0;1,000.23</code></pre>
-<p>Como verás, lo he tuneado un poco: le he añadido una columna con valor constante 1000.23, escrito con el formato anglosajón de separador de miles usando comas.</p>
-<p>Maravilloso. A ver cómo lo leemos.</p>
-<section id="r" class="level2">
-<h2 class="anchored" data-anchor-id="r">R</h2>
-<p>En R, puedes tener la tentación de leerlo así:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(readr)</span>
-<span id="cb2-2">df_iris <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">read_csv</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"iris.txt"</span>)</span>
-<span id="cb2-3">df_iris</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 150 × 1
-   sepal length (cm);sepal width (cm);petal length (cm);petal width (cm);speci…¹
-   &lt;chr&gt;                                                                        
- 1 5.1;3.5;1.4;0.2;0;1,000.23                                                   
- 2 4.9;3.0;1.4;0.2;0;1,000.23                                                   
- 3 4.7;3.2;1.3;0.2;0;1,000.23                                                   
- 4 4.6;3.1;1.5;0.2;0;1,000.23                                                   
- 5 5.0;3.6;1.4;0.2;0;1,000.23                                                   
- 6 5.4;3.9;1.7;0.4;0;1,000.23                                                   
- 7 4.6;3.4;1.4;0.3;0;1,000.23                                                   
- 8 5.0;3.4;1.5;0.2;0;1,000.23                                                   
- 9 4.4;2.9;1.4;0.2;0;1,000.23                                                   
-10 4.9;3.1;1.5;0.1;0;1,000.23                                                   
-# ℹ 140 more rows
-# ℹ abbreviated name:
-#   ¹​`sepal length (cm);sepal width (cm);petal length (cm);petal width (cm);species;extra`</code></pre>
-</div>
-</div>
-<p>Todo horrible porque está todo dentro de una columna. La función no ha sabido separar en columnas porque esperaba la coma como delimitador. La coma está en los valores de la columna <code>extra</code> pero no en la primera fila, con los nombres de columnas. Así que <code>read_csv</code> entiende que solo hay una columna.</p>
-<p><code>read.csv()</code> se hace bastante lío y daría error con algo así.</p>
-<p>Un clásico cuando no te funciona <code>read_csv()</code> es probar <code>read_csv2()</code>, que asume que la separación es <code>";"</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1">df_iris <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span>  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">read_csv2</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"iris.txt"</span>)</span>
-<span id="cb4-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">head</span>(df_iris)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 6
-  `sepal length (cm)` `sepal width (cm)` `petal length (cm)` `petal width (cm)`
-                &lt;dbl&gt;              &lt;dbl&gt;               &lt;dbl&gt; &lt;chr&gt;             
-1                  51                 35                  14 0.2               
-2                  49                 30                  14 0.2               
-3                  47                 32                  13 0.2               
-4                  46                 31                  15 0.2               
-5                  50                 36                  14 0.2               
-6                  54                 39                  17 0.4               
-# ℹ 2 more variables: species &lt;dbl&gt;, extra &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<p>Tampoco funciona.</p>
-<p>Las columnas sí están separadas, pero los valores no tienens sentido. <code>read_csv2()</code> ha usado la coma como separador decimal. Y los puntos que había en los números, se los ha pasado por ahí. Y la columna <code>extra</code> la ha puesto como si la coma fuera el separador decimal, cuando realmente es el separador de miles.</p>
-<p>Así que mal.</p>
-<p>Si usaras R base con <code>read.csv2()</code> tendrías también un poco de lío, con columnas identificadas como texto en lugar de número.</p>
-<p>En estos casos, yo tiro de <code>readr::read_delim()</code> especificando cuál es el separador de miles y cuál el decimal (algo equivalente puedes hacer en R base con <code>read.table()</code>).</p>
-<p>Con la función <code>readr::locale()</code> especifico estos separadores.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">df_iris <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">read_delim</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"iris.txt"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">delim =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">";"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">locale =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">locale</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">decimal_mark =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"."</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">grouping_mark =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">","</span>))</span>
-<span id="cb6-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">head</span>(df_iris)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 6
-  `sepal length (cm)` `sepal width (cm)` `petal length (cm)` `petal width (cm)`
-                &lt;dbl&gt;              &lt;dbl&gt;               &lt;dbl&gt;              &lt;dbl&gt;
-1                 5.1                3.5                 1.4                0.2
-2                 4.9                3                   1.4                0.2
-3                 4.7                3.2                 1.3                0.2
-4                 4.6                3.1                 1.5                0.2
-5                 5                  3.6                 1.4                0.2
-6                 5.4                3.9                 1.7                0.4
-# ℹ 2 more variables: species &lt;dbl&gt;, extra &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<p>Es un esperpento anti-estandarizaciones, pero ocurre. Debe de haber algunas herramientas de estas que descargan informes en texto plano que tienen esta configuración horrorosa, porque me llegan ficheros así cada dos por tres.</p>
-<p>Y como no son estándar, las funciones habituales de lectura de CSVs se hacen bastante lío.</p>
-<p>Para casos así, intento <strong>ser muy explícito con el código</strong> y <code>read_delim()</code> me obliga a ello por sistema.</p>
-</section>
-<section id="con-python" class="level2">
-<h2 class="anchored" data-anchor-id="con-python">Con Python</h2>
-<p>En Python usaría directamente la función de pandas <code>pd.read_csv()</code> especificando todo.</p>
-<p>Por defecto no funciona:</p>
-<div class="cell" data-python.reticulate="false">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb8-2">df_iris <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'iris.txt'</span>)</span>
-<span id="cb8-3">df_iris.head()</span></code></pre></div>
-</div>
-<p>Pero cada cosa tiene su argumento:</p>
-<div class="cell" data-python.reticulate="false">
-<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb9-2">df_iris <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.read_csv(</span>
-<span id="cb9-3">  <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'iris.txt'</span>, </span>
-<span id="cb9-4">  sep<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">';'</span>, </span>
-<span id="cb9-5">  decimal<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'.'</span>, <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#no necesario en este caso</span></span>
-<span id="cb9-6">  thousands<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">','</span></span>
-<span id="cb9-7">  </span>
-<span id="cb9-8">  )</span>
-<span id="cb9-9">df_iris.head()</span></code></pre></div>
-</div>
-<p>La función <code>pd.read_csv()</code> ya asume que el separador decimal es el punto, así que no hace falta especificar nada de eso esta vez…</p>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2024-05-09-csv/</guid>
-  <pubDate>Thu, 09 May 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
