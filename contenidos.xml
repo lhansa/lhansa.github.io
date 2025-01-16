@@ -336,18 +336,14 @@ font-style: inherit;">&lt;-</span> a, </span>
 background-color: null;
 font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">25</span>, <span class="dv" style="color: #AD0000;
+font-style: inherit;">dnorm</span>(pop_mean, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>), </span>
 <span id="cb2-6">        sigma <span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
 background-color: null;
-font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, <span class="dv" style="color: #AD0000;
+font-style: inherit;">dnorm</span>(pop_sd, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
 <span id="cb2-7">    ),</span>
@@ -364,9 +360,9 @@ font-style: inherit;">y =</span> real_data)</span>
 background-color: null;
 font-style: inherit;">precis</span>(fit1)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           mean         sd      5.5%     94.5%
-a     24.981842 0.05072362 24.900776 25.062908
-sigma  5.073994 0.03585699  5.016688  5.131301</code></pre>
+<pre><code>           mean         sd      5.5%    94.5%
+a     24.987641 0.05066636 24.906666 25.06862
+sigma  5.068262 0.03581411  5.011025  5.12550</code></pre>
 </div>
 </div>
 <p>Incluso con unos prioris malísimos, el resultado es el correcto (y más fácil de interpretar).</p>
@@ -417,9 +413,9 @@ font-style: inherit;">y =</span> real_data)</span>
 background-color: null;
 font-style: inherit;">precis</span>(fit2)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            mean       sd     5.5%    94.5%
-a       7.663018 3.691649 1.763049 13.56299
-sigma 548.463245      NaN      NaN      NaN</code></pre>
+<pre><code>           mean         sd      5.5%     94.5%
+a     24.985067 0.05066808 24.904089 25.066044
+sigma  5.067067 0.03581597  5.009826  5.124308</code></pre>
 </div>
 </div>
 
@@ -598,12 +594,12 @@ font-style: inherit;">head</span>(coef_df)</span></code></pre></div>
 <pre><code># A tibble: 6 × 3
   intercept    age    id
       &lt;dbl&gt;  &lt;dbl&gt; &lt;int&gt;
-1   -0.0422 -0.577     1
-2    0.0351 -0.589     2
-3   -0.0624 -0.466     3
-4   -0.325  -0.483     4
-5    0.0338 -0.790     5
-6   -0.0867 -0.592     6</code></pre>
+1    0.0712 -0.645     1
+2    0.0440 -0.773     2
+3   -0.123  -0.413     3
+4   -0.215  -0.564     4
+5   -0.0332 -0.665     5
+6   -0.0946 -0.670     6</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -1028,9 +1024,9 @@ background-color: null;
 font-style: inherit;">precis</span>(fit_edad)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               mean         sd       5.5%      94.5%
-a      5.495288e-09 0.09737878 -0.1556301  0.1556301
-bA    -5.684033e-01 0.10999983 -0.7442043 -0.3926024
-sigma  7.883258e-01 0.07801138  0.6636486  0.9130031</code></pre>
+a      2.249960e-07 0.09737883 -0.1556300  0.1556304
+bA    -5.684030e-01 0.10999989 -0.7442041 -0.3926019
+sigma  7.883263e-01 0.07801150  0.6636489  0.9130038</code></pre>
 </div>
 </div>
 <p>Parece que edades tempranas de matrimonio se asocian a un mayor ratio de divorcios.</p>
@@ -1091,10 +1087,10 @@ font-style: inherit;">data =</span> df_divorce</span>
 background-color: null;
 font-style: inherit;">precis</span>(fit_casados)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>               mean        sd       5.5%     94.5%
-bM     3.501027e-01 0.1259242  0.1488516 0.5513539
-a     -7.583041e-06 0.1082445 -0.1730032 0.1729881
-sigma  9.102427e-01 0.0898568  0.7666342 1.0538513</code></pre>
+<pre><code>              mean        sd       5.5%     94.5%
+bM    3.500456e-01 0.1259276  0.1487889 0.5513022
+a     2.580548e-06 0.1082465 -0.1729962 0.1730014
+sigma 9.102662e-01 0.0898626  0.7666484 1.0538839</code></pre>
 </div>
 </div>
 <p>El ratio de matrimonios también muestra una relación (positiva en este caso) con los divorcios. Parece razonable: cuanta más gente se case, más divorcios habrá.</p>
@@ -1244,9 +1240,9 @@ background-color: null;
 font-style: inherit;">precis</span>(fit_edad_casados)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               mean         sd       5.5%      94.5%
-bA    -6.947376e-01 0.09572699 -0.8477278 -0.5417474
-a      2.533942e-10 0.09466834 -0.1512983  0.1512983
-sigma  6.817373e-01 0.06758017  0.5737312  0.7897435</code></pre>
+bA    -6.947577e-01 0.09572744 -0.8477487 -0.5417668
+a      3.730622e-05 0.09466898 -0.1512620  0.1513366
+sigma  6.817422e-01 0.06758133  0.5737341  0.7897502</code></pre>
 </div>
 </div>
 <p>Las prioris del modelo:</p>
@@ -1281,13 +1277,13 @@ font-style: inherit;">2</span>)))</span>
 background-color: null;
 font-style: inherit;">head</span>(mu)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           [,1]       [,2]
-[1,] -1.7857365  0.9732286
-[2,]  1.8216721 -0.4261884
-[3,] -0.1948193 -0.0471354
-[4,]  1.1769275  1.1232286
-[5,] -0.5056549  0.4753514
-[6,]  3.1720536  0.1677314</code></pre>
+<pre><code>            [,1]        [,2]
+[1,]  0.40754123  0.55198721
+[2,] -0.97045287 -0.26903069
+[3,] -1.04597053  0.04440014
+[4,] -0.33992995  1.06002650
+[5,]  0.07748926  0.69109599
+[6,]  1.96460272 -0.69449517</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><span class="fu" style="color: #4758AB;
 background-color: null;
@@ -1449,7 +1445,7 @@ font-style: inherit;"># lines(rep(df_divorce$D[i], 2), D_sim[, i], col = "blue")
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-11-26-espurias/index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="https://lhansa.github.io/posts/2024-11-26-espurias/index_files/figure-html/prioris2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>

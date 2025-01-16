@@ -229,17 +229,17 @@ cookieconsent.run({
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">alist</span>(</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>        y <span class="sc">~</span> <span class="fu">dnorm</span>(mu, sigma), </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        mu <span class="ot">&lt;-</span> a, </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        a <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">25</span>, <span class="dv">2</span>), </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        sigma <span class="sc">~</span> <span class="fu">dnorm</span>(<span class="dv">5</span>, <span class="dv">1</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>        a <span class="sc">~</span> <span class="fu">dnorm</span>(pop_mean, <span class="dv">2</span>), </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>        sigma <span class="sc">~</span> <span class="fu">dnorm</span>(pop_sd, <span class="dv">1</span>)</span>
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    ),</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> <span class="fu">list</span>(<span class="at">y =</span> real_data)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           mean         sd      5.5%     94.5%
-a     24.981842 0.05072362 24.900776 25.062908
-sigma  5.073994 0.03585699  5.016688  5.131301</code></pre>
+<pre><code>           mean         sd      5.5%    94.5%
+a     24.987641 0.05066636 24.906666 25.06862
+sigma  5.068262 0.03581411  5.011025  5.12550</code></pre>
 </div>
 </div>
 <p>Incluso con unos prioris malísimos, el resultado es el correcto (y más fácil de interpretar).</p>
@@ -256,9 +256,9 @@ sigma  5.073994 0.03585699  5.016688  5.131301</code></pre>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit2)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            mean       sd     5.5%    94.5%
-a       7.663018 3.691649 1.763049 13.56299
-sigma 548.463245      NaN      NaN      NaN</code></pre>
+<pre><code>           mean         sd      5.5%     94.5%
+a     24.985067 0.05066808 24.904089 25.066044
+sigma  5.067067 0.03581597  5.009826  5.124308</code></pre>
 </div>
 </div>
 

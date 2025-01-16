@@ -263,9 +263,9 @@ cookieconsent.run({
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               mean         sd       5.5%      94.5%
-a      5.495288e-09 0.09737878 -0.1556301  0.1556301
-bA    -5.684033e-01 0.10999983 -0.7442043 -0.3926024
-sigma  7.883258e-01 0.07801138  0.6636486  0.9130031</code></pre>
+a      2.249960e-07 0.09737883 -0.1556300  0.1556304
+bA    -5.684030e-01 0.10999989 -0.7442041 -0.3926019
+sigma  7.883263e-01 0.07801150  0.6636489  0.9130038</code></pre>
 </div>
 </div>
 <p>Parece que edades tempranas de matrimonio se asocian a un mayor ratio de divorcios.</p>
@@ -284,10 +284,10 @@ sigma  7.883258e-01 0.07801138  0.6636486  0.9130031</code></pre>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_casados)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>               mean        sd       5.5%     94.5%
-bM     3.501027e-01 0.1259242  0.1488516 0.5513539
-a     -7.583041e-06 0.1082445 -0.1730032 0.1729881
-sigma  9.102427e-01 0.0898568  0.7666342 1.0538513</code></pre>
+<pre><code>              mean        sd       5.5%     94.5%
+bM    3.500456e-01 0.1259276  0.1487889 0.5513022
+a     2.580548e-06 0.1082465 -0.1729962 0.1730014
+sigma 9.102662e-01 0.0898626  0.7666484 1.0538839</code></pre>
 </div>
 </div>
 <p>El ratio de matrimonios también muestra una relación (positiva en este caso) con los divorcios. Parece razonable: cuanta más gente se case, más divorcios habrá.</p>
@@ -331,9 +331,9 @@ sigma  9.102427e-01 0.0898568  0.7666342 1.0538513</code></pre>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_edad_casados)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>               mean         sd       5.5%      94.5%
-bA    -6.947376e-01 0.09572699 -0.8477278 -0.5417474
-a      2.533942e-10 0.09466834 -0.1512983  0.1512983
-sigma  6.817373e-01 0.06758017  0.5737312  0.7897435</code></pre>
+bA    -6.947577e-01 0.09572744 -0.8477487 -0.5417668
+a      3.730622e-05 0.09466898 -0.1512620  0.1513366
+sigma  6.817422e-01 0.06758133  0.5737341  0.7897502</code></pre>
 </div>
 </div>
 <p>Las prioris del modelo:</p>
@@ -342,13 +342,13 @@ sigma  6.817373e-01 0.06758017  0.5737312  0.7897435</code></pre>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">link</span>(fit_edad_casados, <span class="at">post =</span> prior, <span class="at">data =</span> <span class="fu">list</span>(<span class="at">A=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>)))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mu)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>           [,1]       [,2]
-[1,] -1.7857365  0.9732286
-[2,]  1.8216721 -0.4261884
-[3,] -0.1948193 -0.0471354
-[4,]  1.1769275  1.1232286
-[5,] -0.5056549  0.4753514
-[6,]  3.1720536  0.1677314</code></pre>
+<pre><code>            [,1]        [,2]
+[1,]  0.40754123  0.55198721
+[2,] -0.97045287 -0.26903069
+[3,] -1.04597053  0.04440014
+[4,] -0.33992995  1.06002650
+[5,]  0.07748926  0.69109599
+[6,]  1.96460272 -0.69449517</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">2</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>))</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>) {</span>
@@ -380,7 +380,7 @@ sigma  6.817373e-01 0.06758017  0.5737312  0.7897435</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/prioris2-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
