@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Leonardo Hansa">
-<meta name="description" content="Experimentos con autocolinealidad para ver si siempre es tan mala como se dice en la regresión lineal">
+<meta name="description" content="Experimentos con multicolinealidad para ver si siempre es tan mala como se dice en la regresión lineal">
 
-<title>Experimento con autocolinealidad – Leonardo Hansa</title>
+<title>Experimento con multicolinealidad – Leonardo Hansa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -193,7 +193,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Experimento con autocolinealidad</h1>
+<h1 class="title">Experimento con multicolinealidad</h1>
   <div class="quarto-categories">
     <div class="quarto-category">datos</div>
   </div>
@@ -201,7 +201,7 @@ window.Quarto = {
 
 <div>
   <div class="description">
-    Experimentos con autocolinealidad para ver si siempre es tan mala como se dice en la regresión lineal
+    Experimentos con multicolinealidad para ver si siempre es tan mala como se dice en la regresión lineal
   </div>
 </div>
 
@@ -230,50 +230,57 @@ window.Quarto = {
 </header>
 
 
-<section id="autocolinealidad-en-la-regresión-lineal-con-muestras-grandes" class="level2">
-<h2 class="anchored" data-anchor-id="autocolinealidad-en-la-regresión-lineal-con-muestras-grandes">Autocolinealidad en la regresión lineal con muestras grandes</h2>
-<p>Tienes una variable <span class="math inline">\(y\)</span> que depende de dos variables <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span>. Pero <span class="math inline">\(x_2\)</span> es una combinación lineal de <span class="math inline">\(x_1\)</span>.</p>
 <div id="libs" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> statsmodels.api <span class="im">as</span> sm</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> statsmodels.regression.linear_model <span class="im">import</span> OLS</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<section id="multicolinealidad-en-la-regresión-lineal-con-muestras-grandes" class="level2">
+<h2 class="anchored" data-anchor-id="multicolinealidad-en-la-regresión-lineal-con-muestras-grandes">Multicolinealidad en la regresión lineal con muestras grandes</h2>
+<p>Tienes una variable <span class="math inline">\(y\)</span> que depende de dos variables <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span>. Pero <span class="math inline">\(x_2\)</span> es una combinación lineal de <span class="math inline">\(x_1\)</span>.</p>
 <div id="datos" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">10</span>, n)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x1 <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> x2 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Por si hay alguna duda:</p>
+<div id="cell-correlacion" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(x1, x2)[<span class="dv">0</span>, <span class="dv">1</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="correlacion" class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>0.697235733025426</code></pre>
+</div>
+</div>
 <p>¿Qué pasa si usas <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> en una regresión lineal?</p>
-<div id="regresion" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.column_stack((x1, x2))</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> OLS(y, X).fit()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modelo.summary())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="regresion" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.column_stack((x1, x2))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> OLS(y, X).fit()</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modelo.summary())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.967
-Model:                            OLS   Adj. R-squared:                  0.967
-Method:                 Least Squares   F-statistic:                 1.452e+05
-Date:                Thu, 16 Jan 2025   Prob (F-statistic):               0.00
-Time:                        22:53:56   Log-Likelihood:                -37256.
-No. Observations:               10000   AIC:                         7.452e+04
-Df Residuals:                    9997   BIC:                         7.454e+04
+Dep. Variable:                      y   R-squared:                       0.965
+Model:                            OLS   Adj. R-squared:                  0.965
+Method:                 Least Squares   F-statistic:                 1.398e+05
+Date:                Sun, 19 Jan 2025   Prob (F-statistic):               0.00
+Time:                        21:06:06   Log-Likelihood:                -37199.
+No. Observations:               10000   AIC:                         7.440e+04
+Df Residuals:                    9997   BIC:                         7.443e+04
 Df Model:                           2                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-const          1.9362      0.513      3.778      0.000       0.931       2.941
-x1             2.9751      0.014    208.083      0.000       2.947       3.003
-x2             4.0514      0.020    201.997      0.000       4.012       4.091
+const          2.6701      0.518      5.159      0.000       1.656       3.685
+x1             2.9780      0.014    210.271      0.000       2.950       3.006
+x2             4.0143      0.020    201.193      0.000       3.975       4.053
 ==============================================================================
-Omnibus:                        0.939   Durbin-Watson:                   1.984
-Prob(Omnibus):                  0.625   Jarque-Bera (JB):                0.963
-Skew:                          -0.006   Prob(JB):                        0.618
-Kurtosis:                       2.954   Cond. No.                         291.
+Omnibus:                        3.669   Durbin-Watson:                   1.977
+Prob(Omnibus):                  0.160   Jarque-Bera (JB):                3.463
+Skew:                          -0.002   Prob(JB):                        0.177
+Kurtosis:                       2.909   Cond. No.                         296.
 ==============================================================================
 
 Notes:
@@ -282,45 +289,45 @@ Notes:
 </div>
 <p>Pues aparentemente nada. Los coeficientes son los esperados y las <span class="math inline">\(t\)</span>-stats son altas.</p>
 </section>
-<section id="autocolinealidad-en-la-regresión-lineal-con-muestras-pequeñas" class="level2">
-<h2 class="anchored" data-anchor-id="autocolinealidad-en-la-regresión-lineal-con-muestras-pequeñas">Autocolinealidad en la regresión lineal con muestras pequeñas</h2>
-<p>Antes tenías una muestra de tamaño <code>python n</code>. Vamos a cambiar eso.</p>
-<div id="datos-pequenos" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">10</span>, n)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x1 <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> x2 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="multicolinealidad-en-la-regresión-lineal-con-muestras-pequeñas" class="level2">
+<h2 class="anchored" data-anchor-id="multicolinealidad-en-la-regresión-lineal-con-muestras-pequeñas">Multicolinealidad en la regresión lineal con muestras pequeñas</h2>
+<p>Antes tenías una muestra de tamaño <code>py n</code>. Vamos a cambiar eso.</p>
+<div id="datos-pequenos" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">10</span>, n)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x1 <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> x2 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Con estos datos, aparentemente los mismos pero con menor muestra, ajusto la regresión.</p>
-<div id="regresion-pequena" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.column_stack((x1, x2))</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> OLS(y, X).fit()</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modelo.summary())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="regresion-pequena" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.column_stack((x1, x2))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> sm.add_constant(X)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>modelo <span class="op">=</span> OLS(y, X).fit()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(modelo.summary())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.971
-Model:                            OLS   Adj. R-squared:                  0.970
-Method:                 Least Squares   F-statistic:                     1608.
-Date:                Thu, 16 Jan 2025   Prob (F-statistic):           4.26e-75
-Time:                        22:53:56   Log-Likelihood:                -367.71
-No. Observations:                 100   AIC:                             741.4
-Df Residuals:                      97   BIC:                             749.2
+Dep. Variable:                      y   R-squared:                       0.964
+Model:                            OLS   Adj. R-squared:                  0.964
+Method:                 Least Squares   F-statistic:                     1313.
+Date:                Sun, 19 Jan 2025   Prob (F-statistic):           5.67e-71
+Time:                        21:06:06   Log-Likelihood:                -367.44
+No. Observations:                 100   AIC:                             740.9
+Df Residuals:                      97   BIC:                             748.7
 Df Model:                           2                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-const         -2.9188      5.129     -0.569      0.571     -13.098       7.260
-x1             3.1849      0.141     22.585      0.000       2.905       3.465
-x2             3.7938      0.188     20.143      0.000       3.420       4.168
+const         11.9141      5.083      2.344      0.021       1.826      22.003
+x1             2.8967      0.135     21.462      0.000       2.629       3.165
+x2             3.8677      0.193     19.992      0.000       3.484       4.252
 ==============================================================================
-Omnibus:                        3.931   Durbin-Watson:                   2.372
-Prob(Omnibus):                  0.140   Jarque-Bera (JB):                3.710
-Skew:                          -0.253   Prob(JB):                        0.156
-Kurtosis:                       3.796   Cond. No.                         309.
+Omnibus:                        1.625   Durbin-Watson:                   1.845
+Prob(Omnibus):                  0.444   Jarque-Bera (JB):                1.263
+Skew:                          -0.271   Prob(JB):                        0.532
+Kurtosis:                       3.097   Cond. No.                         297.
 ==============================================================================
 
 Notes:

@@ -213,11 +213,11 @@ cookieconsent.run({
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> janitor</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Teníamos un listado de nombres que en un proyecto real vendrían como valores de la columna de un data frame. Y están repetidos.</p>
-<div id="66e8f447" class="cell" data-execution_count="2">
+<div id="01091ce0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nombres <span class="op">=</span> [<span class="st">"Campaña veintitrés"</span>, <span class="st">"C'est très petite"</span>, <span class="st">"Alışveriş Arabası Önü Giydirme"</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>nombres <span class="op">=</span> nombres <span class="op">*</span> <span class="dv">2</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>nombres</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>['Campaña veintitrés',
  "C'est très petite",
  'Alışveriş Arabası Önü Giydirme',
@@ -239,7 +239,7 @@ cookieconsent.run({
 <p>He <a href="https://github.com/pyjanitor-devs/pyjanitor/blob/dev/janitor/functions/clean_names.py">curioseado el código fuente</a> y he encontrado la función que limpia los nombres de las columnas, es decir, el código que aplica las reglas de limpieza.</p>
 <p>Este código está un poco escondido, pero lo puedes llamar directamenmte sobre una serie de pandas (es decir, lo que podría llegar a ser una columna de un data frame).</p>
 <p>La función es <code>_clean_names</code> y su primer argumento es la serie que quieres editar. Ninguno de los argumentos de configuración tiene valor por defecto, así que hay que especificarlos todos.</p>
-<div id="95174804" class="cell" data-execution_count="3">
+<div id="94aa650a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> janitor.functions.clean_names <span class="im">import</span> _clean_names</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nombres <span class="op">=</span> pd.Series(nombres)</span>
@@ -253,7 +253,7 @@ cookieconsent.run({
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    truncate_limit<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>nuevos_nombres</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>0            campaa_veintitrs
 1             cest_trs_petite
 2    alveri_arabas_n_giydirme
