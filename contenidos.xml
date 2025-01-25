@@ -10,7 +10,361 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.6.40</generator>
-<lastBuildDate>Thu, 16 Jan 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 24 Jan 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Otro experimento con relaciones espurias</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2025-01-24-mas-relaciones-espurias/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="datos-y-planteamiento" class="level2">
+<h2 class="anchored" data-anchor-id="datos-y-planteamiento">Datos y planteamiento</h2>
+<p>Tienes una variable <img src="https://latex.codecogs.com/png.latex?x_%7Breal%7D"> que genera dos variables: <img src="https://latex.codecogs.com/png.latex?y"> y <img src="https://latex.codecogs.com/png.latex?x_%7Bspur%7D">.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(rethinking)</span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(ggplot2)</span>
+<span id="cb1-3"></span>
+<span id="cb1-4">n_data <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="cb1-5">x_real <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(n_data)</span>
+<span id="cb1-6">x_spur <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(n_data, x_real)</span>
+<span id="cb1-7">y  <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">rnorm</span>(n_data, x_real)</span>
+<span id="cb1-8"></span>
+<span id="cb1-9">df <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">data.frame</span>(y, x_real, x_spur)</span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb1-12">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_histogram</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(x_spur), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#800080"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2025-01-24-mas-relaciones-espurias/index_files/figure-html/libs-and-data-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Como la relación entre <img src="https://latex.codecogs.com/png.latex?x_%7Breal%7D"> y <img src="https://latex.codecogs.com/png.latex?x_%7Bspur%7D"> es alta, <img src="https://latex.codecogs.com/png.latex?x_%7Bspur%7D"> parece tener una relación con <img src="https://latex.codecogs.com/png.latex?y">.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(df) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb2-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_point</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(x_spur, y)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb2-3">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_smooth</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(x_spur, y), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">method =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"lm"</span>)</span></code></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2025-01-24-mas-relaciones-espurias/index_files/figure-html/plot-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Pero <img src="https://latex.codecogs.com/png.latex?y"> por definición depende únicamente de <img src="https://latex.codecogs.com/png.latex?x_%7Breal%7D">, por lo que la relación entre <img src="https://latex.codecogs.com/png.latex?x_%7Bspur%7D"> y <img src="https://latex.codecogs.com/png.latex?y"> es espuria.</p>
+</section>
+<section id="regresiones" class="level2">
+<h2 class="anchored" data-anchor-id="regresiones">Regresiones</h2>
+<p>La regresión que se ajusta según la definición sería:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">fit_real <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">quap</span>(</span>
+<span id="cb3-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alist</span>(</span>
+<span id="cb3-3">    y <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(mu, sigma), </span>
+<span id="cb3-4">    mu <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> b <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x_real, </span>
+<span id="cb3-5">    a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>), </span>
+<span id="cb3-6">    b <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>),</span>
+<span id="cb3-7">    sigma <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dexp</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb3-8">  ), </span>
+<span id="cb3-9">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> df</span>
+<span id="cb3-10">)</span>
+<span id="cb3-11"></span>
+<span id="cb3-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">precis</span>(fit_real)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           mean         sd        5.5%     94.5%
+a     0.1033248 0.08852148 -0.03814959 0.2447993
+b     0.8891497 0.09753880  0.73326381 1.0450355
+sigma 0.9855336 0.06929995  0.87477895 1.0962884</code></pre>
+</div>
+</div>
+<p>Si intentas ajustar una regresión que incluya a la variable espuria, el modelo te la rechazará.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">fit <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">quap</span>(</span>
+<span id="cb5-2">    <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alist</span>(</span>
+<span id="cb5-3">        y <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(mu, sigma), </span>
+<span id="cb5-4">        mu <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> b_spur <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x_spur <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> b_real <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x_real, </span>
+<span id="cb5-5">        a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>),</span>
+<span id="cb5-6">        b_spur <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>),</span>
+<span id="cb5-7">        b_real <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>),</span>
+<span id="cb5-8">        sigma <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dexp</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb5-9">    ), </span>
+<span id="cb5-10">    <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> df</span>
+<span id="cb5-11">)</span>
+<span id="cb5-12"></span>
+<span id="cb5-13"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">precis</span>(fit)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            mean         sd        5.5%     94.5%
+a      0.1046021 0.08805048 -0.03611955 0.2453238
+b_spur 0.1343157 0.08945600 -0.00865227 0.2772837
+b_real 0.7392645 0.13943163  0.51642586 0.9621032
+sigma  0.9790066 0.06886007  0.86895487 1.0890582</code></pre>
+</div>
+</div>
+<p>Si no quieres hacerlo bayesiano:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1">fit_lm <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lm</span>(y <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> x_spur <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> x_real, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> df)</span>
+<span id="cb7-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summary</span>(fit_lm)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = y ~ x_spur + x_real, data = df)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-2.7013 -0.6812 -0.1133  0.6213  2.9315 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.13080    0.09987   1.310    0.193    
+x_spur       0.10942    0.09466   1.156    0.251    
+x_real       0.79813    0.14911   5.353  5.8e-07 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.9977 on 97 degrees of freedom
+Multiple R-squared:  0.4699,    Adjusted R-squared:  0.459 
+F-statistic:    43 on 2 and 97 DF,  p-value: 4.264e-14</code></pre>
+</div>
+</div>
+<p>Otra opción sería que sí usaras la variable espuria pero no la real:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1">fit_spur <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">quap</span>(</span>
+<span id="cb9-2">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">alist</span>(</span>
+<span id="cb9-3">    y <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(mu, sigma), </span>
+<span id="cb9-4">    mu <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> b <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> x_spur, </span>
+<span id="cb9-5">    a <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>),</span>
+<span id="cb9-6">    b <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dnorm</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>),</span>
+<span id="cb9-7">    sigma <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">dexp</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb9-8">  ), </span>
+<span id="cb9-9">  <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">data =</span> df</span>
+<span id="cb9-10">)</span>
+<span id="cb9-11"></span>
+<span id="cb9-12"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">precis</span>(fit_spur)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>            mean         sd        5.5%     94.5%
+a     0.08931005 0.09733337 -0.06624748 0.2448676
+b     0.47324510 0.07049634  0.36057833 0.5859119
+sigma 1.11271375 0.07808541  0.98791817 1.2375093</code></pre>
+</div>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <category>datos</category>
+  <guid>https://lhansa.github.io/posts/2025-01-24-mas-relaciones-espurias/</guid>
+  <pubDate>Fri, 24 Jan 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Experimento con multicolinealidad</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6469,347 +6823,6 @@ font-style: inherit;">"Pepito"</span>)</span>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2024-07-30-concatena-strings/</guid>
   <pubDate>Tue, 30 Jul 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Evolución de compraventa mensual en España</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-05-25-viviendas/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>El INE tiene datos mensuales sobre compraventa de viviendas por Comunidades Autónomas (lo tiene por provincias pero he pasado de ese nivel):</p>
-<div id="cell-lectura" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb1-2"></span>
-<span id="cb1-3">df_viviendas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.read_csv(</span>
-<span id="cb1-4">  <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'ine-compraventa.csv'</span>, </span>
-<span id="cb1-5">  sep<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">';'</span>, </span>
-<span id="cb1-6">  thousands<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'.'</span>,</span>
-<span id="cb1-7">  encoding<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'iso-8859-1'</span></span>
-<span id="cb1-8">)</span>
-<span id="cb1-9"></span>
-<span id="cb1-10">df_viviendas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (</span>
-<span id="cb1-11">  df_viviendas</span>
-<span id="cb1-12">  .drop([<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Régimen y estado'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Total Nacional'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Provincias'</span>], axis<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb1-13">  .rename(</span>
-<span id="cb1-14">    columns<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">lambda</span> x: x.lower().replace(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">' '</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'_'</span>).encode(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'ascii'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'ignore'</span>).decode(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'utf-8'</span>))</span>
-<span id="cb1-15">)</span>
-<span id="cb1-16"></span>
-<span id="cb1-17">df_viviendas.head()</span></code></pre></div>
-<div id="lectura" class="cell-output cell-output-display" data-execution_count="1">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">comunidades_y_ciudades_autnomas</th>
-<th data-quarto-table-cell-role="th">periodo</th>
-<th data-quarto-table-cell-role="th">total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>01 Andalucía</td>
-<td>2024M03</td>
-<td>8805</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>01 Andalucía</td>
-<td>2024M02</td>
-<td>9606</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>01 Andalucía</td>
-<td>2024M01</td>
-<td>10290</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>01 Andalucía</td>
-<td>2023M12</td>
-<td>7519</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>01 Andalucía</td>
-<td>2023M11</td>
-<td>9857</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>Vamos a tratarlo un poco (tampoco mucho, que es sábado):</p>
-<div id="cell-algo-tratamiento" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">df_viviendas[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'periodo'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.to_datetime(df_viviendas[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'periodo'</span>], <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">format</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'%YM%m'</span>)</span>
-<span id="cb2-2"></span>
-<span id="cb2-3">df_viviendas[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'comunidades_y_ciudades_autnomas'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df_viviendas[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'comunidades_y_ciudades_autnomas'</span>].<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span>.replace(<span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">r'\d</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{2}</span><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;"> '</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">''</span>, regex<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>)</span>
-<span id="cb2-4"></span>
-<span id="cb2-5"></span>
-<span id="cb2-6">df_viviendas <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (</span>
-<span id="cb2-7">  df_viviendas</span>
-<span id="cb2-8">  .rename(columns<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'comunidades_y_ciudades_autnomas'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'ccaa'</span>})</span>
-<span id="cb2-9">)</span>
-<span id="cb2-10"></span>
-<span id="cb2-11">df_viviendas.head()</span></code></pre></div>
-<div id="algo-tratamiento" class="cell-output cell-output-display" data-execution_count="2">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">ccaa</th>
-<th data-quarto-table-cell-role="th">periodo</th>
-<th data-quarto-table-cell-role="th">total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>Andalucía</td>
-<td>2024-03-01</td>
-<td>8805</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>Andalucía</td>
-<td>2024-02-01</td>
-<td>9606</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>Andalucía</td>
-<td>2024-01-01</td>
-<td>10290</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>Andalucía</td>
-<td>2023-12-01</td>
-<td>7519</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>Andalucía</td>
-<td>2023-11-01</td>
-<td>9857</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<p>Mucho mejor. Ahora toca visualizar esto.</p>
-<p>El siguiente código es de ChatGPT… y sinceramente, creo que está mal, que pinta lo que le da la gana y no lo que yo quiero (concretamente, se inventa el orden del eje x).</p>
-<p>Pero llevo horas con problemas de VSCode, versiones de Python, entornos virtuales y paso de dedicarle más tiempo a esto hoy (cosa que en R habrían sido 5 minutos).</p>
-<p>Otro día.</p>
-<div id="cell-evolucion" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> seaborn <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> sns</span>
-<span id="cb3-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> plt</span>
-<span id="cb3-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> matplotlib.dates <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> mdates</span>
-<span id="cb3-4"></span>
-<span id="cb3-5">g <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> sns.FacetGrid(</span>
-<span id="cb3-6">  df_viviendas, </span>
-<span id="cb3-7">  col<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'ccaa'</span>, </span>
-<span id="cb3-8">  col_wrap<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, </span>
-<span id="cb3-9">  hue<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'ccaa'</span>, </span>
-<span id="cb3-10">  sharey<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>,</span>
-<span id="cb3-11">)  </span>
-<span id="cb3-12"></span>
-<span id="cb3-13">g.map_dataframe(sns.lineplot, x<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'periodo'</span>, y<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'total'</span>)</span>
-<span id="cb3-14"></span>
-<span id="cb3-15"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Ajustar las etiquetas y el layout</span></span>
-<span id="cb3-16"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> ax <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> g.axes.flatten():</span>
-<span id="cb3-17">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Ajustar los locators para que solo se muestren unos pocos ticks</span></span>
-<span id="cb3-18">    ax.xaxis.set_major_locator(mdates.MonthLocator(interval<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">12</span>))  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Ajusta el intervalo según sea necesario</span></span>
-<span id="cb3-19">    ax.xaxis.set_major_formatter(mdates.DateFormatter(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'%Y-%m'</span>))</span>
-<span id="cb3-20">    ax.tick_params(axis<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'x'</span>, rotation<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">45</span>)</span>
-<span id="cb3-21"></span>
-<span id="cb3-22">g.set_axis_labels(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Fecha'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Total'</span>)</span>
-<span id="cb3-23"></span>
-<span id="cb3-24">plt.show()</span></code></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-05-25-viviendas/index_files/figure-html/evolucion-output-1.png" id="evolucion" width="1441" height="1179" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2024-05-25-viviendas/</guid>
-  <pubDate>Sat, 25 May 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
