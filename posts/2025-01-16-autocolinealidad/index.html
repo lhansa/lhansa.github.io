@@ -239,16 +239,18 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="multicolinealidad-en-la-regresión-lineal-con-muestras-grandes">Multicolinealidad en la regresión lineal con muestras grandes</h2>
 <p>Tienes una variable <span class="math inline">\(y\)</span> que depende de dos variables <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span>. Pero <span class="math inline">\(x_2\)</span> es una combinación lineal de <span class="math inline">\(x_1\)</span>.</p>
 <div id="datos" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">10</span>, n)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x1 <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> x2 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">123</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x1 <span class="op">=</span> np.random.normal(<span class="dv">50</span>, <span class="dv">10</span>, n)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> x1 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> x1 <span class="op">+</span> <span class="dv">4</span> <span class="op">*</span> x2 <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, n)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Por si hay alguna duda:</p>
 <div id="cell-correlacion" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>np.corrcoef(x1, x2)[<span class="dv">0</span>, <span class="dv">1</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="correlacion" class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>0.6977750585315148</code></pre>
+<pre><code>0.7074774568946038</code></pre>
 </div>
 </div>
 <p>¿Qué pasa si usas <span class="math inline">\(x_1\)</span> y <span class="math inline">\(x_2\)</span> en una regresión lineal?</p>
@@ -261,26 +263,26 @@ window.Quarto = {
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.966
-Model:                            OLS   Adj. R-squared:                  0.966
-Method:                 Least Squares   F-statistic:                 1.427e+05
+Dep. Variable:                      y   R-squared:                       0.967
+Model:                            OLS   Adj. R-squared:                  0.967
+Method:                 Least Squares   F-statistic:                 1.465e+05
 Date:                Sun, 26 Jan 2025   Prob (F-statistic):               0.00
-Time:                        20:46:06   Log-Likelihood:                -37159.
-No. Observations:               10000   AIC:                         7.432e+04
-Df Residuals:                    9997   BIC:                         7.434e+04
+Time:                        21:41:39   Log-Likelihood:                -37142.
+No. Observations:               10000   AIC:                         7.429e+04
+Df Residuals:                    9997   BIC:                         7.431e+04
 Df Model:                           2                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-const          1.3967      0.513      2.723      0.006       0.391       2.402
-x1             3.0122      0.014    214.523      0.000       2.985       3.040
-x2             3.9981      0.020    200.752      0.000       3.959       4.037
+const          2.2011      0.508      4.332      0.000       1.205       3.197
+x1             3.0220      0.014    214.712      0.000       2.994       3.050
+x2             3.9480      0.020    199.329      0.000       3.909       3.987
 ==============================================================================
-Omnibus:                        0.191   Durbin-Watson:                   1.988
-Prob(Omnibus):                  0.909   Jarque-Bera (JB):                0.167
-Skew:                          -0.006   Prob(JB):                        0.920
-Kurtosis:                       3.016   Cond. No.                         294.
+Omnibus:                        0.071   Durbin-Watson:                   1.994
+Prob(Omnibus):                  0.965   Jarque-Bera (JB):                0.085
+Skew:                           0.005   Prob(JB):                        0.958
+Kurtosis:                       2.989   Cond. No.                         293.
 ==============================================================================
 
 Notes:
@@ -308,26 +310,26 @@ Notes:
 <div class="cell-output cell-output-stdout">
 <pre><code>                            OLS Regression Results                            
 ==============================================================================
-Dep. Variable:                      y   R-squared:                       0.962
-Model:                            OLS   Adj. R-squared:                  0.961
-Method:                 Least Squares   F-statistic:                     1236.
-Date:                Sun, 26 Jan 2025   Prob (F-statistic):           9.62e-70
-Time:                        20:46:06   Log-Likelihood:                -374.57
-No. Observations:                 100   AIC:                             755.1
-Df Residuals:                      97   BIC:                             763.0
+Dep. Variable:                      y   R-squared:                       0.974
+Model:                            OLS   Adj. R-squared:                  0.973
+Method:                 Least Squares   F-statistic:                     1810.
+Date:                Sun, 26 Jan 2025   Prob (F-statistic):           1.60e-77
+Time:                        21:41:39   Log-Likelihood:                -367.78
+No. Observations:                 100   AIC:                             741.6
+Df Residuals:                      97   BIC:                             749.4
 Df Model:                           2                                         
 Covariance Type:            nonrobust                                         
 ==============================================================================
                  coef    std err          t      P&gt;|t|      [0.025      0.975]
 ------------------------------------------------------------------------------
-const          5.4128      5.014      1.079      0.283      -4.539      15.365
-x1             3.1198      0.130     24.056      0.000       2.862       3.377
-x2             3.5656      0.211     16.887      0.000       3.146       3.985
+const         -1.7233      4.880     -0.353      0.725     -11.410       7.963
+x1             3.0745      0.140     21.956      0.000       2.797       3.352
+x2             3.9304      0.190     20.682      0.000       3.553       4.308
 ==============================================================================
-Omnibus:                        2.319   Durbin-Watson:                   1.984
-Prob(Omnibus):                  0.314   Jarque-Bera (JB):                1.864
-Skew:                           0.133   Prob(JB):                        0.394
-Kurtosis:                       3.614   Cond. No.                         271.
+Omnibus:                        0.041   Durbin-Watson:                   2.129
+Prob(Omnibus):                  0.980   Jarque-Bera (JB):                0.191
+Skew:                           0.014   Prob(JB):                        0.909
+Kurtosis:                       2.788   Cond. No.                         295.
 ==============================================================================
 
 Notes:
