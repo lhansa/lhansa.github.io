@@ -67,7 +67,7 @@ Estudié matemáticas porque me llamaban la atención y ese título universitari
 
 ## Soft skills
 
-- Soy vago. Intento hacer lo mínimo.
+- Soy vago. Intento hacer lo mínimo (salvo que el proyecto sea mío, en cuyo caso lo doy todísimo).
 - Soy poco imaginativo. No te aportaré ideas nuevas. 
 - Sin embargo, me desmotivo con tareas repetitivas.
 - Yo soy más importante que la empresa: si los domingos por la tarde me da depresión porque al día siguiente es lunes, dejaré el trabajo.
