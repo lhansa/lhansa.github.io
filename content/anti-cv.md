@@ -6,7 +6,7 @@ slug: anti-cv
 
 Para todos los puestos de trabajo a los que aspiras, te piden tu CV. El CV es un listado de actividades profesionales y educativas de las que presumes y que, en cierto modo, te han llevado a donde estás ahora. 
 
-No sé en tu caso, pero en el mío también he llegado a donde estoy gracias a las cosas de las que habitualmente no presumo. 
+No sé en tu caso, pero en el mío **también he llegado a donde estoy gracias a esas experiencias negativas.**
 
 Sin embargo, si una empresa considera que le soy válido, debería saber que, si lo soy, también es por estas cosas ocultas. 
 
