@@ -6,13 +6,15 @@ slug: anti-cv
 
 Para todos los puestos de trabajo a los que aspiras, te piden tu CV. El CV es un listado de actividades profesionales y educativas de las que presumes y que, en cierto modo, te han llevado a donde estás ahora. 
 
-No sé en tu caso, pero en el mío también he llegado a donde estoy gracias a las cosas de las que habitualmente no presumo. Sin embargo, si una empresa considera que le soy válido, debería saber que, si lo soy, también es por estas cosas ocultas. 
+No sé en tu caso, pero en el mío también he llegado a donde estoy gracias a las cosas de las que habitualmente no presumo. 
 
-El **anti CV** contiene mis experiencias profesionales y educativas negativas; aquellas vivencias de las que no se me ocurre presumir, porque son errores, decisiones equivocadas, pero que han contribuido a mi aprendizaje. Por ello, les debo mucho. 
+Sin embargo, si una empresa considera que le soy válido, debería saber que, si lo soy, también es por estas cosas ocultas. 
+
+El **anti CV** contiene mis experiencias profesionales y educativas negativas; aquellas vivencias de las que no se me ocurre presumir, porque son errores, decisiones equivocadas y situaciones mal gestionadas, pero que han contribuido a mi aprendizaje. Por ello, les debo mucho. 
 
 ## Leonardo Hansa
 
-- Copio y pego código de Stack Overflow y ChatGPT. 
+_Copio y pego código de Stack Overflow y ChatGPT._
 
 ## Resumen
 
@@ -67,10 +69,14 @@ Estudié matemáticas porque me llamaban la atención y ese título universitari
 
 - Soy vago. Intento hacer lo mínimo.
 - Soy poco imaginativo. No te aportaré ideas nuevas. 
-- Yo soy más importante que la empresa: si me contratas, serás dueño de mi tiempo pero solo hasta las 6 (ó 5:30).
+- Sin embargo, me desmotivo con tareas repetitivas.
+- Yo soy más importante que la empresa: si los domingos por la tarde me da depresión porque al día siguiente es lunes, dejaré el trabajo.
+- Si me contratas como empleado, serás dueño de mi tiempo pero solo hasta las 6 (o incluso 5). Si me contratas como autónomo, no serás dueño de mi tiempo.
 - Aprendo despacio y pocas cosas. 
 - No me entrego mucho. Si me mandas algo que no me gusta, lo haré peor que las cosas que sí me gustan.
-- Poco motivado. Si los domingos por la tarde me da depresión porque al día siguiente es lunes, dejaré el trabajo.
+
+***
+
 
 
 
