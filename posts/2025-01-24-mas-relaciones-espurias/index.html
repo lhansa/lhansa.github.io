@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,10 +73,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b63098396dbc5a4b5206480371b031fc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a19b4e02925d3bb4245384d1a3255a16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -287,9 +287,9 @@ window.Quarto = {
 <span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_real)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           mean         sd        5.5%     94.5%
-a     0.1033248 0.08852148 -0.03814959 0.2447993
-b     0.8891497 0.09753880  0.73326381 1.0450355
-sigma 0.9855336 0.06929995  0.87477895 1.0962884</code></pre>
+a     0.1200136 0.08733753 -0.01956863 0.2595958
+b     1.0571869 0.09017250  0.91307384 1.2013000
+sigma 0.9596754 0.06750045  0.85179669 1.0675542</code></pre>
 </div>
 </div>
 <p>Si intentas ajustar una regresión que incluya a la variable espuria, el modelo te la rechazará.</p>
@@ -308,11 +308,11 @@ sigma 0.9855336 0.06929995  0.87477895 1.0962884</code></pre>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            mean         sd        5.5%     94.5%
-a      0.1046021 0.08805048 -0.03611955 0.2453238
-b_spur 0.1343157 0.08945600 -0.00865227 0.2772837
-b_real 0.7392645 0.13943163  0.51642586 0.9621032
-sigma  0.9790066 0.06886007  0.86895487 1.0890582</code></pre>
+<pre><code>              mean         sd        5.5%     94.5%
+a       0.11982176 0.08719034 -0.01952525 0.2591688
+b_spur -0.03306708 0.09448089 -0.18406579 0.1179316
+b_real  1.09219751 0.13449093  0.87725503 1.3071400
+sigma   0.95766044 0.06749719  0.84978689 1.0655340</code></pre>
 </div>
 </div>
 <p>Si no quieres hacerlo bayesiano:</p>
@@ -325,20 +325,20 @@ Call:
 lm(formula = y ~ x_spur + x_real, data = df)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--2.7013 -0.6812 -0.1133  0.6213  2.9315 
+     Min       1Q   Median       3Q      Max 
+-2.26639 -0.58538 -0.03526  0.66746  2.29240 
 
 Coefficients:
             Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.13080    0.09987   1.310    0.193    
-x_spur       0.10942    0.09466   1.156    0.251    
-x_real       0.79813    0.14911   5.353  5.8e-07 ***
+(Intercept)  0.14138    0.09862   1.434    0.155    
+x_spur      -0.07976    0.09989  -0.798    0.427    
+x_real       1.17575    0.14336   8.201    1e-12 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.9977 on 97 degrees of freedom
-Multiple R-squared:  0.4699,    Adjusted R-squared:  0.459 
-F-statistic:    43 on 2 and 97 DF,  p-value: 4.264e-14</code></pre>
+Residual standard error: 0.9749 on 97 degrees of freedom
+Multiple R-squared:  0.5856,    Adjusted R-squared:  0.577 
+F-statistic: 68.53 on 2 and 97 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <p>Otra opción sería que sí usaras la variable espuria pero no la real:</p>
@@ -356,10 +356,10 @@ F-statistic:    43 on 2 and 97 DF,  p-value: 4.264e-14</code></pre>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">precis</span>(fit_spur)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>            mean         sd        5.5%     94.5%
-a     0.08931005 0.09733337 -0.06624748 0.2448676
-b     0.47324510 0.07049634  0.36057833 0.5859119
-sigma 1.11271375 0.07808541  0.98791817 1.2375093</code></pre>
+<pre><code>           mean         sd        5.5%     94.5%
+a     0.1670335 0.10619925 -0.00269343 0.3367604
+b     0.5325380 0.08162221  0.40208999 0.6629861
+sigma 1.2435069 0.08730279  1.10398016 1.3830336</code></pre>
 </div>
 </div>
 
