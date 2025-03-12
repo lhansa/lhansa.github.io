@@ -290,16 +290,16 @@ font-style: inherit;">"~/Desktop/datos.xlsx"</span>),</span>
 background-color: null;
 font-style: inherit;">times =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">4</span></span>
+font-style: inherit;">10</span></span>
 <span id="cb2-8">)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: milliseconds
-  expr      min       lq      mean   median        uq       max neval
- excel 820.7414 862.7988  898.2197 916.4072  933.6406  939.3229     4
-  xlsx 839.1843 890.7691 1043.6222 973.2563 1196.4753 1388.7918     4</code></pre>
+  expr      min       lq     mean   median       uq       max neval
+ excel 817.9462 825.5456 866.1293 848.6167 910.4109  959.5712    10
+  xlsx 818.2618 834.9224 940.5163 851.6510 939.8498 1496.9993    10</code></pre>
 </div>
 </div>
-<p>Flipo por primera vez porque apenas hay diferencia entre dejar que averigüe la extensión y especificársela.</p>
+<p>Flipo por primera vez porque dejar que averigüe la extensión es más rápido que especificársela.</p>
 </section>
 <section id="prueba-2" class="level2">
 <h2 class="anchored" data-anchor-id="prueba-2">Prueba 2</h2>
@@ -334,16 +334,16 @@ font-style: inherit;">10</span>),</span>
 background-color: null;
 font-style: inherit;">times =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">4</span></span>
+font-style: inherit;">10</span></span>
 <span id="cb4-5">)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: milliseconds
       expr      min       lq     mean   median       uq       max neval
- xlsx_1000 830.0113 835.4860 885.0444 841.4934 934.6029 1027.1796     4
-   xlsx_10 815.5608 824.1691 833.6877 837.5909 843.2063  844.0083     4</code></pre>
+ xlsx_1000 820.7639 833.2358 909.8336 886.4963 974.2052 1078.0520    10
+   xlsx_10 820.3404 837.1177 881.2103 846.8810 937.2429  976.9624    10</code></pre>
 </div>
 </div>
-<p>Flipo por segunda vez porque dejar que adivine con 10 filas es solo un pelín más rápido que dejarle que adivine con 1000.</p>
+<p>Flipo por segunda vez porque dejar que adivine con 10 filas es más lento que dejarle que adivine con 1000.</p>
 </section>
 <section id="prueba-3" class="level2">
 <h2 class="anchored" data-anchor-id="prueba-3">Prueba 3</h2>
@@ -413,13 +413,13 @@ font-style: inherit;">col_types =</span> col_types),</span>
 background-color: null;
 font-style: inherit;">times =</span> <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">5</span></span>
+font-style: inherit;">10</span></span>
 <span id="cb6-12">)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Unit: milliseconds
-           expr      min       lq     mean   median       uq      max neval
-      xlsx_1000 824.4902 840.7945 850.3480 843.7635 861.7436 880.9484     5
- xlsx_col_types 818.0615 829.8634 885.1125 857.1077 928.6439 991.8862     5</code></pre>
+           expr      min       lq     mean   median       uq       max neval
+      xlsx_1000 817.4203 825.1557 861.3388 839.0177 874.1154  980.9381    10
+ xlsx_col_types 818.4011 831.7859 891.1541 843.5541 956.0038 1076.8263    10</code></pre>
 </div>
 </div>
 <p>Y me quedo flipando aún más porque lo de especificar <code>col_types</code> apenas ayuda (de hecho, si el número de filas es 1000 en lugar de 10000, empeora el tiempo; por lo menos, en una prueba que he hecho pero no he publicado).</p>
