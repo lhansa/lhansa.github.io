@@ -9,8 +9,545 @@
 <link>https://lhansa.github.io/contenidos.html</link>
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
-<generator>quarto-1.6.42</generator>
-<lastBuildDate>Tue, 11 Mar 2025 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.6.43</generator>
+<lastBuildDate>Sat, 12 Apr 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Cuánto te afecta la semilla al resultado final</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2025-04-12-semilla/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="comentarios-iniciales" class="level2">
+<h2 class="anchored" data-anchor-id="comentarios-iniciales">Comentarios iniciales</h2>
+<p>En <a href="https://open.spotify.com/episode/0Bl4iZq1o5s2Kd5WESm2Cu?si=LgiczmLkTfOpc0vKREYI9w">Cuartil</a> mencionamos que cambiar la semilla puede cambiar la métrica de ajuste de tu modelo.</p>
+<p>Voy a ajustar un RandomForest en algún conjunto de datos varias veces.</p>
+<p>El objetivo es ver que, cada vez que lo ejecuto, la predicción cambia, por lo que hay cierta incertidumbre cada vez que ajustas un modelo de estos.</p>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.datasets <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> fetch_california_housing, load_breast_cancer</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.ensemble <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> RandomForestRegressor, RandomForestClassifier</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.model_selection <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> train_test_split</span>
+<span id="cb1-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> mean_squared_error, roc_auc_score</span>
+<span id="cb1-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-6"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-7"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb1-8"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> seaborn <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sns</span></code></pre></div>
+</div>
+</section>
+<section id="ejemplo-1.-regresión" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-1.-regresión">Ejemplo 1. Regresión</h2>
+<section id="preparación-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="preparación-de-datos">Preparación de datos</h3>
+<p>Los datos no me importan especialmente. Cargo unos de <strong>sklearn</strong> que me ha sugerido ChatGPT. Los separo en train y test. Esta separación la dejo fija: voy a estudiar cómo afecta la aleatoriedad del modelo, no la de los datos.</p>
+<div id="data" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> fetch_california_housing(as_frame<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb2-2">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.data</span>
+<span id="cb2-3">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.target</span>
+<span id="cb2-4"></span>
+<span id="cb2-5">X_train, X_test, y_train, y_test <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> train_test_split(X, y, test_size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, random_state<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>)</span></code></pre></div>
+</div>
+</section>
+<section id="ajuste-de-los-modelos" class="level3">
+<h3 class="anchored" data-anchor-id="ajuste-de-los-modelos">Ajuste de los modelos</h3>
+<p>Ajusto 100 modelos. Voy a guardar algunas cosas de los ajustes para luego ver cómo varían de un caso a otro. Lo que quiero estudiar es si hay mucha dispersión entre unos resultados y otros.</p>
+<div id="loop-model" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">num_trials <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span></span>
+<span id="cb3-2">l_mse <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb3-3">df_preds <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame()</span>
+<span id="cb3-4"></span>
+<span id="cb3-5"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(num_trials):</span>
+<span id="cb3-6">  <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'Iteración </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">/</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>num_trials<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb3-7">  random_state <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>)</span>
+<span id="cb3-8"></span>
+<span id="cb3-9">  model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> RandomForestRegressor(</span>
+<span id="cb3-10">    random_state<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>random_state, </span>
+<span id="cb3-11">    n_jobs<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb3-12">  )</span>
+<span id="cb3-13"></span>
+<span id="cb3-14">  model.fit(X_train, y_train)</span>
+<span id="cb3-15"></span>
+<span id="cb3-16">  y_pred <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model.predict(X_test)</span>
+<span id="cb3-17">  l_mse.append(mean_squared_error(y_test, y_pred))</span>
+<span id="cb3-18"></span>
+<span id="cb3-19">  df_preds[<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'pred_</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>i<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> y_pred</span></code></pre></div>
+</div>
+</section>
+<section id="visualización" class="level3">
+<h3 class="anchored" data-anchor-id="visualización">Visualización</h3>
+<section id="métrica-de-ajuste" class="level4">
+<h4 class="anchored" data-anchor-id="métrica-de-ajuste">Métrica de ajuste</h4>
+<p>Reconozco que esperaba más dispersión entre las métricas. Entre los 100 modelos, la métrica de ajuste (MSE) varía entre 0.25 y 0.26. Muy estable.</p>
+<div id="hist-mse" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">plt.hist(l_mse, bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb4-2">plt.show()</span></code></pre></div>
+</div>
+</section>
+</section>
+<section id="predicciones" class="level3">
+<h3 class="anchored" data-anchor-id="predicciones">Predicciones</h3>
+<p>Ahora muestro cómo varía cada predicción observación a observación. Muestro solo unas pocas porque no se ve nada si intento ver todas una a una.</p>
+<p>Quizá no tenga sentido ver todas una a una, sino ver la desviación en general de todas las observación con respecto a su punto medio o su media o lo que sea. Pero paso de pensar.</p>
+<div id="preds-boxplots" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">df_long <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_preds.reset_index().melt(id_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'index'</span>, var_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'modelo'</span>, value_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pred'</span>)</span>
+<span id="cb5-2">df_long <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_long.rename(columns<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'index'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>})</span>
+<span id="cb5-3"></span>
+<span id="cb5-4">subset_ids <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_long[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>].unique()[:<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>]</span>
+<span id="cb5-5">subset <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_long[df_long[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>].isin(subset_ids)]</span>
+<span id="cb5-6"></span>
+<span id="cb5-7">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>))</span>
+<span id="cb5-8">sns.boxplot(data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>subset, x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pred'</span>, showfliers<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb5-9">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ID de observación (subconjunto)'</span>)</span>
+<span id="cb5-10">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Predicción'</span>)</span>
+<span id="cb5-11">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Boxplot de predicciones por observación (100 primeras)'</span>)</span>
+<span id="cb5-12">plt.xticks(rotation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>)</span>
+<span id="cb5-13">plt.tight_layout()</span>
+<span id="cb5-14">plt.show()</span></code></pre></div>
+</div>
+<p>Hay alguna observación que sí presenta algo de variabilidad entre los modelos pero no me escandizaría por ello.</p>
+</section>
+</section>
+<section id="ejemplo-2.-clasificación" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-2.-clasificación">Ejemplo 2. Clasificación</h2>
+<p>Ahora quiero hacer algo parecido en un problema de clasificación 0-1.</p>
+<section id="preparación-de-datos-1" class="level3">
+<h3 class="anchored" data-anchor-id="preparación-de-datos-1">Preparación de datos</h3>
+<div id="data-class" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> load_breast_cancer()</span>
+<span id="cb6-2">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.data</span>
+<span id="cb6-3">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.target</span>
+<span id="cb6-4"></span>
+<span id="cb6-5">X_train, X_test, y_train, y_test <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> train_test_split(X, y, test_size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>, random_state<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">42</span>)</span></code></pre></div>
+</div>
+</section>
+<section id="ajuste-de-modelos" class="level3">
+<h3 class="anchored" data-anchor-id="ajuste-de-modelos">Ajuste de modelos</h3>
+<div id="modelos" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">all_preds <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb7-2">all_aucs <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb7-3"></span>
+<span id="cb7-4"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>):  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 100 semillas</span></span>
+<span id="cb7-5">    model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> RandomForestClassifier(random_state<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>i, n_jobs<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb7-6">    model.fit(X_train, y_train)</span>
+<span id="cb7-7">    probs <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model.predict_proba(X_test)[:, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb7-8">    </span>
+<span id="cb7-9">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Guardar predicciones</span></span>
+<span id="cb7-10">    df_temp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame({</span>
+<span id="cb7-11">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(X_test)),</span>
+<span id="cb7-12">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'prob'</span>: probs,</span>
+<span id="cb7-13">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'seed'</span>: i,</span>
+<span id="cb7-14">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'true_label'</span>: y_test</span>
+<span id="cb7-15">    })</span>
+<span id="cb7-16">    all_preds.append(df_temp)</span>
+<span id="cb7-17">    </span>
+<span id="cb7-18">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Calcular y guardar AUC</span></span>
+<span id="cb7-19">    auc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> roc_auc_score(y_test, probs)</span>
+<span id="cb7-20">    all_aucs.append(auc)</span></code></pre></div>
+</div>
+</section>
+<section id="visualización-1" class="level3">
+<h3 class="anchored" data-anchor-id="visualización-1">Visualización</h3>
+<section id="bondad-de-ajuste" class="level4">
+<h4 class="anchored" data-anchor-id="bondad-de-ajuste">Bondad de ajuste</h4>
+<div id="hist-auc" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">df_all <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.concat(all_preds, ignore_index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb8-2"></span>
+<span id="cb8-3">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>))</span>
+<span id="cb8-4">sns.histplot(all_aucs, bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, kde<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb8-5">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'AUC'</span>)</span>
+<span id="cb8-6">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Distribución de AUCs sobre 100 random forests'</span>)</span>
+<span id="cb8-7">plt.tight_layout()</span>
+<span id="cb8-8">plt.show()</span></code></pre></div>
+</div>
+</section>
+<section id="probabalidad-por-observación" class="level4">
+<h4 class="anchored" data-anchor-id="probabalidad-por-observación">Probabalidad por observación</h4>
+<div id="f06e97e7" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Unir todos los resultados</span></span>
+<span id="cb9-2">df_all <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.concat(all_preds, ignore_index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb9-3"></span>
+<span id="cb9-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Crear gráfico</span></span>
+<span id="cb9-5">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>))</span>
+<span id="cb9-6">sns.stripplot(data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>df_all, x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'prob'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>, hue<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'true_label'</span>, dodge<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.6</span>, palette<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Set1'</span>, jitter<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb9-7">plt.axvline(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'gray'</span>, linestyle<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'--'</span>)</span>
+<span id="cb9-8">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Probabilidad predicha (clase 1)'</span>)</span>
+<span id="cb9-9">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ID de observación'</span>)</span>
+<span id="cb9-10">plt.xticks(ticks<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(df_all[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>].unique()), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(df_all[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>].unique()) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">//</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>))</span>
+<span id="cb9-11">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variabilidad de predicciones por semilla (Random Forest)'</span>)</span>
+<span id="cb9-12">plt.legend(title<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Clase real'</span>, loc<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lower right'</span>)</span>
+<span id="cb9-13">plt.tight_layout()</span>
+<span id="cb9-14">plt.show()</span></code></pre></div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2025-04-12-semilla/</guid>
+  <pubDate>Sat, 12 Apr 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Tiempos de lectura de un fichero Excel</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6420,264 +6957,6 @@ font-style: inherit;">%.%</span>cyl</span></code></pre></div>
  ]]></description>
   <category>datos</category>
   <guid>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</guid>
-  <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Pernotaciones por Comunidades Autónomas</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-08-04-viajeros/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>El INE tiene unos datos de pernoctaciones a distintos niveles, mes a mes. Me interesan a nivel de Comunidad Autónoma.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(readr)</span>
-<span id="cb1-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(dplyr)</span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">library</span>(ggplot2)</span>
-<span id="cb1-4"></span>
-<span id="cb1-5">ggplot2<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_set</span>(ggplot2<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">theme_light</span>())</span>
-<span id="cb1-6"></span>
-<span id="cb1-7">df_pernoctaciones <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">read_csv2</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"2941 (1).csv"</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">locale =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">locale</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">encoding =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"latin1"</span>))</span>
-<span id="cb1-8"></span>
-<span id="cb1-9">df_pernoctaciones <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> janitor<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">clean_names</span>(df_pernoctaciones)</span></code></pre></div>
-</div>
-<p>El formato de los datos nunca entenderé quién lo ha decidido. Imagino que alguien que no tenía que trabajar con ellos. Los proceso un poco.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1">df_series <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> df_pernoctaciones <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span></span>
-<span id="cb2-2">  <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Quito NAs porque son el total</span></span>
-<span id="cb2-3">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">filter</span>(<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">is.na</span>(comunidades_y_ciudades_autonomas)) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span> </span>
-<span id="cb2-4">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">mutate</span>(</span>
-<span id="cb2-5">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">periodo =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">paste0</span>(periodo, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"D01"</span>), </span>
-<span id="cb2-6">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">periodo =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.Date</span>(periodo, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">format =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"%YM%mD%d"</span>), </span>
-<span id="cb2-7">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">total =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">parse_number</span>(</span>
-<span id="cb2-8">      total, </span>
-<span id="cb2-9">      <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">locale =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">locale</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">grouping_mark =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"."</span>),</span>
-<span id="cb2-10">      <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">na =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">c</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"."</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">".."</span>)</span>
-<span id="cb2-11">    )</span>
-<span id="cb2-12">  ) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span> </span>
-<span id="cb2-13">    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">group_by</span>(comunidades_y_ciudades_autonomas, periodo) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|&gt;</span> </span>
-<span id="cb2-14">    <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">summarise</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">pernoctaciones =</span> <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">sum</span>(total, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">na.rm =</span> <span class="cn" style="color: #8f5902;
-background-color: null;
-font-style: inherit;">TRUE</span>), <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">.groups =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"drop"</span>)</span></code></pre></div>
-</div>
-<p>Y aquí, la evolución de pernoctaciones mes a mes de cada Comunidad Autónoma:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1">formato <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> scales<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">label_number</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">big.mark =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"."</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">scale =</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.001</span>, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">suffix =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"k"</span>)</span>
-<span id="cb3-2"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">ggplot</span>(df_series, <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> periodo, <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> pernoctaciones)) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb3-3">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_line</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"#800080"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb3-4">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">geom_smooth</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">method =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"loess"</span>) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb3-5">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">scale_y_continuous</span>(<span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">labels =</span> formato) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb3-6">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">facet_wrap</span>(</span>
-<span id="cb3-7">    <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">~</span>comunidades_y_ciudades_autonomas, </span>
-<span id="cb3-8">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">scales =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"free_y"</span>, </span>
-<span id="cb3-9">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">ncol =</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span></span>
-<span id="cb3-10">  ) <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb3-11">  <span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">labs</span>(</span>
-<span id="cb3-12">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Pernoctaciones mensuales por CCAA"</span>, </span>
-<span id="cb3-13">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Fuente: INE"</span>, </span>
-<span id="cb3-14">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">y =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Pernoctaciones (miles)"</span>, </span>
-<span id="cb3-15">    <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">x =</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">""</span></span>
-<span id="cb3-16">  )</span></code></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2024-08-04-viajeros/index_files/figure-html/evolucion-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-
-
-
- ]]></description>
-  <category>exploraciones</category>
-  <guid>https://lhansa.github.io/posts/2024-08-04-viajeros/</guid>
   <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
