@@ -10,7 +10,261 @@
 <atom:link href="https://lhansa.github.io/contenidos.xml" rel="self" type="application/rss+xml"/>
 <description>Tips sobre análisis de datos</description>
 <generator>quarto-1.6.43</generator>
-<lastBuildDate>Sat, 12 Apr 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 17 Apr 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Cómo corregir el optimismo de tu modelo estadístico</title>
+  <dc:creator>Leonardo Hansa</dc:creator>
+  <link>https://lhansa.github.io/posts/2025-04-17-optimism-correction/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="comentarios-iniciales" class="level2">
+<h2 class="anchored" data-anchor-id="comentarios-iniciales">Comentarios iniciales</h2>
+<p>Si entrenas un modelo en un conjunto de datos que no es muy grande, la métrica de ajuste que reportes no deberías calcularla sobre los datos de entrenamiento. Esto es porque el modelo ya conoce esos datos y se ha entrenado con ellos, intentando optimizar esa métrica de ajuste.</p>
+<p>Lo típico es reservar un conjunto de validación, unos datos que el modelo no conoce, por lo que la métrica de ajuste no tendrá ese sesgo.</p>
+<p>A ese sesgo lo llamamos <em>optimismo.</em></p>
+<p>Lo malo, según Frank Harrell, es que, si tu conjunto de datos es pequeño, esa validación no será suficiente estable.</p>
+<p><em>Bootstrap</em> es una solución.</p>
+<div id="libs" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.datasets <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> fetch_openml</span>
+<span id="cb1-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> LinearRegression</span>
+<span id="cb1-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.metrics <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> r2_score</span>
+<span id="cb1-6"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.utils <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> resample</span>
+<span id="cb1-7"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span></code></pre></div>
+</div>
+</section>
+<section id="bootstrap-para-corregir-el-optimismo" class="level2">
+<h2 class="anchored" data-anchor-id="bootstrap-para-corregir-el-optimismo">Bootstrap para corregir el optimismo</h2>
+<p>La idea es entrenar el modelo en varias muestras bootstrap y calcular la métrica de ajuste en cada par muestra bootstrap, muestra original, y luego la diferencia. Así, tendrás una lista de diferencias de longitud el número de muestras.</p>
+<p>Luego calculas la media.</p>
+<p>Finalmente, entrenas el modelo en la muestra original completa y le aplicas esa diferencia media.</p>
+<p>La métrica de ajuste final será la métrica de ajuste en entrenamiento menos la diferencia, es decir, con el optimismo corregido.</p>
+<section id="algunos-datos" class="level3">
+<h3 class="anchored" data-anchor-id="algunos-datos">Algunos datos</h3>
+<div id="load" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> fetch_openml(name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"boston"</span>, version<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, as_frame<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb2-2">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.data</span>
+<span id="cb2-3">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> data.target</span>
+<span id="cb2-4"></span>
+<span id="cb2-5">X_np <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> X.to_numpy()</span>
+<span id="cb2-6">y_np <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> y.to_numpy()</span></code></pre></div>
+</div>
+</section>
+<section id="entrenamiento-en-muestras-bootstrap" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento-en-muestras-bootstrap">Entrenamiento en muestras bootstrap</h3>
+<div id="set-up-boots" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">n_bootstraps <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">200</span></span></code></pre></div>
+</div>
+<p>Lo siguiente creo que quedaría más claro con un bucle <code>for</code>, pero en teoría no están recomendados. Así que creo una función y la llamo en una <em>list comprehension</em>.</p>
+<div id="compute-optimism" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> compute_optimism():</span>
+<span id="cb4-2">    X_boot, y_boot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> resample(X_np, y_np)</span>
+<span id="cb4-3"></span>
+<span id="cb4-4">    model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearRegression()</span>
+<span id="cb4-5">    model.fit(X_boot, y_boot)</span>
+<span id="cb4-6"></span>
+<span id="cb4-7">    y_pred_boot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model.predict(X_boot)</span>
+<span id="cb4-8">    r2_boot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> r2_score(y_boot, y_pred_boot)</span>
+<span id="cb4-9"></span>
+<span id="cb4-10">    y_pred_orig <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model.predict(X_np)</span>
+<span id="cb4-11">    r2_orig <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> r2_score(y_np, y_pred_orig)</span>
+<span id="cb4-12"></span>
+<span id="cb4-13">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span>(r2_boot <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> r2_orig)</span></code></pre></div>
+</div>
+<p>Y ahora calculo todo.</p>
+<div id="list-optimism" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">optimism_estimates <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [compute_optimism() <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> _ <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(n_bootstraps)]</span></code></pre></div>
+</div>
+</section>
+<section id="cálculo-del-optimismo" class="level3">
+<h3 class="anchored" data-anchor-id="cálculo-del-optimismo">Cálculo del optimismo</h3>
+<p>El optimismo medio es lo que necesito para el próximo paso. Así que calculo la media de la lista que acabo de generar.</p>
+<div id="cell-optimism" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">mean_optimism <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.mean(optimism_estimates)</span>
+<span id="cb6-2">mean_optimism</span></code></pre></div>
+<div id="optimism" class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>0.019457255438982853</code></pre>
+</div>
+</div>
+<p>Por curiosidad, así se distribuye el optimismo.</p>
+<div id="cell-histogram" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">plt.hist(optimism_estimates, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#800080"</span>, bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb8-2">plt.show()</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://lhansa.github.io/posts/2025-04-17-optimism-correction/index_files/figure-html/histogram-output-1.png" id="histogram" width="566" height="411" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="entrenamiento-final" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento-final">Entrenamiento final</h3>
+<p>Todos los entrenamientos anteriores estaban hechos sobre muestras <em>bootrstrap</em>, es decir, no estaban sobre el entrenamiento</p>
+<div id="final-train" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">final_model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearRegression()</span>
+<span id="cb9-2">final_model.fit(X_np, y_np)</span>
+<span id="cb9-3">final_r2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> r2_score(y_np, final_model.predict(X_np))</span></code></pre></div>
+</div>
+<div id="optimism-correct" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">corrected_r2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> final_r2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> mean_optimism</span>
+<span id="cb10-2"></span>
+<span id="cb10-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"R² original: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>final_r2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.4f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb10-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Optimismo medio: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>mean_optimism<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.4f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb10-5"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"R² corregido: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>corrected_r2<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.4f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>R² original: 0.7406
+Optimismo medio: 0.0195
+R² corregido: 0.7212</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>exploraciones</category>
+  <guid>https://lhansa.github.io/posts/2025-04-17-optimism-correction/</guid>
+  <pubDate>Thu, 17 Apr 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Cuánto te afecta la semilla al resultado final</title>
   <dc:creator>Leonardo Hansa</dc:creator>
@@ -6993,101 +7247,6 @@ font-style: inherit;">"free_y"</span>)</span></code></pre></div>
   <category>exploraciones</category>
   <guid>https://lhansa.github.io/posts/2024-08-05-mercamadrid/</guid>
   <pubDate>Mon, 05 Aug 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Papel del punto en R</title>
-  <dc:creator>Leonardo Hansa</dc:creator>
-  <link>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Guillermo Luijk <a href="https://www.linkedin.com/feed/update/urn:li:activity:7225379882355044352?commentUrn=urn%3Ali%3Acomment%3A%28activity%3A7225379882355044352%2C7225391436190371840%29&amp;replyUrn=urn%3Ali%3Acomment%3A%28activity%3A7225379882355044352%2C7225459855812120576%29&amp;dashCommentUrn=urn%3Ali%3Afsd_comment%3A%287225391436190371840%2Curn%3Ali%3Aactivity%3A7225379882355044352%29&amp;dashReplyUrn=urn%3Ali%3Afsd_comment%3A%287225459855812120576%2Curn%3Ali%3Aactivity%3A7225379882355044352%29">criticaba</a> el punto en R porque se permite usar en el nombre de variables, lo que limita su uso fuera de ellas.</p>
-<p>He intentado crear un operador en R con <code>.</code> que sirviera para sustituir en cierto modo al operador <code>$</code>. Imposible.</p>
-<p>Pero comparto avances porque quizá, aunque sea al Leo del futuro, le puede venir bien.</p>
-<section id="operadores-infix-propios-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="operadores-infix-propios-en-r">Operadores <em>infix</em> propios en R</h2>
-<p>Todo lo que haces en R es una función. Pero no todas las funciones necesitan paréntesis. Por ejemplo, puedes sumar de dos formas:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span></span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">+</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span>(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>La primera opción creo que se llama <em>infix</em>. Hay operaciones que se entienden mucho mejor así escritas que escritas como la segunda opción.</p>
-<p>De hecho, esa es la filosofía del <em>pipe</em>. El <em>pipe</em> está disponible desde R 4.1.0 con <code>|&gt;</code> pero antiguamente había que usar la librería <strong>magrittr</strong>.</p>
-<p>Como esta librería no formaba parte de lo fundamentos del lenguaje, todos los operadores tenían que ser propios y para hacer eso hay que usar una sintaxis muy particular.</p>
-<p>Los pipes de magrittr van acotados por <code>%</code>, porque esa es la sintaxis obligatoria para cualquier operador que quieras hacer y usar <em>infix</em>. Así resultó en <code>%&gt;%</code>.</p>
-</section>
-<section id="creación-de-un-operador-propio" class="level2">
-<h2 class="anchored" data-anchor-id="creación-de-un-operador-propio">Creación de un operador propio</h2>
-<p>Mi objetivo era un operador <code>.</code> con el que pudiera hacer <code>df.columna</code>, por ejemplo, que <code>mtcars.cyl</code> obtuviera resultado. Sería algo así:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">mtcars.cyl</span></code></pre></div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
-</div>
-</div>
-<p>Si intentas ejecutar eso, te dará error. Y no he dado con ninguna forma de hacerlo funcionar. Porque cualquier operador propio tiene que ir rodeado de <code>%</code>.</p>
-<p>Por ello, esto es lo que he conseguido:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">%.%</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">`</span> <span class="ot" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">&lt;-</span> <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">function</span>(df, columna) {</span>
-<span id="cb7-2">    df[[<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">as.character</span>(<span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">substitute</span>(columna))]]</span>
-<span id="cb7-3">}</span>
-<span id="cb7-4"></span>
-<span id="cb7-5">mtcars<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">%.%</span>cyl</span></code></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
-</div>
-</div>
-
-
-</section>
-
- ]]></description>
-  <category>datos</category>
-  <guid>https://lhansa.github.io/posts/2024-08-04-puntos-en-R/</guid>
-  <pubDate>Sun, 04 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
