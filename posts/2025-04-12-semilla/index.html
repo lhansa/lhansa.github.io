@@ -207,292 +207,101 @@ cookieconsent.run({
 <p>Voy a ajustar un RandomForest en algún conjunto de datos varias veces.</p>
 <p>El objetivo es ver que, cada vez que lo ejecuto, la predicción cambia, por lo que hay cierta incertidumbre cada vez que ajustas un modelo de estos.</p>
 <div id="libs" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_california_housing, load_breast_cancer</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor, RandomForestClassifier</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_diabetes</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error, roc_auc_score</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="ejemplo-1.-regresión" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo-1.-regresión">Ejemplo 1. Regresión</h2>
-<section id="preparación-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="preparación-de-datos">Preparación de datos</h3>
+<section id="preparación-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="preparación-de-datos">Preparación de datos</h2>
 <p>Los datos no me importan especialmente. Cargo unos de <strong>sklearn</strong> que me ha sugerido ChatGPT. Los separo en train y test. Esta separación la dejo fija: voy a estudiar cómo afecta la aleatoriedad del modelo, no la de los datos.</p>
 <div id="data" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fetch_california_housing(as_frame<span class="op">=</span><span class="va">True</span>)</span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> load_diabetes()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data.data</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data.target</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="ajuste-de-los-modelos" class="level3">
-<h3 class="anchored" data-anchor-id="ajuste-de-los-modelos">Ajuste de los modelos</h3>
+<section id="ajuste-de-los-modelos" class="level2">
+<h2 class="anchored" data-anchor-id="ajuste-de-los-modelos">Ajuste de los modelos</h2>
 <p>Ajusto 100 modelos. Voy a guardar algunas cosas de los ajustes para luego ver cómo varían de un caso a otro. Lo que quiero estudiar es si hay mucha dispersión entre unos resultados y otros.</p>
 <div id="loop-model" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>num_trials <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>l_mse <span class="op">=</span> []</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df_preds <span class="op">=</span> pd.DataFrame()</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>num_trials <span class="op">=</span> <span class="dv">200</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>l_r2 <span class="op">=</span> []</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>l_preds <span class="op">=</span> []</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_trials):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f'Iteración </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>num_trials<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  random_state <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="dv">10000</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  model <span class="op">=</span> RandomForestRegressor(</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    random_state<span class="op">=</span>random_state, </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    n_jobs<span class="op">=-</span><span class="dv">1</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  model.fit(X_train, y_train)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  y_pred <span class="op">=</span> model.predict(X_test)</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  l_mse.append(mean_squared_error(y_test, y_pred))</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  df_preds[<span class="ss">f'pred_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">'</span>] <span class="op">=</span> y_pred</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Iteración 1/100
-Iteración 2/100
-Iteración 3/100
-Iteración 4/100
-Iteración 5/100
-Iteración 6/100
-Iteración 7/100
-Iteración 8/100
-Iteración 9/100
-Iteración 10/100
-Iteración 11/100
-Iteración 12/100
-Iteración 13/100
-Iteración 14/100
-Iteración 15/100
-Iteración 16/100
-Iteración 17/100
-Iteración 18/100
-Iteración 19/100
-Iteración 20/100
-Iteración 21/100
-Iteración 22/100
-Iteración 23/100
-Iteración 24/100
-Iteración 25/100
-Iteración 26/100
-Iteración 27/100
-Iteración 28/100
-Iteración 29/100
-Iteración 30/100
-Iteración 31/100
-Iteración 32/100
-Iteración 33/100
-Iteración 34/100
-Iteración 35/100
-Iteración 36/100
-Iteración 37/100
-Iteración 38/100
-Iteración 39/100
-Iteración 40/100
-Iteración 41/100
-Iteración 42/100
-Iteración 43/100
-Iteración 44/100
-Iteración 45/100
-Iteración 46/100
-Iteración 47/100
-Iteración 48/100
-Iteración 49/100
-Iteración 50/100
-Iteración 51/100
-Iteración 52/100
-Iteración 53/100
-Iteración 54/100
-Iteración 55/100
-Iteración 56/100
-Iteración 57/100
-Iteración 58/100
-Iteración 59/100
-Iteración 60/100
-Iteración 61/100
-Iteración 62/100
-Iteración 63/100
-Iteración 64/100
-Iteración 65/100
-Iteración 66/100
-Iteración 67/100
-Iteración 68/100
-Iteración 69/100
-Iteración 70/100
-Iteración 71/100
-Iteración 72/100
-Iteración 73/100
-Iteración 74/100
-Iteración 75/100
-Iteración 76/100
-Iteración 77/100
-Iteración 78/100
-Iteración 79/100
-Iteración 80/100
-Iteración 81/100
-Iteración 82/100
-Iteración 83/100
-Iteración 84/100
-Iteración 85/100
-Iteración 86/100
-Iteración 87/100
-Iteración 88/100
-Iteración 89/100
-Iteración 90/100
-Iteración 91/100
-Iteración 92/100
-Iteración 93/100
-Iteración 94/100
-Iteración 95/100
-Iteración 96/100
-Iteración 97/100
-Iteración 98/100
-Iteración 99/100
-Iteración 100/100</code></pre>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    random_state <span class="op">=</span> np.random.randint(<span class="dv">0</span>, <span class="dv">10000</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> RandomForestRegressor(random_state<span class="op">=</span>random_state, n_jobs<span class="op">=-</span><span class="dv">1</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    model.fit(X_train, y_train)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    y_pred <span class="op">=</span> model.predict(X_test)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    l_r2.append(r2_score(y_test, y_pred))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    pred_series <span class="op">=</span> pd.Series(y_pred, name<span class="op">=</span><span class="ss">f"pred_</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    l_preds.append(pred_series)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Ahora creo el data frame de predicciones:</p>
+<div id="concat" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_preds <span class="op">=</span> pd.concat(l_preds, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="visualización" class="level3">
-<h3 class="anchored" data-anchor-id="visualización">Visualización</h3>
-<section id="métrica-de-ajuste" class="level4">
-<h4 class="anchored" data-anchor-id="métrica-de-ajuste">Métrica de ajuste</h4>
-<p>Reconozco que esperaba más dispersión entre las métricas. Entre los 100 modelos, la métrica de ajuste (MSE) varía entre 0.25 y 0.26. Muy estable.</p>
-<div id="cell-hist-mse" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.hist(l_mse, bins<span class="op">=</span><span class="dv">20</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="visualización" class="level2">
+<h2 class="anchored" data-anchor-id="visualización">Visualización</h2>
+<section id="métrica-de-ajuste" class="level3">
+<h3 class="anchored" data-anchor-id="métrica-de-ajuste">Métrica de ajuste</h3>
+<p>Aquí la distribución del R2.</p>
+<div id="cell-hist-mse" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/hist-mse-output-1.png" id="hist-mse" width="566" height="411" class="figure-img"></p>
+<p><img src="index_files/figure-html/hist-mse-output-1.png" id="hist-mse" width="1142" height="854" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="predicciones" class="level3">
 <h3 class="anchored" data-anchor-id="predicciones">Predicciones</h3>
 <p>Ahora muestro cómo varía cada predicción observación a observación. Muestro solo unas pocas porque no se ve nada si intento ver todas una a una.</p>
 <p>Quizá no tenga sentido ver todas una a una, sino ver la desviación en general de todas las observación con respecto a su punto medio o su media o lo que sea. Pero paso de pensar.</p>
-<div id="cell-preds-boxplots" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_preds.reset_index().melt(id_vars<span class="op">=</span><span class="st">'index'</span>, var_name<span class="op">=</span><span class="st">'modelo'</span>, value_name<span class="op">=</span><span class="st">'pred'</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_long.rename(columns<span class="op">=</span>{<span class="st">'index'</span>: <span class="st">'id'</span>})</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>subset_ids <span class="op">=</span> df_long[<span class="st">'id'</span>].unique()[:<span class="dv">50</span>]</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> df_long[df_long[<span class="st">'id'</span>].isin(subset_ids)]</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">6</span>))</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>subset, x<span class="op">=</span><span class="st">'id'</span>, y<span class="op">=</span><span class="st">'pred'</span>, showfliers<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'ID de observación (subconjunto)'</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Predicción'</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot de predicciones por observación (100 primeras)'</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-preds-boxplots" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_preds.reset_index().melt(id_vars<span class="op">=</span><span class="st">'index'</span>, var_name<span class="op">=</span><span class="st">'modelo'</span>, value_name<span class="op">=</span><span class="st">'pred'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="op">=</span> df_long.rename(columns<span class="op">=</span>{<span class="st">'index'</span>: <span class="st">'id'</span>})</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>subset_ids <span class="op">=</span> df_long[<span class="st">'id'</span>].unique()[:<span class="dv">50</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> df_long[df_long[<span class="st">'id'</span>].isin(subset_ids)]</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">6</span>))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>subset, x<span class="op">=</span><span class="st">'id'</span>, y<span class="op">=</span><span class="st">'pred'</span>, showfliers<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'ID de observación (subconjunto)'</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Predicción'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot de predicciones por observación (unas pocas)'</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>, fontsize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="1910" height="567" class="figure-img"></p>
+<p><img src="index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="1910" height="568" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>Hay alguna observación que sí presenta algo de variabilidad entre los modelos pero no me escandizaría por ello.</p>
-</section>
-</section>
-<section id="ejemplo-2.-clasificación" class="level2">
-<h2 class="anchored" data-anchor-id="ejemplo-2.-clasificación">Ejemplo 2. Clasificación</h2>
-<p>Ahora quiero hacer algo parecido en un problema de clasificación 0-1.</p>
-<section id="preparación-de-datos-1" class="level3">
-<h3 class="anchored" data-anchor-id="preparación-de-datos-1">Preparación de datos</h3>
-<div id="data-class" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> load_breast_cancer()</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> data.data</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> data.target</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="ajuste-de-modelos" class="level3">
-<h3 class="anchored" data-anchor-id="ajuste-de-modelos">Ajuste de modelos</h3>
-<div id="modelos" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>all_preds <span class="op">=</span> []</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>all_aucs <span class="op">=</span> []</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):  <span class="co"># 100 semillas</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> RandomForestClassifier(random_state<span class="op">=</span>i, n_jobs<span class="op">=-</span><span class="dv">1</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    model.fit(X_train, y_train)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    probs <span class="op">=</span> model.predict_proba(X_test)[:, <span class="dv">1</span>]</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Guardar predicciones</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    df_temp <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'id'</span>: <span class="bu">range</span>(<span class="bu">len</span>(X_test)),</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'prob'</span>: probs,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'seed'</span>: i,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">'true_label'</span>: y_test</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    all_preds.append(df_temp)</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calcular y guardar AUC</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    auc <span class="op">=</span> roc_auc_score(y_test, probs)</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    all_aucs.append(auc)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="visualización-1" class="level3">
-<h3 class="anchored" data-anchor-id="visualización-1">Visualización</h3>
-<section id="bondad-de-ajuste" class="level4">
-<h4 class="anchored" data-anchor-id="bondad-de-ajuste">Bondad de ajuste</h4>
-<div id="cell-hist-auc" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df_all <span class="op">=</span> pd.concat(all_preds, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>sns.histplot(all_aucs, bins<span class="op">=</span><span class="dv">20</span>, kde<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'AUC'</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Distribución de AUCs sobre 100 random forests'</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/hist-auc-output-1.png" id="hist-auc" width="758" height="374" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="probabalidad-por-observación" class="level4">
-<h4 class="anchored" data-anchor-id="probabalidad-por-observación">Probabalidad por observación</h4>
-<div id="daaaf002" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Unir todos los resultados</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df_all <span class="op">=</span> pd.concat(all_preds, ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">8</span>))</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>sns.stripplot(data<span class="op">=</span>df_all, x<span class="op">=</span><span class="st">'prob'</span>, y<span class="op">=</span><span class="st">'id'</span>, hue<span class="op">=</span><span class="st">'true_label'</span>, dodge<span class="op">=</span><span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.6</span>, palette<span class="op">=</span><span class="st">'Set1'</span>, jitter<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">'gray'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Probabilidad predicha (clase 1)'</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'ID de observación'</span>)</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks<span class="op">=</span><span class="bu">range</span>(<span class="dv">0</span>, <span class="bu">len</span>(df_all[<span class="st">'id'</span>].unique()), <span class="bu">len</span>(df_all[<span class="st">'id'</span>].unique()) <span class="op">//</span> <span class="dv">5</span>))</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Variabilidad de predicciones por semilla (Random Forest)'</span>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>plt.legend(title<span class="op">=</span><span class="st">'Clase real'</span>, loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/cell-10-output-1.png" width="950" height="758" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
 
 
-</section>
 </section>
 </section>
 
