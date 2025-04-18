@@ -590,16 +590,16 @@ font-style: inherit;">True</span>)</span>
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">6</span>))</span>
+font-style: inherit;">20</span>))</span>
 <span id="cb5-16">sns.boxplot(data<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span>subset, x<span class="op" style="color: #5E5E5E;
+font-style: inherit;">=</span>subset, y<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"id"</span>, y<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"id"</span>, x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
@@ -608,10 +608,10 @@ background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">False</span>)</span>
-<span id="cb5-17">plt.xlabel(<span class="st" style="color: #20794D;
+<span id="cb5-17">plt.ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"ID de observación (subconjunto)"</span>)</span>
-<span id="cb5-18">plt.ylabel(<span class="st" style="color: #20794D;
+<span id="cb5-18">plt.xlabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Predicción"</span>)</span>
 <span id="cb5-19">plt.title(<span class="st" style="color: #20794D;
@@ -631,7 +631,7 @@ font-style: inherit;">5</span>)</span>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2025-04-12-semilla/index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="1910" height="568" class="figure-img"></p>
+<p><img src="https://lhansa.github.io/posts/2025-04-12-semilla/index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="567" height="1910" class="figure-img"></p>
 </figure>
 </div>
 </div>
