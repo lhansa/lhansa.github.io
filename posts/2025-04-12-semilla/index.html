@@ -285,24 +285,22 @@ cookieconsent.run({
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>subset_ids <span class="op">=</span> df_long[<span class="st">"id"</span>].unique()[:<span class="dv">50</span>]</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>subset <span class="op">=</span> df_long[df_long[<span class="st">"id"</span>].isin(subset_ids)]</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular mediana por id</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>medianas <span class="op">=</span> subset.groupby(<span class="st">"id"</span>)[<span class="st">"pred"</span>].median().sort_values()</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir 'id' a categoría ordenada según su mediana</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>subset[<span class="st">"id"</span>] <span class="op">=</span> pd.Categorical(subset[<span class="st">"id"</span>], categories<span class="op">=</span>medianas.index, ordered<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">20</span>))</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>subset, y<span class="op">=</span><span class="st">"id"</span>, x<span class="op">=</span><span class="st">"pred"</span>, showfliers<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"ID de observación (subconjunto)"</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Predicción"</span>)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot de predicciones por observación (unas pocas)"</span>)</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>, fontsize<span class="op">=</span><span class="dv">5</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>medianas <span class="op">=</span> subset.groupby(<span class="st">"id"</span>)[<span class="st">"pred"</span>].median().sort_values()</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>subset[<span class="st">"id"</span>] <span class="op">=</span> pd.Categorical(subset[<span class="st">"id"</span>], categories<span class="op">=</span>medianas.index, ordered<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">15</span>))</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>sns.boxplot(data<span class="op">=</span>subset, y<span class="op">=</span><span class="st">"id"</span>, x<span class="op">=</span><span class="st">"pred"</span>, color<span class="op">=</span><span class="st">"#800080"</span>, showfliers<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"ID de observación (subconjunto)"</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Predicción"</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Boxplot de predicciones por observación (unas pocas)"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>, fontsize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="567" height="1910" class="figure-img"></p>
+<p><img src="index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="759" height="1430" class="figure-img"></p>
 </figure>
 </div>
 </div>

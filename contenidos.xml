@@ -558,21 +558,15 @@ font-style: inherit;">=</span> df_long[df_long[<span class="st" style="color: #2
 background-color: null;
 font-style: inherit;">"id"</span>].isin(subset_ids)]</span>
 <span id="cb5-8"></span>
-<span id="cb5-9"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Calcular mediana por id</span></span>
-<span id="cb5-10">medianas <span class="op" style="color: #5E5E5E;
+<span id="cb5-9">medianas <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> subset.groupby(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"id"</span>)[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"pred"</span>].median().sort_values()</span>
-<span id="cb5-11"></span>
-<span id="cb5-12"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Convertir 'id' a categoría ordenada según su mediana</span></span>
-<span id="cb5-13">subset[<span class="st" style="color: #20794D;
+<span id="cb5-10"></span>
+<span id="cb5-11">subset[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"id"</span>] <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -585,15 +579,15 @@ background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">True</span>)</span>
-<span id="cb5-14"></span>
-<span id="cb5-15">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+<span id="cb5-12"></span>
+<span id="cb5-13">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">20</span>))</span>
-<span id="cb5-16">sns.boxplot(data<span class="op" style="color: #5E5E5E;
+font-style: inherit;">15</span>))</span>
+<span id="cb5-14">sns.boxplot(data<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>subset, y<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -603,21 +597,25 @@ font-style: inherit;">"id"</span>, x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"pred"</span>, showfliers<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"pred"</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#800080"</span>, showfliers<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">False</span>)</span>
-<span id="cb5-17">plt.ylabel(<span class="st" style="color: #20794D;
+<span id="cb5-15">plt.ylabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"ID de observación (subconjunto)"</span>)</span>
-<span id="cb5-18">plt.xlabel(<span class="st" style="color: #20794D;
+<span id="cb5-16">plt.xlabel(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Predicción"</span>)</span>
-<span id="cb5-19">plt.title(<span class="st" style="color: #20794D;
+<span id="cb5-17">plt.title(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Boxplot de predicciones por observación (unas pocas)"</span>)</span>
-<span id="cb5-20">plt.xticks(rotation<span class="op" style="color: #5E5E5E;
+<span id="cb5-18">plt.xticks(rotation<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -626,12 +624,12 @@ background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span>)</span>
-<span id="cb5-21">plt.tight_layout()</span>
-<span id="cb5-22">plt.show()</span></code></pre></div>
+<span id="cb5-19">plt.tight_layout()</span>
+<span id="cb5-20">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2025-04-12-semilla/index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="567" height="1910" class="figure-img"></p>
+<p><img src="https://lhansa.github.io/posts/2025-04-12-semilla/index_files/figure-html/preds-boxplots-output-1.png" id="preds-boxplots" width="759" height="1430" class="figure-img"></p>
 </figure>
 </div>
 </div>
