@@ -173,25 +173,95 @@ background-color: null;
 font-style: inherit;">=</span> np.mean(optimism_estimates)</span>
 <span id="cb6-2">mean_optimism</span></code></pre></div>
 <div id="optimism" class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>0.019457255438982853</code></pre>
+<pre><code>0.019051516450253544</code></pre>
 </div>
 </div>
 <p>Por curiosidad, así se distribuye el optimismo.</p>
 <div id="cell-histogram" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">plt.hist(optimism_estimates, color<span class="op" style="color: #5E5E5E;
+<div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">"#800080"</span>, bins<span class="op" style="color: #5E5E5E;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>))</span>
+<span id="cb8-2">plt.hist(optimism_estimates, bins<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">20</span>)</span>
-<span id="cb8-2">plt.show()</span></code></pre></div>
+font-style: inherit;">20</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#800080"</span>, edgecolor<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"black"</span>, alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.75</span>)</span>
+<span id="cb8-3"></span>
+<span id="cb8-4">plt.title(</span>
+<span id="cb8-5">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Distribución del optimismo del modelo (bootstrap)"</span>, fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">14</span>, fontweight<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"bold"</span></span>
+<span id="cb8-6">)</span>
+<span id="cb8-7">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Optimismo estimado"</span>, fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>)</span>
+<span id="cb8-8">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Frecuencia"</span>, fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>)</span>
+<span id="cb8-9"></span>
+<span id="cb8-10">plt.grid(<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, linestyle<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"--"</span>, linewidth<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.3</span>)</span>
+<span id="cb8-11">plt.xticks(fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb8-12">plt.yticks(fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)</span>
+<span id="cb8-13">plt.tight_layout()</span>
+<span id="cb8-14">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2025-04-17-optimism-correction/index_files/figure-html/histogram-output-1.png" id="histogram" width="566" height="411" class="figure-img"></p>
+<p><img src="https://lhansa.github.io/posts/2025-04-17-optimism-correction/index_files/figure-html/histogram-output-1.png" id="histogram" width="759" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -251,8 +321,8 @@ background-color: null;
 font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R² original: 0.7406
-Optimismo medio: 0.0195
-R² corregido: 0.7212</code></pre>
+Optimismo medio: 0.0191
+R² corregido: 0.7216</code></pre>
 </div>
 </div>
 
@@ -437,7 +507,7 @@ font-style: inherit;">1</span>)</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="https://lhansa.github.io/posts/2025-04-12-semilla/index_files/figure-html/hist-mse-output-1.png" id="hist-mse" width="1142" height="854" class="figure-img"></p>
+<p><img src="https://lhansa.github.io/posts/2025-04-12-semilla/index_files/figure-html/hist-mse-output-1.png" id="hist-mse" width="758" height="470" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -450,74 +520,104 @@ font-style: inherit;">1</span>)</span></code></pre></div>
 <div id="cell-preds-boxplots" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">df_long <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> df_preds.reset_index().melt(id_vars<span class="op" style="color: #5E5E5E;
+font-style: inherit;">=</span> df_preds.reset_index().melt(</span>
+<span id="cb5-2">    id_vars<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'index'</span>, var_name<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"index"</span>, var_name<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'modelo'</span>, value_name<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"modelo"</span>, value_name<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'pred'</span>)</span>
-<span id="cb5-2">df_long <span class="op" style="color: #5E5E5E;
+font-style: inherit;">"pred"</span></span>
+<span id="cb5-3">)</span>
+<span id="cb5-4">df_long <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df_long.rename(columns<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'index'</span>: <span class="st" style="color: #20794D;
+font-style: inherit;">"index"</span>: <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'id'</span>})</span>
-<span id="cb5-3"></span>
-<span id="cb5-4">subset_ids <span class="op" style="color: #5E5E5E;
+font-style: inherit;">"id"</span>})</span>
+<span id="cb5-5"></span>
+<span id="cb5-6">subset_ids <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df_long[<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'id'</span>].unique()[:<span class="dv" style="color: #AD0000;
+font-style: inherit;">"id"</span>].unique()[:<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">50</span>]</span>
-<span id="cb5-5">subset <span class="op" style="color: #5E5E5E;
+<span id="cb5-7">subset <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df_long[df_long[<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'id'</span>].isin(subset_ids)]</span>
-<span id="cb5-6"></span>
-<span id="cb5-7">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"id"</span>].isin(subset_ids)]</span>
+<span id="cb5-8"></span>
+<span id="cb5-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Calcular mediana por id</span></span>
+<span id="cb5-10">medianas <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> subset.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"pred"</span>].median().sort_values()</span>
+<span id="cb5-11"></span>
+<span id="cb5-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Convertir 'id' a categoría ordenada según su mediana</span></span>
+<span id="cb5-13">subset[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.Categorical(subset[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>], categories<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>medianas.index, ordered<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb5-14"></span>
+<span id="cb5-15">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">6</span>))</span>
-<span id="cb5-8">sns.boxplot(data<span class="op" style="color: #5E5E5E;
+<span id="cb5-16">sns.boxplot(data<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>subset, x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'id'</span>, y<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"id"</span>, y<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'pred'</span>, showfliers<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"pred"</span>, showfliers<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">False</span>)</span>
-<span id="cb5-9">plt.xlabel(<span class="st" style="color: #20794D;
+<span id="cb5-17">plt.xlabel(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'ID de observación (subconjunto)'</span>)</span>
-<span id="cb5-10">plt.ylabel(<span class="st" style="color: #20794D;
+font-style: inherit;">"ID de observación (subconjunto)"</span>)</span>
+<span id="cb5-18">plt.ylabel(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'Predicción'</span>)</span>
-<span id="cb5-11">plt.title(<span class="st" style="color: #20794D;
+font-style: inherit;">"Predicción"</span>)</span>
+<span id="cb5-19">plt.title(<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'Boxplot de predicciones por observación (unas pocas)'</span>)</span>
-<span id="cb5-12">plt.xticks(rotation<span class="op" style="color: #5E5E5E;
+font-style: inherit;">"Boxplot de predicciones por observación (unas pocas)"</span>)</span>
+<span id="cb5-20">plt.xticks(rotation<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
@@ -526,8 +626,8 @@ background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">5</span>)</span>
-<span id="cb5-13">plt.tight_layout()</span>
-<span id="cb5-14">plt.show()</span></code></pre></div>
+<span id="cb5-21">plt.tight_layout()</span>
+<span id="cb5-22">plt.show()</span></code></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
