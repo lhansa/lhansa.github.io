@@ -173,7 +173,7 @@ background-color: null;
 font-style: inherit;">=</span> np.mean(optimism_estimates)</span>
 <span id="cb6-2">mean_optimism</span></code></pre></div>
 <div id="optimism" class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>0.019051516450253544</code></pre>
+<pre><code>0.017757491298340335</code></pre>
 </div>
 </div>
 <p>Por curiosidad, así se distribuye el optimismo.</p>
@@ -321,8 +321,8 @@ background-color: null;
 font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>R² original: 0.7406
-Optimismo medio: 0.0191
-R² corregido: 0.7216</code></pre>
+Optimismo medio: 0.0178
+R² corregido: 0.7229</code></pre>
 </div>
 </div>
 
