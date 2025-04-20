@@ -28,8 +28,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
   
 [[menu.main]]
-    name = "Contenido"
-    url = "/post/"
+    name = "Correos"
+    url = "/correos/"
     description = "Ejemplos de cosas que te envío al correo"
     weight = 1
 [[menu.main]]
