@@ -1,10 +1,12 @@
 ---
 title: Por qué no deberías aprender Python desde cero
-author: ''
+author: 'Leonardo Hansa'
 date: '2024-12-29'
 slug: por-que-no-deberias-aprender-python-desde-cero
-categories: []
-tags: []
+type: "post"
+tags: ["programming", "python", "learning", "process", "methods"]
+summary: "Proponerte aprender Python es un error. Te cuento por qué y cómo aprenderlo de verdad."
+description: "Aprender Python desde cero es un error. Te cuento por qué y cómo aprenderlo de verdad."
 ---
 
 ## Índice

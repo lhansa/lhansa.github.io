@@ -1,10 +1,13 @@
 ---
 title: Guía sobre Tablas Dinámicas en Excel
-author: ''
+author: 'Leonardo Hansa'
 date: '2024-07-11'
 slug: guia-sobre-tablas-dinamicas-en-excel
 categories: []
 description: "Aprende todo sobre las tablas dinámicas en Excel con esta guía completa. Descubre cómo crear, optimizar y solucionar problemas comunes de las tablas dinámicas en Excel."
+tags: ["excel", "data-analysis", "pivot-tables"]
+type: "post"
+summary: "Hay personas que extraen conclusiones de sus negocios sin saber nada de estadística; solo con tablas dinámicas. Aquí te doy unas ideas.."
 ---
 
 ## Introducción a las Tablas Dinámicas en Excel

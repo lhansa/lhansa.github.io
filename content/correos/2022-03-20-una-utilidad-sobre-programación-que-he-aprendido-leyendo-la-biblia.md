@@ -3,6 +3,8 @@ title: Una utilidad sobre programación que he aprendido leyendo la Biblia
 author: Leonardo Hansa
 date: '2022-03-20'
 slug: una-utilidad-sobre-programacion-que-he-aprendido-leyendo-la-biblia
+type: "correos"
+tags: ["programming", "courses", "learning", "modelling"]
 ---
 
 Salomón, según la Biblia, fue un rey de Israel al que un día se le presentaron dos mujeres discutiendo sobre si un bebé era de una o de otra.

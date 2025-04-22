@@ -3,6 +3,8 @@ title: No hagas ese máster
 author: Leonardo Hansa
 date: '2022-01-02'
 slug: no-hagas-ese-master
+type: "correos"
+tags: ["programming", "courses", "learning", "process", "methods"]
 ---
 
 Un tal James Clear dice que no te pongas objetivos en la vida.
@@ -27,6 +29,8 @@ Necesitas un sistema para mantenerte ahí. Tienes que aprender a mantenerte sano
 
 Si en lugar de proponerte adelgazar 5 kilos, cosa que será difícil, frustrante y quizá ni lo consigas, te propones una rutina diaria sana, con el tiempo serás capaz de mantenerte en un buen peso (no solo perder lo que te sobra).
 
+***
+
 ¿Qué tiene que ver esto con aprender a programar?
 
 Pues que si te matriculas en ese máster de Data Science de no sé qué escuela, o en un curso de Python, o asistes a aquel webinar de Introducción a la programación para analistas, es posible que una vez lo acabes vuelvas a tu rutina sin más.
@@ -34,8 +38,6 @@ Pues que si te matriculas en ese máster de Data Science de no sé qué escuela,
 En tal caso, la utilidad de lo que hayas cursado es nula.
 
 Matrículate en el curso que veas. Pero es muy importante que metas la programación en tu rutina.
-
-Responde a este correo y le damos una vuelta juntos. 
 
 
 P.D. En serio, matrículate en el curso que veas. Lo importante es que cuando termines el curso tengas claro que luego te toca continuar. Sin curso. En solitario. Eso no es fácil. Pero te ayudo si quieres. Escríbeme.

@@ -2,7 +2,9 @@
 title: Estás aprendiendo constantemente
 author: Leonardo Hansa
 date: '2022-02-04'
-slug: estás-aprendiendo-constantemente
+slug: estas-aprendiendo-constantemente
+type: "correos"
+tags: ["programming", "courses", "learning", "modelling"]
 ---
 
 Hace tiempo trabajé en un sitio en el que hacíamos modelos matemáticos con los datos de nuestros clientes.
@@ -13,7 +15,7 @@ Sí.
 
 No voy a entrar en detalles ahora de lo absurdo que suena. Lo relevante para ti hoy es que el trabajo se hacía con Excel y PowerPoint.
 
-Quizá, igual que tú.
+Quizá igual que tú.
 
 Pero claro, había proyectos un poco grandes, para los que Excel se quedaba pequeño. Para estos casos, había gente en el equipo que se manejaba bien picando código. Otros no nos manejábamos tan bien, pero intentábamos aprender.
 
@@ -55,11 +57,4 @@ Si estás ahora en un curso, o lo has terminado hace poco, o lo vas a empezar pr
 
 Material hay. Solo te falta método.
 
-Si necesitas método, escríbeme. No aprenderás a programar conmigo. Pero te acompañaré en los primeros pasos del aprendizaje, para que luego sepas continuar solo.
-
-
-
 P.D. Mi compañera sigue impartiendo cursos. Pero estudia mucho más de lo que enseña. No para de estudiar. No se matricula en ningún máster, pero aprende mucho.
-
-
-

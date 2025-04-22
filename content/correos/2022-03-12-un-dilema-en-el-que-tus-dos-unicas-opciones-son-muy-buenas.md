@@ -2,10 +2,10 @@
 title: Un dilema en el que tus dos únicas opciones son muy buenas
 author: Leonardo Hansa
 date: '2022-03-12'
-slug: un-dilema-en-el-que-tus-dos-únicas-opciones-son-muy-buenas
-categories: []
+slug: un-dilema-en-el-que-tus-dos-unicas-opciones-son-muy-buenas
+type: "correos"
+tags: ["programming", "courses", "learning", "modelling"]
 ---
-
 
 Hace unos días dije que si tienes en mente varios recursos para estudiar programación, decantarte por solo uno es difícil. Pero claro, tu tiempo no es infinito, y tu dinero tampoco, así que no puedes hacerlos todos.
 
@@ -15,11 +15,11 @@ Mi sugerencia era que te hicieras una pregunta: ¿para qué quieres el curso?
 
 Algunas posibles respuestas:
 
-    Para conocer herramientas potentes para tu trabajo.
-    Para conseguir un trabajo diferente al que tienes.
-    Porque te obligan.
-    Por pura curiosidad.
-    Para pasar el rato.
+- Para conocer herramientas potentes para tu trabajo.
+- Para conseguir un trabajo diferente al que tienes.
+- Porque te obligan.
+- Por pura curiosidad.
+- Para pasar el rato.
 
 Tu respuesta te puede ayudar, sobre todo, a descartar opciones.
 
@@ -33,6 +33,7 @@ Si te matriculas en un curso de data science, vas a aprender a hacer modelos mat
 
 Verás que se puede descartar mucho si tienes clara la respuesta a esa pregunta.
 
+//
 
 Una vez has descartado muchas cosas viene el gran dilema. ¿Te lanzas a la piscina con una de las pocas opciones que te quedan, o pasas del tema porque concluyes que esto no va contigo?
 
@@ -46,11 +47,4 @@ Si el curso te lleva poco tiempo, mejor, porque arrancarás rápido. Terminas el
 
 Es complicado dar el primer paso.
 
-Si trabajas con datos y quieres dar un empujón a tu carrera profesional, pero sin meterte en historias de big data, data science, machine learning y otras locuciones en inglés, te voy a ofrecer una cosa la semana que viene que te puede gustar.
 
-Será eso, un primer paso.
-
-
-
-P.D.  Lo que te voy a ofrecer la semana que viene no será gratis. No te costará dinero pero sí un esfuerzo.
- 
