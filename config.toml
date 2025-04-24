@@ -17,10 +17,10 @@ summaryLength = 70
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
-  sitename = "Programo porque es resultón"
+  sitename = "Te sientes impostor porque no entiendes tus modelos de machine learning"
   dateform = "02/01/2006"
   title = "Cosa"
-  description = "¿Oxidado en el trabajo? Te mando ideas semanales para que deje de ser así." 
+  description = "Más cursos de data science no te quitarán el síndrome del impostor. Mejor base estadística, sí." 
   disableKinds = ["taxonomy", "taxonomyTerm"]
   
 [[permalinks]]
