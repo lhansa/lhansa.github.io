@@ -4,7 +4,6 @@ author: 'Leonardo Hansa'
 date: '2022-09-17'
 slug: te-gusta-la-caca-y-quiza-no-lo-sepas
 tags: ["programming"]
-summary: 'Qué es la deuda técnica.'
 description: 'Qué es la deuda técnica.'
 type: "correos"
 ---

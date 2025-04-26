@@ -5,7 +5,6 @@ date: '2022-06-19'
 slug: por-que-no-me-gusta-leer-ni-a-ti-programar
 type: "correos"
 description: 'Reflexiones sobre la lectura y la programación.'
-summary: 'Reflexiones sobre la lectura y la programación.'
 tags: ["programación", "lectura", "errores"]
 ---
 

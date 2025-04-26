@@ -5,7 +5,6 @@ date: '2022-11-01'
 slug: otro-error-que-se-me-resiste
 type: "correos"
 description: 'Reflexiones sobre errores en programación y aprendizaje.'
-summary: 'Reflexiones sobre errores en programación y aprendizaje.'
 tags: ["errores", "programación", "aprendizaje"]
 ---
 

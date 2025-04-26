@@ -5,7 +5,6 @@ date: '2022-07-09'
 slug: por-que-me-gusta-el-porno
 type: "correos"
 description: 'Reflexiones sobre la importancia de compartir procesos y metodologías en el análisis de datos.'
-summary: 'Reflexiones sobre la importancia de compartir procesos y metodologías en el análisis de datos.'
 tags: ["datos", "metodologías", "congreso"]
 ---
 

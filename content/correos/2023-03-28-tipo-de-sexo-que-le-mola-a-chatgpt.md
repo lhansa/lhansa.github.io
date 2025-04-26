@@ -5,7 +5,6 @@ type: "correos"
 date: '2023-03-28'
 slug: tipo-de-sexo-que-le-mola-a-chatgpt
 description: 'Reflexiones sobre cómo interactuar con ChatGPT para obtener mejores resultados.'
-summary: 'Reflexiones sobre cómo interactuar con ChatGPT para obtener mejores resultados.'
 tags: ["chatgpt", "ai", "interaction", "data"]
 ---
 

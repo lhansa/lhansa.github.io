@@ -5,7 +5,6 @@ date: '2022-03-21'
 slug: a-nadie-le-importa-lo-que-haces-sino-lo-que-consigues
 type: correos
 description: 'Reflexiones sobre la importancia de los resultados en el trabajo.'
-summary: 'Reflexiones sobre la importancia de los resultados en el trabajo.'
 tags: ["programación", "datos", "valor"]
 ---
 

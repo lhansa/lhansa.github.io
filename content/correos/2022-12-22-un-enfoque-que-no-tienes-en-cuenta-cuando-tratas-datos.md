@@ -5,7 +5,6 @@ date: '2022-12-25'
 slug: un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos
 type: "correos"
 description: 'Reflexiones sobre la programación orientada a objetos y su impacto en el análisis de datos.'
-summary: 'Reflexiones sobre la programación orientada a objetos y su impacto en el análisis de datos.'
 tags: ["programación", "objetos", "python", "r"]
 ---
 

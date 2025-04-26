@@ -5,7 +5,6 @@ date: '2023-02-18'
 slug: hay-muchos-datos-si-y
 type: "correos"
 description: 'Reflexiones sobre la calidad de los datos y su uso en la educación.'
-summary: 'Reflexiones sobre la calidad de los datos y su uso en la educación.'
 tags: ["data", "education", "pyspark", "quality"]
 ---
 

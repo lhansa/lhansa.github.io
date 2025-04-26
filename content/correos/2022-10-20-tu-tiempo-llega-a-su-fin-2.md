@@ -4,7 +4,6 @@ author: 'Leonardo Hansa'
 date: '2022-10-20'
 slug: tu-tiempo-llega-a-su-fin-2
 tags: ["adaptación", "cambio", "futuro", "red dead redemption"]
-summary: 'Reflexiones sobre la adaptación al cambio y la importancia de no quedarse anclado en el pasado.'
 description: 'Reflexiones sobre la adaptación al cambio y la importancia de no quedarse anclado en el pasado.'
 type: "correos"
 ---

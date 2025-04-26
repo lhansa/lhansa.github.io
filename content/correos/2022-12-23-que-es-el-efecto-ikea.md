@@ -5,7 +5,6 @@ date: '2022-12-23'
 slug: que-es-el-efecto-ikea
 type: "correos"
 description: 'Reflexiones sobre el efecto Ikea en la toma de decisiones.'
-summary: 'Reflexiones sobre el efecto Ikea en la toma de decisiones.'
 tags: ["Ikea", "efecto", "decisiones", "psicología"]
 ---
 

@@ -5,7 +5,6 @@ date: '2022-08-28'
 slug: tu-tiempo-llega-a-su-fin-1
 type: "correos"
 description: 'Reflexiones sobre la adaptación al cambio y la importancia de no quedarse anclado en el pasado.'
-summary: 'Reflexiones sobre la adaptación al cambio y la importancia de no quedarse anclado en el pasado.'
 tags: ["adaptación", "cambio", "futuro", "red dead redemption"]
 ---
 

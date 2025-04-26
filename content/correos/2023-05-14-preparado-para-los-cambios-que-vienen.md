@@ -5,7 +5,6 @@ date: '2023-05-14'
 type: "correos"
 slug: preparado-para-los-cambios-que-vienen
 description: 'Relevancia de escribir código asumiendo que tendrás que cambiarlo. Y para esto te facilitará mucho el tenerlo todo modularizado.'
-summary: 'Relevancia de escribir código asumiendo que tendrás que cambiarlo. Y para esto te facilitará mucho el tenerlo todo modularizado.'
 tags: ["programming", "software", "architecture", "data"]
 ---
 

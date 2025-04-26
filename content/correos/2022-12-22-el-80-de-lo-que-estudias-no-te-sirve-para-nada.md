@@ -5,7 +5,6 @@ date: '2023-01-01'
 slug: el-80-de-lo-que-estudias-no-te-sirve-para-nada
 type: "correos"
 description: 'Reflexiones sobre la enseñanza y el aprendizaje.'
-summary: 'Cuanto menos te enseñen, mejor.'
 tags: ["enseñanza", "aprendizaje", "programación", "data"]
 ---
 

@@ -5,7 +5,6 @@ date: '2022-08-08'
 slug: esta-cama-no-te-resultara-comoda
 type: "correos"
 description: 'Excel te limita en tu trabajo con datos.'
-summary: 'Excel te limita en tu trabajo con datos.'
 tags: ["excel", "csv", "parquet", "procusto"]
 ---
 
