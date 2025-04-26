@@ -1,10 +1,13 @@
 ---
 title: Primeros pasos en análisis de datos
-author: ''
+author: 'Leonardo Hansa'
 date: '2024-03-15'
 slug: primeros-pasos-en-analisis-de-datos
-categories: []
-tags: []
+tags: [analysis, data, business]
+description: "¿Quieres aprender análisis de datos pero no sabes por dónde empezar? Descubre los primeros pasos esenciales para adentrarte en el mundo del análisis de datos y cómo puedes aplicarlo en tu carrera profesional. Aprende sobre herramientas, recursos y consejos prácticos para comenzar tu viaje en el análisis de datos."
+summary: "¿Quieres aprender análisis de datos pero no sabes por dónde empezar? Descubre los primeros pasos esenciales para adentrarte en el mundo del análisis de datos y cómo puedes aplicarlo en tu carrera profesional. Aprende sobre herramientas, recursos y consejos prácticos para comenzar tu viaje en el análisis de datos."
+tags: [data-analysis, data-science, business-intelligence]
+type: "post"
 ---
 
 Si estás aquí, es que eres un profesional orientado a negocio y quieres ampliar tu campo. 

@@ -1,11 +1,12 @@
 ---
 title: Por qué convertir tu CSV a Excel puede ser mala idea
-author: ''
+author: 'Leonardo Hansa'
 date: '2024-02-25'
 slug: por-que-convertir-tu-csv-a-excel-puede-ser-mala-idea
-categories: []
-tags:
-  - training
+tags: [training, csv, excel]
+summary: 'Explora las desventajas de convertir archivos CSV a Excel y cómo esto puede afectar la integridad de tus datos.'
+description: 'Descubre las desventajas de convertir archivos CSV a Excel y cómo esto puede afectar la integridad de tus datos. Aprende a manejar archivos CSV de manera efectiva y evita problemas comunes al trabajar con ellos en Excel.'
+type: "post"
 ---
 
 En todas las empresas se usan hojas de cálculo para todo lo relacionado con datos. El estándar suele ser Excel, pero seguro que te has encontrado con ficheros que no se comportan como Excel: 

@@ -6,6 +6,7 @@ slug: ejemplos-de-analisis-de-datos
 description: 'Ejemplos de análisis de datos en diversas industrias. Aprende cómo el análisis de datos mejora negocios, salud, educación, finanzas y más.'
 summary: 'Ejemplos de análisis de datos en diversas industrias. Aprende cómo el análisis de datos mejora negocios, salud, educación, finanzas y más.'
 tags: ["data", "analysis", "examples", "industries"]
+type: "post"
 ---
 
 

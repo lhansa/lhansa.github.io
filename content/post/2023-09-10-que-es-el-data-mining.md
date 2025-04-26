@@ -1,9 +1,12 @@
 ---
 title: Qué es el data mining y cómo funciona
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-09-10'
 slug: que-es-el-data-mining-y-como-funciona
 description: "¿Confundido con los términos 'data mining', 'data science' y 'machine learning'? En este post, aclaramos las diferencias, las aplicaciones y la relevancia de la minería de datos en la actualidad. Descubre qué necesitas estudiar para adentrarte en este campo y qué herramientas son esenciales para llevar a cabo la minería de datos eficazmente."
+summary: "¿Confundido con los términos 'data mining', 'data science' y 'machine learning'? En este post, aclaramos las diferencias, las aplicaciones y la relevancia de la minería de datos en la actualidad. Descubre qué necesitas estudiar para adentrarte en este campo y qué herramientas son esenciales para llevar a cabo la minería de datos eficazmente."
+tags: [data-mining, data]
+type: "post"
 ---
 
 Con los años han surgido muchos nombres para llamar a la misma cosa. Y es importante aclarar algunos conceptos, aunque no se usen mucho, porque las pocas veces que se usan se dicen solo tonterías. 

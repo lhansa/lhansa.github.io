@@ -1,12 +1,13 @@
 ---
 title: Cómo se descarga Python
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-09-29'
 publishdate: '2023-09-29'
 slug: como-se-descarga-python
 description: "Descubre cómo usar Python para data science y business intelligence sin la tediosa tarea de instalación. Conoce las ventajas de Google Colab, la simplicidad de Anaconda y consejos avanzados para la gestión de versiones y librerías. Aprende a simplificar tu inicio en Python"
-categories: []
-tags: []
+summary: "Descubre cómo instalar Python de manera sencilla y efectiva para tus proyectos de data science y business intelligence."
+tags: [python, data]
+type: "post"
 ---
 
 Si estás aquí puede ser porque quieres usar Python para _data science_, o Python para _business intelligence_, o sea, Python para datos. 

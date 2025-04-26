@@ -1,11 +1,12 @@
 ---
 title: Cuánto se tarda en aprender Python
-author: ''
+author: 'Leonardo Hansa'
 date: '2024-05-11'
 slug: cuanto-se-tarda-en-aprender-python
-categories: []
-tags:
-  - formación
+tags: [training, learning, programming, python]
+description: 'Aprender Python es un proceso continuo que varía según la experiencia previa y el enfoque. Descubre cuánto tiempo se tarda en aprender Python y cómo optimizar tu aprendizaje.'
+summary: 'Aprender Python es un proceso continuo que varía según la experiencia previa y el enfoque. Descubre cuánto tiempo se tarda en aprender Python y cómo optimizar tu aprendizaje.'
+type: "post"
 ---
 
 ## Índice 

@@ -1,12 +1,13 @@
 ---
 title: Introducción a la programación para no técnicos
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-10-05'
 publishDate: '2023-10-05'
 slug: introduccion-a-la-programacion-para-no-tecnicos
 description: "¿Te sientes frustrado aprendiendo programación o sientes que no avanzas? Descubre por qué muchos cursos de introducción no son efectivos y cómo enfocar tu aprendizaje para obtener resultados reales. Aprende a elegir cursos basados en aplicaciones prácticas y descubre si la programación es adecuada para ti basado en tus habilidades y metas profesionales."
-categories: []
-tags: []
+tags: [programación, aprendizaje, cursos]
+summary: "Explora cómo mejorar tu aprendizaje en programación y elige cursos que se alineen con tus objetivos."
+type: "post"
 ---
 
 ¿Has empezado a programar y no sabes qué hacer con las cosas que has aprendido?

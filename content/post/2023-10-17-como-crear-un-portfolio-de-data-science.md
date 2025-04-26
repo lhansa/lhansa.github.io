@@ -1,12 +1,12 @@
 ---
 title: Por qué no deberías crear un portfolio de data science
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-10-18'
 publishDate: '2023-10-18'
 slug: por-que-no-deberias-crear-un-portfolio-de-data-science
 description: 'Descubre por qué no es esencial tener un portfolio de data science al buscar tu primer trabajo en el campo. Aprende qué es un portfolio, cómo crearlo y qué valor tiene realmente en los procesos de selección. ¡Entiende la verdadera importancia de demostrar tus habilidades y conocimientos!'
-categories: []
-tags: []
+tags: [data-science, portfolio, career]
+summary: 'Descubre la verdadera importancia de un portfolio en el campo de la ciencia de datos y cómo puede afectar tu búsqueda de empleo.'
 ---
 
 Si estás buscando un primer puesto de data analyst o data science sin experiencia, te habrán insistido mucho en que te montes un portfolio de proyectos que hayas hecho con datos públicos. 

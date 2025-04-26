@@ -1,12 +1,13 @@
 ---
 title: La duda que deberías tener cuando aprendes Python desde cero
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-09-14'
 publishdate: '2023-09-14'
 slug: la-duda-que-deberias-tener-cuando-aprendes-python-desde-cero
 description: "¿Estás considerando aprender Python desde cero? Descubre por qué muchos cursos básicos no te prepararán para el mundo laboral y cómo debes enfocar tu aprendizaje en Python para que sea aplicable y valioso en tu profesión. Entiende la importancia de aprender Python con un enfoque práctico y específico según tus objetivos profesionales."
-categories: []
-tags: []
+summary: "¿Estás considerando aprender Python desde cero? Descubre por qué muchos cursos básicos no te prepararán para el mundo laboral y cómo debes enfocar tu aprendizaje en Python para que sea aplicable y valioso en tu profesión. Entiende la importancia de aprender Python con un enfoque práctico y específico según tus objetivos profesionales."
+tags: [python, data]
+type: "post"
 ---
 
 

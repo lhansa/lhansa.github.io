@@ -1,12 +1,11 @@
 ---
 title: Por qué no deberías hacer un Máster en Data Analytics
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-12-08'
 slug: por-que-no-deberias-hacer-un-master-en-data-analytics
-categories: []
-tags:
-  - formación
-  - training
+tags: [formación, training]
+description: "¿Estás pensando en hacer un máster en Data Analytics o Data Science? Antes de dar ese paso, descubre las razones por las que podrías estar tomando una decisión equivocada. Desde la falta de proyectos reales hasta la superficialidad de los contenidos, este artículo te guiará a través de los aspectos que debes considerar antes de invertir tu tiempo y dinero en un máster."
+summary: "¿Estás pensando en hacer un máster en Data Analytics o Data Science? Antes de dar ese paso, descubre las razones por las que podrías estar tomando una decisión equivocada. Desde la falta de proyectos reales hasta la superficialidad de los contenidos, este artículo te guiará a través de los aspectos que debes considerar antes de invertir tu tiempo y dinero en un máster."
 ---
 
 
