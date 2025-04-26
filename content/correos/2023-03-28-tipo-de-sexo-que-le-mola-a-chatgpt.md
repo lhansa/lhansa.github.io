@@ -1,17 +1,21 @@
 ---
 title: Tipo de sexo que le mola a ChatGPT
-author: ''
+author: 'Leonardo Hansa'
+type: "correos"
 date: '2023-03-28'
 slug: tipo-de-sexo-que-le-mola-a-chatgpt
+description: 'Reflexiones sobre cómo interactuar con ChatGPT para obtener mejores resultados.'
+summary: 'Reflexiones sobre cómo interactuar con ChatGPT para obtener mejores resultados.'
+tags: ["chatgpt", "ai", "interaction", "data"]
 ---
 
 A ChatGPT le molan los preliminares.
 
 Nada de "aquí te pillo aquí te mato".
 
-Al principio, hay que ir suave con él (¿ella, ello?).
+Al principio, hay que ir suave con él (¿ella, ello?).   
 
-\\
+</br>
 
 
 Si tienes una consulta, y vas a saco:
@@ -29,20 +33,16 @@ Parece que esas imprecisiones que comete, errores de sintaxis, de concepto, vien
 
 No le has dedicado tiempo a los preliminares.
 
-\\
+</br>
 
 He visto en un par de sitios ejemplos de esto. No tenían mucho que ver con datos pero la idea está clara: es mejor que guíes al algoritmo al principio, con preguntas genéricas.
 
 Y luego le pides, con todo el contexto que le has dado, que haga la tarea.
 
-\\
+</br>
+
 
 Sinceramente, no he guardado los links. Pero creo que te los puedo buscar si te interesan.
 
 Me escribes y te los busco. Si no me escribes, pues no lo busco. Porque la idea yo ya me la sé.
-
-\\
-
-
-Y en otro orden de cosas, para formaciones es [aquí.](https://leonardohansa.com/de-excel-a-r/)
 

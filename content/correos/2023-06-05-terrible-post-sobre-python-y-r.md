@@ -1,11 +1,13 @@
 ---
 title: Terrible post sobre Python y R
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-06-05'
+type: "correos"
 slug: terrible-post-sobre-python-y-r
+description: 'Un post en Linkedin compara Python y R de forma errónea. Aquí te cuento por qué.'
+summary: 'Un post en Linkedin compara Python y R de forma errónea. Aquí te cuento por qué.'
+tags: ["python", "r", "linkedin", "data"]
 ---
-
-
 
 No sé cómo hay gente que se atreve a decir las burradas que dice.
 

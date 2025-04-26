@@ -23,13 +23,18 @@ Bueno, igual lo dices.
 
 Si es así, no hagas caso a este correo.
 
-//
+
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
 
 Continúo para ti, que no dices esas cosas.
 
 Aunque algo te siente bien, no signfica que quieras compartirlo. En el caso del trabajo, ni siquiera aunque luego trabajes mejor lo vas a decir. Simplemente vas a trabajar mejor.
 
-//
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
 
 Si programas, deberías actuar igual que si haces caca.
 

@@ -1,10 +1,13 @@
 ---
 title: Te gusta la caca y quizá no lo sepas
-author: ''
+author: 'Leonardo Hansa'
 date: '2022-09-17'
 slug: te-gusta-la-caca-y-quiza-no-lo-sepas
+tags: ["programming"]
+summary: 'Qué es la deuda técnica.'
+description: 'Qué es la deuda técnica.'
+type: "correos"
 ---
-
 
 
 El alcohol es caca.
@@ -31,6 +34,9 @@ Conclusión del email de hoy: te gusta la caca...
 
 ¿O no?
 
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
 
 
 En programación es inevitable generar caca, es decir, códigos que no sirven, pruebas que haces y se quedarán ahí en el olvido, bucles que rizan el rizo, que hacen complejo lo sencillo, que se usan como excusa para decir que R no es eficiente...
@@ -48,6 +54,3 @@ Todos recurren a ella. Consiste en dedicar tiempo a final del proyecto a poner m
 Y es clave que saldes esa deuda. Que limpies la caca, o que te la bebas y te emborraches, me da igual lo que hagas con ella.
 
 Pero después de hacer caca, asegúrate de que el analista que venga después (que puede ser tu _yo_ del futuro) no se encuentre con tu caca.
-
-
-Si quieres recibir correos como este en tu bandeja de entrada, regístrate en [leonardohansa.com](https://leonardohansa.com/)

@@ -1,8 +1,12 @@
 ---
 title: Un enfoque que no tienes en cuenta cuando tratas datos
-author: ''
+author: 'Leonardo Hansa'
 date: '2022-12-25'
 slug: un-enfoque-que-no-tienes-en-cuenta-cuando-tratas-datos
+type: "correos"
+description: 'Reflexiones sobre la programación orientada a objetos y su impacto en el análisis de datos.'
+summary: 'Reflexiones sobre la programación orientada a objetos y su impacto en el análisis de datos.'
+tags: ["programación", "objetos", "python", "r"]
 ---
 
 Una cosa que escuché cuando empecé a trabajar con R, hace años, es que estaba orientado a objetos.
@@ -77,11 +81,3 @@ Si no conoces tu objeto, harás malabares para hacer una operación. Y cambiará
 Todo en vano.
 
 Porque es un trabajo que ya hizo alguien por ti. Y tú lo has repetido porque no te has molestado en entender que el paradigma de programación es diferente al que conoces de antes.
-
-
-{{< rawhtml >}}
-</br>
-{{< /rawhtml >}}
-
-
-Organizo formaciones para que no repitas trabajo. Me escribes, me cuentas a qué te dedicas y te digo qué puedo ofrecerte.

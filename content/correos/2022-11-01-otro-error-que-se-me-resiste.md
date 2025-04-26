@@ -1,8 +1,12 @@
 ---
 title: Otro error que se me resiste
-author: ''
+author: 'Leonardo Hansa'
 date: '2022-11-01'
 slug: otro-error-que-se-me-resiste
+type: "correos"
+description: 'Reflexiones sobre errores en programación y aprendizaje.'
+summary: 'Reflexiones sobre errores en programación y aprendizaje.'
+tags: ["errores", "programación", "aprendizaje"]
 ---
 
 Ayer en clase a un estudiante le salía un error raro.
@@ -32,7 +36,9 @@ El caso, que con el autocompletado reescribimos la ruta.
 
 **Guiándolo, claro.** Si dejas libre al autocompletado, el quebradero de cabeza es peor que el error ese de Python lleno de ruido.
 
-
+{{rawhtml}}
+</br>
+{{/rawhtml}}
 
 Una vez terminado, ejecutamos...
 
@@ -55,16 +61,4 @@ Aprendimos que empezar de cero puede ser mejor que arreglar lo que no funciona.
 Porque quizá estés trabajando sobre un código mal planteado.
 
 Y la forma de arreglarlo no es cambiar cosas pequeñitas hasta que funcione.
-
-
-
-Organizo formaciones para quienes quieren aprender a tratar sus datos con código.
-
-Y codificaremos desde 0. Para que el tratamiento esté bien asentado. En códigos robustos.
-
-
-Me escribes a hola@leonardohansa.com y empezamos a trabajar.
-
-
-
  

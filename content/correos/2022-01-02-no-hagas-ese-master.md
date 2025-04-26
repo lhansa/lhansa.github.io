@@ -7,7 +7,7 @@ type: "correos"
 tags: ["programming", "courses", "learning", "process", "methods"]
 ---
 
-Un tal James Clear dice que no te pongas objetivos en la vida.
+James Clear dice que no te pongas objetivos en la vida.
 
 Más o menos.
 

@@ -1,8 +1,11 @@
 ---
 title: Es que eso tiene ya mucho valor
-author: ''
+author: 'Leonardo Hansa'
 date: '2022-11-30'
 slug: es-que-eso-tiene-ya-mucho-valor
+tags: ["formación", "datos", "valor"]
+summary: 'La importancia de tratar los datos correctamente.'
+description: 'La importancia de tratar los datos correctamente.'
 ---
 
 

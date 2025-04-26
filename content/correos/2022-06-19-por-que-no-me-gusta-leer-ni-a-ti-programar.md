@@ -1,8 +1,12 @@
 ---
 title: Por qué no me gusta leer ni a ti programar
-author: ''
+author: 'Leonardo Hansa'
 date: '2022-06-19'
-slug: por-qué-no-me-gusta-leer-ni-a-ti-programar
+slug: por-que-no-me-gusta-leer-ni-a-ti-programar
+type: "correos"
+description: 'Reflexiones sobre la lectura y la programación.'
+summary: 'Reflexiones sobre la lectura y la programación.'
+tags: ["programación", "lectura", "errores"]
 ---
 
 
@@ -45,20 +49,3 @@ No pasa nada.
 
 Pero puedes utilizar la programación para tu trabajo de todos modos.
 
-
-
-Tengo una formación con la que aprenderás a tratar tablas de datos con R.
-
-Quienes más la aprovechan son quienes trabajan con tablas datos, y las exploran. Ni _big data_, ni _data science_, ni palabras rimbombantes. Tratar datos en tablas.
-
-Tiene mucha documentación sobre códigos que uso todos los días en mi trabajo. Y ejercicios para que los practiques.
-
-Y, además, incluye mi soporte. No solo para que me preguntes cómo puedes resolver esos ejercicios cuando te atasques. También para que me preguntes cómo aplicar esos códigos a otros tratamientos.
-
-No te haré tu trabajo pero te ayudaré a que utilices en tu día a día lo que aprendas conmigo.
-
-Si quieres. Porque, igual que tienes claro que no quieres estudiar cirugía, necesito que tengas claro que quieres tratar tablas. Con R.
-
-
-
-Si te ha gustado este correo, suscríbete para recibir otros iguales o mejores en [leonardohansa.com](https://leonardohansa.com/). 

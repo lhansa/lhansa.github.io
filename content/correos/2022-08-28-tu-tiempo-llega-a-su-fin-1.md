@@ -1,8 +1,12 @@
 ---
 title: Tu tiempo llega a su fin (1)
-author: ''
+author: 'Leonardo Hansa'
 date: '2022-08-28'
 slug: tu-tiempo-llega-a-su-fin-1
+type: "correos"
+description: 'Reflexiones sobre la adaptación al cambio y la importancia de no quedarse anclado en el pasado.'
+summary: 'Reflexiones sobre la adaptación al cambio y la importancia de no quedarse anclado en el pasado.'
+tags: ["adaptación", "cambio", "futuro", "red dead redemption"]
 ---
 
 Red Dead Redemption es una de las mejores ficciones que se han escrito nunca.
@@ -31,7 +35,7 @@ Está anclado en un pasado caduco, que va a desaparecer.
 Y Arthur Morgan desaparecerá con él si no se pone las pilas.
 
 
-Tengo una formación.
+Doy formaciones.
 
 Te será útil si tu trabajo con datos está anclado, si trabajas con tablas de datos tan manualmente que ya te has dicho varias veces "tiene que haber otra forma de hacer esto".
 

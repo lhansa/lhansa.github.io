@@ -1,8 +1,12 @@
 ---
 title: El 80% de lo que estudias no te sirve para nada
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-01-01'
 slug: el-80-de-lo-que-estudias-no-te-sirve-para-nada
+type: "correos"
+description: 'Reflexiones sobre la enseñanza y el aprendizaje.'
+summary: 'Cuanto menos te enseñen, mejor.'
+tags: ["enseñanza", "aprendizaje", "programación", "data"]
 ---
 
 
@@ -72,18 +76,3 @@ Te prometo por el niño Jesús que hay códigos así. Aunque tú no te lo creas,
 {{< /rawhtml >}}
 
 Enseño muy pocas cosas. Pero te servirán para casi todas las aplicaciones. Y mi único objetivo es que, con la práctica, tus códigos te parezcan obvios. 
-
-{{< rawhtml >}}
-</br>
-{{< /rawhtml >}}
-
-Organizo formaciones en las que te enseño muy poco y que te sirve para casi todo.
-
-Me cuentas a qué te dedicas (el 80% de tus tareas) y te digo qué puedo ofrecerte.
-
-{{< rawhtml >}}
-</br>
-{{< /rawhtml >}}
-
-P.D. Puedes dar a responder a este correo.
-

@@ -33,7 +33,9 @@ Si te matriculas en un curso de data science, vas a aprender a hacer modelos mat
 
 Verás que se puede descartar mucho si tienes clara la respuesta a esa pregunta.
 
-//
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
 
 Una vez has descartado muchas cosas viene el gran dilema. ¿Te lanzas a la piscina con una de las pocas opciones que te quedan, o pasas del tema porque concluyes que esto no va contigo?
 

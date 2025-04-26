@@ -3,6 +3,10 @@ title: En qué se parecen los cursos de idiomas y de programación
 author: Leonardo Hansa
 date: '2022-03-19'
 slug: en-que-se-parecen-los-cursos-de-idiomas-y-de-programacion
+type: "correos"
+description: 'Reflexiones sobre la enseñanza de idiomas y programación.'
+summary: 'Reflexiones sobre la enseñanza de idiomas y programación.'
+tags: ["programación", "idiomas", "enseñanza"]
 ---
 
 

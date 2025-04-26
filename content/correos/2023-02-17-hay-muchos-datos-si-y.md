@@ -1,8 +1,12 @@
 ---
 title: Hay muchos datos, sí, ¿y?
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-02-18'
 slug: hay-muchos-datos-si-y
+type: "correos"
+description: 'Reflexiones sobre la calidad de los datos y su uso en la educación.'
+summary: 'Reflexiones sobre la calidad de los datos y su uso en la educación.'
+tags: ["data", "education", "pyspark", "quality"]
 ---
 
 
@@ -27,7 +31,7 @@ Metí APIs incluso.
 ¡Hala, qué aventurado! 
 
 
-\\
+</br>
 
 Nate Silver lo cuenta muy bien: los datos han aumentado exponencialmente en los últimos años, sí, pero no su calidad.
 
@@ -44,8 +48,6 @@ Pues esos clientes consultaban apenas unos megas.
 Tenían muchos datos, sí, pero no los usaban.
 
 Luego, que si hay que estudiar 15 sesiones de pyspark.
-
-\\
 
 [Link al artículo](https://motherduck.com/blog/big-data-is-dead/)
 

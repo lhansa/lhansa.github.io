@@ -1,8 +1,12 @@
 ---
 title: ¿Qué es el efecto Ikea?
-author: ''
+author: 'Leonardo Hansa'
 date: '2022-12-23'
 slug: que-es-el-efecto-ikea
+type: "correos"
+description: 'Reflexiones sobre el efecto Ikea en la toma de decisiones.'
+summary: 'Reflexiones sobre el efecto Ikea en la toma de decisiones.'
+tags: ["Ikea", "efecto", "decisiones", "psicología"]
 ---
 
 Me encanta Ikea.
@@ -68,12 +72,3 @@ Tan solo siendo tú podrás montarte lo que nunca estuvo a tu alcance.
 
 
 Solo necesitas una guía, que te dé ingredientes para que tú los mezcles. Y el resultado que obtengas te gustará.
-
-Organizo formaciones con efecto Ikea. Para más detalles, correo a hola@leonardohansa.com
-
-
-{{< rawhtml >}}
-</br>
-{{< /rawhtml >}}
-
-P.D. Cuando me escribas, te responderé con preguntas. Cuando tenga respuesta a esas preguntas, te diré en qué formato y a qué precio puedo trabajar contigo. Y con eso, empezamos a trabajar.

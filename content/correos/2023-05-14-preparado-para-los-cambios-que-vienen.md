@@ -1,8 +1,12 @@
 ---
 title: ¿Preparado para los cambios que vienen?
-author: ''
+author: 'Leonardo Hansa'
 date: '2023-05-14'
+type: "correos"
 slug: preparado-para-los-cambios-que-vienen
+description: 'Relevancia de escribir código asumiendo que tendrás que cambiarlo. Y para esto te facilitará mucho el tenerlo todo modularizado.'
+summary: 'Relevancia de escribir código asumiendo que tendrás que cambiarlo. Y para esto te facilitará mucho el tenerlo todo modularizado.'
+tags: ["programming", "software", "architecture", "data"]
 ---
 
 
@@ -17,9 +21,7 @@ Es una empresa (el cliente) de estas de referencia. Que ha hecho ricos a sus inv
 
 Y es un auténtico desastre.
 
-Es de esas instituciones que llevan a pensar "¿cómo hay gente haciendo las cosas tan mal y ganando tanto dinero?".
-
-\\
+Es de esas instituciones que llevan a pensar "¿cómo hay gente haciendo las cosas tan mal y ganando tanto dinero?".     ¡
 
 Nos han cambiado el formato de unos datos que nos mandan trimestralmente.
 
@@ -31,16 +33,11 @@ Pero como digo, ahora los han cambiado.
 
 Que el proceso ya no vale...
 
-¿O sí?
-
-\\
-
+¿O sí?     
 
 El párrafo que te he compartido al principio del email es de un post del portal All things distributed.
 
-Plantea la importancia de asumir lo siguiente cuando escribes código de programación: vas a tener que cambiarlo en el futuro.
-
-\\
+Plantea la importancia de asumir lo siguiente cuando escribes código de programación: vas a tener que cambiarlo en el futuro.     
 
 Todo cambia, todo fluye. Y lo que involucra a la tecnología, especialmente.
 
@@ -50,10 +47,8 @@ Escríbelo asumiendo que tendrás que cambiarlo.
 
 ¿Cómo te condiciona eso?
 
-Haz módulos, bloques, mini-tareas.
+Haz módulos, bloques, mini-tareas.      
 
-
-\\
 
 En el proyecto este del cliente insultante estuvo trabajando una antigua compañera mía.
 
@@ -71,11 +66,4 @@ Porque era independiente de eso.
 
 **Claudia (mi ex-compi):** muchas gracias, porque me has ahorrado, mazo, mazo de tiempo.
 
-***
-
-
-
-[En mi formación de tratamiento de datos](https://leonardohansa.com/de-excel-a-r/) no te doy detalles de cómo plantear los módulos (porque lo considero un tema aparte y una formación no debe tratar muchos temas).
-
-Pero tienes soporte. Aprovéchalo si necesitas una guía de cómo empezar.
 

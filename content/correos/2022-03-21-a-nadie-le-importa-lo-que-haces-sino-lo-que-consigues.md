@@ -3,6 +3,10 @@ title: A nadie le importa lo que haces, sino lo que consigues
 author: Leonardo Hansa
 date: '2022-03-21'
 slug: a-nadie-le-importa-lo-que-haces-sino-lo-que-consigues
+type: correos
+description: 'Reflexiones sobre la importancia de los resultados en el trabajo.'
+summary: 'Reflexiones sobre la importancia de los resultados en el trabajo.'
+tags: ["programación", "datos", "valor"]
 ---
 
 
@@ -51,14 +55,6 @@ De nada.
 Porque no vas a generar más valor en tu trabajo haciendo modelos y estadística guay. Sino transformando el esfuerzo que inviertes en tratar tus hojas de cálculo.
 
 Te lo he dicho más veces: no quieres "programar", así en general. Quieres herramientas que transformen tu trabajo a uno más valorado. Y hay herramientas, vinculadas a la programación, que te pueden ayudar.
-
-La semana que viene te voy a ofrecer una cosa. Es una muestra pequeña (muy pequeña) de a qué me refiero. Un primer paso.
-
-Habrá gente que diga que es empezar la casa por el tejado.
-
-Yo diría que es empezar a aplicar la programación en tu trabajo.
-
-
 
 
 P.D. Si los datos con los que trabajas están siempre limpios y ordenados no te servirá de absolutamente nada. 
