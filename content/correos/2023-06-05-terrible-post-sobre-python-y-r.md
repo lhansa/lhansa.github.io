@@ -16,7 +16,6 @@ No era largo, pero el tipo se había currado un poco el formato. Lo había puest
 
 Y claro, me pregunto, ¿para qué se molesta? ¡Si lo que dice es mentira!
 
-## Qué decía el post
 
 La primera línea decía algo así como "las 5 cosas que puedes hacer con Python pero no con R" y viceversa.
 
@@ -40,7 +39,6 @@ _Echa el freno magdaleno,_ me apetecía decirle.
 
 Pero no lo he hecho porque no quería interactuar con su post. Para que no gane visibilidad.
 
-## Por qué era mentira
 
 Mucho cuidado con afirmaciones tan tajantes de lo que no se puede hacer con una cosa o con otra.
 
