@@ -1,9 +1,11 @@
-baseurl = "http://leonardohansa.com"
+baseurl = "https://leonardohansa.com"
 title = "Leonardo Hansa"
 author = "Leonardo Hansa"
 canonifyurls = true
 languagecode = "en"
 theme = "hugo-tanka"
+
+relativeUrls = true
 
 GoogleAnalyticsID = ""
 disqusShortname = ""
