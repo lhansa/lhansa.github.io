@@ -19,7 +19,7 @@ summaryLength = 70
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
-  sitename = "Tu machine learning no sirve si no sabes explicarlo"
+  sitename = "Tu machine learning es inútil si no sabes explicarlo"
   dateform = "02/01/2006"
   title = "Leonardo Hansa"
   description = "Más cursos de data science no te quitarán el síndrome del impostor. Mejor base estadística, sí." 
