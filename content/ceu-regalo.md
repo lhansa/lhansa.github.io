@@ -35,7 +35,8 @@ A ver, cuidado... en esta web verás muchos formularios; **no todos los formular
 
 **Es muy importante que te suscribas en el de arriba y te asegures de que te llegan dos correos.**
 
-En ambos encontrarás material sobre R, **pero solo en el primer correo verás el tratamiento para la corrección de los datos erróneos.**
+En ambos encontrarás material sobre datos, **pero solo en el primer correo verás el tratamiento para la corrección de los datos erróneos.**
 
+En el segundo correo estarás ya en mi lista. Envío material e ideas sobre análisis y ciencia de datos, tutoriales, formaciones y cosas así. En ese segundo correo tendrás acceso a lo que llamo Piedra Roseta: una **comparativa entre R, Python y Excel** con dos ejercicios típicos de análisis de datos. Te servirá para ver cómo hacer lo mismo con las tres herramientas: así, si sabes un poco de una, aprenderás de las otras 2.
 
 ## Recuerda: si quieres el material extra, regístrate en el formulario de arriba.
