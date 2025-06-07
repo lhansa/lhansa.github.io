@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /private/
 Disallow: /tags/
 
-Sitemap: https://leonardo.hansa.com/sitemap.xml
+Sitemap: https://leonardohansa.com/sitemap.xml
