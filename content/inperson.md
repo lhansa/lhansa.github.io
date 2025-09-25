@@ -2,7 +2,7 @@
 title: Un placer
 author: Leonardo Hansa
 slug: inperson
-type: forms
+type: "forms"
 noindex: true 
 _build:
     list: never
