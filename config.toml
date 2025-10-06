@@ -19,7 +19,7 @@ summaryLength = 70
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [params]
-  sitename = "No quieres proyectos machine learning. Lo que quieres es entender tu negocio con datos y no con opiniones."
+  sitename = "No quieres proyectos de machine learning. Lo que quieres es entender tu negocio con datos y no con opiniones."
   dateform = "02/01/2006"
   title = "Leonardo Hansa"
   description = "Más cursos de data science no te quitarán el síndrome del impostor. Mejor base estadística, sí." 
