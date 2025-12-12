@@ -1,7 +1,7 @@
 ---
 title: No quieres otro proyecto de datos
 author: Leonardo Hansa
-slug: de-excel-a-r
+slug: consultoria
 noindex: true 
 _build:
     list: never
