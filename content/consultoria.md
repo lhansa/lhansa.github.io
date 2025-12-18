@@ -2,6 +2,7 @@
 title: No quieres otro proyecto de datos
 author: Leonardo Hansa
 slug: consultoria
+type: "forms"
 noindex: true 
 _build:
     list: never
