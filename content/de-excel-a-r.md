@@ -211,6 +211,24 @@ Si quieres hacer data scientist, necesitarás trabajar con data scientists duran
 
 [Pago seguro con tarjeta.](https://buy.stripe.com/cN216E9Fs5Zx6di5km) 
 
+## Qué dice la gente del curso
+
+## Qué dice la gente de mis cursos
+
+> Excekente profesor
+> Tanto la documentación como las explicaciones, la combinación de teoría y práctica y las experiencias compartidas por Leo, han sido inmejorables.
+> las respuestas a los correos que se le comparten son rápidas y detalla lo que se le pide. Sin duda, un gran comunicador y traslada el entusiasmo que siente por este contenido.
+> todo ajustado a expectativas. Nada que mejorar
+> Destaco implicación en el trabajo de los alumnos.
+> Leo enfoca una materia compleja y amplia de una manera excelente
+> Leo es un profesor ejemplar
+> Como primer contacto con el lenguaje se aborda lo necesario para que podamos continuar investigando y aprendiendo segun cada cual le interese
+> Muy práctico el curso y muy pendiente del alumnado
+> Agradezco mucho toda la documentación tan organizada.
+> ha sido un verdadero privilegio y honor aprender y crecer en esta rama como tu alumna (J.F)
+> Aprecio realmente tu paciencia y dedicación. (G.R)
+
+
 ***
 
 
