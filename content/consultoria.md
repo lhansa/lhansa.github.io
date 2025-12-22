@@ -35,7 +35,7 @@ Trabajo en 5 fases:
 2. Durante una semana haces un listado de preguntas de negocio que quieras responder con datos y no con opiniones ni expertise de dinosaurios.
 3. Hacemos una sesión, durante una mañana, en la que nos juntamos y vemos todos los datos a los que tienes acceso. En esta sesión vemos qué preguntas puedes responder con tus datos y cómo. 
 4. Habrá preguntas que no puedas responder. Así que nos juntamos una semana después para ver qué preguntas puedes responder con datos de otros compañeros, otros departamentos, incluso de terceras empresas. Entre esas dos sesiones tendrás que indagar mucho pero yo te guío. 
-5. Te cuneto en detalle cómo puedes responder cada pregunta que tienes, o qué datos te faltan para responder las pendientes. Algunas preguntas se resolverán con una tabla dinámica, otras se resolverán con una persona con ciertos conocimientos de estadística, y otras con un proyecto de varios meses con una consultora. Otras no se podrán responder.
+5. Te cuento en detalle cómo puedes responder cada pregunta que tienes, o qué datos te faltan para responder las pendientes. Algunas preguntas se resolverán con una tabla dinámica, otras se resolverán con una persona con ciertos conocimientos de estadística, y otras con un proyecto de varios meses con una consultora. Otras no se podrán responder.
 
 ### El precio son 3.500 euros más IVA.
 
@@ -43,6 +43,13 @@ Insisto, esto puede no ser para ti. Hay personas que necesitan gastarse el presu
 
 Si lo que nececesitas es entender tu negocio con datos, puedes contar conmigo.
 
-En el siguiente link te dejo huecos míos para empezar la fase 1. Después de eso, te cobro y empezamos la fase 2.
+Rellena este formulario. Te llamo y decidimos si empezamos la fase 1.
+
+
+{{< rawhtml >}}
+<section id=subscribe3>
+<div class="ml-embedded" data-form="U46g6b"></div>
+</section>
+{{< /rawhtml >}}
 
 
