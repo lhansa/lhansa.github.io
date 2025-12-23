@@ -11,6 +11,7 @@ _build:
 
 - ¿Qué tal se llevan marketing y comercial?
 - ¿Te fías de las métricas que te da tu CRM?
+- ¿Están cayendo tus datos de tráfico por la IA? ¿Pero sabes que la IA te está trayendo negocio porque te menciona y no se te ocurre cómo medirlo?
 - ¿Qué me dices de Meta Ads? ¿Te dan seguridad sus datos de clicks? ¿Y de conversiones?
 - ¿Tu CEO, o incluso el financiero, te obliga a reportar métricas que no tienes ni idea de dónde salen?
 - ¿Cómo mides cuánto aportan distintos medios, cuando la inversión en cada uno ocurre a la vez en todos?
