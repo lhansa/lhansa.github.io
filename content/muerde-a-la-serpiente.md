@@ -303,6 +303,8 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 > Como primer contacto con el lenguaje se aborda lo necesario para que podamos continuar investigando y aprendiendo segun cada cual le interese
 > Muy práctico el curso y muy pendiente del alumnado
 > Agradezco mucho toda la documentación tan organizada.
+> Muy atento, resuelve todas mis dudas. 
+> Me has ayudado a sentar las bases para estudiar luego otros temas de data science.
 > ha sido un verdadero privilegio y honor aprender y crecer en esta rama como tu alumna (J.F)
 > Aprecio realmente tu paciencia y dedicación. (G.R)
 
