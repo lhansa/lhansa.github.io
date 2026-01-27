@@ -307,4 +307,5 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 > Me has ayudado a sentar las bases para estudiar luego otros temas de data science.
 > ha sido un verdadero privilegio y honor aprender y crecer en esta rama como tu alumna (J.F)
 > Aprecio realmente tu paciencia y dedicación. (G.R)
+> Fuiste de los mejores profesores si no el mejor que tuve (M.F)
 
