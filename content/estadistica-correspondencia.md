@@ -20,11 +20,17 @@ Te hago spoiler: Frank llega a presidente. Poco antes de tomar posesión hace un
 En el diálogo, aproximado, de memoria, dicen: 
 
 ---Oye, entenderás que ahora ya no voy a poder venir por aquí. Mi agenda va a estar más limitada. Pero no quiero dejarte tirado. Quiero hacer algo por ti. Te hago un hueco en la Casa Blanca. Te nombro jefe de cocina. 
+
 ---Ni de coña, Frank,  ---imagínate aquí el acento de Freddy, muy profundo--- no quiero saber más de la cocina. Lo odio. 
+
 ---¿Cómo? No me esperaba eso. ¿No te gusta? Con lo bien que me has atendido siempre, nunca lo habría pensado. 
+
 ---Hago bien mi trabajo, pero quiero cambiar. ¿Quieres hacerme un favor? Nómbrame jardinero de la Casa Blanca. 
+
 ---¿Jardinero? ¿De verdad te interesa eso?
+
 ---Desde luego. Aire libre, aroma de las plantas, sus colores... quiero salir, dejar de estar encerrado en esta cocina. 
+
 
 ***
 
