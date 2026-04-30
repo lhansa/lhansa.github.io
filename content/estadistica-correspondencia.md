@@ -11,7 +11,7 @@ En la serie _House of Cards_ al personaje de Kevin Spacey, congresista en EE.UU.
 
 Es un restaurante cutre, sucio, de hamburguesas, con muy mal aspecto. Ya sabes, el típico que sale en la Lonely Planet y te dicen "si quieres una hamburguesa de lo más auténtica, ve aquí". 
 
-Lo lleva, por supuesto, Freddy, un negro de estos de película, grandote, fuerte, y con vozarrón imponente. En la trama de la serie, lleva unos 20 años al otro lado de la barra de la hamburguesería. 
+Lo lleva Freddy, un negro de estos de película, grandote, fuerte, y con vozarrón imponente. En la trama de la serie, lleva unos 20 años al otro lado de la barra de la hamburguesería. 
 
 Es el sitio de referencia de Frank (Kevin Spacey) y va siempre que tiene ocasión. No solo a desconectar, sino a organizar reuniones de esas que los políticos no quieren que queden registradas. 
 
@@ -19,8 +19,7 @@ Te hago spoiler: Frank llega a presidente. Poco antes de tomar posesión hace un
 
 En el diálogo, aproximado, de memoria, dicen: 
 
----Oye, entenderás que ahora ya no voy a poder venir por aquí. Mi agenda va a estar más limitada. Pero no quiero dejarte tirado. Quiero hacer algo por ti. Te hago un hueco en la Casa Blanca. Te nombro jefe de cocina. 
-
+---Oye, entenderás que ahora ya no voy a poder venir por aquí. Mi agenda va a estar más limitada. Pero no quiero dejarte tirado. Quiero hacer algo por ti. Te hago un hueco en la Casa Blanca. Te nombro jefe de cocina. \n
 ---Ni de coña, Frank,  ---imagínate aquí el acento de Freddy, muy profundo--- no quiero saber más de la cocina. Lo odio. 
 
 ---¿Cómo? No me esperaba eso. ¿No te gusta? Con lo bien que me has atendido siempre, nunca lo habría pensado. 
@@ -98,17 +97,17 @@ Estoy como tú.
 
 Me gusta desconectar. 
 
-No de mi profesión, no de mi campo, no de lo mío. 
+Igual que Freddy, pero no de mi profesión, no de mi campo, no de lo mío. 
 
 Me gusta desconectar los dispositivos. Descansar la vista, los hombros, las lumbares. 
 
-Irme con lo mío a un sitio cómodo. Sentarme sin estar pendiente de un ordenador, de un teclado. De configurar el entorno de Python, ni de instalar la librería. 
+Irme con lo mío a un sitio cómodo. Sentarme sin estar pendiente de un ordenador, de un teclado, de configurar el entorno de Python, ni de instalar la librería. 
 
 **Tengo algo para ti.**
 
 ### Te quiero mandar una carta
 
-Sí, una carta. Por correo postal. Si vives en España, de esas que envía Correos. 
+Sí, una carta. Por correo postal. Si vives en España, de esas que envía Correos. En tu país el servicio postal se llamará de otra forma. 
 
 Un sobre, con tu nombre y tu dirección. Y un remitente, y un sello. 
 
@@ -132,7 +131,7 @@ Te ofrezco que leas algo más.
 
 Un texto sobre tu sector. Sobre datos. Sobre modelización. 
 
-### Qué contiene la carta
+### ¿Qué contiene la carta?
 
 ## Tengo una carta escrita sobre inferencia bayesiana. 
 
@@ -144,31 +143,30 @@ Yo te cuento una de esas cosas de la primera, y cómo la segunda lo soluciona.
 
 Si lees mi carta, aprenderás: 
 
-- El error que más me persigue cuando empleo estadística tal y como se enseña en cualquier curso, máster o lo que sea.
-- Cómo lo corrige la estadística bayesiana, contado primero de forma muy intuitiva. Con una moneda.
+- El **error** que más me persigue cuando empleo estadística tal y como se enseña en cualquier curso, máster o lo que sea.
+- Cómo lo **corrige** la estadística bayesiana, contado primero de forma muy intuitiva. Con una moneda.
 
 Luego vamos a algo práctico, con un conjunto de datos al que, por supuesto, tendrás acceso: 
 
-- Cómo se plantea habitualmente el responder a una pregunta de negocio sobre ese conjunto de datos.
-- Qué no tiene sentido metodológico en esa forma (estadística frecuentista)
-- Cómo el planteamiento bayesiano te quita de problemas típicos (hipótesis, significatividad)
+- Cómo se plantea habitualmente el responder a una **pregunta de negocio** sobre ese conjunto de datos.
+- Qué **no tiene sentido metodológico** en esa forma (estadística frecuentista)
+- Cómo el planteamiento bayesiano **te quita de problemas típicos** (hipótesis, significatividad)
 
 ### La carta no es una columna de opinión en favor de la estadística bayesiana
 
 Te enseñaré cómo implementar cada paso necesario. 
 
-- Tendrás código de la versión tradicional.
-- Tendrás código de la versión bayesiana.
-- Nada del código entero para que copies, pegues y ejecutes.
-- Explicación bloque a bloque de código, para que sepas qué hace cada línea.
-- Todo en Python, no porque sea mi lenguaje favorito, sino porque es el que más gente usa.
-- ¿Tú usas R? Te daré las pautas para que una IA te lo traduzca.
+- Tendrás **código de la versión tradicional.**
+- Tendrás **código de la versión bayesiana.**
+- Nada del código entero para que copies, pegues y ejecutes y te olvides, sino una **explicación bloque a bloque de código**, para que sepas qué hace cada línea.
+- Todo en **Python,** no porque sea mi lenguaje favorito, sino porque es el que más gente usa.
+- ¿Tú usas R? Te daré las pautas para que lo lleves a R.
 
-Una IA puede darte ya este contenido. 
+## ¿Una IA puede darte ya este contenido?
 
 Sí, estoy de acuerdo. Yo le pido cosas así constantemente. 
 
-Lo bueno es que ya las sé. Las conozco. Sé la pinta que debe tener, tengo una idea del resultado que debe salir. 
+Lo bueno es que ya las sé. Las conozco. Sé la pinta que deben tener, tengo una idea del resultado que debe salir. 
 
 Si no la tienes, y la IA se equivoca, tú estarás equivocado también. 
 
@@ -178,7 +176,7 @@ Si no la tienes, y la IA se equivoca, tú estarás equivocado también.
 
 En link de abajo puedes comprar la carta. Cuando lo hagas, te pediré una dirección, claro. Así: 
 
-- Te llegará a casa la carta. Un sobre, con 12 folios de explicación de inferencia bayesiana. Códigos, explicación de código, de conceptos, de datos, todo.
+- Te **llegará a casa la carta.** Un sobre, con 12 folios de explicación de inferencia bayesiana. Códigos, explicación de código, de conceptos, de datos, todo.
 - Acceso al conjunto de datos, para que puedas replicarlo todo.
 - Acceso a un vídeo con material complementario mío. Entraré en detalle de un concepto que en el texto solo cuento de forma intuitiva, sin entrar en código. Esto te ayudará a bajar al barro, porque verás cómo interactúo yo con el código.
 - Acceso a mí para preguntarme lo que necesites sobre la carta. Conceptos que no queden claros, por qué realizar tal paso o tal otro...
