@@ -1,42 +1,66 @@
 ---
-title: Soy mediocre
+title: Estoy en contra de las decisiones basadas en datos
 author: Leonardo Hansa
-slug: soy-mediocre
+slug: contra-los-datos
 ---
 
-No destaco en nada. No la lío mucho pero tampoco soy un fiera en nada. 
+En tu trabajo, en la empresa en la que trabajas, ¿cómo se toman las decisiones?
 
-Quizá te pase a ti también. 
+¿Son **organizados, meticulosos**? ¿Valoran la información que tienen disponible? ¿Valoran los riesgos, los beneficios? ¿Dan prioridades? 
 
-Te apañas con las cosillas que sabes. Y tiras adelante con ello. 
+¿Y luego hacen un árbol de **decisiones**? ¿Con las consecuencias? 
 
-A veces te toca hacer algo que se lo has visto hacer a otras personas y flipas. Compararte con los que destacan es un problema. Es como si te haces freelance y te quieres poner a la altura de Steve Jobs o Elon Musk. 
+¿Simulan escenarios? ¿Se basan en **probabilidades**?
 
-Te frustras. Porque no te termina de ir tan bien como a ellos. 
+Sabes por dónde voy, ¿verdad?
 
-Es lo que tiene no destacar. 
+Voy por aquí: 
 
-Eso sí, hay buenas noticias. Aunque no destaques, puedes tener herramientas a tu disposición y hacer un buen uso de ellas. 
+### la mayoría de empresas con las que he trabajado son lo contrario de lo anterior. 
 
-Quizá juegues al pádel. O toques el piano. O cocines. ¿Te llevas tupper a la oficina? Seguro que tienes un plato que sabes que te queda bien y te gusta llevártelo a la ofi. No destacarás, pero te queda bien. 
+**Se dejan llevar**, **tiran adelante**. Igual que yo. Igual que tú. 
 
-Esa es la clave de lo que aprendes. No aprendes para destacar en un campo. Aprendes para llegar un poquito más lejos. 
+En tu día a día, en mi día a día, ¿qué hacemos?
 
-Cuando aprendes algo nuevo, sientes que eres una persona más completa. 
+Nos dejamos llevar. Por la **intuición**, por un _feeling_, por impresiones, por experiencias pasadas...
 
-Y se puede ir más allá. **Incluso sin destacar:** aplicar lo que aprendes.
+No pasa nada. Es normal. E inevitable. 
 
-¿Tienes la sensación de que tu jefe pasa de ti? Igual ni sabe lo que haces. Te tiene ahí, perdiendo el tiempo con ficheros Excel sin pies ni cabeza. Copiando y pegando tablas para unos informes que, en fin... a saber si sirven. 
+Es inevitable dejarse llevar por impresiones, sin pararse a pensar en todos los detalles de una decisión, porque es la única forma de avanzar. 
 
-Si tuvieras más tiempo para aportar lo que sabes, para estudiar esos datos en lugar de tratar con ficheros imposibles, si ganaras algo de tiempo, le enseñarías a tu jefe lo que vales. Aportarías valor a esos datos y sacarías información útil.
+No puedes considerar todos los detalles si quieres progresar. 
 
-Programar te simplifica el trabajo con esos ficheros. Para que tengas tiempo para dedicar a cosas útiles. 
+### Los detalles, los números, las métricas y los datos están para situaciones que requieren detalle, que requieren perfección. 
 
-También sin destacar como programador. Es solo una herramienta. No hay que destacar.
+Seguro que has oído a personas que se dicen de sí mismas, **como crítica, que son muy perfeccionistas.**
 
-Si te interesa programar, todos las semanas envío un email con ideas. O dos o tres. Para que aprenderlo sea llevadero. 
+Claro que es una crítica. No puedes ser perfeccionista todo el rato. 
 
-Semana que no estás, consejo de programación que te pierdes.
+Pero habrá situaciones en las que debas serlo: 
+
+- Un **proceso interno** de la empresa va lento (dar de alta un servicio, dar acceso a varios usuarios, conseguir que varios usuarios rellenen un formulario, lo que se te ocurra). Tomas medidas, una y otra vez, pero no hay avances. Alerta.
+- Tienes un **presupuesto para invertir**. Muy justo y te han pedido resultados. Marketing, formación, desarrollo. No es de esos presupuestos de final de año, de esos de "gástalo para que parezca que lo usamos" o "gástalo para que Hacienda cobre menos". No, aquí te han pedido resultados. Alerta.
+- Ofreces un **producto nuevo** a clientes frecuentes, para fidelizar, para _upselling_, para _cross-selling_, lo que tengas que hacer. Y nadie compra. Alerta.
+
+Si en tu trabajo todas las decisiones se toman, y se deben tomar, a base de intuición, de mariposas en la barriga, de sudores fríos, de pelos de punta, de si te cae bien quien te lo propone, de si da igual cómo salgan las cosas... te doy mi enhorabuena. Estás por encima de todo y te admiro. 
+
+No tengo nada para ti. 
+
+Tengo algo para ti si algunas de las decisiones, de los proyectos, de los análisis, se basan: 
+
+- en datos,
+- en números,
+- en métricas.
+
+En mis correos te comparto un consejo sobre toma de decisiones con datos. 
+
+- No me refiero a modelos de machine learning técnicos
+- No me refiero a inteligencia artificial de moda
+- No me refiero a matemáticas de profesor universitario con camisa de cuadros
+
+Me refiero a ser práctico en tu trabajo. Con datos. No con opiniones.
+
+Semana que no estás, consejo que te pierdes.
 
 Te das de alta con un click. Si no te gusta, te das de baja con otro.
 
