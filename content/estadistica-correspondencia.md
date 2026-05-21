@@ -119,6 +119,8 @@ Y dentro del sobre, folios. Texto impreso en varias hojas, dobladas y metidas en
 
 ### Estadística por correspondencia
 
+![Estadística por correspondencia](/img/estadistica-correspondencia.gif)
+
 Mira, seamos claros: me encanta YouTube. No solo para perder el tiempo, sino para ver vídeos de temas de datos, computación, algoritmos, matemáticas. 
 
 Pero también me gusta sentarme a leer. 
