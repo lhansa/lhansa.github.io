@@ -179,9 +179,9 @@ Si no la tienes, y la IA se equivoca, tú estarás equivocado también.
 En link de abajo puedes comprar la carta. Cuando lo hagas, te pediré una dirección, claro. Así: 
 
 - Te **llegará a casa la carta.** Un sobre, con 12 folios de explicación de inferencia bayesiana. Códigos, explicación de código, de conceptos, de datos, todo.
-- Acceso al conjunto de datos, para que puedas replicarlo todo.
-- Acceso a un vídeo con material complementario mío. Entraré en detalle de un concepto que en el texto solo cuento de forma intuitiva, sin entrar en código. Esto te ayudará a bajar al barro, porque verás cómo interactúo yo con el código.
-- Acceso a mí para preguntarme lo que necesites sobre la carta. Conceptos que no queden claros, por qué realizar tal paso o tal otro...
+- Acceso al **conjunto de datos**, para que puedas replicarlo todo.
+- Acceso a un **vídeo con material complementario** mío. Entraré en detalle de un concepto que en el texto solo cuento de forma intuitiva, sin entrar en código. Esto te ayudará a bajar al barro, porque verás cómo interactúo yo con el código.
+- Acceso a mí para **preguntarme lo que necesites sobre la carta.** Conceptos que no queden claros, por qué realizar tal paso o tal otro...
 
 La carta tarda en llegar. No es inmediato, pero los accesos digitales que hay te llegarán al momento, porque también te pediré el correo electrónico. No todo va a ser postal. Aunque queramos desconectar, no vamos a negar que vivimos en el siglo XXI. 
 
