@@ -188,3 +188,37 @@ La carta tarda en llegar. No es inmediato, pero los accesos digitales que hay te
 
 ## Estadística bayesiana por correspondencia. 30 €
 ### Pago seguro con tarjeta
+
+## Preguntas frecuentes
+
+### ¿Es una formación?
+
+Sí. 
+
+### ¿Qué aprenderé?
+
+Es una introducción a inferencia bayesiana, es decir, harás modelos estadísticos con el enfoque bayesiano. 
+
+### ¿Qué aporta ese enfoque con respecto al "otro" enfoque?
+
+En la carta entro en detalle pero a modo de resumen hazte a la idea de que la incertidumbre se explora de forma más intuitiva (no hay p-valor, por ejemplo). También es intuitivo darle al modelo conocimiento tuyo sobre el sector, para que lo tenga en cuenta en los cálculos (por ejemplo, tal coeficiente tiene que ser positivo).
+
+### ¿Qué formato tiene la formación?
+
+Es una carta. Te envío una carta a casa. Y tendrás acceso a un par de vídeos complementarios, nada más comprar. Así tendrás ya contenido que consultar en lo que esperas a que llegue la carta. 
+
+### ¿Cuánto tarda en llegar la carta?
+
+Pues sinceramente, ni idea. Me queda tiempo por delante para hacer pruebas. En España en teoría son pocos días pero luego Correos hace de las suyas. Fuera de España creo que puede tardar incluso 2 ó 3 semanas. 
+
+### ¿Hay examen/certificación?
+
+Es una carta. Qué quieres...
+
+### ¿Qué contenidos tiene?
+
+La carta tiene tanto explicaciones teóricas como enfoque práctico. Lo que busco con ella es que entiendas mejor una herramienta útil en la modelización estadística y que puedas empezar a ponerla en práctica. 
+
+### ¿Hace falta saber de algo previo?
+
+Necesito que sepas qué es una regresión. Y quizá cómo [ejecutar código Python](https://leonardohansa.com/muerde-a-la-serpiente/). Digo _quizá_ porque realmente puedes limitarte a leer la carta, sin ponerla en práctica. Puedes leer el enfoque bayesiano, entender los ejemplos, aprender de qué va el tema, sin ejecutar nada. Y luego si quieres incluso lo adaptas tú a otro lenguaje (te daré alguna pauta para R).
