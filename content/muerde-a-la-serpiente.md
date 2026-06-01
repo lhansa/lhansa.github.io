@@ -296,18 +296,26 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 ## Qué dice la gente de mis cursos
 
 > Excekente profesor
-> Tanto la documentación como las explicaciones, la combinación de teoría y práctica y las experiencias compartidas por Leo, han sido inmejorables.
-> las respuestas a los correos que se le comparten son rápidas y detalla lo que se le pide. Sin duda, un gran comunicador y traslada el entusiasmo que siente por este contenido.
-> todo ajustado a expectativas. Nada que mejorar
+
+> Tanto la documentación como las explicaciones, la combinación de teoría y práctica y las experiencias compartidas por Leo, han sido inmejorables. las respuestas a los correos que se le comparten son rápidas y detalla lo que se le pide. Sin duda, un gran comunicador y traslada el entusiasmo que siente por este contenido. todo ajustado a expectativas. Nada que mejorar
+
 > Destaco implicación en el trabajo de los alumnos.
+
 > Leo enfoca una materia compleja y amplia de una manera excelente
+
 > Leo es un profesor ejemplar
+
 > Como primer contacto con el lenguaje se aborda lo necesario para que podamos continuar investigando y aprendiendo segun cada cual le interese
+
 > Muy práctico el curso y muy pendiente del alumnado
+
 > Agradezco mucho toda la documentación tan organizada.
+
 > Muy atento, resuelve todas mis dudas. 
-> Me has ayudado a sentar las bases para estudiar luego otros temas de data science.
-> ha sido un verdadero privilegio y honor aprender y crecer en esta rama como tu alumna (J.F)
+
+> Me has ayudado a sentar las bases para estudiar luego otros temas de data science. ha sido un verdadero privilegio y honor aprender y crecer en esta rama como tu alumna (J.F)
+
 > Aprecio realmente tu paciencia y dedicación. (G.R)
+
 > Fuiste de los mejores profesores si no el mejor que tuve (M.F)
 
