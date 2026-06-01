@@ -1,6 +1,7 @@
 ---
 title: También a mí se me hizo bola empezar con Python
 slug: muerde-a-la-serpiente
+type: "venta"
 ---
 
 ## pero finalmente aprendí.
