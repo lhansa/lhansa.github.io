@@ -56,9 +56,10 @@ En Python.
 
 {{< rawhtml >}}
 <iframe width="560" height="315" 
-  src="https://www.youtube.com/embed/C41rKu1L1ug" 
+  src="https://www.youtube-nocookie.com/embed/C41rKu1L1ug" 
   title="YouTube video player" 
-  frameborder="0" 
+  frameborder="0"
+  referrerpolicy="strict-origin-when-cross-origin"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
   allowfullscreen>
 </iframe>
