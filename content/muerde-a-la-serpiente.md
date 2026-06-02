@@ -55,6 +55,10 @@ En Python.
 ## ¿Crees que la IA ya hará Python por ti? Te respondo:
 
 {{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
+
+{{< rawhtml >}}
 <iframe width="560" height="315" 
   src="https://www.youtube-nocookie.com/embed/C41rKu1L1ug" 
   title="YouTube video player" 
