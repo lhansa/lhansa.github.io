@@ -52,6 +52,20 @@ Pues que ahora, si quieres hacer estadística, te toca programar.
 
 En Python. 
 
+## ¿Crees que la IA ya hará Python por ti? Te respondo:
+
+{{< rawhtml >}}
+<iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/C41rKu1L1ug" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+{{< /rawhtml >}}
+
+**Así que sí, te toca aprender.** Unos mínimos.
+
 Pero claro, si buscas en Google tutoriales para aprender a programar en Python, verás cosas del estilo:
 
 - Declaración de variables
