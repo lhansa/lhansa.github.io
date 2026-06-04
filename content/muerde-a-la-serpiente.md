@@ -227,6 +227,10 @@ No. La solución es lo menos interesante de los ejercicios. Lo interesante es qu
 
 Los ejercicios te piden que saques conclusiones sobre los datos. Y **la manera en que sacarás partido a esta formación** es intentando esos ejercicios una y otra vez, de muchas formas distintas. Eso te ayudará a conseguir soltura escribiendo código, que es a lo que deberías aspirar con esta formación.
 
+### ¿Hay material sobre inteligencia artificial?
+
+No (por ahora, no) pero sabrás usar mejor la IA. 
+
 ### ¿Cómo entregas el material?
 
 Te lo envío al correo que uses para la compra. 
@@ -278,7 +282,7 @@ Pero si tienes dudas de si te arrepentirás de comprarla, la respuesta es sí: a
 
 ### ¿Emites factura?
 
-Por supuesto. Pídemela y te la envío.
+Te llega a través de la plataforma de venta.
 
 
 ### Con esta formación, ¿podré encontrar trabajo de data scientist?
