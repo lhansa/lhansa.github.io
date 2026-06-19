@@ -1,5 +1,5 @@
 ---
-title: Preguntas Frecuentes
+title: Aprendizajes en formato breve para tus análisis de datos
 author: Leonardo Hansa
 slug: aprendizajes-analisis-datos
 ---
