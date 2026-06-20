@@ -187,11 +187,25 @@ O sea, que si te surge una duda sobre:
 - Cómo aplicar el texto a los ejercicios
 - Cómo aplicar el contenido a una tarea tuya diferente de lo que se plantea en el texto (sí, incluso eso)
 
-Digo, si te surge algo de eso, me contactas y te doy soporte. 
+Digo, si te surge algo de eso, me contactas y te doy soporte. Durante 6 meses desde la compra.
 
 Por correo electrónico. 
 
 Y te respondo rápido. No tardo 15 días en responder. 2, como mucho. A veces, en 2 horas ya tendrás una respuesta. 
+
+## Este curso no es para todo el mundo
+
+Recomiendo encarecidamente **no** comprar este curso si: 
+
+- Tienes un nivel avanzado de Python, aunque no sea aplicado a datos (con tu nivel avanzado, te recomiendo que tires directamente de documentación oficial)
+- Ya haces algún tratamiento de tablas con Python aunque tu nivel sea bajo. Si ya lo haces, no inviertas más dinero en formación; simplemente curra y curra. 
+- No tienes modo de usar un lenguaje de programación, quizá porque tu empresa se resista.
+
+Dicho de otra forma: **este curso es para quienes analizan datos, y ahora además quieren tratarlos desde su origen, en la medida de lo posible, con Python.**
+
+Es una **introducción** al tratamiento de datos con Python. Si buscas algo avanzado, o un caso de uso muy particular, **este curso no es para ti.**
+
+### El curso no tiene garantía de devolución, así que por favor, no lo adquieras si no sabes si es para ti
 
 ## Disponibilidad
 
@@ -199,11 +213,11 @@ Te llegará todo al poco de comprar la formación, al correo electrónico que in
 
 ## Precio
 
-82€
+68€
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
 
-### PVP: 82€ 
+### PVP: 68€ 
 
 [Pago seguro con tarjeta.](https://buy.stripe.com/8wMcPm5pccnVaty4gl) 
 
@@ -229,7 +243,7 @@ Los ejercicios te piden que saques conclusiones sobre los datos. Y **la manera e
 
 ### ¿Hay material sobre inteligencia artificial?
 
-No (por ahora, no) pero sabrás usar mejor la IA. 
+No pero sabrás usar mejor la IA. 
 
 ### ¿Cómo entregas el material?
 
@@ -247,9 +261,7 @@ Sí, por correo electrónico. Te respondo personalmente en 2 días hábiles.
 
 Cuando compres el curso recibirás instrucciones de cómo contactar conmigo para el soporte.
 
-**El soporte es ilimitado en el tiempo.** O sea, si dentro de tres años tienes dudas sobre cómo aplicar alguna parte del código, me escribes y te respondo. 
-
-Y sí, creo que dentro de 3 años seguiremos usando estas herramientas. 
+**El soporte dura 6 meses.** O sea, durante 6 meses tras la compra, si tienes dudas sobre el contenido, me escribes y te respondo. Las veces que quieras.
 
 ### ¿Necesito instalar algún programa?
 
@@ -278,7 +290,7 @@ Si tienes Chromebook podrás trabajar con la versión online, con la que de todo
 
 No. En cuanto recibas el material no hay devolución posible. 
 
-Pero si tienes dudas de si te arrepentirás de comprarla, la respuesta es sí: así que no la compres. 
+Pero si tienes dudas de si te arrepentirás de comprar el curso, la respuesta es sí: así que no la compres. 
 
 ### ¿Emites factura?
 
@@ -310,7 +322,7 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 
 ## Formación de tratamiento de datos: antídoto contra serpientes
 
-### PVP: 82€ 
+### PVP: 68€ 
 
 [Pago seguro con tarjeta.](https://buy.stripe.com/8wMcPm5pccnVaty4gl) 
 
