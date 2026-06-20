@@ -219,7 +219,8 @@ Te llegará todo al poco de comprar la formación, al correo electrónico que in
 
 ### PVP: 68€ 
 
-[Pago seguro con tarjeta.](https://buy.stripe.com/8wMcPm5pccnVaty4gl) 
+[Pago seguro con tarjeta.](https://leonardohansa.lemonsqueezy.com/checkout/buy/94599342-8051-4de2-afa1-b301dcedee73)
+
 
 ***
 
@@ -324,7 +325,7 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 
 ### PVP: 68€ 
 
-[Pago seguro con tarjeta.](https://buy.stripe.com/8wMcPm5pccnVaty4gl) 
+[Pago seguro con tarjeta.](https://leonardohansa.lemonsqueezy.com/checkout/buy/94599342-8051-4de2-afa1-b301dcedee73)
 
 ***
 
@@ -353,4 +354,6 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 > Aprecio realmente tu paciencia y dedicación. (G.R)
 
 > Fuiste de los mejores profesores si no el mejor que tuve (M.F)
+
+[Pago seguro con tarjeta.](https://leonardohansa.lemonsqueezy.com/checkout/buy/94599342-8051-4de2-afa1-b301dcedee73)
 
