@@ -355,5 +355,9 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 
 > Fuiste de los mejores profesores si no el mejor que tuve (M.F)
 
+## Formación de tratamiento de datos: antídoto contra serpientes
+
+### PVP: 68€ 
+
 [Pago seguro con tarjeta.](https://leonardohansa.lemonsqueezy.com/checkout/buy/94599342-8051-4de2-afa1-b301dcedee73)
 
