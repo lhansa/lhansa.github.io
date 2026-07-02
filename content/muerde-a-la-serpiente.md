@@ -193,19 +193,35 @@ Por correo electrónico.
 
 Y te respondo rápido. No tardo 15 días en responder. 2, como mucho. A veces, en 2 horas ya tendrás una respuesta. 
 
-## Este curso no es para todo el mundo
+## Recomiendo que no compres este curso
+
+Esto no es una frase de psicología inversa, ni nada de ir sobrado. Llevo una década enseñando, mejorando mis métodos, y con eso he conseguido muchos alumnos satisfechos, la inmensa mayoría. 
+
+En parte, lo consigo sabiendo a quién **no** dar clase.
+
+No enseño a determinadas personas, que detallo a continuación, porque me centro en aquellas a las que puedo ayudar. Ahora verás que no es un tema de actitud, de "no enseño a quienes no quieren tomárselo en serio"; no va de eso. Hay muchas, muchísimas personas, a la que mi curso no les servirá de nada. 
+
+Por favor, **si eres de esas personas, no compres.** De verdad. El curso **no tiene garantía de devolución.** Una vez compras, recibes automáticamente todo el material. Tú no me lo puedes devolver, así que yo tampoco. 
+
+Por ello te pido que si compras, estés seguro de que no perteneces a las personas que **no** deben comprar.
 
 Recomiendo encarecidamente **no** comprar este curso si: 
 
 - Tienes un nivel avanzado de Python, aunque no sea aplicado a datos (con tu nivel avanzado, te recomiendo que tires directamente de documentación oficial)
 - Ya haces algún tratamiento de tablas con Python aunque tu nivel sea bajo. Si ya lo haces, no inviertas más dinero en formación; simplemente curra y curra. 
-- No tienes modo de usar un lenguaje de programación, quizá porque tu empresa se resista.
+- No tienes modo de usar un lenguaje de programación, quizá porque tu empresa se resista. Aunque puedas hacer todo el curso online, las herramientas que enseño son muy cómodas de usar en tu día a día si las tienes instaladas. No tiene sentido que te pongas a hacer trampas de conseguir accesos sin que IT se entere.
+- Solo quieres hojear. Aunque la mayor parte del contenido es un ebook, el formato está pensado para que lo tengas en el ordenador, con código al lado que puedas ejecutar, que puedas copiar y pegar, trastear. No es una formación cómoda para hojear, en el sentido del formato. 
+
 
 Dicho de otra forma: **este curso es para quienes analizan datos, y ahora además quieren tratarlos desde su origen, en la medida de lo posible, con Python.**
 
 Es una **introducción** al tratamiento de datos con Python. Si buscas algo avanzado, o un caso de uso muy particular, **este curso no es para ti.**
 
 ### El curso no tiene garantía de devolución, así que por favor, no lo adquieras si no sabes si es para ti
+
+## Por cierto, todo el material está disponible gratis en internet
+
+
 
 ## Disponibilidad
 
