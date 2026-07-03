@@ -38,7 +38,7 @@ Te ayudo con ese 1%.
 </br>
 {{< /rawhtml >}}
 
-Python se ha puesto de moda. Eso es un hecho. 
+Python se puso de moda hace unos años. Y ahí sigue. Eso es un hecho. 
 
 En parte se debe a que en el mundo de los datos han entrado muchos ingenieros. 
 
@@ -220,6 +220,30 @@ Es una **introducción** al tratamiento de datos con Python. Si buscas algo avan
 ### El curso no tiene garantía de devolución, así que por favor, no lo adquieras si no sabes si es para ti
 
 ## Por cierto, todo el material está disponible gratis en internet
+
+Sí, no hay nada, **nada**, de todo lo que yo te cuento que no puedas encontrar gratis por internet. 
+
+Es más, encontrarás mucho más. 
+
+### Ese es justo el problema
+
+Lo que me he propuesto con esta formación es **enseñarte lo mínimo imprescindible para que puedas empezar a tratar tus datos con Python.** 
+
+Lo mínimo. 
+
+Si tú lo quieres todo, entonces **te recomiendo que no hagas este curso.**
+
+Y también te deseo suerte. Te deseo suerte porque precisamente el hecho de que quieras aprenderlo todo es la razón por la que se te hará bola empezar. 
+
+#### Necesitas hacer un filtro de lo que necesitas para arrancar.
+
+- Internet no hace ese filtro. 
+- Los libros técnicos de 600 páginas no hacen eso. 
+- Los cursos gratuitos no hacen eso. 
+- Los cursos con muchos colorines y efectos especiales en los vídeos no hacen eso.
+
+
+
 
 
 
