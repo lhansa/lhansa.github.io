@@ -240,16 +240,27 @@ Y también te deseo suerte. Te deseo suerte porque precisamente el hecho de que 
 - Internet no hace ese filtro. 
 - Los libros técnicos de 600 páginas no hacen eso. 
 - Los cursos gratuitos no hacen eso. 
-- Los cursos con muchos colorines y efectos especiales en los vídeos no hacen eso.
+- Los cursos con muchos colorines y efectos especiales en los vídeos tampoco hacen eso.
 
+**Cuidado.** No digo que mi curso sea el único válido. 
 
+Mi curso es muy válido en algunas circunstancias. En otras, no lo es, y necesitarás cursos o materiales que entren en mucha más profundidad. 
 
+A día de hoy, cuando necesito entrar en profundidad de un tema, si es un herramienta, recurro a la documentación oficial; si es una metodología estadística, recurro a libros de texto referenciados en carreras universitarias; si es una técnica, recurro a los ejercicios recomendados por referentes a nivel mundial en la materia. 
+
+Es decir, muchas personas en muchas situaciones necesitan profundizar. 
+
+Pero todo el mundo cuando se inicia en un tema necesita lo contrario. Necesita que le filtren lo imprescidible. 
+
+**Con este curso, yo te hago de filtro.**
+
+### Por favor, no compres este curso si no buscas un filtro 
 
 
 
 ## Disponibilidad
 
-Te llegará todo al poco de comprar la formación, al correo electrónico que indiques en el momento de compra. 
+Te llegará todo el material al poco de comprar la formación, al correo electrónico que indiques en el momento de compra. 
 
 ## Precio
 
@@ -304,6 +315,14 @@ Cuando compres el curso recibirás instrucciones de cómo contactar conmigo para
 
 **El soporte dura 6 meses.** O sea, durante 6 meses tras la compra, si tienes dudas sobre el contenido, me escribes y te respondo. Las veces que quieras.
 
+### ¿Qué precio tiene?
+
+68 euros.
+
+### Es muy caro. 
+
+Eso no es una pregunta.
+
 ### ¿Necesito instalar algún programa?
 
 Te resultará más cómodo si lo haces, pero no es necesario para aprovechar el contenido. 
@@ -357,6 +376,34 @@ Pues tampoco. No te enseñaré a sacar conclusiones a partir de tus exploracione
 Luego necesitarás estadística: modelos, visualizaciones, tests,... pero eso no entra en esta formación. 
 
 En esta formación entra la parte previa. Que la necesitarás para ser data analyst (o como lo quieras llamar). Pero si lo que quieres es aprender la parte estadística, entonces esta **no** es tu formación.
+
+### ¿Por qué debería hacer tu curso en lugar del de XXX ó YYY?
+
+No _deberías_ hacer mi curso. Haz mi curso si quieres **y** si te crees que te será útil. 
+
+Te será útil si quieres aplicar Python para tratar tus tablas de datos y no sabes por dónde empezar. 
+
+Si quieres usar Python para otras cosas, no hagas este curso. 
+
+Si sabes por dónde empezar, no hagas este curso. 
+
+Si no vas a usar Python, no hagas este curso. 
+
+Sobre el curso de XXX ó YYY, no te puedo decir nada. 
+
+### Tengo un nivel avanzado de Python pero no lo uso para tratamiento de datos. ¿Me ayudará tu curso?
+
+Si tienes un nivel avanzado ya, te recomiendo que busques otras fuentes para empezar, como documentación oficial o el libro de Wes McKinney. 
+
+Mi curso te ayudará a empezar más rápido. Que sea significativo o no la diferencia con respecto a ir por tu cuenta, en cosa tuya. 
+
+### Yo ya he probado a usar Python para tratar datos y no me sirve. ¿Qué haces tú diferente a otras documentaciones que ya he consultado?
+
+Pues no sé lo que has consultado, pero sí puedo decirte una cosa: mi curso es, de todos los cursos que conozco, el más utilidades da a sus alumnos con la menor cantidad de contenido posible. 
+
+¿Contradictorio?
+
+Para mí no, está claro. Creo que muchos cursos y documentaciones fallan por exceso de material. No tiene sentido empezar Python aplicado a datos definiendo tuplas o _lists comprehensions_. Si lo que sabes de Python son cosas así, no me extraña que no te sirva.
 
 
 ***
