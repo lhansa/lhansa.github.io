@@ -193,6 +193,22 @@ Por correo electrónico.
 
 Y te respondo rápido. No tardo 15 días en responder. 2, como mucho. A veces, en 2 horas ya tendrás una respuesta. 
 
+
+## Precio
+
+68€
+
+## Formación de tratamiento de datos: antídoto contra serpientes
+
+### PVP: 68€ 
+
+[Pago seguro con tarjeta.](https://leonardohansa.lemonsqueezy.com/checkout/buy/94599342-8051-4de2-afa1-b301dcedee73)
+
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
+
+
 ## Recomiendo que no compres este curso
 
 Esto no es una frase de psicología inversa, ni nada de ir sobrado. Llevo una década enseñando, mejorando mis métodos, y con eso he conseguido muchos alumnos satisfechos, la inmensa mayoría. 
@@ -207,25 +223,30 @@ Por ello te pido que si compras, estés seguro de que no perteneces a las person
 
 Recomiendo encarecidamente **no** comprar este curso si: 
 
-- Tienes un nivel avanzado de Python, aunque no sea aplicado a datos (con tu nivel avanzado, te recomiendo que tires directamente de documentación oficial)
-- Ya haces algún tratamiento de tablas con Python aunque tu nivel sea bajo. Si ya lo haces, no inviertas más dinero en formación; simplemente curra y curra. 
-- No tienes modo de usar un lenguaje de programación, quizá porque tu empresa se resista. Aunque puedas hacer todo el curso online, las herramientas que enseño son muy cómodas de usar en tu día a día si las tienes instaladas. No tiene sentido que te pongas a hacer trampas de conseguir accesos sin que IT se entere.
-- Solo quieres hojear. Aunque la mayor parte del contenido es un ebook, el formato está pensado para que lo tengas en el ordenador, con código al lado que puedas ejecutar, que puedas copiar y pegar, trastear. No es una formación cómoda para hojear, en el sentido del formato. 
+- Tienes un **nivel avanzado de Python**, aunque no sea aplicado a datos (con tu nivel avanzado, te recomiendo que tires directamente de documentación oficial)
+- Ya **haces algún tratamiento de tablas con Python** aunque tu nivel sea bajo. Si ya lo haces, no inviertas más dinero en formación; simplemente curra y curra. 
+- **No tienes modo de usar un lenguaje de programación,** quizá porque tu empresa se resista. Aunque puedas hacer todo el curso online, las herramientas que enseño son muy cómodas de usar en tu día a día si las tienes instaladas. No tiene sentido que te pongas a hacer trampas de conseguir accesos sin que IT se entere.
+- **Solo quieres hojear**. Aunque la mayor parte del contenido es un ebook, el formato está pensado para que lo tengas en el ordenador, con código al lado que puedas ejecutar, que puedas copiar y pegar, trastear. No es una formación cómoda para hojear, en el sentido del formato. 
 
 
 Dicho de otra forma: **este curso es para quienes analizan datos, y ahora además quieren tratarlos desde su origen, en la medida de lo posible, con Python.**
 
 Es una **introducción** al tratamiento de datos con Python. Si buscas algo avanzado, o un caso de uso muy particular, **este curso no es para ti.**
 
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
+
+
 ### El curso no tiene garantía de devolución, así que por favor, no lo adquieras si no sabes si es para ti
 
-## Por cierto, todo el material está disponible gratis en internet
+## Por cierto, todo el material está disponible gratis en internet.
 
 Sí, no hay nada, **nada**, de todo lo que yo te cuento que no puedas encontrar gratis por internet. 
 
 Es más, encontrarás mucho más. 
 
-### Ese es justo el problema
+### Ese es justo el problema.
 
 Lo que me he propuesto con esta formación es **enseñarte lo mínimo imprescindible para que puedas empezar a tratar tus datos con Python.** 
 
@@ -254,8 +275,11 @@ Pero todo el mundo cuando se inicia en un tema necesita lo contrario. Necesita q
 
 **Con este curso, yo te hago de filtro.**
 
-### Por favor, no compres este curso si no buscas un filtro 
+### Por favor, no compres este curso si no buscas un filtro.
 
+{{< rawhtml >}}
+</br>
+{{< /rawhtml >}}
 
 
 ## Disponibilidad
@@ -379,7 +403,7 @@ En esta formación entra la parte previa. Que la necesitarás para ser data anal
 
 ### ¿Por qué debería hacer tu curso en lugar del de XXX ó YYY?
 
-No _deberías_ hacer mi curso. Haz mi curso si quieres **y** si te crees que te será útil. 
+No _deberías_ hacer mi curso. Haz mi curso si quieres **y** si crees que te será útil. 
 
 Te será útil si quieres aplicar Python para tratar tus tablas de datos y no sabes por dónde empezar. 
 
@@ -389,7 +413,7 @@ Si sabes por dónde empezar, no hagas este curso.
 
 Si no vas a usar Python, no hagas este curso. 
 
-Sobre el curso de XXX ó YYY, no te puedo decir nada. 
+Conozco muchos cursos diferentes al mío que están muy bien. Si los de XXX o YYY son alguno de esos, estarán muy bien.
 
 ### Tengo un nivel avanzado de Python pero no lo uso para tratamiento de datos. ¿Me ayudará tu curso?
 
@@ -399,11 +423,11 @@ Mi curso te ayudará a empezar más rápido. Que sea significativo o no la difer
 
 ### Yo ya he probado a usar Python para tratar datos y no me sirve. ¿Qué haces tú diferente a otras documentaciones que ya he consultado?
 
-Pues no sé lo que has consultado, pero sí puedo decirte una cosa: mi curso es, de todos los cursos que conozco, el más utilidades da a sus alumnos con la menor cantidad de contenido posible. 
+Pues no sé lo que has consultado, pero sí puedo decirte una cosa: mi curso es, de todos los cursos que conozco, el que más utilidades da a sus alumnos con la menor cantidad de contenido posible. 
 
 ¿Contradictorio?
 
-Para mí no, está claro. Creo que muchos cursos y documentaciones fallan por exceso de material. No tiene sentido empezar Python aplicado a datos definiendo tuplas o _lists comprehensions_. Si lo que sabes de Python son cosas así, no me extraña que no te sirva.
+Para mí no, está claro. Creo que muchos cursos y documentaciones fallan por exceso de material. No tiene sentido empezar Python aplicado a datos definiendo tuplas o _lists comprehensions_. Si lo que sabes de Python son cosas así, no me extraña que no te sea útil.
 
 
 ***
