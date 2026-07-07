@@ -1,5 +1,5 @@
 ---
-title: Condiciones generales de contratación
+title: Términos y condiciones
 author: Leonardo Hansa
 slug: condiciones
 noindex: true
@@ -9,6 +9,8 @@ _build:
 
 
 **leonardohansa.com**
+
+## Condiciones generales de contratación
 
 ## 1. Información general
 La titularidad de este sitio web leonardohansa.com, (en adelante Sitio Web) la ostenta: Leonardo Hansa, con NIF: 50770534N, y cuyos datos de contacto son:
