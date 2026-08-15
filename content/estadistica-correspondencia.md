@@ -3,6 +3,7 @@ title: Formación estadística por correo postal
 author: Leonardo Hansa
 slug: estadistica-correspondencia
 type: "venta"
+hidenav: true
 noindex: true 
 _build:
     list: never
