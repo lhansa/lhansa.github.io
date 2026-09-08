@@ -14,7 +14,7 @@ El **anti CV** contiene mis experiencias profesionales y educativas negativas; a
 
 ## Leonardo Hansa
 
-~~Data analyst.~~ ~~Data scientist.~~ _Copio y pego código de Stack Overflow y ChatGPT._
+~~Data scientist.~~ _Uso Claude Code._
 
 ## Resumen
 
