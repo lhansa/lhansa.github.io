@@ -1,5 +1,5 @@
 ---
-title: Regalo para los asistentes al seminario bayesiano en CUNEF
+title: Recibe el notebook de regalo para los asistentees al seminario bayesiano en CUNEF
 author: Leonardo Hansa
 slug: regalo-bayes
 type: "forms"
@@ -8,9 +8,7 @@ _build:
     list: never
 ---
 
-### Recibe el notebook con el ejemplo de caso jerárquico desde de un punto de vista bayesiano
-
-Te enviaré al correo un link al notebook. 
+Te enviaré al correo un link al notebook. Contiene un caso práctico para ajustar un modelo jerárquico bayesiano.
 
 {{< rawhtml >}}
 <section id=subscribe1>
@@ -21,6 +19,7 @@ Te enviaré al correo un link al notebook.
 Comentarios: 
 
 - El notebook lo puedes ejecutar en Google Colab.
+- Está totalmente comentado, muy guiado, para que puedas seguirlo y todo con explicaciones.
 - Los datos se leen directamente desde el notebook online (por eso no te llegará ningún fichero con datos).
 - Lo que te cuento en el notebook es cómo usar PyMC (la herramienta vista en el seminario) para ajustar modelos jerárquicos.
 - Si no sabes qué son modelos jerárquicos, lo aprenderás (de verdad, no asumo que el lector sepa qué son; te contaré desde cero su utilidad).
