@@ -37,3 +37,6 @@ Mi ejemplo sirve de filtro para centrarse en el ajuste bayesiano.
 </section>
 {{< /rawhtml >}}
 
+Si con el link no consigues acceso, no te cortes: ha sido culpa mía. Respóndeme al correo que te habrá llegado y te lo mando.
+
+
