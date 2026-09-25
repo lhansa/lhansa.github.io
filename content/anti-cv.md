@@ -26,7 +26,7 @@ Estudié matemáticas porque me llamaban la atención y ese título universitari
 
 **Septiembre 2019 - actualidad**
 
-- Llevo como un año desarrollando un simulador. Tiene una lógica tan extraña que no consigo hacerme con él. Dado que no entiendo ni lo que estoy desarrollando, miedo me da el resultado final. 
+- Soy responsable de una herramienta que funciona como una especie de página web, con mucho Javascript. Solo Claude sabe cómo funciona, si acaso. Yo, desde luego, no tengo ni idea.
 - Implementé un algoritmo de optimización de hiperparámetros del que no me fío ni un pelo. Soy tan consciente de sus puntos débiles que no me atrevo a usarlo. De hecho, suelo recomendar a mis compañeros que no lo usen.
 
 ### Minsait 
@@ -68,10 +68,11 @@ Estudié matemáticas porque me llamaban la atención y ese título universitari
 ## Soft skills
 
 - Soy vago. Intento hacer lo mínimo (salvo que el proyecto sea mío, en cuyo caso lo doy todísimo).
-- Soy poco imaginativo. No te aportaré ideas nuevas. 
-- Sin embargo, me desmotivo con tareas repetitivas.
+- Soy poco imaginativo. No te aportaré ideas nuevas. Solo te ayudaré a decidirte con las que ya tienes en la cabeza.
+- Me desmotivo con tareas repetitivas. De hecho, no las haré.
 - Yo soy más importante que la empresa: si los domingos por la tarde me da depresión porque al día siguiente es lunes, dejaré el trabajo.
-- Si me contratas como empleado, serás dueño de mi tiempo pero solo hasta las 6 (o incluso 5). Si me contratas como autónomo, no serás dueño de mi tiempo.
+- Si me contratas como empleado, cobraré poco, pero porque trabajaré poco. ¿Cuánto me pagas por una jornada de 16 horas semanales?
+- Si me contratas como autónomo, no serás dueño de mi tiempo.
 - Aprendo despacio y pocas cosas. 
 - No me entrego mucho. Si me mandas algo que no me gusta, lo haré peor que las cosas que sí me gustan.
 
