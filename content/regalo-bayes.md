@@ -12,7 +12,7 @@ Te enviaré al correo un link al notebook. Contiene un caso práctico para ajust
 
 {{< rawhtml >}}
 <section id=subscribe1>
-<div class="ml-embedded" data-form="9ANFWr"></div>
+<div class="ml-embedded" data-form="xBlTw7"></div>
 </section>
 {{< /rawhtml >}}
 
@@ -32,7 +32,7 @@ Mi ejemplo sirve de filtro para centrarse en el ajuste bayesiano.
 
 {{< rawhtml >}}
 <section id=subscribe2>
-<div class="ml-embedded" data-form="9ANFWr"></div>
+<div class="ml-embedded" data-form="xBlTw7"></div>
 </section>
 {{< /rawhtml >}}
 
