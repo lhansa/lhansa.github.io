@@ -39,6 +39,16 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     url = "/contra-los-datos/"
     description = "Sobre mí"
     weight = 2
+[[menu.main]]
+    name = "Sobre Yo"
+    url = "/sobre-yo/"
+    description = "Sobre yo"
+    weight = 3
+[[menu.main]]
+    name = "Anti-CV"
+    url = "/anti-cv"
+    description = "Mi Anti CV"
+    weight = 4
 
 [privacy]
   [privacy.disqus]
